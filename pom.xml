@@ -37,14 +37,13 @@
             <artifactId>javafx-fxml</artifactId>
             <version>21-ea+21</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.camunda.bpm/camunda-engine -->
+        <!-- https://mvnrepository.com/artifact/org.camunda.bpm.assert/camunda-bpm-assert -->
         <!-- Camunda is used to ease the integration, handling and processing of BPMN -->
-        <!-- Vulnerability Warnings: All investigated and classified as non-critical -->
         <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-engine</artifactId>
-            <version>7.20.0-alpha2</version>
-            <scope>provided</scope>
+            <groupId>org.camunda.bpm.assert</groupId>
+            <artifactId>camunda-bpm-assert</artifactId>
+            <version>15.0.0</version>
+            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.fazecast/jSerialComm -->
         <!-- jSerialComm is the addition to establish the Port communication to the Arduino -->
