@@ -36,8 +36,7 @@ The code structure in the form of classes, methods and attributes can quickly be
 Therefore, the following lightweight UML-diagram reveals a structural representation of the back-end. Even though not
 all methods (and even classes) are shown, it still illustrates the key connections.
 
-ALl below here needs to be updated with this project ...\
-![UML diagram of the project](UML.png) TODO: Creation of a diagram
+![UML diagram of the project](UML.png)
 
 ## List of References
 
@@ -47,3 +46,19 @@ ALl below here needs to be updated with this project ...\
     *
 * Hardware-Connection-References
     *
+
+
+# Cheat Zone:
+* Visibility:
+  * ***private***: Visible just in the <u>Class</u>
+  * ***public***: Visible <u>Everywhere</u>
+  * ***empty***: Visible in the <u>Package</u>
+* Numbers:
+  * byte (8): -128 to 127 
+  * short (16): −32768 to 32767
+  * int (32):−2147483648 to 2147483647
+  * long (64): −9223372036854775808 to 9223372036854775807
+  * float (32): -3.4e+38 to 3.4e+38 --7 digits
+  * double (64): -1.7e+308 to 1.7e+308 --15 digits
+  * boolean (1): true to false
+  * char (16): all Unicode
