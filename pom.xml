@@ -35,15 +35,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>21-ea+21</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.camunda.bpm.assert/camunda-bpm-assert -->
-        <!-- Camunda is used to ease the integration, handling and processing of BPMN -->
-        <dependency>
-            <groupId>org.camunda.bpm.assert</groupId>
-            <artifactId>camunda-bpm-assert</artifactId>
-            <version>15.0.0</version>
-            <scope>test</scope>
+            <version>21-ea+23</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.fazecast/jSerialComm -->
         <!-- jSerialComm is the addition to establish the Port communication to the Arduino -->
@@ -71,7 +63,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>org.ccp.MainApplication</mainClass>
+                    <mainClass>edu.gate.frontend.MainApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

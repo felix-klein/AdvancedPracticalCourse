@@ -62,3 +62,8 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * double (64): -1.7e+308 to 1.7e+308 --15 digits
   * boolean (1): true to false
   * char (16): all Unicode
+* JavaFX:
+  * Layers: Stage >> Scene >> Scene-Graph > Root > Branch > Leaf
+  * StackPane: Designed to stack its child nodes on top of each other in a single layer. It uses a stack-like approach
+    where the last added node is placed on top, potentially covering the nodes underneath.
+  *
