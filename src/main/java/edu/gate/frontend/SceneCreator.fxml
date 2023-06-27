@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.MainApplication">
+      <ToolBar layoutX="113.0" layoutY="39.0" prefHeight="40.0" prefWidth="200.0">
+          <Button mnemonicParsing="false" text="Button" />
+      </ToolBar>
+      <TitledPane animated="false" layoutX="384.0" layoutY="14.0" text="untitled">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </TitledPane>
+      <AreaChart layoutX="42.0" layoutY="119.0" prefHeight="279.0" prefWidth="321.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </AreaChart>
+</AnchorPane>
