@@ -59,8 +59,12 @@ For further clarification and as a result of active programming we decided to us
 * Main Design-Guide reference:
   * [M2-Material Design](https://m2.material.io/design/color/dark-theme.html)
 * Color Scheme Dark-Theme:
-  * Background: `#121212`
-  * 
+  * Color Scheme: [TUM Colors](https://gist.github.com/lnksz/51e3566af2df5c7aa678cd4dfc8305f7)
+    * Dark: `#121212` - Background
+    * TUM Blue: `#0065bd` - Header
+    * tum-blue-dark: `#072140` - 
+    * tum-grey-1: `#20252A` - Box
+    * Red200: `#CF6679` - Warning
 
 # Cheat Zone:
 * Visibility:
@@ -79,3 +83,5 @@ For further clarification and as a result of active programming we decided to us
 * JavaFX:
   * Layers: Stage >> Scene >> Scene-Graph > Root > Branch > Leaf
   * SceneBuilder: JavaFX is functional modeled via SceneBuilder App.
+  * Window Size: 649.0 x 803.0
+  * Window Position: 781.0, 25.0

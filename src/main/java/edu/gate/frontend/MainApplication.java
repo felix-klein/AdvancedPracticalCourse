@@ -4,10 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.File;
+import java.util.Objects;
 
 /**
  * MainApplication extended with the Application class for JavaFX. It is the entrance class for the frontend/user to
@@ -33,19 +32,17 @@ public class MainApplication extends Application {
         try {
 
             /* JavaFX root1 element for the first group of Scene-Graph elements (element grouping - low) */
-            //Group root1 = new Group(); /* We are using SceneBuilder */
-            Parent root1 = FXMLLoader.load(new File(
-                        "src/main/java/edu/gate/frontend/SceneCreator.fxml")
-                    .toURI().toURL()); /* load fxml file (the URI step is conventional necessary)*/
+            Parent root1 = FXMLLoader.load(Objects.requireNonNull(
+                    getClass().getResource("/layout/SceneCreator.fxml"))); /* load the fxml file */
 
             /* JavaFX scene including the first group for the scene creation (visualisation content - middle) */
             Scene scene = new Scene(root1);
-            scene.setFill(Color.web("#121212")); /* set background color */
 
             /* JavaFX stage as the main window for the whole application (application window - high) */
             primaryStage.setScene(scene);
+            primaryStage.setX(781.0); /* window position */
+            primaryStage.setY(25.0); /* window position */
             primaryStage.setTitle("Motor Quality Control Application"); /* set title */
-            primaryStage.setFullScreen(true); /* set window to full screen */
             primaryStage.show();
 
         } catch (Exception fx) { /* Throw a general text and additional information */

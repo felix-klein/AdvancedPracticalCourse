@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="803.0" prefWidth="649.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="803.0" prefWidth="649.0" style="-fx-background-color: #121212;">
+         <children>
+            <TextFlow id="Intro" fx:id="intro" layoutX="120.0" layoutY="27.0" prefHeight="85.0" prefWidth="485.0" style="-fx-background-color: #20252A; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <Label fx:id="introtxt" alignment="CENTER" prefHeight="85.0" prefWidth="528.0" text="This window represents the control center and results environment of the program. &#10;The whole interface is extended by the Camunda Modeler in the left half, which appears&#10;after selecting a process flow. &#10;&#10;Please read the notes and warnings!" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children></TextFlow>
+            <TextFlow fx:id="warning" layoutX="70.0" layoutY="20.0" prefHeight="85.0" prefWidth="485.0" style="-fx-background-color: #CF6679; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="130.0">
+               <children>
+                  <Label fx:id="warningtxt" alignment="CENTER" prefHeight="85.0" prefWidth="528.0" text="WARNING!&#10;&#10;Do not open the test bench while the motor is being tested. There is a risk of personal injury.&#10;If you are asked to do so for operational reasons, please do not reach into the test station and &#10;do not touch any wiring, as there is also a risk of injury!" textAlignment="CENTER">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </TextFlow>
+            <TextFlow fx:id="header" layoutX="70.0" layoutY="20.0" prefHeight="30.0" prefWidth="485.0" style="-fx-background-color: #0065bd; -fx-border-radius: 1; -fx-background-radius: 1;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Label fx:id="headertxt" alignment="CENTER" prefHeight="30.0" prefWidth="596.0" text="Predictive Maintenance and Quality Control for E-Engines through Compliance Checking" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </TextFlow>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
