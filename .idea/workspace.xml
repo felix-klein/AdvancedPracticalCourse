@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="JavaFX experimentations and first integrations. It was also changed to use SceneBuilder for operating designs.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/SceneCreator.fxml" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Scene Creator frontend/layout modifications and first style changes.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneCreator.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/SceneCreator.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +30,9 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Tag Library Descriptor" />
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,26 +60,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.33678162",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "spring.configuration.checksum": "991b882e344ef920b767eb94bddfc491",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33678162&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;991b882e344ef920b767eb94bddfc491&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/layout" />
@@ -83,7 +91,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.i17BA [javafx:run]">
-    <configuration name="edu.gate.frontend.MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.gate.frontend.MainApplication" />
       <module name="i17BA" />
       <extension name="coverage">
@@ -121,11 +129,6 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.edu.gate.frontend.MainApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -150,6 +153,10 @@
       <workItem from="1687886370055" duration="1299000" />
       <workItem from="1687887764978" duration="2656000" />
       <workItem from="1687937729602" duration="12228000" />
+      <workItem from="1687964727099" duration="200000" />
+      <workItem from="1688034730985" duration="3216000" />
+      <workItem from="1688044681866" duration="10474000" />
+      <workItem from="1688056855034" duration="476000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -193,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687890398894</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Scene Creator frontend/layout modifications and first style changes.">
+      <created>1687964856155</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687964856155</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +243,8 @@
     <MESSAGE value="Redesign of the BPMN environment and handling. The pom.xml is now more lightweight but the user need`s to implement a separate Camunda Modeler App." />
     <MESSAGE value="Clean-up in the program and ready to merge to the main branch." />
     <MESSAGE value="JavaFX experimentations and first integrations. It was also changed to use SceneBuilder for operating designs." />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaFX experimentations and first integrations. It was also changed to use SceneBuilder for operating designs." />
+    <MESSAGE value="Scene Creator frontend/layout modifications and first style changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Scene Creator frontend/layout modifications and first style changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

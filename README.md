@@ -64,7 +64,8 @@ For further clarification and as a result of active programming we decided to us
     * TUM Blue: `#0065bd` - Header
     * tum-blue-dark: `#072140` - 
     * tum-grey-1: `#20252A` - Box
-    * Red200: `#CF6679` - Warning
+    * Red200: `#B00020` - Warning
+    tum-blue-light: `#5E94D4` - Label
 
 # Cheat Zone:
 * Visibility:
