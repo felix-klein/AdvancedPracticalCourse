@@ -37,8 +37,9 @@ public class SceneControl {
 
     /**
      * This method helps to save code duplication and does switch the scene with the according action and path.
+     *
      * @param action is the Event to switch the scene.
-     * @param path is the scene to switch to.
+     * @param path   is the scene to switch to.
      * @throws IOException to handle event errors.
      */
     public void toScene(ActionEvent action, Stage stageOption, String path) throws IOException {
@@ -50,7 +51,7 @@ public class SceneControl {
 
         /* JavaFX scene including the first group for the scene creation (visualisation content - middle) */
         /* If there was no stage delivered, we need to create one via the action */
-        Stage stage = stageOption==null ? (Stage) ((Node) action.getSource()).getScene().getWindow() : stageOption;
+        Stage stage = stageOption == null ? (Stage) ((Node) action.getSource()).getScene().getWindow() : stageOption;
         stage.setScene(scene);
         stage.setX(781.0); /* window position */
         stage.setY(25.0); /* window position */

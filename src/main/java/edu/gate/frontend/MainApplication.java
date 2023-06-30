@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class MainApplication extends Application {
     /**
      * The main method is for JavaFX purposes initialized with a command.
+     *
      * @param args is the Java execution argument.
      */
     public static void main(String[] args) {
@@ -19,6 +20,7 @@ public class MainApplication extends Application {
 
     /**
      * Comments after completion!
+     *
      * @param primaryStage is the basic and first stage object for the JavaFX structure.
      */
     @Override

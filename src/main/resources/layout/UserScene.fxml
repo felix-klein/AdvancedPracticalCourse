@@ -2,9 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -14,24 +17,7 @@
   <content>
     <AnchorPane minHeight="100.0" prefHeight="2000.0" prefWidth="649.0" style="-fx-background-color: #121212;">
          <children>
-            <TextFlow id="Intro" fx:id="intro" layoutX="120.0" layoutY="27.0" prefHeight="85.0" prefWidth="596.0" style="-fx-background-color: #20252A; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
-               <children>
-                  <Label fx:id="introtxt" alignment="CENTER" prefHeight="85.0" text="Welcome to the i17BA Control Center!&#10;In this environment you will find all the control instances and results for the quality testing of your electric mo- &#10;tors. Please download the desktop version of Camunda Modeler to personalize your test processes. The  ar- &#10;rangement of the control windows promises a pleasant and clear working environment with Camunda Modeler.&#10; Have fun and if you have further questions, please have a look at the notes at the bottom of the page." textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Helvetica" size="12.0" />
-                     </font>
-                  </Label>
-               </children></TextFlow>
-            <TextFlow fx:id="warning" layoutX="18.0" layoutY="125.0" prefHeight="85.0" prefWidth="596.0" style="-fx-background-color: #B00020; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="130.0">
-               <children>
-                  <Label fx:id="warningtxt" alignment="CENTER" prefHeight="85.0" text="WARNING!&#10;&#10;Do not open the test bench while the motor is being tested. There is a risk of personal injury.&#10;If you are asked to do so for operational reasons, please do not reach into the test station and &#10;do not touch any wiring, as there is also a risk of injury!" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Helvetica" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </TextFlow>
-            <TextFlow fx:id="header" layoutX="70.0" layoutY="20.0" prefHeight="30.0" prefWidth="596.0" style="-fx-background-color: #0065bd; -fx-border-radius: 1; -fx-background-radius: 1;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+            <TextFlow fx:id="header" layoutX="20.0" layoutY="5.0" prefHeight="30.0" prefWidth="552.5" style="-fx-background-color: #0065bd; -fx-border-radius: 1; -fx-background-radius: 1;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                <children>
                   <Label fx:id="headertxt" alignment="CENTER" prefHeight="30.0" prefWidth="596.0" text="Predictive Maintenance and Quality Control for E-Engines through Compliance Checking" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -40,7 +26,24 @@
                   </Label>
                </children>
             </TextFlow>
-            <Pane layoutX="401.0" layoutY="220.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="260.0">
+            <TextFlow id="Intro" fx:id="intro" layoutX="20.0" layoutY="40.0" prefHeight="85.0" prefWidth="552.5" style="-fx-background-color: #20252A; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <Label fx:id="introtxt" alignment="CENTER" prefHeight="85.0" text="Welcome to the i17BA Control Center!&#10;In this environment you will find all the control instances and results for the quality testing of your electric mo- &#10;tors. Please download the desktop version of Camunda Modeler to personalize your test processes. The  ar- &#10;rangement of the control windows promises a pleasant and clear working environment with Camunda Modeler.&#10; Have fun and if you have further questions, please have a look at the notes at the bottom of the page." textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children></TextFlow>
+            <TextFlow fx:id="warning" layoutX="20.0" layoutY="130.0" prefHeight="85.0" prefWidth="552.5" style="-fx-background-color: #B00020; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="130.0">
+               <children>
+                  <Label fx:id="warningtxt" alignment="CENTER" prefHeight="85.0" text="WARNING!&#10;&#10;Do not open the test bench while the motor is being tested. There is a risk of personal injury.&#10;If you are asked to do so for operational reasons, please do not reach into the test station and &#10;do not touch any wiring, as there is also a risk of injury!" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </TextFlow>
+            <Pane layoutX="412.5" layoutY="260.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="260.0">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" text="Accuracy" textFill="#5e94d4">
                      <font>
@@ -55,7 +58,70 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Spinner layoutX="20.0" layoutY="41.0" />
+                  <ChoiceBox fx:id="accuracy" layoutX="20.0" layoutY="41.0" prefWidth="159.11718" />
+               </children>
+            </Pane>
+            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Loop runs" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="iloop" depthTest="DISABLE" layoutX="174.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonLoops" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Spinner fx:id="loopRun" layoutX="20.0" layoutY="41.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="260.0" prefHeight="187.0" prefWidth="388.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.topAnchor="260.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Process Selection" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="iSelection" depthTest="DISABLE" layoutX="362.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSelection" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <RadioButton fx:id="alpha" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" text="Custom process creation ALPHA" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Selection" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="beta" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Custom process creation BETA" textFill="WHITE" toggleGroup="$Selection">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="gamma" layoutX="20.0" layoutY="95.0" mnemonicParsing="false" text="Custom process creation GAMMA" textFill="WHITE" toggleGroup="$Selection">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="shortR" layoutX="20.0" layoutY="122.0" mnemonicParsing="false" selected="true" text="Predefined and recommended SHORT-RUN test" textFill="WHITE" toggleGroup="$Selection">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="longR" layoutX="20.0" layoutY="149.0" mnemonicParsing="false" text="Predefined and recommended LONG-RUN test" textFill="WHITE" toggleGroup="$Selection">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </RadioButton>
                </children>
             </Pane>
             <Button fx:id="toAdminScene" layoutY="1974.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To Admin Page" textFill="WHITE">
@@ -63,6 +129,94 @@
                   <Font name="Helvetica" size="12.0" />
                </font>
             </Button>
+            <Button fx:id="Go" layoutX="536.5" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#process" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="WHITE" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="424.0">
+               <font>
+                  <Font name="Helvetica" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="30.0" layoutY="230.0" text="Control Center" textFill="WHITE" AnchorPane.topAnchor="230.0">
+               <font>
+                  <Font name="Helvetica" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="462.0" text="Customization Area" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica" size="20.0" />
+               </font>
+            </Label>
+            <Pane layoutX="20.0" layoutY="492.0" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Customize" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button depthTest="DISABLE" layoutX="114.7783" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonCustomize" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#alphaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Alpha" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#betaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Beta" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#gammaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Gamma" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="627.0" prefHeight="102.0" prefWidth="140.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="View" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button depthTest="DISABLE" layoutX="114.7783" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonView" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#shortRView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Short-Run" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#longRView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Long-Run" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="165.0" layoutY="492.0" prefHeight="237.0" prefWidth="447.5" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Information &amp; Guidance " textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="30.0" layoutY="749.0" text="Result Inspection " textFill="WHITE">
+               <font>
+                  <Font name="Helvetica" size="20.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </content>
 </ScrollPane>
