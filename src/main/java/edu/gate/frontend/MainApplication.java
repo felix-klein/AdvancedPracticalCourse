@@ -1,5 +1,6 @@
 package edu.gate.frontend;
 
+import edu.terminal.Terminal;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -9,12 +10,15 @@ import javafx.stage.Stage;
  * in the README.txt.
  */
 public class MainApplication extends Application {
+    private static Terminal terminal;
+
     /**
      * The main method is for JavaFX purposes initialized with a command.
      *
      * @param args is the Java execution argument.
      */
     public static void main(String[] args) {
+        terminal = new Terminal();
         launch(args);
     }
 
@@ -34,5 +38,15 @@ public class MainApplication extends Application {
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
             fx.printStackTrace();
         }
+    }
+
+    /**
+     * This getter allows all classes of this package to use the current terminal. One of the most important functions
+     * for further backend analyses and processing.
+     *
+     * @return the actual terminal object.
+     */
+    public static Terminal getTerminal() {
+        return terminal;
     }
 }

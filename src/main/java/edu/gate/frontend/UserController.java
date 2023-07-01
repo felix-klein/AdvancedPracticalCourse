@@ -29,26 +29,25 @@ public class UserController extends ComboController implements Initializable {
      * application. If the user did no changes, the default values will be used to process the application.
      *
      * @param mouseEvent is the mouseclick to run the process.
+     * @throws URISyntaxException is an exception handler for the file transformation.
      */
     @FXML
-    private void process(javafx.scene.input.MouseEvent mouseEvent) {
+    private void process(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException {
+        String type;
         /* Determine which of the processes the user selected. */
         if (alpha.isSelected()) { /* alpha: first customized process */
-            System.out.println("alpha"); // just testing
+            type = "alpha"; // just testing
         } else if (beta.isSelected()) { /* beta: second customized process */
-            System.out.println("beta");
+            type = "beta";
         } else if (gamma.isSelected()) { /* gamma: third customized process */
-            System.out.println("gamma");
+            type = "gamma";
         } else if (longR.isSelected()) { /* longR: the predefined long run process */
-            System.out.println("long-run");
-        } else if (shortR.isSelected()) { /* shortR: the predefined short run process */
-            System.out.println("short-run");
+            type = "longR";
+        } else { /* shortR: the predefined short run process, also default value*/
+            type = "shortR";
         }
-        /* Getting the values of the box areas */
-        String accuracyLevel = accuracy.getValue();  /* accuracy level */
-        int loopCount = loopRun.getValue(); /* preferred loop runs */
-        System.out.println("Accuracy Level: " + accuracyLevel); // just testing
-        System.out.println("Loop Count: " + loopCount); // just testing
+        /* Activates the process with settings from the Control Center. */
+        MainApplication.getTerminal().startUserProcess(getRequestedFile(type), accuracy.getValue(), loopRun.getValue());
     }
 
     /**

@@ -80,12 +80,28 @@ public class ComboController {
     }
 
     /**
+     * This method does show us the information window from the setup area with the checkboxes.
+     *
+     * @param mouseEvent is the mouseclick to show the info window.
+     */
+    @FXML
+    private void infoButtonSetup(javafx.scene.input.MouseEvent mouseEvent) {
+        String headline = "Test-Bench Setup";
+        String text = "All items in this list are essential for the smooth and correct initialization of the" +
+                " Blueprint engine. If you have conscientiously worked through all the points and start the program," +
+                " the data acquisition for the engine can succeed in the best possible way to make the further user" +
+                " tests as accurate as possible.\n" +
+                "You must also have completed all points to be able to start the initialization.";
+        infoWindow(headline, text);
+    }
+
+    /**
      * This method is a helper to reduce code duplicates for the screening of the information windows.
      *
      * @param headline is the Text for the window title.
      * @param text     is the text for the information itself.
      */
-    private void infoWindow(String headline, String text) {
+    protected void infoWindow(String headline, String text) {
         Alert panel = new Alert(Alert.AlertType.INFORMATION); /* create an alert panel */
         panel.setTitle(headline); /* panel title */
         panel.setHeaderText(null); /* no header */
@@ -103,15 +119,7 @@ public class ComboController {
      * @throws IOException        is an exception handler for the OS selection.
      */
     protected void openCamundaFile(String type) throws URISyntaxException, IOException {
-        /* Switch to indicate the needed and correct file path. */
-        String path = switch (type) {
-            case "alpha" -> "/camundaFiles/alpha.bpmn";
-            case "beta" -> "/camundaFiles/beta.bpmn";
-            case "gamma" -> "/camundaFiles/gamma.bpmn";
-            case "longR" -> "/camundaFiles/LongRun.bpmn";
-            default -> "/camundaFiles/ShortRun.bpmn";
-        };
-        File file = new File(Objects.requireNonNull(getClass().getResource(path)).toURI()); /* get file */
+        File file = getRequestedFile(type); /* to get the requested and needed file */
 
         /* Control if the file is even existing with its path, and return an info window for the user. */
         if (!file.exists()) {
@@ -120,6 +128,25 @@ public class ComboController {
         } else {
             openInCorrectOS(file); /* open the file, but with the right comment for the OS */
         }
+    }
+
+    /**
+     * This method is a helper to reduce code duplication and to be open for the Terminal call via UserController.
+     *
+     * @param type is the id name of the requested file.
+     * @return the file of type.
+     * @throws URISyntaxException is an exception handler for the file transformation.
+     */
+    protected File getRequestedFile(String type) throws URISyntaxException {
+        /* Switch to indicate the needed and correct file path. */
+        String path = switch (type) {
+            case "alpha" -> "/camundaFiles/alpha.bpmn";
+            case "beta" -> "/camundaFiles/beta.bpmn";
+            case "gamma" -> "/camundaFiles/gamma.bpmn";
+            case "longR" -> "/camundaFiles/LongRun.bpmn";
+            default -> "/camundaFiles/ShortRun.bpmn";
+        };
+        return new File(Objects.requireNonNull(getClass().getResource(path)).toURI()); /* get file */
     }
 
     /**

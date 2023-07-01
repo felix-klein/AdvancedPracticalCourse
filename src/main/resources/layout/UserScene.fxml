@@ -124,7 +124,7 @@
                   </RadioButton>
                </children>
             </Pane>
-            <Button fx:id="toAdminScene" layoutY="1974.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To Admin Page" textFill="WHITE">
+            <Button fx:id="toAdminScene" layoutX="20.0" layoutY="1972.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To Admin Page" textFill="WHITE" AnchorPane.bottomAnchor="5.0">
                <font>
                   <Font name="Helvetica" size="12.0" />
                </font>
@@ -208,6 +208,11 @@
                   <Label layoutX="10.0" layoutY="10.0" text="Information &amp; Guidance " textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="41.0" prefHeight="186.0" prefWidth="407.5" text="Label" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
                      </font>
                   </Label>
                </children>
