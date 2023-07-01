@@ -38,6 +38,13 @@ all methods (and even classes) are shown, it still illustrates the key connectio
 
 ![UML diagram of the project](UML.png)
 
+# Comment structure 
+Comments are an important and essential part of clear and comprehensible code. Therefor, do we integrate comments
+whenever there is a line of code which is not trivial.\
+For further clarification and as a result of active programming we decided to use two types to comments:\
+  * `//` for not completed comments and work, like a 'in construction comment'
+  * `/* */` and `/** **/`for final comments and work, like a 'final/normal comment' 
+
 ## List of References
 
 * Algorithmic-References
@@ -47,6 +54,18 @@ all methods (and even classes) are shown, it still illustrates the key connectio
 * Hardware-Connection-References
     *
 
+## Design Guide
+
+* Main Design-Guide reference:
+  * [M2-Material Design](https://m2.material.io/design/color/dark-theme.html)
+* Color Scheme Dark-Theme:
+  * Color Scheme: [TUM Colors](https://gist.github.com/lnksz/51e3566af2df5c7aa678cd4dfc8305f7)
+    * Dark: `#121212` - Background
+    * TUM Blue: `#0065bd` - Header
+    * tum-blue-dark: `#072140` - 
+    * tum-grey-1: `#20252A` - Box
+    * Red200: `#B00020` - Warning
+    tum-blue-light: `#5E94D4` - Label
 
 # Cheat Zone:
 * Visibility:
@@ -64,6 +83,6 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * char (16): all Unicode
 * JavaFX:
   * Layers: Stage >> Scene >> Scene-Graph > Root > Branch > Leaf
-  * StackPane: Designed to stack its child nodes on top of each other in a single layer. It uses a stack-like approach
-    where the last added node is placed on top, potentially covering the nodes underneath.
-  *
+  * SceneBuilder: JavaFX is functional modeled via SceneBuilder App.
+  * Window Size: 649.0 x 803.0
+  * Window Position: 781.0, 25.0

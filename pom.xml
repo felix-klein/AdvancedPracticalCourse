@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21-ea+21</version>
+            <version>21-ea+23</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.kordamp.bootstrapfx/bootstrapfx-core -->
         <!-- BootstrapFX to create Bootstrap like layouts with JavaFX -->
