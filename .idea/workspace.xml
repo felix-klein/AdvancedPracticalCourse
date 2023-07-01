@@ -9,14 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The frontend is extended with further functionality. The Camunda Modeler files are included and the app opens by request. Files Long-Run and Short-Run are not complete, but that needs to be done if we now how and what to control at the engine. The application is running and the warnings are acceptable. The admin page is added but not configured at all.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Flow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Triad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +29,8 @@
         <option value="JavaFXApplication" />
         <option value="Tag Library Descriptor" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,6 +51,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Rboe9tEM0lkc7QS7EmCf62QevU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -245,7 +248,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/Frontend" />
+                        <option value="GitLab/main" />
                       </list>
                     </value>
                   </entry>

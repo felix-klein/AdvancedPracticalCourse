@@ -1,5 +1,7 @@
 package edu.terminal;
 
+import edu.ground.datapreparation.*;
+
 import java.io.File;
 
 /**
@@ -12,6 +14,7 @@ public class Terminal {
     private File userProcess;
     final private String setupProcess = "/adminFiles/setup.bpmn";
     private boolean initialized;
+    private edu.ground.datapreparation.Triad processData;
 
     public Terminal() {
         initialized = false;
@@ -27,14 +30,26 @@ public class Terminal {
     }
 
     /**
-     * From UserController.
+     * From gate/frontend/UserController.java.
      * This method got coled from the UserController to activate the process.
+     * To ground/datapreparation/FileProcessing.java.
      *
      * @param userProcess   is the file including the BPMN notation to analyse.
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @param loopCount     is the number of loop passes, if there is one at all.
      */
     public void startUserProcess(File userProcess, String accuracyLevel, int loopCount) {
-        this.userProcess = userProcess;
+        /* Convert the XML data of the process and structure it in a Triad object. */
+        FileProcessing fileProcessing = new FileProcessing(userProcess);
+        this.processData = fileProcessing.getProcessData();
+    }
+
+    /**
+     * Getter to make the ProcessData public.
+     *
+     * @return the Process Data in a Triad object.
+     */
+    public Triad getProcessData() {
+        return processData;
     }
 }
