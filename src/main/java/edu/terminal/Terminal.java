@@ -1,5 +1,8 @@
 package edu.terminal;
 
+import edu.ground.datapreparation.FileProcessing;
+import edu.ground.datapreparation.Triad;
+
 import java.io.File;
 
 /**
@@ -12,6 +15,7 @@ public class Terminal {
     private File userProcess;
     final private String setupProcess = "/adminFiles/setup.bpmn";
     private boolean initialized;
+    private edu.ground.datapreparation.Triad processData;
 
     public Terminal() {
         initialized = false;
@@ -24,17 +28,36 @@ public class Terminal {
     public void initializeBlueprint() {
         //TODO: Initialise the blueprint, including the adminFiles.
         initialized = true;
+
     }
 
     /**
-     * From UserController.
+     * From gate/frontend/UserController.java.
      * This method got coled from the UserController to activate the process.
+     * To ground/datapreparation/FileProcessing.java.
      *
      * @param userProcess   is the file including the BPMN notation to analyse.
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @param loopCount     is the number of loop passes, if there is one at all.
+     * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public void startUserProcess(File userProcess, String accuracyLevel, int loopCount) {
-        this.userProcess = userProcess;
+    public boolean startUserProcess(File userProcess, String accuracyLevel, int loopCount) {
+        if (!initialized) {
+            return false;
+        }
+        /* Convert the XML data of the process and structure it in a Triad object. */
+        FileProcessing fileProcessing = new FileProcessing(userProcess);
+        this.processData = fileProcessing.getProcessData();
+
+        return true;
+    }
+
+    /**
+     * Getter to make the ProcessData public.
+     *
+     * @return the Process Data in a Triad object.
+     */
+    public Triad getProcessData() {
+        return processData;
     }
 }

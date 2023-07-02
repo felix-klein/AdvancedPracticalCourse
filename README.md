@@ -36,7 +36,21 @@ The code structure in the form of classes, methods and attributes can quickly be
 Therefore, the following lightweight UML-diagram reveals a structural representation of the back-end. Even though not
 all methods (and even classes) are shown, it still illustrates the key connections.
 
-![UML diagram of the project](UML.png)
+![UML diagram of the project](UML.svg)
+
+# Operation rules and syntax
+Operations:\
+  * Engine: engine, motor, machine, unit, main.
+  * Gear: gear, shift, throttle, level, nivo.
+  * Runtime: time, duration, span, period, term, run, length.
+  * null: default.
+Operation Values:\
+  * 0: stop, end, terminate, finish, off, exit, 0.
+  * 1: start, go, run, launch, begin, on, 1.
+  * -101: increase, rise, grow, up, jump.
+  * -90: decrease, reduce, low, les, ease.
+  * 0 - 32767: 0, 1, ..., 32767.
+  * default: -11111.
 
 # Comment structure 
 Comments are an important and essential part of clear and comprehensible code. Therefor, do we integrate comments
@@ -64,8 +78,8 @@ For further clarification and as a result of active programming we decided to us
     * TUM Blue: `#0065bd` - Header
     * tum-blue-dark: `#072140` - 
     * tum-grey-1: `#20252A` - Box
-    * Red200: `#B00020` - Warning
-    tum-blue-light: `#5E94D4` - Label
+    * Red200: `#B00020` - Warning 
+    * tum-blue-light: `#5E94D4` - Label
 
 # Cheat Zone:
 * Visibility:
