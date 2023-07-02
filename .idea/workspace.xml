@@ -8,16 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The data processing does include all new objects and classes needed to order the Process Data for further investigation and operations.&#10;As an addition, Unversioned Files appeared which could have an impact in the further process but could also just include technical changes!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +162,7 @@
       <workItem from="1688121147888" duration="9173000" />
       <workItem from="1688142889946" duration="8505000" />
       <workItem from="1688200784604" duration="8926000" />
-      <workItem from="1688287698722" duration="15804000" />
+      <workItem from="1688287698722" duration="19024000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -240,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688233517148</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation.">
+      <created>1688314561676</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1688314561676</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +281,8 @@
     <MESSAGE value="The scene was adjusted and complemented. There is also a separate Admin Scene. The code is more lightweight now and reduces duplicates as much as possible.&#10;Warning: The Admin page does have a problem with the scroll function. The belief is, that it is an error in JavaFX and not in our application." />
     <MESSAGE value="The frontend is extended with further functionality. The Camunda Modeler files are included and the app opens by request. Files Long-Run and Short-Run are not complete, but that needs to be done if we now how and what to control at the engine. The application is running and the warnings are acceptable. The admin page is added but not configured at all." />
     <MESSAGE value="The data processing does include all new objects and classes needed to order the Process Data for further investigation and operations.&#10;As an addition, Unversioned Files appeared which could have an impact in the further process but could also just include technical changes!" />
-    <option name="LAST_COMMIT_MESSAGE" value="The data processing does include all new objects and classes needed to order the Process Data for further investigation and operations.&#10;As an addition, Unversioned Files appeared which could have an impact in the further process but could also just include technical changes!" />
+    <MESSAGE value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
+    <option name="LAST_COMMIT_MESSAGE" value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

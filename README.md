@@ -36,7 +36,7 @@ The code structure in the form of classes, methods and attributes can quickly be
 Therefore, the following lightweight UML-diagram reveals a structural representation of the back-end. Even though not
 all methods (and even classes) are shown, it still illustrates the key connections.
 
-![UML diagram of the project](UML.png)
+![UML diagram of the project](UML.svg)
 
 # Operation rules and syntax
 Operations:\
