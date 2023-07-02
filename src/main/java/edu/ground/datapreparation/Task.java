@@ -6,10 +6,12 @@ package edu.ground.datapreparation;
 public class Task extends EFT {
     private final String id;
     private final String name;
+    private final OperationTable operations;
 
     public Task(String taskLine) {
         this.id = findID(taskLine);
         this.name = findName(taskLine);
+        this.operations = new OperationTable(name);
     }
 
     /**
@@ -28,5 +30,14 @@ public class Task extends EFT {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Getter to make the Operations (including values) public.
+     *
+     * @return an object with two lists including the operation name and value.
+     */
+    public OperationTable getOperations() {
+        return operations;
     }
 }

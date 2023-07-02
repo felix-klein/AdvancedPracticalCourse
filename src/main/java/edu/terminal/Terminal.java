@@ -1,6 +1,7 @@
 package edu.terminal;
 
-import edu.ground.datapreparation.*;
+import edu.ground.datapreparation.FileProcessing;
+import edu.ground.datapreparation.Triad;
 
 import java.io.File;
 
@@ -27,6 +28,7 @@ public class Terminal {
     public void initializeBlueprint() {
         //TODO: Initialise the blueprint, including the adminFiles.
         initialized = true;
+
     }
 
     /**
@@ -37,11 +39,17 @@ public class Terminal {
      * @param userProcess   is the file including the BPMN notation to analyse.
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @param loopCount     is the number of loop passes, if there is one at all.
+     * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public void startUserProcess(File userProcess, String accuracyLevel, int loopCount) {
+    public boolean startUserProcess(File userProcess, String accuracyLevel, int loopCount) {
+        if (!initialized) {
+            return false;
+        }
         /* Convert the XML data of the process and structure it in a Triad object. */
         FileProcessing fileProcessing = new FileProcessing(userProcess);
         this.processData = fileProcessing.getProcessData();
+
+        return true;
     }
 
     /**

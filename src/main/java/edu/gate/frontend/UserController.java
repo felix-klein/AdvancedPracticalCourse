@@ -47,7 +47,15 @@ public class UserController extends ComboController implements Initializable {
             type = "shortR";
         }
         /* Activates the process with settings from the Control Center. */
-        MainApplication.getTerminal().startUserProcess(getRequestedFile(type), accuracy.getValue(), loopRun.getValue());
+        boolean processRunning = MainApplication.getTerminal().startUserProcess(getRequestedFile(type),
+                accuracy.getValue(), loopRun.getValue());
+
+        /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
+        if (!processRunning) {
+            infoWindow("No Process Start Possible", "Your admin has not yet initialized the Blueprint" +
+                    " engine into the system. The comparison data to compare your process with ideal values is " +
+                    "missing. Please inform your admin about the missing initialization and wait until it is active.");
+        }
     }
 
     /**

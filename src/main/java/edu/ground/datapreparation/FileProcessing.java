@@ -34,14 +34,14 @@ public class FileProcessing {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             while (bufferedReader.ready()) {
                 /* Convert each line to lower case, for easier search. */
-                String currentLine = bufferedReader.readLine().toLowerCase();
+                String currentLine = bufferedReader.readLine();
                 /* Just investigate lines within the process area. */
                 if (inProcessArea) {
-                    if (currentLine.contains("task id=")) { /* Task line */
+                    if (currentLine.contains("Task id=") || currentLine.contains("task id=")) { /* Task line */
                         tasks.add(new Task(currentLine));
-                    } else if (currentLine.contains("<bpmn:sequenceflow id=")) { /* Flow line */
+                    } else if (currentLine.contains("<bpmn:sequenceFlow id=")) { /* Flow line */
                         flows.add(new Flow(currentLine));
-                    } else if (currentLine.contains("event id=")) { /* Event line */
+                    } else if (currentLine.contains("Event id=")) { /* Event line */
                         events.add(new Event(currentLine));
                     } else if (currentLine.contains("</bpmn:process>")) { /* End of Process line */
                         return new Triad(events, tasks, flows);
