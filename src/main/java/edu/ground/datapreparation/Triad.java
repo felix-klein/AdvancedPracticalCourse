@@ -9,5 +9,6 @@ import java.util.ArrayList;
  * @param tasks  is the list of all included Tasks.
  * @param flows  is the list of all included Flows.
  */
-public record Triad(ArrayList<Event> events, ArrayList<Task> tasks, ArrayList<Flow> flows) {
+public record Triad(ArrayList<Event> events, ArrayList<Task> tasks, ArrayList<Flow> flows,
+                    ArrayList<Gateway> gateways) {
 }

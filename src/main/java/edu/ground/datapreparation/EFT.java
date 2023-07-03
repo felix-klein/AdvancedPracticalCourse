@@ -1,7 +1,8 @@
 package edu.ground.datapreparation;
 
 /**
- * This class is the mother class of Event, Flow and Task to provide with easy to access functionality.
+ * This class is the mother class of Event, Flow, Task and Gateway to provide with easy to access functionality.
+ * The class Gateway was added afterwards (after noticing its missing) so it is not in the naming of this class.
  */
 public class EFT {
 
@@ -27,17 +28,17 @@ public class EFT {
 
 
     /**
-     * This method finds and reads the Type of the Event out of the String line. Because of the location of this
-     * information in the element naming.
+     * This method finds and reads the Type of the Event/Gateway out of the String line. Because of the location of this
+     * information in the element naming. We distinguish between Event types and Gateway types.
      *
      * @param line is the String line to investigate.
      * @return a String which is the Type.
      */
-    protected String findType(String line) {
+    protected String findType(String line, boolean isEvent) {
         String startString = "<bpmn:";
         int startType = line.indexOf(startString) + startString.length();
         line = line.substring(startType);
-        int endType = line.indexOf("Event id=");
+        int endType = isEvent ? line.indexOf("Event id=") : line.indexOf("Gateway id=");
         return line.substring(0, endType);
     }
 
