@@ -8,14 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Small changes and actualisation's in the UML.svg file for the transparency.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Triad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Triad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +130,8 @@
         <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.MainApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +166,7 @@
       <workItem from="1688142889946" duration="8505000" />
       <workItem from="1688200784604" duration="8926000" />
       <workItem from="1688287698722" duration="20032000" />
-      <workItem from="1688372218003" duration="1954000" />
+      <workItem from="1688372218003" duration="3356000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -255,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688318487402</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well.">
+      <created>1688376278439</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688376278439</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +276,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/data_processing" />
+                        <option value="GitLab/main" />
                       </list>
                     </value>
                   </entry>
@@ -297,7 +301,8 @@
     <MESSAGE value="The data processing does include all new objects and classes needed to order the Process Data for further investigation and operations.&#10;As an addition, Unversioned Files appeared which could have an impact in the further process but could also just include technical changes!" />
     <MESSAGE value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
     <MESSAGE value="Small changes and actualisation's in the UML.svg file for the transparency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes and actualisation's in the UML.svg file for the transparency." />
+    <MESSAGE value="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well." />
+    <option name="LAST_COMMIT_MESSAGE" value="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
