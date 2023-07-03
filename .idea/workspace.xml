@@ -8,10 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Small changes and actualisation's in the UML.svg file for the transparency.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Triad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Triad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Rboe9tEM0lkc7QS7EmCf62QevU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -129,6 +133,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.MainApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +168,8 @@
       <workItem from="1688121147888" duration="9173000" />
       <workItem from="1688142889946" duration="8505000" />
       <workItem from="1688200784604" duration="8926000" />
-      <workItem from="1688287698722" duration="19024000" />
+      <workItem from="1688287698722" duration="20032000" />
+      <workItem from="1688372218003" duration="1954000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -241,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688314561676</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Small changes and actualisation's in the UML.svg file for the transparency.">
+      <created>1688318487402</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688318487402</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +272,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/main" />
+                        <option value="GitLab/data_processing" />
                       </list>
                     </value>
                   </entry>
@@ -282,7 +296,8 @@
     <MESSAGE value="The frontend is extended with further functionality. The Camunda Modeler files are included and the app opens by request. Files Long-Run and Short-Run are not complete, but that needs to be done if we now how and what to control at the engine. The application is running and the warnings are acceptable. The admin page is added but not configured at all." />
     <MESSAGE value="The data processing does include all new objects and classes needed to order the Process Data for further investigation and operations.&#10;As an addition, Unversioned Files appeared which could have an impact in the further process but could also just include technical changes!" />
     <MESSAGE value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
-    <option name="LAST_COMMIT_MESSAGE" value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
+    <MESSAGE value="Small changes and actualisation's in the UML.svg file for the transparency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes and actualisation's in the UML.svg file for the transparency." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

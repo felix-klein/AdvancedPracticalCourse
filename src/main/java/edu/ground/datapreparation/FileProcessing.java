@@ -27,6 +27,7 @@ public class FileProcessing {
         ArrayList<Event> events = new ArrayList<>();
         ArrayList<Task> tasks = new ArrayList<>();
         ArrayList<Flow> flows = new ArrayList<>();
+        ArrayList<Gateway> gateways = new ArrayList<>();
         /* Parameter indicating if we are in the process area of the file. */
         boolean inProcessArea = false;
 
@@ -43,8 +44,10 @@ public class FileProcessing {
                         flows.add(new Flow(currentLine));
                     } else if (currentLine.contains("Event id=")) { /* Event line */
                         events.add(new Event(currentLine));
+                    } else if (currentLine.contains("Gateway id=")) { /* Gateway line */
+                        gateways.add(new Gateway(currentLine));
                     } else if (currentLine.contains("</bpmn:process>")) { /* End of Process line */
-                        return new Triad(events, tasks, flows);
+                        return new Triad(events, tasks, flows, gateways);
                     }
                 }
                 /* The start of the process is declared in the parameter inProcessArea. To get declared as inProcessArea

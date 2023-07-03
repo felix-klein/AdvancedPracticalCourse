@@ -11,7 +11,7 @@ public class Event extends EFT {
     public Event(String eventLine) {
         this.id = findID(eventLine);
         this.name = findName(eventLine);
-        this.type = findType(eventLine);
+        this.type = findType(eventLine, true);
     }
 
     /**
