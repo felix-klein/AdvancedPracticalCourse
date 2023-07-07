@@ -28,9 +28,5 @@ public class BoardConnection {
                 }
             }
         }
-        //Source more or less: https://github.com/Fazecast/jSerialComm
     }
 }
-
-//Terminal:
-// screen /dev/cu.usbmodem141201 115200

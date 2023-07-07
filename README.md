@@ -75,6 +75,7 @@ For further clarification and as a result of active programming we decided to us
   * [M2-Material Design](https://m2.material.io/design/color/dark-theme.html)
 * Color Scheme Dark-Theme:
   * Color Scheme: [TUM Colors](https://gist.github.com/lnksz/51e3566af2df5c7aa678cd4dfc8305f7)
+  * Dark Scheme: [MATERIAL DESIGN - Dark theme](https://m2.material.io/design/color/dark-theme.html#ui-application)
     * Dark: `#121212` - Background
     * TUM Blue: `#0065bd` - Header
     * tum-blue-dark: `#072140` - 
@@ -84,11 +85,10 @@ For further clarification and as a result of active programming we decided to us
     * tum-blue-light: `#5E94D4` - Label, Event Start/End
     * tum-blue-light-dark: `#9ABCE4` - Event 
 
-# Cheat Zone:
+# Cheat Zone
 * Visibility:
-  * ***private***: Visible just in the <u>Class</u>
-  * ***public***: Visible <u>Everywhere</u>
-  * ***empty***: Visible in the <u>Package</u>
+  ![img.png](information1.png)
+    
 * Numbers:
   * byte (8): -128 to 127 
   * short (16): −32768 to 32767
@@ -103,3 +103,12 @@ For further clarification and as a result of active programming we decided to us
   * SceneBuilder: JavaFX is functional modeled via SceneBuilder App.
   * Window Size: 649.0 x 803.0
   * Window Position: 781.0, 25.0
+
+# Hardware Connection
+* Connection:
+  * Type: `Cable`
+  * Technique: `Serial` (JSerialComm)
+  * Port: `/dev/cu.usbmodem141201`
+  * Baud Rate: `115200`
+  * Terminal Input: `screen /dev/cu.usbmodem141201 115200`
+  * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)
