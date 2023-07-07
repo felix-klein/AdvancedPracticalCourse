@@ -52,8 +52,14 @@
             <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/guru.nidi/graphviz-java -->
+        <!-- Graphviz is for Java to build PetriNet png`s -->
+        <dependency>
+            <groupId>guru.nidi</groupId>
+            <artifactId>graphviz-java</artifactId>
+            <version>0.18.1</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-maven-plugin -->

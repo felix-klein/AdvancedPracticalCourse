@@ -18,6 +18,7 @@ public class MainApplication extends Application {
      * @param args is the Java execution argument.
      */
     public static void main(String[] args) {
+        System.setProperty("org.graphstream.ui", "javafx");
         terminal = new Terminal();
         launch(args);
     }
@@ -50,3 +51,4 @@ public class MainApplication extends Application {
         return terminal;
     }
 }
+//Result Inspection

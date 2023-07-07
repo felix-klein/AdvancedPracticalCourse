@@ -1,6 +1,6 @@
 package edu.ground.datapreparation;
 
-public class Gateway extends EFT{
+public class Gateway extends EFT {
     private final String id;
     private final boolean type;
 
@@ -11,6 +11,7 @@ public class Gateway extends EFT{
 
     /**
      * This  typeMatching method converts the String of parallel/exclusive into a boolean value, for easier processing.
+     *
      * @param type is the found type as a String text.
      * @return a boolean, which is true for a Parallel Gateway and false for an Exclusive (and rest) Gateway.
      */

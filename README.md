@@ -13,8 +13,9 @@ the dependencies and plugins contained here are as follows:
     * camunda-bpm-assert
     * jSerialComm
     * junit-jupiter-api
+    * graphviz-java
 * Plugins:
-    * javafx-maven-plugin<
+    * javafx-maven-plugin
 * Properties:
     * maven.compiler.source: 20
     * maven.compiler.target: 20
@@ -62,9 +63,9 @@ For further clarification and as a result of active programming we decided to us
 ## List of References
 
 * Algorithmic-References
-    *
+    *   
 * Frontend-References
-    *
+    * graphviz-java: https://github.com/nidi3/graphviz-java
 * Hardware-Connection-References
     *
 
@@ -78,8 +79,10 @@ For further clarification and as a result of active programming we decided to us
     * TUM Blue: `#0065bd` - Header
     * tum-blue-dark: `#072140` - 
     * tum-grey-1: `#20252A` - Box
-    * Red200: `#B00020` - Warning 
-    * tum-blue-light: `#5E94D4` - Label
+    * Red200: `#B00020` `176,0,32` - Warning, Wrong Task
+    * Green200: `#018786` `1, 135, 134`- Correct Task
+    * tum-blue-light: `#5E94D4` - Label, Event Start/End
+    * tum-blue-light-dark: `#9ABCE4` - Event 
 
 # Cheat Zone:
 * Visibility:

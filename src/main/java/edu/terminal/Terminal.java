@@ -1,7 +1,9 @@
 package edu.terminal;
 
+import edu.gate.hardware.HardwareGate;
 import edu.ground.datapreparation.FileProcessing;
 import edu.ground.datapreparation.Triad;
+import edu.ground.pm.ProcessFlow;
 
 import java.io.File;
 
@@ -16,6 +18,7 @@ public class Terminal {
     final private String setupProcess = "/adminFiles/setup.bpmn";
     private boolean initialized;
     private edu.ground.datapreparation.Triad processData;
+    private edu.ground.datapreparation.Triad blueprintData;
 
     public Terminal() {
         initialized = false;
@@ -25,8 +28,10 @@ public class Terminal {
      * From AdminController.
      * This method got coled from the AdminController to initialise the blueprint data via the blueprint engine.
      */
-    public void initializeBlueprint() {
-        //TODO: Initialise the blueprint, including the adminFiles.
+    public void initializeBlueprint(File blueprintProcess) {
+        /* Convert the XML data of the process and structure it in a Triad object. */
+        FileProcessing fileProcessing = new FileProcessing(blueprintProcess);
+        this.blueprintData = fileProcessing.getProcessData();
         initialized = true;
 
     }
@@ -48,16 +53,26 @@ public class Terminal {
         /* Convert the XML data of the process and structure it in a Triad object. */
         FileProcessing fileProcessing = new FileProcessing(userProcess);
         this.processData = fileProcessing.getProcessData();
-
+        //new ProcessFlow(processData);
+        new HardwareGate();
         return true;
     }
 
     /**
-     * Getter to make the ProcessData public.
+     * Getter to make the processData public.
      *
      * @return the Process Data in a Triad object.
      */
     public Triad getProcessData() {
         return processData;
+    }
+
+    /**
+     * Getter to make the blueprintData public.
+     *
+     * @return the Blueprint (Ideal) Data in a Triad object.
+     */
+    public Triad getBlueprintData() {
+        return blueprintData;
     }
 }
