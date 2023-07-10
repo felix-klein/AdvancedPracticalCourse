@@ -113,7 +113,7 @@
                         <Font name="Helvetica" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="GoSetup" layoutX="460.75" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#setup" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="WHITE" AnchorPane.topAnchor="467.0">
+                <Button fx:id="GoSetup" layoutX="445.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#setup" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="Start Initialization" textFill="WHITE" AnchorPane.topAnchor="467.0">
                     <font>
                         <Font name="Helvetica" size="12.0" />
                     </font>

@@ -5,6 +5,7 @@ import edu.ground.datapreparation.FileProcessing;
 import edu.ground.datapreparation.Triad;
 
 import java.io.File;
+import java.util.Objects;
 
 /**
  * The Terminal class is meant to be like the terminal at an airport, to coordinate a static and ordered transfer.
@@ -20,7 +21,8 @@ public class Terminal {
     private edu.ground.datapreparation.Triad blueprintData;
 
     public Terminal() {
-        initialized = false;
+        /* If there is a blueprint text file, we consider this file as the correct file for this motor of control. */
+        initialized = getClass().getResource("/data/blueprint.txt") != null;
     }
 
     /**
@@ -30,9 +32,13 @@ public class Terminal {
     public void initializeBlueprint(File blueprintProcess) {
         /* Convert the XML data of the process and structure it in a Triad object. */
         FileProcessing fileProcessing = new FileProcessing(blueprintProcess);
+        /* Saves the Triad object locally. */
         this.blueprintData = fileProcessing.getProcessData();
+        /* Using this process data to initialise and start the Hardware, which does save the blueprint results in
+            a txt file for further investigations.
+         */
+        HardwareGate initializationHWG = new HardwareGate(blueprintData);
         initialized = true;
-
     }
 
     /**
@@ -53,7 +59,7 @@ public class Terminal {
         FileProcessing fileProcessing = new FileProcessing(userProcess);
         this.processData = fileProcessing.getProcessData();
         //new ProcessFlow(processData);
-        new HardwareGate();
+        new HardwareGate(processData);
         return true;
     }
 

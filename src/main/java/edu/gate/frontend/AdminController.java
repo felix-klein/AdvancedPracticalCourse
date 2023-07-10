@@ -55,6 +55,8 @@ public class AdminController extends ComboController {
             File file = new File(Objects.requireNonNull(getClass()
                     .getResource("/adminFiles/setup.bpmn")).toURI());
             MainApplication.getTerminal().initializeBlueprint(file);
+            infoWindow("Motor Initialization Done", "The blueprint motor is now fully initialized " +
+                        "and ready to use for further testing!");
         } catch (URISyntaxException e) {
             System.out.println("There is an error with the admin file or its path");
             e.getStackTrace();

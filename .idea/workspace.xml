@@ -10,9 +10,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments related to the lates chaotic commit (push). More style and logical adjustments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,32 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -309,7 +337,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/process_mining" />
+                        <option value="GitLab/main" />
                       </list>
                     </value>
                   </entry>
