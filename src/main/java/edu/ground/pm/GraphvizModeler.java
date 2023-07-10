@@ -29,7 +29,7 @@ public class GraphvizModeler {
         addGateways(gateways);
 
         try {
-            Graphviz.fromGraph(graph).height(100).render(Format.PNG).toFile(new File("ProcessMining/PN.png"));
+            Graphviz.fromGraph(graph).height(100).render(Format.PNG).toFile(new File("/ProcessMining/PN.png"));
         } catch (IOException e) {
             System.out.println("The new PetriNet image, couldn't be saved");
             e.getStackTrace();

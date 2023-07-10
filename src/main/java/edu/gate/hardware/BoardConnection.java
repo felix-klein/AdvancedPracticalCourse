@@ -3,7 +3,7 @@ package edu.gate.hardware;
 import com.fazecast.jSerialComm.SerialPort;
 
 public class BoardConnection {
-    private final SerialPort serialPort = SerialPort.getCommPort("/dev/cu.usbmodem141201");
+    private final SerialPort serialPort = SerialPort.getCommPort("/dev/cu.usbmodem143201");
 
     public BoardConnection() {
         //TODO: need to update this test and modify and improve.
