@@ -170,11 +170,11 @@ public class ComboController {
            operation to open the file.
          */
         if (operatingSystem.contains("mac")) { /* Mac*/
-            Runtime.getRuntime().exec("open " + file); /* it causes a warning but is still the best option */
+            new ProcessBuilder("open", file.getAbsolutePath()).start();
         } else if (operatingSystem.contains("win")) { /* Windows */
-            new ProcessBuilder("cmd.exe", "/c", "start", file.getPath()).start();
+            new ProcessBuilder("cmd.exe", "/c", "start", file.getAbsolutePath()).start();
         } else if (operatingSystem.contains("nux") || operatingSystem.contains("nix")) { /* Linux & Unix */
-            Runtime.getRuntime().exec("xdg-open " + file);
+            new ProcessBuilder("xdg-open", file.getAbsolutePath()).start();
         } else {
             infoWindow("File Error by OS determination", "It is not possible to open the document" +
                     " because it is not possible to find out on which operating system this application is running." +
