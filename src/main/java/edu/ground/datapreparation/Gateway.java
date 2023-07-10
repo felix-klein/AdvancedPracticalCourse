@@ -16,11 +16,7 @@ public class Gateway extends EFT {
      * @return a boolean, which is true for a Parallel Gateway and false for an Exclusive (and rest) Gateway.
      */
     private boolean typeMatching(String type) {
-        if (type.equals("parallel")) {
-            return true;
-        } else {
-            return false;
-        }
+        return type.equals("parallel");
     }
 
     /**

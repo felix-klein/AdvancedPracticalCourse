@@ -20,6 +20,7 @@ public class ComboController {
      */
     @FXML
     private void infoButtonAccuracy(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info accuracy: " + mouseEvent.getPickResult());
         String headline = "Accuracy Information";
         String text = "Accuracy describes how accurate the sensor data for the compliance check should be." +
                 " We recommend the level basic to ensure both " +
@@ -34,6 +35,7 @@ public class ComboController {
      */
     @FXML
     private void infoButtonLoops(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info loops: " + mouseEvent.getPickResult());
         String headline = "Loop runs";
         String text = "If you have consciously or unconsciously integrated one or more loops in your test " +
                 "process, you must specify the number of loop runs intended.";
@@ -47,6 +49,7 @@ public class ComboController {
      */
     @FXML
     private void infoButtonSelection(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info selection: " + mouseEvent.getPickResult());
         String headline = "Process Selection";
         String text = "You can select only one of the processes to run. To edit or view the processes, please go" +
                 " to the 'Customization Area'.";
@@ -60,6 +63,7 @@ public class ComboController {
      */
     @FXML
     private void infoButtonCustomize(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info customization: " + mouseEvent.getPickResult());
         String headline = "Process Customization";
         String text = "These 3 process environments can be customized and modified by you. Please follow the" +
                 " instructions on the right and save your changes with the save button. Do not change the location!";
@@ -73,6 +77,7 @@ public class ComboController {
      */
     @FXML
     private void infoButtonView(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info view: " + mouseEvent.getPickResult());
         String headline = "Predefined Models";
         String text = "We ask that you view, but not change, these predefined processes. If you do change them, " +
                 "please follow the given notations.";
@@ -86,6 +91,7 @@ public class ComboController {
      */
     @FXML
     private void infoButtonSetup(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info setup: " + mouseEvent.getPickResult());
         String headline = "Test-Bench Setup";
         String text = "All items in this list are essential for the smooth and correct initialization of the" +
                 " Blueprint engine. If you have conscientiously worked through all the points and start the program," +

@@ -34,6 +34,7 @@ public class AdminController extends ComboController {
      */
     @FXML
     private void setup(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - Start Initialization: " + mouseEvent.getPickResult());
         /* Control if all checkboxes are ticket. If no checkbox is not ticked.*/
         if (!check1.isSelected()
                 || !check2.isSelected()

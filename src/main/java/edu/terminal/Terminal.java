@@ -37,7 +37,7 @@ public class Terminal {
         /* Using this process data to initialise and start the Hardware, which does save the blueprint results in
             a txt file for further investigations.
          */
-        HardwareGate initializationHWG = new HardwareGate(blueprintData);
+        new HardwareGate(blueprintData);
         initialized = true;
     }
 

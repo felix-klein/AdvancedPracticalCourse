@@ -67,7 +67,7 @@ public class EFT {
      *
      * @param line      is the String line to investigate.
      * @param attribute is the string indicator to find the attribute.
-     * @returna String which is the searched attribute value.
+     * @return a String which is the searched attribute value.
      */
     private String findAttribute(String line, String attribute) {
         int startAttribute = line.indexOf(attribute) + attribute.length();
