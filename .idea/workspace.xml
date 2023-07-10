@@ -8,9 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments related to the lates chaotic commit (push). More style and logical adjustments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,8 @@
         <option value="Tag Library Descriptor" />
         <option value="CSS File" />
         <option value="FxmlFile" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +61,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -166,7 +171,14 @@
       <workItem from="1688142889946" duration="8505000" />
       <workItem from="1688200784604" duration="8926000" />
       <workItem from="1688287698722" duration="20032000" />
-      <workItem from="1688372218003" duration="3356000" />
+      <workItem from="1688372218003" duration="6777000" />
+      <workItem from="1688461254208" duration="15889000" />
+      <workItem from="1688721094644" duration="999000" />
+      <workItem from="1688723707906" duration="94000" />
+      <workItem from="1688725708891" duration="3184000" />
+      <workItem from="1688732283910" duration="3955000" />
+      <workItem from="1688900025665" duration="419000" />
+      <workItem from="1688982142162" duration="843000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -259,7 +271,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688376278439</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Addendum/Improvement: Logical adjustment in the sense of accepting Exclusive gateways, with specific rules, for easier loop handling.">
+      <created>1688379426574</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688379426574</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Process Mining and advanced! The goal was to implement the pm package but the data was unclear. This session resulted in an overall session including changes in nearly all related areas.&#10;Most important we got the hardware running and data printing!">
+      <created>1688735083966</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688735083966</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Adjustments related to the lates chaotic commit (push). More style and logical adjustments.">
+      <created>1688736622535</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688736622535</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +309,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/main" />
+                        <option value="GitLab/process_mining" />
                       </list>
                     </value>
                   </entry>
@@ -302,7 +335,10 @@
     <MESSAGE value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
     <MESSAGE value="Small changes and actualisation's in the UML.svg file for the transparency." />
     <MESSAGE value="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well." />
-    <option name="LAST_COMMIT_MESSAGE" value="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well." />
+    <MESSAGE value="Addendum/Improvement: Logical adjustment in the sense of accepting Exclusive gateways, with specific rules, for easier loop handling." />
+    <MESSAGE value="Process Mining and advanced! The goal was to implement the pm package but the data was unclear. This session resulted in an overall session including changes in nearly all related areas.&#10;Most important we got the hardware running and data printing!" />
+    <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

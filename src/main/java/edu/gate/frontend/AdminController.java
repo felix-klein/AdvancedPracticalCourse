@@ -4,7 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.Objects;
 
 /**
  * The AdminController is the controller class for all events from the AdminScene.fxml.
@@ -46,7 +49,15 @@ public class AdminController extends ComboController {
             infoWindow(headline, text);
             return; /* If there is one missing, we do not initialize and return */
         }
-        /* Pass the command to initialize the Blueprint. */
-        MainApplication.getTerminal().initializeBlueprint();
+
+        try {
+            /* Pass the command to initialize the Blueprint. */
+            File file = new File(Objects.requireNonNull(getClass()
+                    .getResource("/adminFiles/setup.bpmn")).toURI());
+            MainApplication.getTerminal().initializeBlueprint(file);
+        } catch (URISyntaxException e) {
+            System.out.println("There is an error with the admin file or its path");
+            e.getStackTrace();
+        }
     }
 }
