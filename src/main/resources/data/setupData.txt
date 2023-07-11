@@ -1,0 +1,2 @@
+Port:/dev/cu.usbmodem143201*
+BaudRate:115200*

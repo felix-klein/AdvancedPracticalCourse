@@ -8,11 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Small Admin adjustments and form related contributions to reduce errors.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/ReceiveConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SendingConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/ProcessFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/ProcessFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +208,9 @@
       <workItem from="1688732283910" duration="3955000" />
       <workItem from="1688900025665" duration="419000" />
       <workItem from="1688982142162" duration="843000" />
+      <workItem from="1689060237002" duration="10254000" />
+      <workItem from="1689075901629" duration="758000" />
+      <workItem from="1689076700056" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -332,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688990952080</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API.">
+      <created>1689003913541</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689003913541</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +393,8 @@
     <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
     <MESSAGE value="Small Admin adjustments and logical structuring." />
     <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Admin adjustments and form related contributions to reduce errors." />
+    <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

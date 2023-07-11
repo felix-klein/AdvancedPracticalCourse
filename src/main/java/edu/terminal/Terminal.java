@@ -5,7 +5,6 @@ import edu.ground.datapreparation.FileProcessing;
 import edu.ground.datapreparation.Triad;
 
 import java.io.File;
-import java.util.Objects;
 
 /**
  * The Terminal class is meant to be like the terminal at an airport, to coordinate a static and ordered transfer.
@@ -14,8 +13,6 @@ import java.util.Objects;
  * does increase the overview and transparency immense.
  */
 public class Terminal {
-    private File userProcess;
-    final private String setupProcess = "/adminFiles/setup.bpmn";
     private boolean initialized;
     private edu.ground.datapreparation.Triad processData;
     private edu.ground.datapreparation.Triad blueprintData;
@@ -28,6 +25,8 @@ public class Terminal {
     /**
      * From AdminController.
      * This method got coled from the AdminController to initialise the blueprint data via the blueprint engine.
+     *
+     * @param blueprintProcess is a file containing the Process of the blueprint.
      */
     public void initializeBlueprint(File blueprintProcess) {
         /* Convert the XML data of the process and structure it in a Triad object. */
