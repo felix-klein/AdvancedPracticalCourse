@@ -8,14 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/ReceiveConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SendingConnection.java" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Current.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Mic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Temp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Vib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,7 @@
         <option value="FxmlFile" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -72,13 +75,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -118,6 +114,9 @@
       <recent name="$PROJECT_DIR$/src/main/java/edu/gate/frontend/layout" />
       <recent name="$PROJECT_DIR$/src/main/java/edu/gate/frontend" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.gate.hardware" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.i17BA [javafx:run]">
@@ -210,7 +209,9 @@
       <workItem from="1688982142162" duration="843000" />
       <workItem from="1689060237002" duration="10254000" />
       <workItem from="1689075901629" duration="758000" />
-      <workItem from="1689076700056" duration="1209000" />
+      <workItem from="1689076700056" duration="1948000" />
+      <workItem from="1689316305680" duration="685000" />
+      <workItem from="1689331105589" duration="4280000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -345,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689003913541</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time.">
+      <created>1689078401662</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689078401662</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +402,8 @@
     <MESSAGE value="Small Admin adjustments and logical structuring." />
     <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
     <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
+    <MESSAGE value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

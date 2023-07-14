@@ -14,12 +14,14 @@ import java.util.Objects;
  * is used to send instructions and to receive sensor data and results.
  */
 public class BoardConnection {
-    private final SerialPort port;
-    private final String baudRate;
 
     public BoardConnection() {
-        this.port = SerialPort.getCommPort(Objects.requireNonNull(getSetupData("Port:")));
-        this.baudRate = getSetupData("BaudRate:");
+        SerialPort port = SerialPort.getCommPort(Objects.requireNonNull(getSetupData("Port:")));
+        int baudRate = Integer.parseInt(Objects.requireNonNull(getSetupData("BaudRate:")));
+
+        port.setBaudRate(baudRate);
+        port.openPort();
+        new SerialThread(port);
     }
 
 
