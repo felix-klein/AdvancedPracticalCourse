@@ -36,7 +36,7 @@ public class Terminal {
         /* Using this process data to initialise and start the Hardware, which does save the blueprint results in
             a txt file for further investigations.
          */
-        new HardwareGate(blueprintData);
+        new HardwareGate(blueprintData, "extreme", 1);
         initialized = true;
     }
 
@@ -58,7 +58,7 @@ public class Terminal {
         FileProcessing fileProcessing = new FileProcessing(userProcess);
         this.processData = fileProcessing.getProcessData();
         //new ProcessFlow(processData);
-        new HardwareGate(processData);
+        new HardwareGate(processData, accuracyLevel, loopCount);
         return true;
     }
 

@@ -8,16 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Current.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Mic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Temp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Vib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Current.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Mic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/ReceiveConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SendingConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Temp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/Vib.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +214,7 @@
       <workItem from="1689075901629" duration="758000" />
       <workItem from="1689076700056" duration="1948000" />
       <workItem from="1689316305680" duration="685000" />
-      <workItem from="1689331105589" duration="4280000" />
+      <workItem from="1689331105589" duration="10776000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -353,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process.">
+      <option name="closed" value="true" />
+      <created>1689341781032</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1689341781032</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +414,8 @@
     <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
     <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
     <MESSAGE value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
+    <MESSAGE value="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process." />
+    <option name="LAST_COMMIT_MESSAGE" value="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
