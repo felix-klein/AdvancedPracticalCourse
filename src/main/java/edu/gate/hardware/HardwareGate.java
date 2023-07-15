@@ -59,11 +59,11 @@ public class HardwareGate {
      */
     private short accuracyAdaption(String accuracyLevel) {
         return switch (accuracyLevel) { //TODO: Adjust
-            case "extreme" -> 99;
-            case "intense" -> 999;
-            case "high" -> 9999;
-            case "1-for-1" -> 90;
-            default -> 9; // "basic"
+            case "extreme" -> 9; /* Every 10 milliseconds (10) */
+            case "intense" -> 99; /* Every 0.1 second (100) */
+            case "high" -> 249; /* Every 0.25 second (250) */
+            case "1-for-1" -> 999; /* Every 1 second (1000) */
+            default -> 499; /* "basic" is the default, with every 1/2 second (500) */
         };
     }
 }

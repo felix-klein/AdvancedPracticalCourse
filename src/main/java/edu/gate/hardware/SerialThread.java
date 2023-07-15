@@ -23,6 +23,8 @@ public class SerialThread extends Thread {
     private final ArrayList<Long> CP3;
     private final ArrayList<Long> TSP;
     private SensIn SENS;
+    private ArrayList<String> processInstructions;
+    private ArrayList<Integer> processInstructionsTimeDelay;
 
     public SerialThread(SerialPort port, Triad processFlow, Short accuracyLevel) {
         this.port = port;
@@ -49,6 +51,9 @@ public class SerialThread extends Thread {
      */
     @Override
     public void run() {
+        this.processInstructions = new ArrayList<>();
+        this.processInstructionsTimeDelay = new ArrayList<>();
+        prepareProcessInstructions();
         sendingSerial();
     }
 
@@ -58,18 +63,63 @@ public class SerialThread extends Thread {
      */
     private void sendingSerial() {
         OutputStream outputStream = port.getOutputStream();
-        String instruction = "start"; // Replace with your desired command
-        try {
-            outputStream.write(instruction.getBytes());
-            outputStream.flush();
-        } catch (IOException e) {
-            System.out.println("Error in the output stream of the serial communication:");
-            e.getStackTrace();
+        for (int i = 0; i < processInstructions.size(); i++) {
+            try {
+                outputStream.write(processInstructions.get(i).getBytes());
+                outputStream.flush();
+            } catch (IOException e) {
+                System.out.println("Error in the output stream of the serial communication:");
+                e.getStackTrace();
+            }
         }
     }
 
-    private String prepareSendingSerial() {
-        return null;
+    private void prepareProcessInstructions() {
+        /* Initializing the START of the Flow. */
+        String latestID = null;
+        for (int i = 0; i < processData.events().size(); i++) {
+            if (processData.events().get(i).getType().equals("startEvent")) {
+                processInstructions.add("<*EST:1#>");
+                processInstructionsTimeDelay.add(0);
+                latestID = processData.events().get(i).getId();
+            }
+        }
+
+        /* Initializing the MIDDLE of the Flow. */
+        /* Searching as long everything as there are flows left. Just a counter. */
+        for (int counter = 0; counter < processData.flows().size(); counter++) {
+            /* Searching literally in each flow if it does match with the latest ID.*/
+            for (int i = 0; i < processData.flows().size(); i++) {
+                /* We are just processing if we found the correct flow to our ID. */
+                if (processData.flows().get(i).getSourceRef().equals(latestID)) {
+                    boolean foundObject = false;
+                    int searchCounter = 0;
+                    /* Searching until the object is found or no element is left. */
+                    while (!foundObject) {
+                        if (searchCounter < processData.tasks().size() && processData.tasks().
+                                get(searchCounter).getId().equals(processData.flows().get(i).getTargetRef())) {
+                            /* Searching in all Tasks. */
+                            processInstructions.add(processData.tasks().get(searchCounter).getOperationLine());
+                            processInstructionsTimeDelay.add(processData.tasks().get(searchCounter).getTimeDelay());
+                            foundObject = true;
+                        } else if (searchCounter < processData.events().size() && processData.events().
+                                get(searchCounter).getId().equals(processData.flows().get(i).getTargetRef())) {
+                            /* Search in all Events. */
+                            /* If it is in the event, it is the final end event. */
+                            processInstructions.add("<*EST:0#>?");
+                            processInstructionsTimeDelay.add(0);
+                            foundObject = true;
+                        } else if (searchCounter < processData.gateways().size() && processData.gateways().
+                                get(searchCounter).getId().equals(processData.flows().get(i).getTargetRef())) {
+                            /* Search in all Gateways. */
+                            // TODO: At loop one.
+                        }
+                    }
+
+                    latestID = processData.flows().get(i).getTargetRef();
+                }
+            }
+        }
     }
 
     /**

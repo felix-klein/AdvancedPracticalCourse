@@ -7,6 +7,9 @@ public class OperationTable {
     private String[] operationName;
     private short[] operationValue;
 
+    private final String operationsLine;
+    private int timeDelay = 0;
+
     /**
      * To initialise an operation table it does need the name of the task, which is the information pool.
      *
@@ -15,6 +18,7 @@ public class OperationTable {
     public OperationTable(String taskName) {
         String[] operationList = splitOperations(taskName);
         analyseList(operationList);
+        this.operationsLine = writeOperationsLine();
     }
 
     /**
@@ -68,7 +72,9 @@ public class OperationTable {
         try {
             /* If the 'number' is directly a number, what should be the normal case, we can use it. */
             short numberValue = Short.parseShort(number);
-            if (numberValue < 0) { return -11111; } /* accept just numbers in the positive spectrum */
+            if (numberValue < 0) {
+                return -11111;
+            } /* accept just numbers in the positive spectrum */
             return Short.parseShort(number);
         } catch (NumberFormatException e) {
             /* If the number is a String, we can consider a few possible options, what the user could have meant. */
@@ -122,7 +128,7 @@ public class OperationTable {
                     name.toLowerCase().contains("level") ||
                     name.toLowerCase().contains("nivo")) {
                 /* If the 'name' is kind of a gear call, the name should be Gear. */
-                return "Gear";
+                return "EGS"; /* Engine-Gear-Shift */
             } else if (name.toLowerCase().contains("time") ||
                     name.toLowerCase().contains("duration") ||
                     name.toLowerCase().contains("span") ||
@@ -131,14 +137,26 @@ public class OperationTable {
                     name.toLowerCase().contains("run") ||
                     name.toLowerCase().contains("length")) {
                 /* If the 'name' is kind of a time call, the name should be Runtime. */
-                return "Runtime";
+                return "TMD"; /* Time-Duration */
             } else if (name.toLowerCase().contains("engine") ||
                     name.toLowerCase().contains("motor") ||
                     name.toLowerCase().contains("machine") ||
                     name.toLowerCase().contains("unit") ||
                     name.toLowerCase().contains("main")) {
                 /* If the 'name' is kind of an engine call, the name should be Engine. */
-                return "Engine";
+                return "EST"; /* Engine-Status-Type */
+            } else if (name.toLowerCase().contains("rotation") ||
+                    name.toLowerCase().contains("rpm") ||
+                    name.toLowerCase().contains("speed") ||
+                    name.toLowerCase().contains("rev") ||
+                    name.toLowerCase().contains("drill")) {
+                return "RPM";
+            } else if (name.toLowerCase().contains("light") ||
+                    name.toLowerCase().contains("lamp") ||
+                    name.toLowerCase().contains("bulb") ||
+                    name.toLowerCase().contains("sun") ||
+                    name.toLowerCase().contains("led")) {
+                return "LED";
             }
             /* Additions could be added as soon as it is obvious which settings are addable. */
             // TODO: Add future modification parameters for the process into the naming list.
@@ -148,6 +166,29 @@ public class OperationTable {
             /* All exceptions and not identifiable names are handled as null values and got ignored for the moment. */
             return null;
         }
+    }
+
+    /**
+     * This method creates the string line for the output which is sent to the Hardware via the serial communication.
+     *
+     * @return a string which is the whole line in its correct formatting.
+     */
+    private String writeOperationsLine() {
+        String line = "<";
+        for (int i = 0; i < operationName.length; i++) {
+            /* Adding the operations to the string. */
+            line = line + "*" + operationName[i] + ":" + operationValue[i] + "#";
+            /* Searching for a time indicator, with whom the time delay can be initialized. */
+            if (operationName[i].equals("TSP")) {
+                timeDelay = operationValue[i] * 1000;
+            }
+        }
+        /* Put in a default time delay if there was non specified. The default value is always 5 seconds.*/
+        if (timeDelay <= 1) {
+            timeDelay = 5000;
+        }
+        line = line + ">";
+        return line;
     }
 
     /**
@@ -166,5 +207,24 @@ public class OperationTable {
      */
     public short[] getOperationValue() {
         return operationValue;
+    }
+
+    /**
+     * Getter to make the operation line for the hardware communication accessible.
+     *
+     * @return a string which is the complete output line for the hardware communication.
+     */
+    public String getOperationsLine() {
+        return operationsLine;
+    }
+
+    /**
+     * Getter to make the time delay readable for the sender function in order to delay the sending as well. This
+     * is needed to reduce the memory overhead on the board.
+     *
+     * @return an integer which is the time dilay in milliseconds.
+     */
+    public int getTimeDelay() {
+        return timeDelay;
     }
 }

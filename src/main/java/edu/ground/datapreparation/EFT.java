@@ -2,7 +2,7 @@ package edu.ground.datapreparation;
 
 /**
  * This class is the mother class of Event, Flow, Task and Gateway to provide with easy to access functionality.
- * The class Gateway was added afterwards (after noticing its missing) so it is not in the naming of this class.
+ * The class Gateway was added afterward (after noticing its missing) so it is not in the naming of this class.
  */
 public class EFT {
 
