@@ -23,7 +23,7 @@ public class HardwareGate {
 
         port.setBaudRate(baudRate);
         port.openPort();
-        new SerialThread(port, processFlow, accuracyAdaption(accuracyLevel));
+        new SerialThread(port, processFlow, accuracyAdaption(accuracyLevel), loopCount);
     }
 
 
@@ -58,7 +58,7 @@ public class HardwareGate {
      * @return a short which is the number of milliseconds in which the sensors should gather data.
      */
     private short accuracyAdaption(String accuracyLevel) {
-        return switch (accuracyLevel) { //TODO: Adjust
+        return switch (accuracyLevel) {
             case "extreme" -> 9; /* Every 10 milliseconds (10) */
             case "intense" -> 99; /* Every 0.1 second (100) */
             case "high" -> 249; /* Every 0.25 second (250) */

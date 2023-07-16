@@ -53,7 +53,7 @@ public class OperationTable {
                 operationValue[i] = -11111;
             }
             /* We separate the operation into its name and value. */
-            /* The name part got added to the operationName without anny filtering at first. */
+            /* The name part got added to the operationName without any filtering at first. */
             String namePart = operationList[i].substring(0, operationList[i].indexOf(":")).trim();
             operationName[i] = nameAnalytics(namePart); /* specify the name or a name group */
             /* The value part does need filtering for the case there is a value in not short format. */
@@ -184,8 +184,8 @@ public class OperationTable {
             }
         }
         /* Put in a default time delay if there was non specified. The default value is always 5 seconds.*/
-        if (timeDelay <= 1) {
-            timeDelay = 5000;
+        if (!line.contains("TSP")) {
+            line = line + "*TSP:" + 5000 + "#";
         }
         line = line + ">";
         return line;
