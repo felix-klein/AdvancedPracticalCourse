@@ -123,7 +123,7 @@ public class AdminController extends ComboController implements Initializable {
      * @param newData is the new data for this element.
      */
     private void newDataReplacer(String dataHeader, String newData) {
-        /**
+        /*
          * Every change will be visible in the target version of the setupData.txt file, not in the file of this
          * resources' folder! This setupData.txt in resources is the default and original storage.
          */
