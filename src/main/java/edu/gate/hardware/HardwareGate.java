@@ -16,6 +16,7 @@ import java.util.Objects;
  * The result is a dual function as transmitter and outside gate.
  */
 public class HardwareGate {
+    private final SensIn SENS;
 
     public HardwareGate(Triad processFlow, String accuracyLevel, int loopCount) {
         SerialPort port = SerialPort.getCommPort(Objects.requireNonNull(getSetupData("Port:")));
@@ -25,11 +26,7 @@ public class HardwareGate {
         port.openPort();
         SerialThread dataTransfer = new SerialThread(port, processFlow, accuracyAdaption(accuracyLevel), loopCount);
 
-        //TODO: test the received data:
-        for (int i = 0; i < dataTransfer.getSENS().TMP().size(); i++) {
-            System.out.print("Temperature: " + dataTransfer.getSENS().TMP().get(i));
-            System.out.println("  Time-Stamp: " + dataTransfer.getSENS().TSP());
-        }
+        this.SENS = dataTransfer.getSENS();
     }
 
 
@@ -71,5 +68,14 @@ public class HardwareGate {
             case "1-for-1" -> 999; /* Every 1 second (1000) */
             default -> 499; /* "basic" is the default, with every 1/2 second (500) */
         };
+    }
+
+    /**
+     * Getter to make the sensor data from the board available to the Terminal class and package.
+     *
+     * @return a record, which stores all the sensor data.
+     */
+    public SensIn getSENS() {
+        return SENS;
     }
 }

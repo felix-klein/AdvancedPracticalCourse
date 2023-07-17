@@ -70,6 +70,7 @@ public class SerialThread extends Thread {
             System.out.println("An Thread error occurred, especially thrown by the join() operator!");
             e.getStackTrace();
         }
+        port.closePort();
     }
 
     /**
@@ -106,7 +107,6 @@ public class SerialThread extends Thread {
                         e.getStackTrace();
                     }
                 }
-                System.out.println(processInstructions.get(s));
                 outputStream.write(processInstructions.get(s).getBytes());
                 outputStream.flush();
             } catch (IOException e) {
@@ -126,6 +126,8 @@ public class SerialThread extends Thread {
          * which are on the main road are passed loopCounter+1 times, so practically the loop starts at X2
          * and ends in X2. */
         boolean loopEntrancePassed = false; /* X1:Save the id for further usage and as boolean replacement. */
+        /* The false ID is the source of the flow which calls the entrance gateway the first time. */
+        String falseBranchID = null;
 
         /* Initializing the START of the Flow. */
         String latestID = null;
@@ -175,9 +177,10 @@ public class SerialThread extends Thread {
                             if (loopEntrancePassed) {
                                 loopEntrancePassed = false;
                                 /* Find and initialise the loop via reverse engineering. */
-                                counter += reverseLoopTrace(processData.flows().get(i).getSourceRef(),
+                                counter += reverseLoopTrace(falseBranchID,
                                         processData.gateways().get(searchCounter).getId());
                             } else {
+                                falseBranchID = processData.flows().get(i).getSourceRef();
                                 loopEntrancePassed = true;
                             }
                             foundObject = true;
@@ -213,29 +216,27 @@ public class SerialThread extends Thread {
                 /* If statement which is true if the right flow has been found. */
                 if (processData.flows().get(flow).getTargetRef().equals(latestID)
                         && !processData.flows().get(flow).getSourceRef().equals(falseBranchID)) {
-                    String currentID = processData.flows().get(flow).getSourceRef(); /* ID to search for */
+                    latestID = processData.flows().get(flow).getSourceRef(); /* ID to search for */
                     boolean match = false; /* Indicator if the corresponding ID has been found. */
-                    for (int o = 0; !match &&
-                            o < Math.max(processData.tasks().size(), processData.gateways().size()) &&
-                            !loopCompleted;
-                         o++) { /* (o) stands for object */
-                        /* Search in the current objects if they are a match. */
-                        String taskID = processData.tasks().get(o).getId();
-                        String gatewayID = processData.events().get(o).getId();
+                    for (int o = 0; !match /* (o) stands for object */
+                            && o < Math.max(processData.tasks().size(), processData.gateways().size()); o++) {
                         /* Compare for a match. */
-                        if (o < processData.tasks().size() && taskID.equals(currentID)) {
+                        if (o < processData.tasks().size()
+                                && processData.tasks().get(o).getId().equals(latestID)) {
                             currentLoop.add(processData.tasks().get(o).getOperationLine());
                             currentLoopTimeDelay.add(processData.tasks().get(o).getTimeDelay());
-                        } else if (o < processData.gateways().size() && gatewayID.equals(currentID)) {
-                            if (taskID.equals(exitID)) {
+                            match = true;
+                        } else if (o < processData.gateways().size()
+                                && processData.gateways().get(o).getId().equals(latestID)) {
+                            if (processData.gateways().get(o).getId().equals(exitID)) {
                                 latestLoopBranch = processData.flows().get(flow).getTargetRef();
                                 loopCompleted = true;
                             } else {
                                 passingEntrance = true;
                             }
+                            match = true;
                         }
                     }
-                    latestID = currentID;
                     counterIncrease += (passingEntrance) ? 1 : 0;
                 }
             }
@@ -280,7 +281,6 @@ public class SerialThread extends Thread {
                     int packetEndIndex = dataBuilder.indexOf("\n");
                     if (packetEndIndex != -1) {
                         String packet = dataBuilder.substring(0, packetEndIndex);
-                        System.out.println(packet);
                         receivedEndSignal = analyseSerialData(packet);
                         dataBuilder.delete(0, packetEndIndex + 1);
                     }
@@ -297,10 +297,10 @@ public class SerialThread extends Thread {
      * @return a boolean to indicate if the received string contains the end signal.
      */
     private boolean analyseSerialData(String dataLine) {
-        String[] splitMission = dataLine.split("/*");
+        String[] splitMission = dataLine.split("#");
 
         for (String s : splitMission) {
-            if (s.equals("?")) {
+            if (s.contains("?")) {
                 return true;
             } else if (s.contains("TMP")) {
                 String[] split = s.split(":");

@@ -9,6 +9,7 @@ Min Input: <*EST:1#> (9 for starting the engine as an example)
 
 // ---> global variables
 bool constructionsEnd = false;
+bool sensorsEnd = false;
 SingleLinkedList<byte> missionNames;
 SingleLinkedList<short> missionParams;
 short timeDelay = 100;
@@ -28,7 +29,7 @@ const byte STI = 7; //(Sensor-Time-Interval: 999)
 // ---> user defined functions
 void applyMission() { // Helper function to apply the gathered mission.
 counter += 1;
-  for (int i=0; i<missionNames.getSize(); i++) { //TODO this is an test code and needs to be adjusted!
+  for (int i=0; i<missionNames.getSize(); i++) {
     if (missionNames.getValue(i) == LED) { // Light task
       if (missionParams.getValue(i) == 1) {
         digitalWrite(13, HIGH);
@@ -67,14 +68,12 @@ void setup() {
 void loop() {
   if (constructionsEnd != true) { // If there are still constructions to fulfill.
   // INPUT: Constructions initializing.
-    if (runMission != true) { // If there is an Mission running, with reference to the time, new missions shouldn't be read.
+    if (runMission != true) { // If there is a Mission running, with reference to the time, new missions shouldn't be read.
       if (Serial.available() >= 1) { // Safety measure, for the case that the serial communication is slower than the setup() function.
         char controller = Serial.read();
-        Serial.println(String("Each controller char: ") + controller);
         if (controller == '<') {
         } else if (controller == '*') {
           String name = Serial.readStringUntil(':');
-          Serial.println(String("name: ") + name);
           if (name.equals(String("LED"))) {
             missionNames.add(1);
           } else if (name.equals(String("RPM"))) {
@@ -91,7 +90,6 @@ void loop() {
             missionNames.add(7);
           }
           String param = Serial.readStringUntil('#');
-          Serial.println(String("param: ") + param);
           missionParams.add(param.toInt());
         } else if (controller == '>') {
           applyMission();
@@ -110,20 +108,21 @@ void loop() {
         missionStamp = 0;
         }
     }
+  }
 
 
 // OUTPUT: Sensor data gathering, in parallel.
     static unsigned long sensorStamp = 0; // Static, because it should stay throughout the loop / unsigned long, because if it is to big it should restart at 0.
-    if (millis() - sensorStamp > sensorInterval) {
+    if ((millis() - sensorStamp > sensorInterval) && (sensorsEnd == false)) {
       sensorStamp = millis();
       int reading = analogRead(0);
       float temp = reading * 0.0048828125 * 100;
       if (constructionsEnd == true) { // Signal the end of the last sensor data with a ?.
-        Serial.println(String("TSP:") + sensorStamp + String("*TMP:") + temp + String("*?")); // Example output at the end: "TSP:27.34*TMP:654000*?".
+        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#?")); // Example output at the end: "TSP:27.34#TMP:654000#?".
+        sensorsEnd = true;
       } else {
-        Serial.println(String("TSP:") + sensorStamp + String("*TMP:") + temp); //Example output: "TSP:27.34*TMP:654000".
+        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp); //Example output: "TSP:27.34#TMP:654000".
       }
     }
-  }
  delay(10);
 }

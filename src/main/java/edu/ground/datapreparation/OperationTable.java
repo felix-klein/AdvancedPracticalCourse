@@ -177,7 +177,14 @@ public class OperationTable {
         String line = "<";
         for (int i = 0; i < operationName.length; i++) {
             /* Adding the operations to the string. */
-            line = line + "*" + operationName[i] + ":" + operationValue[i] + "#";
+            /* If the operation is a time delay, the adjustments of seconds to milliseconds have to be done. */
+            if (operationName[i].equals("TMD")) {
+                timeDelay = operationValue[i] * 1000;
+                line = line + "*" + operationName[i] + ":" + timeDelay + "#";
+            } else {
+                line = line + "*" + operationName[i] + ":" + operationValue[i] + "#";
+            }
+
             /* Searching for a time indicator, with whom the time delay can be initialized. */
             if (operationName[i].equals("TMD")) {
                 timeDelay = operationValue[i] * 1000;
