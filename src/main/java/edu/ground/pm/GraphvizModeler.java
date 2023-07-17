@@ -69,16 +69,16 @@ public class GraphvizModeler {
      * @param events is the list of Events from the Camunda Modeler.
      */
     private void addEvents(ArrayList<Event> events) {
-        for (int i=0; i<events.size(); i++) {
-            String id = events.get(i).getId();
+        for (Event event : events) {
+            String id = event.getId();
             Color color = Color.rgb(32, 37, 42);
-            Style style = switch (events.get(i).getType()) {
+            Style style = switch (event.getType()) {
                 case "start" -> Style.SOLID;
                 case "end" -> Style.BOLD;
                 default -> Style.DASHED;
             };
 
-            graph.with(node(id).with(color, Shape.CIRCLE, style, Label.of(events.get(i).getName())));
+            graph.with(node(id).with(color, Shape.CIRCLE, style, Label.of(event.getName())));
         }
     }
 
@@ -88,9 +88,9 @@ public class GraphvizModeler {
      * @param gateways is the list of Gateways from the Camunda Modeler
      */
     private void addGateways(ArrayList<Gateway> gateways) {
-        for (int i=0; i<gateways.size(); i++) {
-            String id = gateways.get(i).getId();
-            Label label = gateways.get(i).getType() ? Label.of("+") : Label.of("x");
+        for (Gateway gateway : gateways) {
+            String id = gateway.getId();
+            Label label = gateway.getType() ? Label.of("+") : Label.of("x");
             Color color = Color.rgb(32, 37, 42);
 
             graph.with(node(id).with(color, Shape.DIAMOND, label, Style.BOLD));

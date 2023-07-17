@@ -2,7 +2,7 @@ package edu.ground.datapreparation;
 
 /**
  * This class is the mother class of Event, Flow, Task and Gateway to provide with easy to access functionality.
- * The class Gateway was added afterwards (after noticing its missing) so it is not in the naming of this class.
+ * The class Gateway was added afterward (after noticing its missing) so it is not in the naming of this class.
  */
 public class EFT {
 
@@ -67,7 +67,7 @@ public class EFT {
      *
      * @param line      is the String line to investigate.
      * @param attribute is the string indicator to find the attribute.
-     * @returna String which is the searched attribute value.
+     * @return a String which is the searched attribute value.
      */
     private String findAttribute(String line, String attribute) {
         int startAttribute = line.indexOf(attribute) + attribute.length();

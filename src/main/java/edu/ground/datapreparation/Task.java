@@ -6,14 +6,17 @@ package edu.ground.datapreparation;
 public class Task extends EFT {
     private final String id;
     private final String name;
-    private final OperationTable operations;
+    private final int timeDelay;
+    private final String operationLine;
     private boolean inAcceptance;
     private String breachStatement;
 
     public Task(String taskLine) {
         this.id = findID(taskLine);
         this.name = findName(taskLine);
-        this.operations = new OperationTable(name);
+        OperationTable operations = new OperationTable(name);
+        this.operationLine = operations.getOperationsLine();
+        this.timeDelay = operations.getTimeDelay();
     }
 
     /**
@@ -35,12 +38,21 @@ public class Task extends EFT {
     }
 
     /**
-     * Getter to make the Operations (including values) public.
+     * Getter to make the Time Delay public.
      *
-     * @return an object with two lists including the operation name and value.
+     * @return an integer which is the time in milliseconds.
      */
-    public OperationTable getOperations() {
-        return operations;
+    public int getTimeDelay() {
+        return timeDelay;
+    }
+
+    /**
+     * Getter to make the operations line public.
+     *
+     * @return a string which includes all operations in the correct syntax.
+     */
+    public String getOperationLine() {
+        return operationLine;
     }
 
     /**

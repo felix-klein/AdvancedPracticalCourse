@@ -8,11 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments related to the lates chaotic commit (push). More style and logical adjustments.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/BoardConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +30,38 @@
         <option value="FxmlFile" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -42,13 +71,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -89,6 +111,9 @@
       <recent name="$PROJECT_DIR$/src/main/java/edu/gate/frontend/layout" />
       <recent name="$PROJECT_DIR$/src/main/java/edu/gate/frontend" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.gate.hardware" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.i17BA [javafx:run]">
@@ -179,6 +204,15 @@
       <workItem from="1688732283910" duration="3955000" />
       <workItem from="1688900025665" duration="419000" />
       <workItem from="1688982142162" duration="843000" />
+      <workItem from="1689060237002" duration="10254000" />
+      <workItem from="1689075901629" duration="758000" />
+      <workItem from="1689076700056" duration="1948000" />
+      <workItem from="1689316305680" duration="685000" />
+      <workItem from="1689331105589" duration="21155000" />
+      <workItem from="1689496266402" duration="19191000" />
+      <workItem from="1689579948400" duration="9787000" />
+      <workItem from="1689595246043" duration="9349000" />
+      <workItem from="1689608227165" duration="1659000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -292,7 +326,83 @@
       <option name="project" value="LOCAL" />
       <updated>1688736622535</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Small Admin adjustments and logical structuring.">
+      <created>1688989423081</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688989423081</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Small Admin adjustments and form related contributions to reduce errors.">
+      <created>1688990952080</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688990952080</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API.">
+      <created>1689003913541</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689003913541</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time.">
+      <created>1689078401662</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689078401662</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process.">
+      <option name="closed" value="true" />
+      <created>1689341781032</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1689341781032</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Not finished or tested commit, with the goal of saving the current stage. There are mostly structural changes for more logical and cleaner functions.">
+      <option name="closed" value="true" />
+      <created>1689350845702</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689350845702</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Not finished work session, but with improvements for the Serial communication and the style of data preparation and structuring.">
+      <option name="closed" value="true" />
+      <created>1689439982825</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689439982825</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code.">
+      <option name="closed" value="true" />
+      <created>1689515684998</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1689515684998</updated>
+    </task>
+    <task id="LOCAL-00025" summary="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!">
+      <option name="closed" value="true" />
+      <created>1689527328884</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1689527328884</updated>
+    </task>
+    <task id="LOCAL-00026" summary="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested.">
+      <option name="closed" value="true" />
+      <created>1689589907135</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1689589907135</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +419,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/process_mining" />
+                        <option value="GitLab/main" />
                       </list>
                     </value>
                   </entry>
@@ -322,7 +432,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code." />
     <MESSAGE value="Additions to the pom.xml and the creation of a README.md." />
     <MESSAGE value="New Structuring of the MainApplication.java and the creation/integration of UML.png." />
     <MESSAGE value="Redesign of the BPMN environment and handling. The pom.xml is now more lightweight but the user need`s to implement a separate Camunda Modeler App." />
@@ -338,7 +447,17 @@
     <MESSAGE value="Addendum/Improvement: Logical adjustment in the sense of accepting Exclusive gateways, with specific rules, for easier loop handling." />
     <MESSAGE value="Process Mining and advanced! The goal was to implement the pm package but the data was unclear. This session resulted in an overall session including changes in nearly all related areas.&#10;Most important we got the hardware running and data printing!" />
     <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
+    <MESSAGE value="Small Admin adjustments and logical structuring." />
+    <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
+    <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
+    <MESSAGE value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
+    <MESSAGE value="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process." />
+    <MESSAGE value="Not finished or tested commit, with the goal of saving the current stage. There are mostly structural changes for more logical and cleaner functions." />
+    <MESSAGE value="Not finished work session, but with improvements for the Serial communication and the style of data preparation and structuring." />
+    <MESSAGE value="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code." />
+    <MESSAGE value="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!" />
+    <MESSAGE value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
+    <option name="LAST_COMMIT_MESSAGE" value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

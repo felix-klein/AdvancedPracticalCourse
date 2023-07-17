@@ -13,26 +13,31 @@ import java.io.File;
  * does increase the overview and transparency immense.
  */
 public class Terminal {
-    private File userProcess;
-    final private String setupProcess = "/adminFiles/setup.bpmn";
     private boolean initialized;
     private edu.ground.datapreparation.Triad processData;
     private edu.ground.datapreparation.Triad blueprintData;
 
     public Terminal() {
-        initialized = false;
+        /* If there is a blueprint text file, we consider this file as the correct file for this motor of control. */
+        initialized = getClass().getResource("/data/blueprint.txt") != null;
     }
 
     /**
      * From AdminController.
      * This method got coled from the AdminController to initialise the blueprint data via the blueprint engine.
+     *
+     * @param blueprintProcess is a file containing the Process of the blueprint.
      */
     public void initializeBlueprint(File blueprintProcess) {
         /* Convert the XML data of the process and structure it in a Triad object. */
         FileProcessing fileProcessing = new FileProcessing(blueprintProcess);
+        /* Saves the Triad object locally. */
         this.blueprintData = fileProcessing.getProcessData();
+        /* Using this process data to initialise and start the Hardware, which does save the blueprint results in
+            a txt file for further investigations.
+         */
+        new HardwareGate(blueprintData, "extreme", 1);
         initialized = true;
-
     }
 
     /**
@@ -53,7 +58,7 @@ public class Terminal {
         FileProcessing fileProcessing = new FileProcessing(userProcess);
         this.processData = fileProcessing.getProcessData();
         //new ProcessFlow(processData);
-        new HardwareGate();
+        new HardwareGate(processData, accuracyLevel, loopCount);
         return true;
     }
 

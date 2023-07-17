@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
  */
 public class UserController extends ComboController implements Initializable {
     @FXML
-    private RadioButton alpha, beta, gamma, shortR, longR;
+    private RadioButton alpha, beta, gamma, longR; /*  shortR: isn't needed, because it is the default value */
     @FXML
     private Spinner<Integer> loopRun;
     @FXML
@@ -33,6 +33,7 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void process(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException {
+        System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
         String type;
         /* Determine which of the processes the user selected. */
         if (alpha.isSelected()) { /* alpha: first customized process */
@@ -99,6 +100,7 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void alphaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+        System.out.println("Button - Alpha: " + mouseEvent.getPickResult());
         openCamundaFile("alpha");
     }
 
@@ -111,6 +113,7 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void betaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+        System.out.println("Button - Beta: " + mouseEvent.getPickResult());
         openCamundaFile("beta");
     }
 
@@ -123,6 +126,7 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void gammaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+        System.out.println("Button - Gamma: " + mouseEvent.getPickResult());
         openCamundaFile("gamma");
     }
 
@@ -135,6 +139,7 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void longRView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+        System.out.println("Button - Long-Run: " + mouseEvent.getPickResult());
         openCamundaFile("longR");
     }
 
@@ -147,6 +152,7 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void shortRView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+        System.out.println("Button - Short-Run: " + mouseEvent.getPickResult());
         /* The passed parameter is unimportant, because the short-run represents the default operation. */
         openCamundaFile("shortR"); /* could be null with no influence */
     }
