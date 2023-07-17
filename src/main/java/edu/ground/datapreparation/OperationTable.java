@@ -200,24 +200,6 @@ public class OperationTable {
     }
 
     /**
-     * Getter to make the operation name accessible.
-     *
-     * @return the array including the operations.
-     */
-    public String[] getOperationName() {
-        return operationName;
-    }
-
-    /**
-     * Getter to make the operation value accessible.
-     *
-     * @return the array including the operation values.
-     */
-    public short[] getOperationValue() {
-        return operationValue;
-    }
-
-    /**
      * Getter to make the operation line for the hardware communication accessible.
      *
      * @return a string which is the complete output line for the hardware communication.

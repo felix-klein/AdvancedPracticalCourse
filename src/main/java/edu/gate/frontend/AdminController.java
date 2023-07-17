@@ -1,11 +1,11 @@
 package edu.gate.frontend;
 
+import com.fazecast.jSerialComm.SerialPort;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
-import com.fazecast.jSerialComm.SerialPort;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 /**
  * The AdminController is the controller class for all events from the AdminScene.fxml.
@@ -67,7 +70,7 @@ public class AdminController extends ComboController implements Initializable {
                     .getResource("/adminFiles/setup.bpmn")).toURI());
             MainApplication.getTerminal().initializeBlueprint(file);
             infoWindow("Motor Initialization Done", "The blueprint motor is now fully initialized " +
-                        "and ready to use for further testing!");
+                    "and ready to use for further testing!");
         } catch (URISyntaxException e) {
             System.out.println("There is an error with the admin file or its path");
             e.getStackTrace();
@@ -86,6 +89,7 @@ public class AdminController extends ComboController implements Initializable {
 
     /**
      * Action method fo the saving of the desired Baud Rate.
+     *
      * @param action is the trigger to save the choice.
      */
     @FXML
@@ -96,15 +100,15 @@ public class AdminController extends ComboController implements Initializable {
     /**
      * Method for the Drop-Down menus in the Port Specification area of the admin page.
      *
-     * @param url is an initialize parameter from Initializable.
+     * @param url            is an initialize parameter from Initializable.
      * @param resourceBundle is an initialize parameter from Initializable.
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /* This array and the corresponding loop are searching and saving the currently available loops. */
         ArrayList<String> allPorts = new ArrayList<>();
-        for(int i=0; i<SerialPort.getCommPorts().length; i++) {
-            if(!SerialPort.getCommPorts()[i].toString().contains("(Dial-In)")) {
+        for (int i = 0; i < SerialPort.getCommPorts().length; i++) {
+            if (!SerialPort.getCommPorts()[i].toString().contains("(Dial-In)")) {
                 allPorts.add(SerialPort.getCommPorts()[i].getSystemPortPath());
             }
         }
@@ -120,7 +124,7 @@ public class AdminController extends ComboController implements Initializable {
      * This helper method finds the line to change and changes it in teh setup data file.
      *
      * @param dataHeader is the name of the data to change.
-     * @param newData is the new data for this element.
+     * @param newData    is the new data for this element.
      */
     private void newDataReplacer(String dataHeader, String newData) {
         /*
@@ -133,7 +137,7 @@ public class AdminController extends ComboController implements Initializable {
                     .toURI());
             /* Iterate through all lines of the document and change the one line with its new data. */
             List<String> setupSheet = Files.readAllLines(fullPath);
-            for(int i=0; i<setupSheet.size(); i++) {
+            for (int i = 0; i < setupSheet.size(); i++) {
                 if (setupSheet.get(i).contains(dataHeader)) {
                     setupSheet.set(i, (dataHeader + newData + '*'));
                     System.out.println(setupSheet.get(i));

@@ -65,9 +65,10 @@ For further clarification and as a result of active programming we decided to us
 * Algorithmic-References
     *   
 * Frontend-References
-    * graphviz-java: https://github.com/nidi3/graphviz-java
-* Hardware-Connection-References
-    *
+    * graphviz-java: [Graphviz Github](https://github.com/nidi3/graphviz-java)
+* Hardware-References
+    * Arduino IDE-language: [Arduino LANGUAGE](https://www.arduino.cc/reference/en/)
+    * Arduino API List: [Arduino List Library  2.1.4](https://nkaaf.github.io/Arduino-List/html/index.html)
 
 ## Design Guide
 

@@ -10,11 +10,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="data_structuring_Admin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
