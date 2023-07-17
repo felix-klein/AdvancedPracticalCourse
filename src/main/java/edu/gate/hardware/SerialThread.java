@@ -13,27 +13,28 @@ import java.util.ArrayList;
  */
 public class SerialThread extends Thread {
     private final SerialPort port;
-    private final Triad processData;
-    private final Short sensorInterval;
+    private Triad processData;
+    private Short sensorInterval;
     private int loopCount;
-    private final ArrayList<Float> TMP;
-    private final ArrayList<Float> VIB;
-    private final ArrayList<Short> MIC;
-    private final ArrayList<Long> CP1;
-    private final ArrayList<Long> CP2;
-    private final ArrayList<Long> CP3;
-    private final ArrayList<Long> TSP;
+    private ArrayList<Float> TMP; /* Temperature */
+    private ArrayList<Float> VIB; /* Vibration */
+    private ArrayList<Short> MIC; /* Microphone-Volume */
+    private ArrayList<Long> CP1; /* Current-Port-1 */
+    private ArrayList<Long> CP2; /* Current-Port-2 */
+    private ArrayList<Long> CP3; /* Current-Port-3 */
+    private ArrayList<Long> TSP; /* Time-Stamp */
     private SensIn SENS;
     private ArrayList<String> processInstructions;
     private ArrayList<Integer> processInstructionsTimeDelay;
     private String latestLoopBranch = null; /* ID to now which way NOT to take for the further process. */
 
-    public SerialThread(SerialPort port, Triad processFlow, Short accuracyLevel, int loopCount) {
+    /**
+     * byThread: This Constructor is for the by-Thread call with the main work of RECEIVING-DATA.
+     *
+     * @param port is the actual running port from the HardwareGate via main-Thread.
+     */
+    public SerialThread(SerialPort port) {
         this.port = port;
-        this.processData = processFlow;
-        this.sensorInterval = accuracyLevel;
-        this.loopCount = loopCount;
-
         this.TMP = new ArrayList<>();
         this.VIB = new ArrayList<>();
         this.MIC = new ArrayList<>();
@@ -41,30 +42,44 @@ public class SerialThread extends Thread {
         this.CP2 = new ArrayList<>();
         this.CP3 = new ArrayList<>();
         this.TSP = new ArrayList<>();
+    }
+
+    /**
+     * mainThread: This Constructor is for the main-Thread (the current) call with the main work of SENDING-DATA.
+     *
+     * @param port          is the actual running port from the HardwareGate.
+     * @param processFlow   is the process data to send.
+     * @param accuracyLevel is the number of sensor interval.
+     * @param loopCount     is the number of loop runs.
+     */
+    public SerialThread(SerialPort port, Triad processFlow, Short accuracyLevel, int loopCount) {
+        this.port = port;
+        this.processData = processFlow;
+        this.sensorInterval = accuracyLevel;
+        this.loopCount = loopCount;
 
         /* Self initialisation for the Thread. */
-        SerialThread byThread = new SerialThread(port, processData, sensorInterval, loopCount);
+        SerialThread byThread = new SerialThread(port);
 
         try {
             byThread.start();
-            receivingSerial();
+            runMain();
             byThread.join();
+            this.SENS = byThread.getSENS();
         } catch (InterruptedException e) {
             System.out.println("An Thread error occurred, especially thrown by the join() operator!");
             e.getStackTrace();
         }
-
     }
 
     /**
-     * This method is for the Thread to run in parallel.
+     * This method is the like the run method for the byThread, just for the main trace/thread.
      */
-    @Override
-    public void run() {
+    public void runMain() {
         this.processInstructions = new ArrayList<>();
         this.processInstructionsTimeDelay = new ArrayList<>();
         /* Define the sensor Interval as the first instance in the instructions list. */
-        processInstructions.add("<STI:" + sensorInterval);
+        processInstructions.add("<*STI:" + sensorInterval + "#>");
         processInstructionsTimeDelay.add(0);
 
         prepareProcessInstructions();
@@ -72,24 +87,26 @@ public class SerialThread extends Thread {
     }
 
     /**
-     * Thread runner method: Does send the constructions to the arduino.
+     * Main-Thread runner method: Does send the constructions to the arduino.
      * Sending Example: "<*RPM:3600#*TMD:5000#>" or at the end "<*RPM:3600#*TMD:5000#>?"
      */
+    @SuppressWarnings("BusyWait")
     private void sendingSerial() {
         OutputStream outputStream = port.getOutputStream();
         for (int s = 0; s < processInstructions.size(); s++) {
             try {
                 /* Build the time delay for the serial sending, to reduce the data overhead on the hardware. The
-                * sending of all the data at once would result in a possible data loss because of the rather small
-                * memory on the arduino board. */
-                if (s > 0 && processInstructionsTimeDelay.get(s-1) > 100) {
+                 * sending of all the data at once would result in a possible data loss because of the rather small
+                 * memory on the arduino board. */
+                if (s > 0 && processInstructionsTimeDelay.get(s - 1) > 50) {
                     try {
-                        Thread.sleep(processInstructionsTimeDelay.get(s-1) - 100);
+                        Thread.sleep(processInstructionsTimeDelay.get(s - 1) - 50);
                     } catch (InterruptedException e) {
                         System.out.println("The Thread sleep operation doesn't work as predicted!");
                         e.getStackTrace();
                     }
                 }
+                System.out.println(processInstructions.get(s));
                 outputStream.write(processInstructions.get(s).getBytes());
                 outputStream.flush();
             } catch (IOException e) {
@@ -99,11 +116,21 @@ public class SerialThread extends Thread {
         }
     }
 
+    /**
+     * This method orders the instructions into their correct order and builds the strings which will be sent to the
+     * board in its correct formatting.
+     */
     private void prepareProcessInstructions() {
+        /* The loop entrance have to be marked to know where the loop trace have to go.
+         * In this case the entrance is the first X1 and the exit is the X2. The tasks in between X1 and X2
+         * which are on the main road are passed loopCounter+1 times, so practically the loop starts at X2
+         * and ends in X2. */
+        boolean loopEntrancePassed = false; /* X1:Save the id for further usage and as boolean replacement. */
+
         /* Initializing the START of the Flow. */
         String latestID = null;
         for (int i = 0; i < processData.events().size(); i++) {
-            if (processData.events().get(i).getType().equals("startEvent")) {
+            if (processData.events().get(i).getType().equals("start")) {
                 processInstructions.add("<*EST:1#>");
                 processInstructionsTimeDelay.add(0);
                 latestID = processData.events().get(i).getId();
@@ -123,44 +150,39 @@ public class SerialThread extends Thread {
                 if (processData.flows().get(i).getSourceRef().equals(latestID) &&
                         !processData.flows().get(i).getTargetRef().equals(latestLoopBranch)) {
                     boolean foundObject = false;
-                    /* In this case the entrance is the first X1 and the exit is the X2. The tasks in between X1 and X2
-                     * which are on the main road are passed loopCounter+1 times, so practically the loop starts at X2
-                     * and ends in X2. */
-                    boolean loopEntrancePassed = false; /* X1:Save the id for further usage and as boolean replacement. */
-
                     int searchCounter = 0;
                     /* Searching until the object is found or no element is left. */
                     while (!foundObject) {
                         /* Initialisation for easier readability. */
-                        String taskID = processData.tasks().get(searchCounter).getId();
-                        String eventID = processData.events().get(searchCounter).getId();
-                        String gatewayID = processData.gateways().get(searchCounter).getId();
                         String targetID = processData.flows().get(i).getTargetRef();
                         /* The if else statements to find the match. */
-                        if (searchCounter < processData.tasks().size() && taskID.equals(targetID)) {
+                        if (searchCounter < processData.tasks().size()
+                                && processData.tasks().get(searchCounter).getId().equals(targetID)) {
                             /* Searching in all Tasks. */
                             processInstructions.add(processData.tasks().get(searchCounter).getOperationLine());
                             processInstructionsTimeDelay.add(processData.tasks().get(searchCounter).getTimeDelay());
                             foundObject = true;
-                        } else if (searchCounter < processData.events().size() && eventID.equals(targetID)) {
+                        } else if (searchCounter < processData.events().size()
+                                && processData.events().get(searchCounter).getId().equals(targetID)) {
                             /* Search in all Events. */
                             /* If it is in the event, it is the final end event. */
                             processInstructions.add("<*EST:0#>?");
                             processInstructionsTimeDelay.add(0);
                             foundObject = true;
-                        } else if (searchCounter < processData.gateways().size() && gatewayID.equals(targetID)) {
+                        } else if (searchCounter < processData.gateways().size()
+                                && processData.gateways().get(searchCounter).getId().equals(targetID)) {
                             /* Search in all Gateways. */
-                            /* The idea is to reverse engineer the loop until the entrance Gateway. */
-                            if (!loopEntrancePassed) {
-                                loopEntrancePassed = true;
-                            } else {
+                            if (loopEntrancePassed) {
                                 loopEntrancePassed = false;
                                 /* Find and initialise the loop via reverse engineering. */
                                 counter += reverseLoopTrace(processData.flows().get(i).getSourceRef(),
                                         processData.gateways().get(searchCounter).getId());
+                            } else {
+                                loopEntrancePassed = true;
                             }
                             foundObject = true;
                         }
+                        searchCounter++;
                     }
                     latestID = processData.flows().get(i).getTargetRef();
                 }
@@ -168,6 +190,13 @@ public class SerialThread extends Thread {
         }
     }
 
+    /**
+     * This helper method handles loops by tracing them via reverse engineering. Helper for prepareProcessInstructions.
+     *
+     * @param falseBranchID is the ID of the last element before the entrance gateway.
+     * @param exitID        is the ID of the exit gateway, where the tracing starts and ends.
+     * @return an int with the number of flows passed in the loop, except the ones of the main trace.
+     */
     private int reverseLoopTrace(String falseBranchID, String exitID) {
         ArrayList<String> currentLoop = new ArrayList<>();
         ArrayList<Integer> currentLoopTimeDelay = new ArrayList<>();
@@ -224,7 +253,7 @@ public class SerialThread extends Thread {
     private void initializeLoop(ArrayList<String> loop, ArrayList<Integer> loopTimeDelay) {
         loopCount = (loopCount <= 0) ? 1 : loopCount;
         for (int counter = 0; counter < loopCount; counter++) {
-            for (int i = loop.size()-1; i >= 0; i--) {
+            for (int i = loop.size() - 1; i >= 0; i--) {
                 processInstructions.add(loop.get(i));
                 processInstructionsTimeDelay.add(loopTimeDelay.get(i));
             }
@@ -232,16 +261,17 @@ public class SerialThread extends Thread {
     }
 
     /**
-     * Home runner method: Does receive the sensor data from the arduino.
+     * Thread runner method: Does receive the sensor data from the arduino and initializing SENS.
      * Receiving Example: "TSP:27.34*TMP:654000" or at the end "TSP:27.34*TMP:654000*?".
      */
-    private void receivingSerial() {
+    @Override
+    public void run() {
         StringBuilder dataBuilder = new StringBuilder();
         /* Defining an end signal will help us to deal with phases of no data transmission. */
         boolean receivedEndSignal = false;
 
         while (!receivedEndSignal) {
-            if (port.bytesAvailable() > 0) { // Check if there are bytes available
+            if (port.bytesAvailable() > 0) {
                 byte[] buffer = new byte[port.bytesAvailable()];
                 int numRead = port.readBytes(buffer, buffer.length);
                 if (numRead > 0) {
@@ -299,7 +329,7 @@ public class SerialThread extends Thread {
     }
 
     /**
-     * Getter for the gathered sensor data for further analyses.
+     * Getter for the gathered sensor data for further analyses. Can be picked up by the main tread.
      *
      * @return a SensIn object, which is a collection of all the sensor data.
      */

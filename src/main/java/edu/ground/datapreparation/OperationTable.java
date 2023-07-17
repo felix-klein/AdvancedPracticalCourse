@@ -8,7 +8,7 @@ public class OperationTable {
     private short[] operationValue;
 
     private final String operationsLine;
-    private int timeDelay = 0;
+    private int timeDelay;
 
     /**
      * To initialise an operation table it does need the name of the task, which is the information pool.
@@ -179,13 +179,14 @@ public class OperationTable {
             /* Adding the operations to the string. */
             line = line + "*" + operationName[i] + ":" + operationValue[i] + "#";
             /* Searching for a time indicator, with whom the time delay can be initialized. */
-            if (operationName[i].equals("TSP")) {
+            if (operationName[i].equals("TMD")) {
                 timeDelay = operationValue[i] * 1000;
             }
         }
         /* Put in a default time delay if there was non specified. The default value is always 5 seconds.*/
-        if (!line.contains("TSP")) {
-            line = line + "*TSP:" + 5000 + "#";
+        if (!line.contains("TMD")) {
+            line = line + "*TMD:" + 5000 + "#";
+            timeDelay = 5000;
         }
         line = line + ">";
         return line;

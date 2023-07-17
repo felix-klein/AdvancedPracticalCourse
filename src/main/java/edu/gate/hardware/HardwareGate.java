@@ -23,7 +23,13 @@ public class HardwareGate {
 
         port.setBaudRate(baudRate);
         port.openPort();
-        new SerialThread(port, processFlow, accuracyAdaption(accuracyLevel), loopCount);
+        SerialThread dataTransfer = new SerialThread(port, processFlow, accuracyAdaption(accuracyLevel), loopCount);
+
+        //TODO: test the received data:
+        for (int i = 0; i < dataTransfer.getSENS().TMP().size(); i++) {
+            System.out.print("Temperature: " + dataTransfer.getSENS().TMP().get(i));
+            System.out.println("  Time-Stamp: " + dataTransfer.getSENS().TSP());
+        }
     }
 
 

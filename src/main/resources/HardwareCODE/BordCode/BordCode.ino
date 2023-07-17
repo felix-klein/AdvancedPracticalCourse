@@ -43,6 +43,7 @@ counter += 1;
       sensorInterval = missionParams.getValue(i);
       Serial.print(counter + String("-Mission: STI"));
     } else if (missionNames.getValue(i) == EST) {
+    Serial.print(counter + String("-Mission: EST"));
       if (missionParams.getValue(i) == 1) {
         //TODO start engine.
       } else {
