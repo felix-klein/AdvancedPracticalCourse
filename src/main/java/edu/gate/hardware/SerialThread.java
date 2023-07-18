@@ -23,6 +23,7 @@ public class SerialThread extends Thread {
     private ArrayList<Long> CP2; /* Current-Port-2 */
     private ArrayList<Long> CP3; /* Current-Port-3 */
     private ArrayList<Long> TSP; /* Time-Stamp */
+    private ArrayList<String> MIS; /* Mission-Initialisation-Stamps */
     private SensIn SENS;
     private ArrayList<String> processInstructions;
     private ArrayList<Integer> processInstructionsTimeDelay;
@@ -42,6 +43,7 @@ public class SerialThread extends Thread {
         this.CP2 = new ArrayList<>();
         this.CP3 = new ArrayList<>();
         this.TSP = new ArrayList<>();
+        this.MIS = new ArrayList<>();
     }
 
     /**
@@ -287,7 +289,7 @@ public class SerialThread extends Thread {
                 }
             }
         }
-        this.SENS = new SensIn(TMP, VIB, MIC, CP1, CP2, CP3, TSP);
+        this.SENS = new SensIn(TMP, VIB, MIC, CP1, CP2, CP3, TSP, MIS);
     }
 
     /**
@@ -323,6 +325,10 @@ public class SerialThread extends Thread {
             } else if (s.contains("TSP")) {
                 String[] split = s.split(":");
                 TSP.add(Long.valueOf(split[1]));
+            } else if (s.contains("MIS")) {
+                /* MIS got a new syntax, which looks like: MIS:egs=1&tmd=5000&tsp=345999. */
+                String[] split = s.split(":");
+                MIS.add(split[1]);
             }
         }
         return false;

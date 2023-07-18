@@ -31,10 +31,13 @@ const byte HDA = 6; //Hall-Delay-Angle      (0-59)
 const byte STI = 7; //Sensor-Time-Interval  (->sensorInterval)
 
 // ---> user defined functions
-void applyMission() { // Helper function to apply the gathered mission.
-counter += 1;
+void applyMission() { /* Helper function to apply the gathered mission. */
+    counter += 1;
+    String creatingMIS = String("MIS:");
+
   for (int i=0; i<missionNames.getSize(); i++) {
       if(missionNames.getValue(i) == EGS) { /* --> Engine-Gear-Shift */
+          creatingMIS = creatingMIS + String("egs=");
           /* Define the gear. */
           if (missionParams.getValue(i) == -1 && engineGear > 0) { /* down-shift */
               engineGear = engineGear - 1;
@@ -55,14 +58,17 @@ counter += 1;
               case 6: shield->setMotorSpeed(4000); break;
           }
       } else if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
+          creatingMIS = creatingMIS + String("tmd=");
           imeDelay = missionParams.getValue(i);
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
+          creatingMIS = creatingMIS + String("est=");
           if (missionParams.getValue(i) == 0) {
               shield->setMotorMode(STOP_MOTOR)
           } else {
               shield->setMotorMode(START_MOTOR)
           }
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
+          creatingMIS = creatingMIS + String("rpm=");
           shield->setMotorSpeed(missionParams.getValue(i));
       } else if (missionNames.getValue(i) == LED) { /* --> LED-Light */
           if (missionParams.getValue(i) == 1) {
@@ -71,11 +77,14 @@ counter += 1;
               digitalWrite(13, LOW);
           }
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */
+          creatingMIS = creatingMIS + String("hda=");
           shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i))
       } else if (missionNames.getValue(i) == STI) { /* --> Sensor-Time-Interval  */
           sensorInterval = missionParams.getValue(i);
       }
+      creatingMIS = creatingMIS + missionParams.getValue(i) + String("&");
   }
+    Serial.println(creatingMIS + String("tsp=") + millis());
 }
 
 // ---> setup()
