@@ -56,12 +56,29 @@ public class AdminController extends ComboController implements Initializable {
                 || !check5.isSelected()
                 || !check6.isSelected()
                 || !check7.isSelected()) {
-            String headline = "missing checkboxes";
+            String headline = "Missing Checkboxes";
             String text = "Unfortunately, you cannot start the process yet because you have not completed or checked" +
                     " off all the tasks from the task list. Please make sure that all tasks are completed" +
                     " consistently and conscientiously before you start the process.";
             infoWindow(headline, text);
             return; /* If there is one missing, we do not initialize and return */
+        }
+
+        /* Control if a port is selected. */
+        if (PortDown.getValue() == null) {
+            String headline = "Missing Port";
+            String text = "You must select the port to which the Arduino board from the test bench is connected to" +
+                    " your test device. Without port can not be started!";
+            infoWindow(headline, text);
+            return; /* If there is no port, we do not initialize and return */
+        }
+
+        /* Control if a baud rate is selected. */
+        if (BaudRateDown.getValue() == null) {
+            String headline = "Missing Baud-Rate";
+            String text = "You must select a baud rate for the communication of your device to the board!";
+            infoWindow(headline, text);
+            return; /* If there is no baud rate, we do not initialize and return */
         }
 
         try {

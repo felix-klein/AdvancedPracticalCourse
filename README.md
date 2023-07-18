@@ -40,18 +40,30 @@ all methods (and even classes) are shown, it still illustrates the key connectio
 ![UML diagram of the project](UML.svg)
 
 # Operation rules and syntax
-Operations:\
-  * Engine: engine, motor, machine, unit, main.
-  * Gear: gear, shift, throttle, level, nivo.
-  * Runtime: time, duration, span, period, term, run, length.
+* Operations:
+  * EGS (Engine-Gear-Shift): 0-6  [-1: down-shift, -99: up-shift]
+  * TMD (Time-Duration): 0-int
+  * EST (Engine-Status-Type): 0/1
+  * RPM (Rotations-per-Minute): 0-4000
+  * LED (LED-Light): 0/1
+  * HDA (Hall-Delay-Angle): 0-59
+  * STI (Sensor-Time-Interval): ->sensorInterval
+* Operations Naming Options:
+  * EGS: gear, shift, throttle, level, nivo.
+  * TMD: time, duration, span, period, term, run, length.
+  * EST: engine, motor, machine, unit, main.
+  * RPM: rotation, rpm, speed, rev, drill.
+  * LED: light, lamp, bulb, sun, led.
+  * HDA: degree, hall, angle, delay, commutation, offset, timing.
   * null: default.
-Operation Values:\
-  * 0: stop, end, terminate, finish, off, exit, 0.
-  * 1: start, go, run, launch, begin, on, 1.
-  * -101: increase, rise, grow, up, jump.
-  * -90: decrease, reduce, low, les, ease.
-  * 0 - 32767: 0, 1, ..., 32767.
-  * default: -11111.
+* Operations Value Options:
+  * (0): stop, end, terminate, finish, off, exit, 0.
+  * (1): start, go, run, launch, begin, on, 1.
+  * (-99): increase, rise, grow, up, jump.
+  * (-1): decrease, reduce, low, les, ease.
+  * (Number: 0 - 32767): 0, 1, ..., 32767.
+  * (Number: < 0): -404.
+  * (NULL): -404.
 
 # Comment structure 
 Comments are an important and essential part of clear and comprehensible code. Therefor, do we integrate comments
@@ -70,6 +82,14 @@ For further clarification and as a result of active programming we decided to us
     * Arduino IDE-language: [Arduino LANGUAGE](https://www.arduino.cc/reference/en/)
     * Arduino API List: [Arduino List Library  2.1.4](https://nkaaf.github.io/Arduino-List/html/index.html)
 
+## Idea Heritage
+* Gear separation from the Porsche 911 GT3 RS:
+  * 1st Gear: 0 - 71 km/h (Extrapolated RPM: 0 - 820 RPM)
+  * 2nd Gear: 71 - 121 km/h (Extrapolated RPM: 820 - 1398 RPM)
+  * 3rd Gear: 121 - 178 km/h (Extrapolated RPM: 1398 - 2060 RPM)
+  * 4th Gear: 178 - 232 km/h (Extrapolated RPM: 2060 - 2683 RPM)
+  * 5th Gear: 232 - 286 km/h (Extrapolated RPM: 2683 - 3306 RPM)
+  * 6th Gear: 286 - 345 km/h (Extrapolated RPM: 3306 - 4000 RPM)
 ## Design Guide
 
 * Main Design-Guide reference:
@@ -102,7 +122,7 @@ For further clarification and as a result of active programming we decided to us
 * JavaFX:
   * Layers: Stage >> Scene >> Scene-Graph > Root > Branch > Leaf
   * SceneBuilder: JavaFX is functional modeled via SceneBuilder App.
-  * Window Size: 649.0 x 803.0
+  * Window Size: 647.0 x 200.0
   * Window Position: 781.0, 25.0
 
 # Hardware Connection
@@ -111,5 +131,5 @@ For further clarification and as a result of active programming we decided to us
   * Technique: `Serial` (JSerialComm)
   * Port: `/dev/cu.usbmodem141201`
   * Baud Rate: `115200`
-  * Terminal Input: `screen /dev/cu.usbmodem141201 115200`
+  * Terminal Input: `screen /dev/cu.usbmodem141101 115200`
   * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)

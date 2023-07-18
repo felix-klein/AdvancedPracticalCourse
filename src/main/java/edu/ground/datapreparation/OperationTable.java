@@ -73,7 +73,7 @@ public class OperationTable {
             /* If the 'number' is directly a number, what should be the normal case, we can use it. */
             short numberValue = Short.parseShort(number);
             if (numberValue < 0) {
-                return -11111;
+                return -404;
             } /* accept just numbers in the positive spectrum */
             return Short.parseShort(number);
         } catch (NumberFormatException e) {
@@ -100,17 +100,17 @@ public class OperationTable {
                     number.toLowerCase().contains("up") ||
                     number.toLowerCase().contains("jump")) {
                 /* If the 'number' is kind of an increase indication, its number should be -101. */
-                return -101;
+                return -99;
             } else if (number.toLowerCase().contains("decrease") ||
                     number.toLowerCase().contains("reduce") ||
                     number.toLowerCase().contains("low") ||
                     number.toLowerCase().contains("les") ||
                     number.toLowerCase().contains("ease")) {
                 /* If the 'number' is kind of a decrease indication, its number should be -90. */
-                return -90;
+                return -1;
             }
             /* The default error code for indicating a mismatch or an error. */
-            return -11111;
+            return -404;
         }
     }
 
@@ -150,13 +150,21 @@ public class OperationTable {
                     name.toLowerCase().contains("speed") ||
                     name.toLowerCase().contains("rev") ||
                     name.toLowerCase().contains("drill")) {
-                return "RPM";
+                return "RPM"; /* Rotations-per-Minute */
             } else if (name.toLowerCase().contains("light") ||
                     name.toLowerCase().contains("lamp") ||
                     name.toLowerCase().contains("bulb") ||
                     name.toLowerCase().contains("sun") ||
                     name.toLowerCase().contains("led")) {
-                return "LED";
+                return "LED"; /* LED-Light */
+            } else if (name.toLowerCase().contains("degree") ||
+                    name.toLowerCase().contains("hall") ||
+                    name.toLowerCase().contains("angle") ||
+                    name.toLowerCase().contains("delay") ||
+                    name.toLowerCase().contains("commutation") ||
+                    name.toLowerCase().contains("offset") ||
+                    name.toLowerCase().contains("timing")) {
+                return "HDA"; /* Hall-Delay-Angle */
             }
             /* Additions could be added as soon as it is obvious which settings are addable. */
             // TODO: Add future modification parameters for the process into the naming list.
@@ -177,19 +185,46 @@ public class OperationTable {
         String line = "<";
         for (int i = 0; i < operationName.length; i++) {
             /* Adding the operations to the string. */
-            /* If the operation is a time delay, the adjustments of seconds to milliseconds have to be done. */
-            if (operationName[i].equals("TMD")) {
-                timeDelay = operationValue[i] * 1000;
-                line = line + "*" + operationName[i] + ":" + timeDelay + "#";
-            } else {
-                line = line + "*" + operationName[i] + ":" + operationValue[i] + "#";
+            /* Adjusting extreme and normal cases and their influence to the resulting value. */
+            int realisedValue = -404;
+            switch (operationName[i]) {
+                case "EGS" -> {/* Engine-Gear-Shift: An error is a down shift */
+                        if (operationValue[i] == -404) {
+                            realisedValue = -1;
+                        } else if (operationValue[i] > 6) {
+                            realisedValue = 6;
+                        } else {
+                            realisedValue = operationValue[i];
+                        }
+                }
+                case "TMD" -> { /* Time-Duration: Default value is 5 sec. */
+                    realisedValue = (operationValue[i] < 0) ? 5000 : operationValue[i] * 1000;
+                    timeDelay = realisedValue;
+                }
+                case "EST", "LED" -> /* Engine-Status-Type & LED-Light: Engine either on or off */
+                        realisedValue = (operationValue[i] > 0) ? 1 : 0;
+                case "RPM" -> { /* Rotations-per-Minute: Are related to the specifications of the motor */
+                    if (operationValue[i] < 0) {
+                        realisedValue = 0;
+                    } else if (operationValue[i] > 4000) {
+                        realisedValue = 4000;
+                    } else {
+                        realisedValue = operationValue[i];
+                    }
+                }
+                case "HDA" -> { /* Hall-Delay-Angle: The Hall degree is specified by the Infineon shield */
+                    if (operationValue[i] <= 0) {
+                        realisedValue = 0;
+                    } else if (operationValue[i] >= 60) {
+                        realisedValue = 59;
+                    } else {
+                        realisedValue = operationValue[i];
+                    }
+                }
             }
-
-            /* Searching for a time indicator, with whom the time delay can be initialized. */
-            if (operationName[i].equals("TMD")) {
-                timeDelay = operationValue[i] * 1000;
-            }
+            line = line + "*" + operationName[i] + ":" + realisedValue + "#";
         }
+
         /* Put in a default time delay if there was non specified. The default value is always 5 seconds.*/
         if (!line.contains("TMD")) {
             line = line + "*TMD:" + 5000 + "#";

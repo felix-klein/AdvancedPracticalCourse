@@ -8,14 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Small style, READ.ME and warning adjustments to make the code more readable and clean.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/pm/GraphvizModeler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="data_structuring_Admin" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -214,6 +213,7 @@
       <workItem from="1689579948400" duration="9787000" />
       <workItem from="1689595246043" duration="9349000" />
       <workItem from="1689608227165" duration="1659000" />
+      <workItem from="1689665725340" duration="7977000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -403,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689589907135</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Small style, READ.ME and warning adjustments to make the code more readable and clean.">
+      <option name="closed" value="true" />
+      <created>1689614654012</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689614654012</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Additions to the pom.xml and the creation of a README.md." />
     <MESSAGE value="New Structuring of the MainApplication.java and the creation/integration of UML.png." />
     <MESSAGE value="Redesign of the BPMN environment and handling. The pom.xml is now more lightweight but the user need`s to implement a separate Camunda Modeler App." />
     <MESSAGE value="Clean-up in the program and ready to merge to the main branch." />
@@ -458,7 +465,8 @@
     <MESSAGE value="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code." />
     <MESSAGE value="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!" />
     <MESSAGE value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
-    <option name="LAST_COMMIT_MESSAGE" value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
+    <MESSAGE value="Small style, READ.ME and warning adjustments to make the code more readable and clean." />
+    <option name="LAST_COMMIT_MESSAGE" value="Small style, READ.ME and warning adjustments to make the code more readable and clean." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

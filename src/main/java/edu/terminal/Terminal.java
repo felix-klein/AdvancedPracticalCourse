@@ -33,9 +33,8 @@ public class Terminal {
         FileProcessing fileProcessing = new FileProcessing(blueprintProcess);
         /* Saves the Triad object locally. */
         this.blueprintData = fileProcessing.getProcessData();
-        /* Using this process data to initialise and start the Hardware, which does save the blueprint results in
-            a txt file for further investigations.
-         */
+        /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
+        * txt file for further investigations. */
         HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData, "extreme", 1);
         hardwareInitialiseGate.getSENS();
         initialized = true;
