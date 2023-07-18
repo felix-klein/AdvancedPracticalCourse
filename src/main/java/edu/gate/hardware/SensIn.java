@@ -12,9 +12,10 @@ import java.util.ArrayList;
  * @param CP1 is a list of all the sensor values at the Current-Phase-1.
  * @param CP2 is a list of all the sensor values at the Current-Phase-2.
  * @param CP3 is a list of all the sensor values at the Current-Phase-3.
- * @param TSP is the Time-Stamp.
+ * @param TSP is a list of all the respective Time-Stamps gathered.
+ * @param MIS is a list of all the Mission-Initialisation-Stamps (not corresponding to the rest).
  */
-public record SensIn(ArrayList<Float> TMP, ArrayList<Float> VIB, ArrayList<Short> MIC,
-                     ArrayList<Long> CP1, ArrayList<Long> CP2, ArrayList<Long> CP3, ArrayList<Long> TSP) {
+public record SensIn(ArrayList<Float> TMP, ArrayList<Float> VIB, ArrayList<Short> MIC, ArrayList<Long> CP1,
+                     ArrayList<Long> CP2, ArrayList<Long> CP3, ArrayList<Long> TSP, ArrayList<String> MIS) {
 
 }

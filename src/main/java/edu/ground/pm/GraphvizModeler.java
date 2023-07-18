@@ -10,7 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static guru.nidi.graphviz.model.Factory.*;
+import static guru.nidi.graphviz.model.Factory.graph;
+import static guru.nidi.graphviz.model.Factory.node;
 
 public class GraphvizModeler {
     private Graph graph;
@@ -54,12 +55,12 @@ public class GraphvizModeler {
      * @param tasks is the list of Tasks from the Camunda Modeler.
      */
     private void addTasks(ArrayList<Task> tasks) {
-        for (int i=0; i<tasks.size(); i++) {
+        for (int i = 0; i < tasks.size(); i++) {
             String id = tasks.get(i).getId();
             Color color = tasks.get(i).isInAcceptance() ?
-                    Color.rgb(1, 135, 134) : Color.rgb(176,0,32);
+                    Color.rgb(1, 135, 134) : Color.rgb(176, 0, 32);
 
-            graph.with(node(id).with(color, Shape.RECTANGLE, Style.FILLED,Color.WHITE.font(), Label.of("T" + i)));
+            graph.with(node(id).with(color, Shape.RECTANGLE, Style.FILLED, Color.WHITE.font(), Label.of("T" + i)));
         }
     }
 

@@ -8,13 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +209,8 @@
       <workItem from="1689579948400" duration="9787000" />
       <workItem from="1689595246043" duration="9349000" />
       <workItem from="1689608227165" duration="1659000" />
+      <workItem from="1689665725340" duration="13453000" />
+      <workItem from="1689704551511" duration="3808000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -402,7 +400,39 @@
       <option name="project" value="LOCAL" />
       <updated>1689589907135</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Small style, READ.ME and warning adjustments to make the code more readable and clean.">
+      <option name="closed" value="true" />
+      <created>1689614654012</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689614654012</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Major changes to the BordCode.ino to adjust it to the Infineon board. This does include research and results in motor control parameter and other structures.&#10;Modifications in style related areas where conducted as well.">
+      <option name="closed" value="true" />
+      <created>1689686001718</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1689686001718</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Untested Changes to the data processing and file creation of the blueprint data. Adding of an additional variable for the analyses of the processed missions.">
+      <option name="closed" value="true" />
+      <created>1689692549351</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1689692549351</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing.">
+      <option name="closed" value="true" />
+      <created>1689709067799</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1689709067799</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,10 +462,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Additions to the pom.xml and the creation of a README.md." />
-    <MESSAGE value="New Structuring of the MainApplication.java and the creation/integration of UML.png." />
-    <MESSAGE value="Redesign of the BPMN environment and handling. The pom.xml is now more lightweight but the user need`s to implement a separate Camunda Modeler App." />
-    <MESSAGE value="Clean-up in the program and ready to merge to the main branch." />
     <MESSAGE value="JavaFX experimentations and first integrations. It was also changed to use SceneBuilder for operating designs." />
     <MESSAGE value="Scene Creator frontend/layout modifications and first style changes." />
     <MESSAGE value="The scene was adjusted and complemented. There is also a separate Admin Scene. The code is more lightweight now and reduces duplicates as much as possible.&#10;Warning: The Admin page does have a problem with the scroll function. The belief is, that it is an error in JavaFX and not in our application." />
@@ -457,7 +483,11 @@
     <MESSAGE value="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code." />
     <MESSAGE value="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!" />
     <MESSAGE value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
-    <option name="LAST_COMMIT_MESSAGE" value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
+    <MESSAGE value="Small style, READ.ME and warning adjustments to make the code more readable and clean." />
+    <MESSAGE value="Major changes to the BordCode.ino to adjust it to the Infineon board. This does include research and results in motor control parameter and other structures.&#10;Modifications in style related areas where conducted as well." />
+    <MESSAGE value="Untested Changes to the data processing and file creation of the blueprint data. Adding of an additional variable for the analyses of the processed missions." />
+    <MESSAGE value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

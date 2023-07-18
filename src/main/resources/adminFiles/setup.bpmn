@@ -9,7 +9,7 @@
       <bpmn:outgoing>Flow_0rs5uqy</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0c2qzpy" sourceRef="Event_087349h" targetRef="Activity_1rpafcd" />
-    <bpmn:task id="Activity_0aodt8y" name="Engine: Stop">
+    <bpmn:task id="Activity_0aodt8y" name="Light: off">
       <bpmn:incoming>Flow_17x11c2</bpmn:incoming>
       <bpmn:outgoing>Flow_0pvzrto</bpmn:outgoing>
     </bpmn:task>
