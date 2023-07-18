@@ -93,13 +93,15 @@ public class Terminal {
             blueprintSheet.add("Sensor-Data:");
             for (int i = 0; i < sensorData.TSP().size(); i++) { /* Creating the same syntax as the missions */
                 String element0 = "TSP=" + sensorData.TSP().get(i) + "&";
-                String element1 = "TMP=" + sensorData.TMP().get(i) + "&";
-                String element2 = "VIB=" + sensorData.VIB().get(i) + "&";
-                String element3 = "MIC=" + sensorData.MIC().get(i) + "&";
-                String element4 = "CP1=" + sensorData.CP1().get(i) + "&";
-                String element5 = "CP2=" + sensorData.CP2().get(i) + "&";
-                String element6 = "CP3=" + sensorData.CP3().get(i);
-                String allElements = element0 + element1 + element2 + element3 + element4 + element5 + element6;
+                String element1 = "TMP=" + sensorData.TMP().get(i); //+ "&";
+                /*
+                 * String element2 = "VIB=" + sensorData.VIB().get(i) + "&";
+                 * String element3 = "MIC=" + sensorData.MIC().get(i) + "&";
+                 * String element4 = "CP1=" + sensorData.CP1().get(i) + "&";
+                 * String element5 = "CP2=" + sensorData.CP2().get(i) + "&";
+                 * String element6 = "CP3=" + sensorData.CP3().get(i);
+                 */
+                String allElements = element0 + element1; //+ element2 + element3 + element4 + element5 + element6;
                 blueprintSheet.add(allElements);
             }
             Files.write(fullPath, blueprintSheet, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);

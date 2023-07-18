@@ -6,7 +6,7 @@
 TLE9879_Group *shield; /* Declare Shield group object */
 
 /*
-Normal example Input: <*STI:999#><*LED:1#*TMD:5000#> <*LED:0#*TMD:1000#> <*LED:1#*TMD:4500#><*EST:0#>?
+Normal example Input: <*STI:999#><*ALB:1#*TMD:5000#> <*ALB:0#*TMD:1000#><*ALB:0#*TMD:4500#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -26,7 +26,7 @@ const byte EGS = 1; //Engine-Gear-Shift     (0-6  [-1: down-shift, -99: up-shift
 const byte TMD = 2; //Time-Duration         (0-int)
 const byte EST = 3; //Engine-Status-Type    (0/1)
 const byte RPM = 4; //Rotations-per-Minute  (0-4000)
-const byte LED = 5; //LED-Light             (0/1)
+const byte ALB = 5; //Arduino-Light-Bulb    (0/1)
 const byte HDA = 6; //Hall-Delay-Angle      (0-59)
 const byte STI = 7; //Sensor-Time-Interval  (->sensorInterval)
 
@@ -59,18 +59,19 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           }
       } else if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
           creatingMIS = creatingMIS + String("tmd=");
-          imeDelay = missionParams.getValue(i);
+          timeDelay = missionParams.getValue(i);
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
           creatingMIS = creatingMIS + String("est=");
           if (missionParams.getValue(i) == 0) {
-              shield->setMotorMode(STOP_MOTOR)
+              //shield->setMotorMode(STOP_MOTOR);
           } else {
-              shield->setMotorMode(START_MOTOR)
+              //shield->setMotorMode(START_MOTOR);
           }
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
           creatingMIS = creatingMIS + String("rpm=");
           shield->setMotorSpeed(missionParams.getValue(i));
-      } else if (missionNames.getValue(i) == LED) { /* --> LED-Light */
+      } else if (missionNames.getValue(i) == ALB) { /* --> Arduino-Light-Bulb */
+          creatingMIS = creatingMIS + String("alb=");
           if (missionParams.getValue(i) == 1) {
               digitalWrite(13, HIGH);
           } else {
@@ -78,8 +79,9 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           }
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */
           creatingMIS = creatingMIS + String("hda=");
-          shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i))
+          shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
       } else if (missionNames.getValue(i) == STI) { /* --> Sensor-Time-Interval  */
+          creatingMIS = creatingMIS + String("sti=");
           sensorInterval = missionParams.getValue(i);
       }
       creatingMIS = creatingMIS + missionParams.getValue(i) + String("&");
@@ -90,11 +92,13 @@ void applyMission() { /* Helper function to apply the gathered mission. */
 // ---> setup()
 void setup() {
   // --> Infineon shield initialization
-  shield = new TLE9879_Group(1); /* Initialize the shield group with the one shields in the stack */
-  shield->setMode(HALL); /* Set the mode to HALL */
-  shield->setParameter(HALL_POLE_PAIRS, 4); /* Set number of pole pares to 4, for 8 poles */
   //shield->setParameter(HALL_INPUT_A, 0); /* For the case, that the contacts on the HALL input are wrong */
-  shield->setParameter(HALL_ANGLE_DELAY_EN, 1); /* Set the possibility of changing the timing degree */
+  /*
+  shield = new TLE9879_Group(1); // Initialize the shield group with the one shields in the stack
+  shield->setMode(HALL); // Set the mode to HALL
+  shield->setParameter(HALL_POLE_PAIRS, 4); // Set number of pole pares to 4, for 8 poles
+  shield->setParameter(HALL_ANGLE_DELAY_EN, 1); // Set the possibility of changing the timing degree
+  */
 
   // --> Serial communication initialization
   Serial.begin(115200); // Sets the data rate in bits per second (baud) for serial data transmission.
@@ -114,19 +118,19 @@ void loop() {
         } else if (controller == '*') {
           String name = Serial.readStringUntil(':');
           if (name.equals(String("EGS"))) {
-            missionNames.add(EGS);
+            missionNames.add(1);
           } else if (name.equals(String("TMD"))) {
-            missionNames.add(TMD);
+            missionNames.add(2);
           } else if (name.equals(String("EST"))) {
-            missionNames.add(EST);
+            missionNames.add(3);
           } else if (name.equals(String("RPM"))) {
-            missionNames.add(RPM);
-          } else if (name.equals(String("LED"))) {
-            missionNames.add(LED);
+            missionNames.add(4);
+          } else if (name.equals(String("ALB"))) {
+            missionNames.add(5);
           } else if (name.equals(String("HDA"))) {
-            missionNames.add(HDA);
+            missionNames.add(6);
           } else if (name.equals(String("STI"))) {
-            missionNames.add(STI);
+            missionNames.add(7);
           }
           String param = Serial.readStringUntil('#');
           missionParams.add(param.toInt());

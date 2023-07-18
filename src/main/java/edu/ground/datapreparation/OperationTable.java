@@ -156,7 +156,7 @@ public class OperationTable {
                     name.toLowerCase().contains("bulb") ||
                     name.toLowerCase().contains("sun") ||
                     name.toLowerCase().contains("led")) {
-                return "LED"; /* LED-Light */
+                return "ALB"; /* Arduino-Light-Bulb */
             } else if (name.toLowerCase().contains("degree") ||
                     name.toLowerCase().contains("hall") ||
                     name.toLowerCase().contains("angle") ||
@@ -201,7 +201,7 @@ public class OperationTable {
                     realisedValue = (operationValue[i] < 0) ? 5000 : operationValue[i] * 1000;
                     timeDelay = realisedValue;
                 }
-                case "EST", "LED" -> /* Engine-Status-Type & LED-Light: Engine either on or off */
+                case "EST", "ALB" -> /* Engine-Status-Type & Arduino-Light-Bulb: Engine either on or off */
                         realisedValue = (operationValue[i] > 0) ? 1 : 0;
                 case "RPM" -> { /* Rotations-per-Minute: Are related to the specifications of the motor */
                     if (operationValue[i] < 0) {
