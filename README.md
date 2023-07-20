@@ -23,12 +23,13 @@ the dependencies and plugins contained here are as follows:
 * <u>External IDE`s:</u>
   * Camunda Modeler (Version 5.12.0)
   * Arduino IDE (Version 2.1.0)
+  * Scene Builder - Gluon
 
 ## Build and run the project
 
-To get the project and all its windows running:
-
-Make *Maven* executable (run) by use of:\
+To get the project running:
+1. Install Camunda Modeler (Version 5.12.0);
+2. Make *Maven* executable (run) by use of:\
    ```View > Tool Windows > Maven > i17BA > Run Configurations > i17BA [javafx:run]```
 
 ## Code structure and layout
@@ -66,11 +67,12 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * (NULL): -404.
 
 # Comment structure 
-Comments are an important and essential part of clear and comprehensible code. Therefor, do we integrate comments
+Comments are an important and essential part of clear and comprehensible code. Therefor, we do integrate comments
 whenever there is a line of code which is not trivial.\
 For further clarification and as a result of active programming we decided to use two types to comments:\
   * `//` for not completed comments and work, like a 'in construction comment'
-  * `/* */` and `/** **/`for final comments and work, like a 'final/normal comment' 
+  * `/* */` and `/** **/`for final comments and work, like a 'final/normal comment'
+This structure does not count for code which is not written in java.
 
 ## List of References
 
@@ -90,6 +92,7 @@ For further clarification and as a result of active programming we decided to us
   * 4th Gear: 178 - 232 km/h (Extrapolated RPM: 2060 - 2683 RPM)
   * 5th Gear: 232 - 286 km/h (Extrapolated RPM: 2683 - 3306 RPM)
   * 6th Gear: 286 - 345 km/h (Extrapolated RPM: 3306 - 4000 RPM)
+
 ## Design Guide
 
 * Main Design-Guide reference:
@@ -129,7 +132,7 @@ For further clarification and as a result of active programming we decided to us
 * Connection:
   * Type: `Cable`
   * Technique: `Serial` (JSerialComm)
-  * Port: `/dev/cu.usbmodem141201`
+  * Port: `/dev/cu.usbmodem141101`
   * Baud Rate: `115200`
   * Terminal Input: `screen /dev/cu.usbmodem141101 115200`
   * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)

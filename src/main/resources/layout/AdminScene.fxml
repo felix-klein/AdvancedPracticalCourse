@@ -143,7 +143,7 @@
                   </Label>
                     </children>
                 </Pane>
-            <ImageView fx:id="setupImage" fitHeight="500.0" fitWidth="592.5" layoutX="20.0" layoutY="845.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" x="202.3737">
+            <ImageView fx:id="setupImage" fitHeight="500.0" fitWidth="592.5" layoutX="-158.0" layoutY="845.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" x="202.3737">
                <image>
                   <Image url="@../adminFiles/setup.png" />
                </image></ImageView>

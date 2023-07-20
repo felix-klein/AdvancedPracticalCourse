@@ -8,9 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustment of the latest changes to the UML diagram.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +65,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="cleanups&amp;adjustments" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -210,7 +215,8 @@
       <workItem from="1689595246043" duration="9349000" />
       <workItem from="1689608227165" duration="1659000" />
       <workItem from="1689665725340" duration="13453000" />
-      <workItem from="1689704551511" duration="3808000" />
+      <workItem from="1689704551511" duration="4108000" />
+      <workItem from="1689758120007" duration="4094000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -432,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689709067799</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Adjustment of the latest changes to the UML diagram.">
+      <option name="closed" value="true" />
+      <created>1689709563496</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689709563496</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +476,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaFX experimentations and first integrations. It was also changed to use SceneBuilder for operating designs." />
     <MESSAGE value="Scene Creator frontend/layout modifications and first style changes." />
     <MESSAGE value="The scene was adjusted and complemented. There is also a separate Admin Scene. The code is more lightweight now and reduces duplicates as much as possible.&#10;Warning: The Admin page does have a problem with the scroll function. The belief is, that it is an error in JavaFX and not in our application." />
     <MESSAGE value="The frontend is extended with further functionality. The Camunda Modeler files are included and the app opens by request. Files Long-Run and Short-Run are not complete, but that needs to be done if we now how and what to control at the engine. The application is running and the warnings are acceptable. The admin page is added but not configured at all." />
@@ -487,7 +500,8 @@
     <MESSAGE value="Major changes to the BordCode.ino to adjust it to the Infineon board. This does include research and results in motor control parameter and other structures.&#10;Modifications in style related areas where conducted as well." />
     <MESSAGE value="Untested Changes to the data processing and file creation of the blueprint data. Adding of an additional variable for the analyses of the processed missions." />
     <MESSAGE value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
+    <MESSAGE value="Adjustment of the latest changes to the UML diagram." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustment of the latest changes to the UML diagram." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
