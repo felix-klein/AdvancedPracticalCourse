@@ -66,6 +66,46 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
+  "history": [
+    {
+      "searchQuery": "i17ba",
+      "state": "OPENED",
+      "assignee": {
+        "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
+        "username": "felixklein",
+        "fullname": "Felix Klein"
+      }
+    },
+    {
+      "searchQuery": "GitLab",
+      "state": "OPENED",
+      "assignee": {
+        "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
+        "username": "felixklein",
+        "fullname": "Felix Klein"
+      }
+    },
+    {
+      "searchQuery": "GitLab",
+      "state": "OPENED",
+      "author": {
+        "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAuthorFilterValue",
+        "username": "felixklein",
+        "fullname": "Felix Klein"
+      }
+    }
+  ],
+  "lastFilter": {
+    "searchQuery": "GitLab",
+    "state": "OPENED",
+    "author": {
+      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAuthorFilterValue",
+      "username": "felixklein",
+      "fullname": "Felix Klein"
+    }
+  }
+}]]></component>
   <component name="GitLabMergeRequestsSettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "first": "https://gitlab.lrz.de/felixklein/i17ba",
