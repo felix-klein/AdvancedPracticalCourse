@@ -5,8 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.web.WebView?>
 
-<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="803.0" minViewportWidth="751.0" prefHeight="764.0" prefViewportHeight="803.0" prefViewportWidth="751.0" prefWidth="751.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.UserController">
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="803.0" minViewportWidth="751.0" prefHeight="764.0" prefViewportHeight="803.0" prefViewportWidth="751.0" prefWidth="751.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.ProcessController">
     <content>
         <AnchorPane minHeight="803.0" minWidth="751.0" prefHeight="803.0" prefWidth="751.0" style="-fx-background-color: #121212;">
             <children>
@@ -27,15 +28,7 @@
                             </font>
                         </Label>
                     </children></TextFlow>
-                <TextFlow fx:id="warning" layoutX="20.0" layoutY="130.0" prefHeight="85.0" prefWidth="552.5" style="-fx-background-color: #B00020; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="130.0">
-                    <children>
-                        <Label fx:id="warningtxt" alignment="CENTER" prefHeight="85.0" text="Information!&#10;&#10;Do not open the test bench while the motor is being tested. There is a risk of personal injury.&#10;If you are asked to do so for operational reasons, please do not reach into the test station and &#10;do not touch any wiring, as there is also a risk of injury!" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font name="Helvetica" size="12.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </TextFlow>
+            <WebView fx:id="webView" layoutX="20.0" layoutY="130.0" prefWidth="711.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             </children></AnchorPane>
     </content>
 </ScrollPane>
