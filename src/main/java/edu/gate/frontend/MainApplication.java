@@ -33,8 +33,11 @@ public class MainApplication extends Application {
         /* For error handling, the implementation of a try-catch structure is helpful */
         try {
             /* Initializing the scene creation class to create a JavaFX application scene */
-            new SceneControl(true, null, primaryStage);
+            new SceneControl((short) 0, null, primaryStage);
 
+            /* Creation of a secondary Stage for the by-Window (Process and Results) */
+            Stage secondaryStage = new Stage();
+            new SceneControl((short) 2, null, secondaryStage);
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
             fx.printStackTrace();

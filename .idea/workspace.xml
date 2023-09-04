@@ -8,9 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Changes to the clean structure and visualisation. No rudimentary changes but rather a cleanup for the presentation to the coordinator.&#10;Last push before the exams brake.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Creation of THE SWITCH - PREP, to adjust the code and its structure for the rebuilding phase including a new Process Modeler.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ProcessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/ProcessScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,57 +66,57 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="cleanups&amp;adjustments" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "history": [
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;history&quot;: [
     {
-      "searchQuery": "i17ba",
-      "state": "OPENED",
-      "assignee": {
-        "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-        "username": "felixklein",
-        "fullname": "Felix Klein"
+      &quot;searchQuery&quot;: &quot;i17ba&quot;,
+      &quot;state&quot;: &quot;OPENED&quot;,
+      &quot;assignee&quot;: {
+        &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+        &quot;username&quot;: &quot;felixklein&quot;,
+        &quot;fullname&quot;: &quot;Felix Klein&quot;
       }
     },
     {
-      "searchQuery": "GitLab",
-      "state": "OPENED",
-      "assignee": {
-        "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-        "username": "felixklein",
-        "fullname": "Felix Klein"
+      &quot;searchQuery&quot;: &quot;GitLab&quot;,
+      &quot;state&quot;: &quot;OPENED&quot;,
+      &quot;assignee&quot;: {
+        &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+        &quot;username&quot;: &quot;felixklein&quot;,
+        &quot;fullname&quot;: &quot;Felix Klein&quot;
       }
     },
     {
-      "searchQuery": "GitLab",
-      "state": "OPENED",
-      "author": {
-        "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAuthorFilterValue",
-        "username": "felixklein",
-        "fullname": "Felix Klein"
+      &quot;searchQuery&quot;: &quot;GitLab&quot;,
+      &quot;state&quot;: &quot;OPENED&quot;,
+      &quot;author&quot;: {
+        &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAuthorFilterValue&quot;,
+        &quot;username&quot;: &quot;felixklein&quot;,
+        &quot;fullname&quot;: &quot;Felix Klein&quot;
       }
     }
   ],
-  "lastFilter": {
-    "searchQuery": "GitLab",
-    "state": "OPENED",
-    "author": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAuthorFilterValue",
-      "username": "felixklein",
-      "fullname": "Felix Klein"
+  &quot;lastFilter&quot;: {
+    &quot;searchQuery&quot;: &quot;GitLab&quot;,
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;author&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAuthorFilterValue&quot;,
+      &quot;username&quot;: &quot;felixklein&quot;,
+      &quot;fullname&quot;: &quot;Felix Klein&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "https://gitlab.lrz.de/felixklein/i17ba",
-    "second": "cc864adc-dd94-4282-941a-d687bf19afcf"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.lrz.de/felixklein/i17ba&quot;,
+    &quot;second&quot;: &quot;cc864adc-dd94-4282-941a-d687bf19afcf&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -136,6 +141,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/layout&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -152,6 +158,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/layout" />
+      <recent name="$PROJECT_DIR$/target/classes/layout" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/layout" />
       <recent name="$PROJECT_DIR$/target/classes/edu/gate/frontend" />
@@ -270,7 +280,8 @@
       <workItem from="1689840178443" duration="239000" />
       <workItem from="1693591658149" duration="396000" />
       <workItem from="1693635455462" duration="1909000" />
-      <workItem from="1693640975530" duration="1670000" />
+      <workItem from="1693640975530" duration="6533000" />
+      <workItem from="1693825876613" duration="826000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -508,7 +519,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689840354520</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Changes and clean up for a clean rebuild of the new branch.">
+      <option name="closed" value="true" />
+      <created>1693820411354</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1693820411354</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Creation of THE SWITCH - PREP, to adjust the code and its structure for the rebuilding phase including a new Process Modeler.">
+      <option name="closed" value="true" />
+      <created>1693820577553</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1693820577553</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="The scene was adjusted and complemented. There is also a separate Admin Scene. The code is more lightweight now and reduces duplicates as much as possible.&#10;Warning: The Admin page does have a problem with the scroll function. The belief is, that it is an error in JavaFX and not in our application." />
-    <MESSAGE value="The frontend is extended with further functionality. The Camunda Modeler files are included and the app opens by request. Files Long-Run and Short-Run are not complete, but that needs to be done if we now how and what to control at the engine. The application is running and the warnings are acceptable. The admin page is added but not configured at all." />
     <MESSAGE value="The data processing does include all new objects and classes needed to order the Process Data for further investigation and operations.&#10;As an addition, Unversioned Files appeared which could have an impact in the further process but could also just include technical changes!" />
     <MESSAGE value="The data processing is for the first part complete. It was tested lightweight via prints. The result is a data type tree structure, including all the  information directly or with code numbers. &#10;All in all, it is ready to go to the pm are for analysis and hardware preparation." />
     <MESSAGE value="Small changes and actualisation's in the UML.svg file for the transparency." />
@@ -563,7 +588,9 @@
     <MESSAGE value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
     <MESSAGE value="Adjustment of the latest changes to the UML diagram." />
     <MESSAGE value="Changes to the clean structure and visualisation. No rudimentary changes but rather a cleanup for the presentation to the coordinator.&#10;Last push before the exams brake." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to the clean structure and visualisation. No rudimentary changes but rather a cleanup for the presentation to the coordinator.&#10;Last push before the exams brake." />
+    <MESSAGE value="Changes and clean up for a clean rebuild of the new branch." />
+    <MESSAGE value="Creation of THE SWITCH - PREP, to adjust the code and its structure for the rebuilding phase including a new Process Modeler." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation of THE SWITCH - PREP, to adjust the code and its structure for the rebuilding phase including a new Process Modeler." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

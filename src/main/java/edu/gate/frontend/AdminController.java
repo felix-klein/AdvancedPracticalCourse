@@ -37,7 +37,7 @@ public class AdminController extends ComboController implements Initializable {
      */
     @FXML
     private void switchToUserScene(ActionEvent action) throws IOException {
-        new SceneControl(true, action, null);
+        new SceneControl((short) 0, action, null);
     }
 
     /**
