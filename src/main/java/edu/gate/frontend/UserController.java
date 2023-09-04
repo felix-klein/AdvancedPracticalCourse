@@ -34,6 +34,24 @@ public class UserController extends ComboController implements Initializable {
     @FXML
     private void process(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException {
         System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
+        /* Activates the process with settings from the Control Center. */
+        boolean processRunning = MainApplication.getTerminal().startUserProcess(getRequestedFile(getType()),
+                accuracy.getValue(), loopRun.getValue());
+
+        /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
+        if (!processRunning) {
+            infoWindow("No Process Start Possible", "Your admin has not yet initialized the Blueprint" +
+                    " engine into the system. The comparison data to compare your process with ideal values is " +
+                    "missing. Please inform your admin about the missing initialization and wait until it is active.");
+        }
+    }
+
+    /**
+     * Helper method to get the selected type (the running process of choice).
+     *
+     * @return the type as a String.
+     */
+    private String getType() {
         String type;
         /* Determine which of the processes the user selected. */
         if (alpha.isSelected()) { /* alpha: first customized process */
@@ -47,16 +65,7 @@ public class UserController extends ComboController implements Initializable {
         } else { /* shortR: the predefined short run process, also default value*/
             type = "shortR";
         }
-        /* Activates the process with settings from the Control Center. */
-        boolean processRunning = MainApplication.getTerminal().startUserProcess(getRequestedFile(type),
-                accuracy.getValue(), loopRun.getValue());
-
-        /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
-        if (!processRunning) {
-            infoWindow("No Process Start Possible", "Your admin has not yet initialized the Blueprint" +
-                    " engine into the system. The comparison data to compare your process with ideal values is " +
-                    "missing. Please inform your admin about the missing initialization and wait until it is active.");
-        }
+        return type;
     }
 
     /**
