@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,13 +19,13 @@ import java.util.Objects;
 public class HardwareGate {
     private final SensIn SENS;
 
-    public HardwareGate(Triad processFlow, String accuracyLevel, int loopCount) {
+    public HardwareGate(ArrayList<String> preparedData) {
         SerialPort port = SerialPort.getCommPort(Objects.requireNonNull(getSetupData("Port:")));
         int baudRate = Integer.parseInt(Objects.requireNonNull(getSetupData("BaudRate:")));
 
         port.setBaudRate(baudRate);
         port.openPort();
-        SerialThread dataTransfer = new SerialThread(port, processFlow, accuracyAdaption(accuracyLevel), loopCount);
+        SerialThread dataTransfer = new SerialThread(port, preparedData);
 
         this.SENS = dataTransfer.getSENS();
     }

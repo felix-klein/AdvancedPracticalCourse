@@ -2,6 +2,7 @@ package edu.terminal;
 
 import edu.gate.hardware.HardwareGate;
 import edu.gate.hardware.SensIn;
+import edu.ground.cpeeGate.Gateway;
 import edu.ground.datapreparation.FileProcessing;
 import edu.ground.pm.ProcessFlow;
 
@@ -36,15 +37,20 @@ public class Terminal {
      * @param blueprintProcess is a file containing the Process of the blueprint.
      */
     public void initializeBlueprint(File blueprintProcess) {
+        String[] PreparedBlueprintData = blueprintProcess.list();
+        for (int i = 0; i < blueprintProcess.length(); i++) {
+            System.out.println(PreparedBlueprintData[i]);
+        }
+
         /* Convert the XML data of the process and structure it in a Triad object. */
         FileProcessing fileProcessing = new FileProcessing(blueprintProcess);
         /* Saves the Triad object locally. */
         edu.ground.datapreparation.Triad blueprintData = fileProcessing.getProcessData();
         /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
          * txt file for further investigations. */
-        HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData, "extreme", 1);
+        //HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData, "extreme", 1);
         /* Get the sensor data back and save it in a txt file for later analyses. */
-        saveBlueprintData(hardwareInitialiseGate.getSENS());
+        //saveBlueprintData(hardwareInitialiseGate.getSENS());
         initialized = true;
     }
 
@@ -53,21 +59,18 @@ public class Terminal {
      * This method got coled from the UserController to activate the process.
      * To ground/datapreparation/FileProcessing.java.
      *
-     * @param userProcess   is the file including the BPMN notation to analyse.
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @param loopCount     is the number of loop passes, if there is one at all.
      * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public boolean startUserProcess(File userProcess, String accuracyLevel, int loopCount) {
+    public boolean startUserProcess(String type, String accuracyLevel, int loopCount) {
         if (!initialized) {
             return false;
         }
-        /* Convert the XML data of the process and structure it in a Triad object. */
-        FileProcessing fileProcessing = new FileProcessing(userProcess);
-        /* Initialise a triad object with the process data. */
-        edu.ground.datapreparation.Triad processData = fileProcessing.getProcessData();
+        /*  */
+        Gateway cpeeGateway = new Gateway(type, accuracyLevel);
         /* Start the process on the hardware. */
-        HardwareGate hardwareUserGate = new HardwareGate(processData, accuracyLevel, loopCount);
+        HardwareGate hardwareUserGate = new HardwareGate(cpeeGateway.getPreparedData());
         /* Get the sensor data back and use it for the process flow drawing. */
         new ProcessFlow(hardwareUserGate.getSENS());
         return true;

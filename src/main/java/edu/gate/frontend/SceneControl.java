@@ -17,21 +17,16 @@ import java.util.Objects;
 public class SceneControl {
     final String userScene = "/layout/UserScene.fxml";
     final String adminScene = "/layout/AdminScene.fxml";
-    final String processScene = "/layout/ProcessScene.fxml";
     final String resultScene = "/layout/ResultScene.fxml";
 
 
     /**
      * We got a two window principle, the first is the main-window (user or admin) and the second is the by-window
-     * (process or results).
-     *
-     * Initialisation Info:
-     * Main Window - User:  SceneChoice=0, action=null, stage=primaryStage          - main-Window
-     * Switch to User:      SceneChoice=0, action=action, stage=null                - main-Window
-     * Switch to Admin:     SceneChoice=1, action=action, stage=null                - main-Window
-     * Main by-Window:      SceneChoice=2, action=null, stage=secondaryStage        - by-Window
-     * Switch to Process:   SceneChoice=2, action=action, stage=null                - by-Window
-     * Switch to Results:   SceneChoice=3, action=action, stage=null                - by-Window
+     * (results).
+     * First User Scene:        SceneChoice=0, action=null, stage=primaryStage          - main-Window
+     * Switch to User Scene:    SceneChoice=0, action=action, stage=null                - main-Window
+     * Switch to Admin Scene:   SceneChoice=1, action=action, stage=null                - main-Window
+     * Results Scene:           SceneChoice=2, action=action, stage=null                - by-Window
      *
      */
     public SceneControl(short sceneChoice, ActionEvent action, Stage stage) throws IOException {
@@ -39,8 +34,7 @@ public class SceneControl {
         switch (sceneChoice) {
             case 0 -> toScene(sceneChoice, action, stage, userScene); /* main-Window: User */
             case 1 -> toScene(sceneChoice, action, stage, adminScene); /* main-Window: Admin */
-            case 2 -> toScene(sceneChoice, action, stage, processScene); /* by-Window: Process */
-            case 3 -> toScene(sceneChoice, action, stage, resultScene);  /* by-Window: Results */
+            case 2 -> toScene(sceneChoice, action, stage, resultScene);  /* by-Window: Results */
         }
     }
 
@@ -75,12 +69,7 @@ public class SceneControl {
         } else {
             stage.setX(10.0); /* window position */
             stage.setMinWidth(637.0); /* minimum with of the window */
-            stage.setTitle("Motor Quality Control Application"); /* set title */
-            if (sceneChoice == 2) { /* set title */
-                stage.setTitle("Process Modeling Environment");
-            } else {
-                stage.setTitle("Result Representation and Analyses");
-            }
+            stage.setTitle("Result Representation and Analyses"); /* set title */
         }
         stage.show();
     }

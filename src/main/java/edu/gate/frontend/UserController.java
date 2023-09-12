@@ -25,18 +25,17 @@ public class UserController extends ComboController implements Initializable {
     private ChoiceBox<String> accuracy;
 
     /**
-     * The method process is activated, if the Process button is clicked. It is the main method of the whole
+     * The method process is activated, if the Process button ("run test") is clicked. It is the main method of the whole
      * application. If the user did no changes, the default values will be used to process the application.
      *
      * @param mouseEvent is the mouseclick to run the process.
-     * @throws URISyntaxException is an exception handler for the file transformation.
      */
     @FXML
-    private void process(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException {
+    private void process(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
         /* Activates the process with settings from the Control Center. */
-        boolean processRunning = MainApplication.getTerminal().startUserProcess(getRequestedFile(getType()),
-                accuracy.getValue(), loopRun.getValue());
+        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
+                loopRun.getValue());
 
         /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
         if (!processRunning) {
@@ -55,7 +54,7 @@ public class UserController extends ComboController implements Initializable {
         String type;
         /* Determine which of the processes the user selected. */
         if (alpha.isSelected()) { /* alpha: first customized process */
-            type = "alpha"; // just testing
+            type = "alpha";
         } else if (beta.isSelected()) { /* beta: second customized process */
             type = "beta";
         } else if (gamma.isSelected()) { /* gamma: third customized process */
@@ -110,7 +109,7 @@ public class UserController extends ComboController implements Initializable {
     @FXML
     private void alphaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
         System.out.println("Button - Alpha: " + mouseEvent.getPickResult());
-        openCamundaFile("alpha");
+        openModeller("alpha");
     }
 
     /**
@@ -123,7 +122,7 @@ public class UserController extends ComboController implements Initializable {
     @FXML
     private void betaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
         System.out.println("Button - Beta: " + mouseEvent.getPickResult());
-        openCamundaFile("beta");
+        openModeller("beta");
     }
 
     /**
@@ -136,7 +135,7 @@ public class UserController extends ComboController implements Initializable {
     @FXML
     private void gammaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
         System.out.println("Button - Gamma: " + mouseEvent.getPickResult());
-        openCamundaFile("gamma");
+        openModeller("gamma");
     }
 
     /**
@@ -149,7 +148,7 @@ public class UserController extends ComboController implements Initializable {
     @FXML
     private void longRView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
         System.out.println("Button - Long-Run: " + mouseEvent.getPickResult());
-        openCamundaFile("longR");
+        openModeller("longR");
     }
 
     /**
@@ -163,6 +162,6 @@ public class UserController extends ComboController implements Initializable {
     private void shortRView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
         System.out.println("Button - Short-Run: " + mouseEvent.getPickResult());
         /* The passed parameter is unimportant, because the short-run represents the default operation. */
-        openCamundaFile("shortR"); /* could be null with no influence */
+        openModeller("shortR"); /* could be null with no influence */
     }
 }
