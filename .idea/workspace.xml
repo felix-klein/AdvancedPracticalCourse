@@ -8,7 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="UML adjustments for the correct documentation." />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Changes doe to new ideas for the model representation and preparation for the analyses start.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -572,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694712717877</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Changes doe to new ideas for the model representation and preparation for the analyses start.">
+      <option name="closed" value="true" />
+      <created>1694713159889</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1694713159889</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Process Mining and advanced! The goal was to implement the pm package but the data was unclear. This session resulted in an overall session including changes in nearly all related areas.&#10;Most important we got the hardware running and data printing!" />
     <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
     <MESSAGE value="Small Admin adjustments and logical structuring." />
     <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
@@ -627,7 +637,8 @@
     <MESSAGE value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
     <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
     <MESSAGE value="UML adjustments for the correct documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="UML adjustments for the correct documentation." />
+    <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
