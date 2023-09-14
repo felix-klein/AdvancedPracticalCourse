@@ -8,9 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Changes doe to new ideas for the model representation and preparation for the analyses start.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="ReadMe adjustments recording to the new changes.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/pm/ProcessFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -583,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694713159889</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="ReadMe adjustments recording to the new changes.">
+      <option name="closed" value="true" />
+      <created>1694713765749</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1694713765749</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +622,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
     <MESSAGE value="Small Admin adjustments and logical structuring." />
     <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
     <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
@@ -638,7 +646,8 @@
     <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
     <MESSAGE value="UML adjustments for the correct documentation." />
     <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
+    <MESSAGE value="ReadMe adjustments recording to the new changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="ReadMe adjustments recording to the new changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

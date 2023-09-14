@@ -2,8 +2,8 @@ package edu.terminal;
 
 import edu.gate.hardware.HardwareGate;
 import edu.gate.hardware.SensIn;
+import edu.ground.analysis.SensInAnalysis;
 import edu.ground.cpeeGate.Gateway;
-import edu.ground.pm.ProcessFlow;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -61,7 +61,7 @@ public class Terminal {
         /* Start the process on the hardware. */
         HardwareGate hardwareUserGate = new HardwareGate(preparedData);
         /* Get the sensor data back and use it for the process flow drawing. */
-        new ProcessFlow(hardwareUserGate.getSENS());
+        new SensInAnalysis(hardwareUserGate.getSENS());
         return true;
     }
 
