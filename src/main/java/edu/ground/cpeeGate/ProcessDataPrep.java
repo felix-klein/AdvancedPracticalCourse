@@ -6,52 +6,87 @@ import java.util.regex.Pattern;
 
 public class ProcessDataPrep {
     private final ArrayList<String> preparedData;
+
+    /**
+     * The Class ProcessDataPrep is the real data translate between the ruff xml string and the final List of output
+     * Strings for the Hardware.
+     *
+     * @param xmlResponse is the single String which includes the xml response in its raw nature.
+     * @param accuracyLevel is an additional parameter from the user interface for the accuracy of the sensor data.
+     */
     public ProcessDataPrep(String xmlResponse, String accuracyLevel) {
+        /* First, purify the raw xml data back into a list of Strings, and filter the unnecessary beginning. */
         ArrayList<String> purifiedData = responsePurification(xmlResponse);
+        /* Translate the verbal accuracy level into a number. */
         Short accuracyInterval = accuracyAdaption(accuracyLevel);
+        /* Last, translate the purified data into the real output for the Hardware. */
         this.preparedData = new ArrayList<>();
         dataModeling(purifiedData, accuracyInterval);
     }
 
+    /**
+     * Main data Modeler does just initialise the beginning and the end, with the result, that the common line
+     * operations could work in a recursive manner.
+     *
+     * @param purifiedData is the raw prepared data.
+     * @param accInterval is the "accuracy Interval", which describes the Sensor accuracy.
+     */
     private void dataModeling(ArrayList<String> purifiedData, Short accInterval) {
         this.preparedData.add("<*STI:" + accInterval + "#>");
         this.preparedData.addAll(recursiveDataBuilder(purifiedData));
         this.preparedData.set(preparedData.size() - 1, preparedData.get(preparedData.size() - 1) + "?");
     }
 
+    /**
+     * This helper method with the main operations is separate to enable the use of recursive behavior in order to
+     * reduce code duplication in the case of loops (and loops in loops). The method will run through each line and
+     * indicate if a Task or Gateway is starting and will investigate its operations.
+     *
+     * @param purifiedData is the prepared data which includes lines and just the ones with important data.
+     * @return a ArrayList of Strings which are the complete lines for the Hardware.
+     */
     private ArrayList<String> recursiveDataBuilder(ArrayList<String> purifiedData) {
         ArrayList<String> currentInLines = new ArrayList<>();
-        
+
+        /* Loop to investigate each line of the xml or each line of this loop section. */
         for (int i = 0; i < purifiedData.size(); i++) {
             if (purifiedData.get(i).contains("endpoint=\"motor_start\"")) {
+                /* Investigation of a Motor Start. */
                 currentInLines.add("<*EST:1#>");
                 i = i + 6;
             } else if (purifiedData.get(i).contains("endpoint=\"motor_stop\"")) {
+                /* Investigation of a Motor Stop. */
                 currentInLines.add("<*EST:0#>");
                 i = i + 6;
             } else if (purifiedData.get(i).contains("endpoint=\"motor_hull_sensor\"")) {
-                /* HDA Part. */
+                /* Investigation of a Motor Hull Sensor. */
+                /* HDA Part -> The Hall Degree Angle of the motor.*/
                 String fullLine = "<*HDA:";
                 int degree = patternMatcher("<degree>(\\d+)</degree>", purifiedData.get(i+4));
                 fullLine = fullLine + (degree == -1 ? fullLine + "30#" : fullLine + degree + "#");
-                /* TMD Part. */
+                /* TMD Part -> The Time Duration of the action. */
                 int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i+5));
                 fullLine = fullLine + "*TMD:" + (duration == -1 ? fullLine + "0#>" : fullLine + duration + "#>");
                 i = i + 8;
                 currentInLines.add(fullLine);
             } else if (purifiedData.get(i).contains("endpoint=\"motor_gear\"")) {
-                /* RPM Part */
+                /* Investigation of a Motor Gear. */
+                /* RPM Part -> The Rotations Per Minutes of the motor.*/
                 String fullLine = "<*RPM:";
                 int level = patternMatcher("<level>(\\d+)</level>", purifiedData.get(i+4));
                 fullLine = fullLine + (level == -1 ? fullLine + "500#" : fullLine + level + "#");
-                /* TMD Part. */
+                /* TMD Part -> The Time Duration of the action. */
                 int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i+5));
                 fullLine = fullLine + "*TMD:" + (duration == -1 ? fullLine + "0#>" : fullLine + duration + "#>");
                 i = i + 8;
                 currentInLines.add(fullLine);
             } else if (purifiedData.get(i).contains("<loop ")) {
+                /* Investigation of a Loop. */
+                /* How many loop runs does this loop do. */
                 int loopCount = patternMatcher("<_probability>(\\d+)</_probability>", purifiedData.get(i+2));
+                /* ArrayList to save the commands of this loop. */
                 ArrayList<String> recursivePart = new ArrayList<>();
+                /* Part to find the last index of this loop. */
                 int loopEnd = purifiedData.size() - 1;
                 while (loopEnd >= 0 && recursivePart.isEmpty()) {
                     if (purifiedData.get(loopEnd).contains("</loop>")) {
@@ -59,17 +94,25 @@ public class ProcessDataPrep {
                     }
                     loopEnd--;
                 }
+                /* Recursive call of this method to investigate the lines of this loop sections at its own. */
                 ArrayList<String> loopInLines = recursiveDataBuilder(recursivePart);
                 while (loopCount > 0) {
                     currentInLines.addAll(loopInLines);
                     loopCount--;
                 }
-                i = loopEnd + 1;
+                i = loopEnd + 1; /* Continue at the end of the loop */
             }
         }
         return currentInLines;
     }
 
+    /**
+     * Helper for recursiveDataBuilder to find the data in String sections which do have a specific pattern.
+     *
+     * @param regex is the pattern.
+     * @param searchArea is the area in which this pattern could be.
+     * @return the value in the pattern or a -1 for no pattern which results in a default value.
+     */
     private int patternMatcher(String regex, String searchArea) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(searchArea);

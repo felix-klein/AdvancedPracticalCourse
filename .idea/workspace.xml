@@ -8,24 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Partly working web view with the wrong browser. The Overall view is correct.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ProcessController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/camundaFiles/LongRun.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/camundaFiles/ShortRun.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/camundaFiles/alpha.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/camundaFiles/beta.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/camundaFiles/gamma.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/ProcessScene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +285,7 @@
       <workItem from="1693826817514" duration="4904000" />
       <workItem from="1693840372376" duration="684000" />
       <workItem from="1693896856175" duration="675000" />
-      <workItem from="1693898175526" duration="29643000" />
+      <workItem from="1693898175526" duration="33925000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -565,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693840072423</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing.">
+      <option name="closed" value="true" />
+      <created>1694543957309</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1694543957309</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small changes and actualisation's in the UML.svg file for the transparency." />
     <MESSAGE value="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well." />
     <MESSAGE value="Addendum/Improvement: Logical adjustment in the sense of accepting Exclusive gateways, with specific rules, for easier loop handling." />
     <MESSAGE value="Process Mining and advanced! The goal was to implement the pm package but the data was unclear. This session resulted in an overall session including changes in nearly all related areas.&#10;Most important we got the hardware running and data printing!" />
@@ -620,7 +617,8 @@
     <MESSAGE value="Creation of THE SWITCH - PREP, to adjust the code and its structure for the rebuilding phase including a new Process Modeler." />
     <MESSAGE value="First changes to the frontend structure and the inclusion of the Process JavaFX interface. Still not working but we consider a first save for refactoring." />
     <MESSAGE value="Partly working web view with the wrong browser. The Overall view is correct." />
-    <option name="LAST_COMMIT_MESSAGE" value="Partly working web view with the wrong browser. The Overall view is correct." />
+    <MESSAGE value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

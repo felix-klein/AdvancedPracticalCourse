@@ -3,10 +3,8 @@ package edu.terminal;
 import edu.gate.hardware.HardwareGate;
 import edu.gate.hardware.SensIn;
 import edu.ground.cpeeGate.Gateway;
-import edu.ground.datapreparation.FileProcessing;
 import edu.ground.pm.ProcessFlow;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
@@ -32,25 +30,17 @@ public class Terminal {
 
     /**
      * From gate/frontend/AdminController.java
-     * This method got coled from the AdminController to initialise the blueprint data via the blueprint engine.
-     *
-     * @param blueprintProcess is a file containing the Process of the blueprint.
+     * This method got called from the AdminController to initialise the blueprint data via the blueprint engine.
      */
-    public void initializeBlueprint(File blueprintProcess) {
-        String[] PreparedBlueprintData = blueprintProcess.list();
-        for (int i = 0; i < blueprintProcess.length(); i++) {
-            System.out.println(PreparedBlueprintData[i]);
-        }
+    public void initializeBlueprint() {
+        /* Convert the XML data of the blueprint into the data command list for the Hardware. */
+        ArrayList<String> blueprintData = new Gateway("blueprint", "extreme").getPreparedData();
 
-        /* Convert the XML data of the process and structure it in a Triad object. */
-        FileProcessing fileProcessing = new FileProcessing(blueprintProcess);
-        /* Saves the Triad object locally. */
-        edu.ground.datapreparation.Triad blueprintData = fileProcessing.getProcessData();
         /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
          * txt file for further investigations. */
-        //HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData, "extreme", 1);
+        HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
         /* Get the sensor data back and save it in a txt file for later analyses. */
-        //saveBlueprintData(hardwareInitialiseGate.getSENS());
+        saveBlueprintData(hardwareInitialiseGate.getSENS());
         initialized = true;
     }
 
@@ -60,17 +50,16 @@ public class Terminal {
      * To ground/datapreparation/FileProcessing.java.
      *
      * @param accuracyLevel is the level of accuracy for the sensor data.
-     * @param loopCount     is the number of loop passes, if there is one at all.
      * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public boolean startUserProcess(String type, String accuracyLevel, int loopCount) {
+    public boolean startUserProcess(String type, String accuracyLevel) {
         if (!initialized) {
-            return false;
+            return false; /* False if there is no blueprint data already from the admin */
         }
-        /*  */
-        Gateway cpeeGateway = new Gateway(type, accuracyLevel);
+        /* Get and convert the xml data of the modeller to the String List for the Hardware.*/
+        ArrayList<String> preparedData = new Gateway(type, accuracyLevel).getPreparedData();
         /* Start the process on the hardware. */
-        HardwareGate hardwareUserGate = new HardwareGate(cpeeGateway.getPreparedData());
+        HardwareGate hardwareUserGate = new HardwareGate(preparedData);
         /* Get the sensor data back and use it for the process flow drawing. */
         new ProcessFlow(hardwareUserGate.getSENS());
         return true;

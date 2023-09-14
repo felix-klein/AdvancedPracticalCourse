@@ -4,11 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Objects;
 
 /**
  * The ComboController is a mather class for the AdminController and UserController to inherit methods.
@@ -121,7 +119,7 @@ public class ComboController {
 
     /**
      * This Method opens the Browser with the tap of the correct modeller instance or a picture of the process model.
-     * TODO:  New and still needs testing as well as commenting.
+     * TODO: Open Modeller needs real options, until now there are just dummies.
      * @param type is the selected model.
      */
     protected void openModeller(String type) {
@@ -143,8 +141,9 @@ public class ComboController {
                 Desktop.getDesktop().browse(uri);
             } else {
                 // Desktop is not supported (e.g., on some Linux distributions)
-                System.out.println("Desktop is not supported on this platform. Or you need to change your default" +
-                        " web browser!");
+                infoWindow("Browser Error", "You need to change your default web browser or inform " +
+                        "your Admin!");
+                System.out.println("You need to change your default web browser or inform your Admin!");
             }
         } catch (URISyntaxException | IOException e) {
             infoWindow("Modeller Error", "The link to the modeller is missing or wrong." +
