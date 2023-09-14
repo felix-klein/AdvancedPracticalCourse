@@ -16,7 +16,5 @@ public class ProcessFlow {
          *  3. Sensor-Data:
          *  4. TSP=3422&TMP=28.23&VIB=120&MIC=20&CP1=2.5&CP2=2.5&CP3=2.5
          */
-        //TODO: Still work to do, manly because there were no tests and there where errors by operation.
-        //new GraphvizModeler(processData);
     }
 }
