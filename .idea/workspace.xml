@@ -8,14 +8,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/HardwareGate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/EFT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/FileProcessing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Flow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Gateway.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/OperationTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/datapreparation/Triad.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,31 +141,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "TheSwitch-Prep",
-    "last_opened_file_path": "/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/layout",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.33678162",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.sync",
-    "spring.configuration.checksum": "991b882e344ef920b767eb94bddfc491",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TheSwitch-Prep&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/layout&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33678162&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;991b882e344ef920b767eb94bddfc491&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/layout" />
@@ -285,7 +294,8 @@
       <workItem from="1693826817514" duration="4904000" />
       <workItem from="1693840372376" duration="684000" />
       <workItem from="1693896856175" duration="675000" />
-      <workItem from="1693898175526" duration="33925000" />
+      <workItem from="1693898175526" duration="34753000" />
+      <workItem from="1694709264516" duration="905000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -563,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694543957309</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well.">
+      <option name="closed" value="true" />
+      <created>1694707955818</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1694707955818</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +611,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Addendum/Improvement: We forgot to implement the Gateway node. As a result, did we add it to all areas where needed and we adjusted the UML diagram as well." />
     <MESSAGE value="Addendum/Improvement: Logical adjustment in the sense of accepting Exclusive gateways, with specific rules, for easier loop handling." />
     <MESSAGE value="Process Mining and advanced! The goal was to implement the pm package but the data was unclear. This session resulted in an overall session including changes in nearly all related areas.&#10;Most important we got the hardware running and data printing!" />
     <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
@@ -618,7 +635,8 @@
     <MESSAGE value="First changes to the frontend structure and the inclusion of the Process JavaFX interface. Still not working but we consider a first save for refactoring." />
     <MESSAGE value="Partly working web view with the wrong browser. The Overall view is correct." />
     <MESSAGE value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
+    <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

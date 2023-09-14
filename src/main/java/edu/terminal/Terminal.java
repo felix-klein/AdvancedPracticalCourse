@@ -83,17 +83,8 @@ public class Terminal {
             sensorData.MIS().replaceAll(String::toUpperCase);
             blueprintSheet.addAll(sensorData.MIS());
             blueprintSheet.add("Sensor-Data:");
-            for (int i = 0; i < sensorData.TSP().size(); i++) { /* Creating the same syntax as the missions */
-                String element0 = "TSP=" + sensorData.TSP().get(i) + "&";
-                String element1 = "TMP=" + sensorData.TMP().get(i); //+ "&";
-                /*
-                 * String element2 = "VIB=" + sensorData.VIB().get(i) + "&";
-                 * String element3 = "MIC=" + sensorData.MIC().get(i) + "&";
-                 * String element4 = "CP1=" + sensorData.CP1().get(i) + "&";
-                 * String element5 = "CP2=" + sensorData.CP2().get(i) + "&";
-                 * String element6 = "CP3=" + sensorData.CP3().get(i);
-                 */
-                String allElements = element0 + element1; //+ element2 + element3 + element4 + element5 + element6;
+            for (int i = 0; i < sensorData.TSP().size(); i++) {
+                String allElements = getAllElements(sensorData, i);
                 blueprintSheet.add(allElements);
             }
             Files.write(fullPath, blueprintSheet, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
@@ -101,5 +92,26 @@ public class Terminal {
             System.out.println("The saving or writing of the blueprint data does not work as expected!");
             e.getStackTrace();
         }
+    }
+
+    /**
+     * Construct a String including all the sensor data which is correlated to a specific time. Helper to create easier
+     * to read code.
+     *
+     * @param sensorData is the SensIn object including all the sensor data of the hardware.
+     * @param i is the specific object line, which will be combined.
+     * @return a String which is all the sensor data of a line in one object.
+     */
+    private static String getAllElements(SensIn sensorData, int i) {
+        String element0 = "TSP=" + sensorData.TSP().get(i) + "&";
+        String element1 = "TMP=" + sensorData.TMP().get(i); //+ "&";
+        /*
+         * String element2 = "VIB=" + sensorData.VIB().get(i) + "&";
+         * String element3 = "MIC=" + sensorData.MIC().get(i) + "&";
+         * String element4 = "CP1=" + sensorData.CP1().get(i) + "&";
+         * String element5 = "CP2=" + sensorData.CP2().get(i) + "&";
+         * String element6 = "CP3=" + sensorData.CP3().get(i);
+         */
+        return element0 + element1; // + element2 + element3 + element4 + element5 + element6
     }
 }

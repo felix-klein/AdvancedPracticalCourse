@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -61,24 +60,7 @@
                   <ChoiceBox fx:id="accuracy" layoutX="20.0" layoutY="41.0" prefWidth="159.11718" />
                </children>
             </Pane>
-            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
-               <children>
-                  <Label layoutX="10.0" layoutY="10.0" text="Loop runs" textFill="#5e94d4">
-                     <font>
-                        <Font name="Helvetica" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="iloop" depthTest="DISABLE" layoutX="174.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonLoops" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Helvetica" size="10.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <Spinner fx:id="loopRun" layoutX="20.0" layoutY="41.0" />
-               </children>
-            </Pane>
+            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0" />
             <Pane layoutX="20.0" layoutY="260.0" prefHeight="187.0" prefWidth="388.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.topAnchor="260.0">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" text="Process Selection" textFill="#5e94d4">
@@ -129,7 +111,7 @@
                   <Font name="Helvetica" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="Go" layoutX="536.5" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#process" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="WHITE" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="424.0">
+            <Button fx:id="Go" layoutX="412.5" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#process" prefHeight="105.0" prefWidth="200.0" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="#b00020" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
                <font>
                   <Font name="Helvetica" size="12.0" />
                </font>

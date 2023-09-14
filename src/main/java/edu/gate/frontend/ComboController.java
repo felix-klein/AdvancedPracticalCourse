@@ -34,20 +34,6 @@ public class ComboController {
      * @param mouseEvent is the mouseclick to show the info window.
      */
     @FXML
-    private void infoButtonLoops(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("Button - info loops: " + mouseEvent.getPickResult());
-        String headline = "Loop runs";
-        String text = "If you have consciously or unconsciously integrated one or more loops in your test " +
-                "process, you must specify the number of loop runs intended.";
-        infoWindow(headline, text);
-    }
-
-    /**
-     * This method does show us the information window from the Loop area.
-     *
-     * @param mouseEvent is the mouseclick to show the info window.
-     */
-    @FXML
     private void infoButtonSelection(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - info selection: " + mouseEvent.getPickResult());
         String headline = "Process Selection";

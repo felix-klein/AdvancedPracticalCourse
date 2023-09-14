@@ -40,7 +40,7 @@ public class MainApplication extends Application {
             new SceneControl((short) 2, null, secondaryStage);
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
-            fx.printStackTrace();
+            fx.getCause();
         }
     }
 

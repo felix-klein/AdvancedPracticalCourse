@@ -29,7 +29,7 @@ public class ProcessDataPrep {
      * operations could work in a recursive manner.
      *
      * @param purifiedData is the raw prepared data.
-     * @param accInterval is the "accuracy Interval", which describes the Sensor accuracy.
+     * @param accInterval is the "accuracy interval", which describes the Sensor accuracy.
      */
     private void dataModeling(ArrayList<String> purifiedData, Short accInterval) {
         this.preparedData.add("<*STI:" + accInterval + "#>");
@@ -60,7 +60,7 @@ public class ProcessDataPrep {
                 i = i + 6;
             } else if (purifiedData.get(i).contains("endpoint=\"motor_hull_sensor\"")) {
                 /* Investigation of a Motor Hull Sensor. */
-                /* HDA Part -> The Hall Degree Angle of the motor.*/
+                /* HDA Part -> The Hall Degree Angle of the motor. */
                 String fullLine = "<*HDA:";
                 int degree = patternMatcher("<degree>(\\d+)</degree>", purifiedData.get(i+4));
                 fullLine = fullLine + (degree == -1 ? fullLine + "30#" : fullLine + degree + "#");

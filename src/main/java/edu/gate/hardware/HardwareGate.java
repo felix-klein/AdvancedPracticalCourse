@@ -1,7 +1,6 @@
 package edu.gate.hardware;
 
 import com.fazecast.jSerialComm.SerialPort;
-import edu.ground.datapreparation.Triad;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -52,23 +51,6 @@ public class HardwareGate {
             e.getStackTrace();
         }
         return null;
-    }
-
-    /**
-     * This helper method, reads the accuracy on a verbal level and transfers it into milliseconds for the sensor
-     * data gathering.
-     *
-     * @param accuracyLevel in a verbal String level.
-     * @return a short which is the number of milliseconds in which the sensors should gather data.
-     */
-    private short accuracyAdaption(String accuracyLevel) {
-        return switch (accuracyLevel) {
-            case "extreme" -> 9; /* Every 10 milliseconds (10) */
-            case "intense" -> 99; /* Every 0.1 second (100) */
-            case "high" -> 249; /* Every 0.25 second (250) */
-            case "1-for-1" -> 999; /* Every 1 second (1000) */
-            default -> 499; /* "basic" is the default, with every 1/2 second (500) */
-        };
     }
 
     /**
