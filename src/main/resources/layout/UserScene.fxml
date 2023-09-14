@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -61,24 +60,7 @@
                   <ChoiceBox fx:id="accuracy" layoutX="20.0" layoutY="41.0" prefWidth="159.11718" />
                </children>
             </Pane>
-            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
-               <children>
-                  <Label layoutX="10.0" layoutY="10.0" text="Loop runs" textFill="#5e94d4">
-                     <font>
-                        <Font name="Helvetica" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="iloop" depthTest="DISABLE" layoutX="174.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonLoops" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Helvetica" size="10.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <Spinner fx:id="loopRun" layoutX="20.0" layoutY="41.0" />
-               </children>
-            </Pane>
+            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0" />
             <Pane layoutX="20.0" layoutY="260.0" prefHeight="187.0" prefWidth="388.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.topAnchor="260.0">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" text="Process Selection" textFill="#5e94d4">
@@ -129,7 +111,7 @@
                   <Font name="Helvetica" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="Go" layoutX="536.5" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#process" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="WHITE" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="424.0">
+            <Button fx:id="Go" layoutX="412.5" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#process" prefHeight="105.0" prefWidth="200.0" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="#b00020" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
                <font>
                   <Font name="Helvetica" size="12.0" />
                </font>
@@ -210,7 +192,7 @@
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="41.0" prefHeight="226.0" prefWidth="408.0" text="You have a high degree of flexibility for customizing the processes, but nevertheless you have to comply with a minor set of rules:&#10;- Operation Layout: [Opertion : value] (The layout needs to consist of an ':'&#10;          and should have the operation on the left and its value on its right.)&#10;-Operation List: [mandatory line break] (If you have to place several&#10;          operations in one task, a line break is absolutely mandatory.)&#10;- Values: [type short, just positive] (Numbers of type short are integers and&#10;          numbers in a window of 0 to 32767.)&#10;- Naming: [rather optional] (The naming for the operations is rather optional,&#10;          but we consist of using common, clear and short terms.)&#10;- Gateways: [exclusive] (The exclusive gateway in this setup is used to&#10;          signal a loop, and nothing else. Do not use other gateways.)&#10;- Start/End: [Start- &amp; End- Event] (The start/end of the process have to be&#10;          their corresponding Events. Other events are forbidden.)&#10;" textFill="WHITE" wrapText="true">
+                  <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="41.0" prefHeight="226.0" prefWidth="408.0" text="When choosing to customize processes or select predefined ones, it helps to internalize the following description to make modeling as pleasant as possible:&#10;&#10;- Start Motor / Stop Motor:  Both tasks do not occupy arguments, since they&#10;          start or stop the engine directly, respectively.&#10;- Throttle Level:  Describes the speed of the motor and therefore includes&#10;          the arguments RPM (rotations per minute) and Duration for how long&#10;          the motor should operate in this state.&#10;- Motor Degree:  Degree specifies the time at which the pole change is&#10;          performed in relation to the stator-rotor ratio. Therefore here the&#10;          arguments Degree and Duration.&#10;&gt; Stop: The stop acts like an emergency stop with immediate effect when&#10;          it is reached for all sensors and the motor." textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>

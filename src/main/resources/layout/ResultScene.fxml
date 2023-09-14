@@ -6,9 +6,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="803.0" minViewportWidth="781.0" prefHeight="764.0" prefViewportHeight="803.0" prefViewportWidth="781.0" prefWidth="649.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.UserController">
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="803.0" minViewportWidth="751.0" prefHeight="764.0" prefViewportHeight="803.0" prefViewportWidth="751.0" prefWidth="751.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.ResultController">
     <content>
-        <AnchorPane minHeight="803.0" minWidth="781.0" prefHeight="803.0" prefWidth="781.0" style="-fx-background-color: #121212;">
+        <AnchorPane minHeight="803.0" minWidth="751.0" prefHeight="803.0" prefWidth="751.0" style="-fx-background-color: #121212;">
             <children>
                 <TextFlow fx:id="header" layoutX="20.0" layoutY="5.0" prefHeight="30.0" prefWidth="552.5" style="-fx-background-color: #0065bd; -fx-border-radius: 1; -fx-background-radius: 1;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                     <children>

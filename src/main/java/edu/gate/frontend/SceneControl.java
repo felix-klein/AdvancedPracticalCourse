@@ -17,21 +17,24 @@ import java.util.Objects;
 public class SceneControl {
     final String userScene = "/layout/UserScene.fxml";
     final String adminScene = "/layout/AdminScene.fxml";
+    final String resultScene = "/layout/ResultScene.fxml";
+
 
     /**
-     * Initialisation Info:
-     * Main Window - User: toUserScene=true, action=null, stage=primaryStage
-     * Switch to User: toUserScene=true, action=action, stage=null
-     * Switch to Admin: toUserScene=false, action=action, stage=null
+     * We got a two window principle, the first is the main-window (user or admin) and the second is the by-window
+     * (results).
+     * First User Scene:        SceneChoice=0, action=null, stage=primaryStage          - main-Window
+     * Switch to User Scene:    SceneChoice=0, action=action, stage=null                - main-Window
+     * Switch to Admin Scene:   SceneChoice=1, action=action, stage=null                - main-Window
+     * Results Scene:           SceneChoice=2, action=action, stage=null                - by-Window
+     *
      */
-    public SceneControl(boolean toUserScene, ActionEvent action, Stage stage) throws IOException {
-        /* If else statement to decide if we want to initialise the user or admin page */
-        if (toUserScene) {
-            /* If it is the creation of the main page, the action value will be null */
-            toScene(action, stage, userScene); /* User-Page or First-User-Page */
-        } else {
-            /* In this case, the 'stage' parameter will always be null. */
-            toScene(action, null, adminScene); /* Admin-Page */
+    public SceneControl(short sceneChoice, ActionEvent action, Stage stage) throws IOException {
+        /* Switch statement to initialize the correct window in its correct position */
+        switch (sceneChoice) {
+            case 0 -> toScene(sceneChoice, action, stage, userScene); /* main-Window: User */
+            case 1 -> toScene(sceneChoice, action, stage, adminScene); /* main-Window: Admin */
+            case 2 -> toScene(sceneChoice, action, stage, resultScene);  /* by-Window: Results */
         }
     }
 
@@ -42,7 +45,7 @@ public class SceneControl {
      * @param path   is the scene to switch to.
      * @throws IOException to handle event errors.
      */
-    public void toScene(ActionEvent action, Stage stageOption, String path) throws IOException {
+    public void toScene(short sceneChoice, ActionEvent action, Stage stageOption, String path) throws IOException {
         /* JavaFX root element for the first group of Scene-Graph elements (element grouping - low) */
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(path))); /* load the fxml file */
 
@@ -53,11 +56,21 @@ public class SceneControl {
         /* If there was no stage delivered, we need to create one via the action */
         Stage stage = stageOption == null ? (Stage) ((Node) action.getSource()).getScene().getWindow() : stageOption;
         stage.setScene(scene);
-        stage.setX(781.0); /* window position */
         stage.setY(25.0); /* window position */
-        stage.setMinWidth(647.0); /* minimum with of the window */
         stage.setMinHeight(200.0); /* maximum with of the window */
-        stage.setTitle("Motor Quality Control Application"); /* set title */
+        if (sceneChoice<=1) {
+            stage.setX(781.0); /* window position */
+            stage.setMinWidth(647.0); /* minimum with of the window */
+            if (sceneChoice == 0) { /* set title */
+                stage.setTitle("User - Motor Quality Control Application");
+            } else {
+                stage.setTitle("Admin - Motor Quality Control Application");
+            }
+        } else {
+            stage.setX(10.0); /* window position */
+            stage.setMinWidth(637.0); /* minimum with of the window */
+            stage.setTitle("Result Representation and Analyses"); /* set title */
+        }
         stage.show();
     }
 }

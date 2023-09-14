@@ -5,11 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,23 +17,19 @@ public class UserController extends ComboController implements Initializable {
     @FXML
     private RadioButton alpha, beta, gamma, longR; /*  shortR: isn't needed, because it is the default value */
     @FXML
-    private Spinner<Integer> loopRun;
-    @FXML
     private ChoiceBox<String> accuracy;
 
     /**
-     * The method process is activated, if the Process button is clicked. It is the main method of the whole
+     * The method process is activated, if the Process button ("run test") is clicked. It is the main method of the whole
      * application. If the user did no changes, the default values will be used to process the application.
      *
      * @param mouseEvent is the mouseclick to run the process.
-     * @throws URISyntaxException is an exception handler for the file transformation.
      */
     @FXML
-    private void process(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException {
+    private void process(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
         /* Activates the process with settings from the Control Center. */
-        boolean processRunning = MainApplication.getTerminal().startUserProcess(getRequestedFile(getType()),
-                accuracy.getValue(), loopRun.getValue());
+        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue());
 
         /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
         if (!processRunning) {
@@ -55,14 +48,14 @@ public class UserController extends ComboController implements Initializable {
         String type;
         /* Determine which of the processes the user selected. */
         if (alpha.isSelected()) { /* alpha: first customized process */
-            type = "alpha"; // just testing
+            type = "alpha";
         } else if (beta.isSelected()) { /* beta: second customized process */
             type = "beta";
         } else if (gamma.isSelected()) { /* gamma: third customized process */
             type = "gamma";
         } else if (longR.isSelected()) { /* longR: the predefined long run process */
             type = "longR";
-        } else { /* shortR: the predefined short run process, also default value*/
+        } else { /* shortR: the predefined short run process, also default value */
             type = "shortR";
         }
         return type;
@@ -76,24 +69,18 @@ public class UserController extends ComboController implements Initializable {
      */
     @FXML
     private void switchToAdminScene(ActionEvent action) throws IOException {
-        new SceneControl(false, action, null);
+        new SceneControl((short) 1, action, null);
     }
 
     /**
      * This method is a default method via the Initializable implementation. It's main purpose is to initialize
-     * the box areas loopRun (Spinner) and accuracy (ChoiceBox).
+     * the box accuracy (ChoiceBox).
      *
      * @param url            is a JavaFX argument.
      * @param resourceBundle is a JavaFX argument.
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /* Initializing the Spinner for the loop runs */
-        SpinnerValueFactory<Integer> spinnerLoops =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20); /* interval */
-        spinnerLoops.setValue(1); /* default */
-        loopRun.setValueFactory(spinnerLoops);
-
         /* Initializing the ChoiceBox for the accuracy levels */
         String[] level = new String[]{"extreme", "intense", "high", "basic", "1-for-1"}; /* choice options */
         accuracy.getItems().addAll(level);
@@ -104,65 +91,55 @@ public class UserController extends ComboController implements Initializable {
      * This method opens the Camunda Modeler with the ALPHA file via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     * @throws IOException        is an exception handler for the OS selection.
      */
     @FXML
-    private void alphaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+    private void alphaView(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - Alpha: " + mouseEvent.getPickResult());
-        openCamundaFile("alpha");
+        openModeller("alpha");
     }
 
     /**
      * This method opens the Camunda Modeler with the BETA file via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     * @throws IOException        is an exception handler for the OS selection.
      */
     @FXML
-    private void betaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+    private void betaView(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - Beta: " + mouseEvent.getPickResult());
-        openCamundaFile("beta");
+        openModeller("beta");
     }
 
     /**
      * This method opens the Camunda Modeler with the GAMMA file via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     * @throws IOException        is an exception handler for the OS selection.
      */
     @FXML
-    private void gammaView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+    private void gammaView(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - Gamma: " + mouseEvent.getPickResult());
-        openCamundaFile("gamma");
+        openModeller("gamma");
     }
 
     /**
      * This method opens the Camunda Modeler with the LONG-RUN file via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     * @throws IOException        is an exception handler for the OS selection.
      */
     @FXML
-    private void longRView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+    private void longRView(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - Long-Run: " + mouseEvent.getPickResult());
-        openCamundaFile("longR");
+        openModeller("longR");
     }
 
     /**
      * This method opens the Camunda Modeler with the SHORT-RUN file via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     * @throws IOException        is an exception handler for the OS selection.
      */
     @FXML
-    private void shortRView(javafx.scene.input.MouseEvent mouseEvent) throws URISyntaxException, IOException {
+    private void shortRView(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - Short-Run: " + mouseEvent.getPickResult());
         /* The passed parameter is unimportant, because the short-run represents the default operation. */
-        openCamundaFile("shortR"); /* could be null with no influence */
+        openModeller("shortR"); /* could be null with no influence */
     }
 }

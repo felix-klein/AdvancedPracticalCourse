@@ -3,10 +3,10 @@ package edu.gate.frontend;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
-import java.io.File;
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Objects;
 
 /**
  * The ComboController is a mather class for the AdminController and UserController to inherit methods.
@@ -25,20 +25,6 @@ public class ComboController {
         String text = "Accuracy describes how accurate the sensor data for the compliance check should be." +
                 " We recommend the level basic to ensure both " +
                 "runtime and correctness of the compliance checking results.";
-        infoWindow(headline, text);
-    }
-
-    /**
-     * This method does show us the information window from the Loop area.
-     *
-     * @param mouseEvent is the mouseclick to show the info window.
-     */
-    @FXML
-    private void infoButtonLoops(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("Button - info loops: " + mouseEvent.getPickResult());
-        String headline = "Loop runs";
-        String text = "If you have consciously or unconsciously integrated one or more loops in your test " +
-                "process, you must specify the number of loop runs intended.";
         infoWindow(headline, text);
     }
 
@@ -118,67 +104,37 @@ public class ComboController {
     }
 
     /**
-     * This method is needed to open the Camunda Modeler with the corresponding file, and it's process.
-     *
-     * @param type is the filename to open.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     * @throws IOException        is an exception handler for the OS selection.
+     * This Method opens the Browser with the tap of the correct modeller instance or a picture of the process model.
+     * TODO: Open Modeller needs real options, until now there are just dummies.
+     * @param type is the selected model.
      */
-    protected void openCamundaFile(String type) throws URISyntaxException, IOException {
-        File file = getRequestedFile(type); /* to get the requested and needed file */
-
-        /* Control if the file is even existing with its path, and return an info window for the user. */
-        if (!file.exists()) {
-            infoWindow("File Error", "The file for the process is missing of saved wrongly." +
-                    " Please inform your Admin!");
-        } else {
-            openInCorrectOS(file); /* open the file, but with the right comment for the OS */
-        }
-    }
-
-    /**
-     * This method is a helper to reduce code duplication and to be open for the Terminal call via UserController.
-     *
-     * @param type is the id name of the requested file.
-     * @return the file of type.
-     * @throws URISyntaxException is an exception handler for the file transformation.
-     */
-    protected File getRequestedFile(String type) throws URISyntaxException {
-        /* Switch to indicate the needed and correct file path. */
+    protected void openModeller(String type) {
         String path = switch (type) {
-            case "alpha" -> "/camundaFiles/alpha.bpmn";
-            case "beta" -> "/camundaFiles/beta.bpmn";
-            case "gamma" -> "/camundaFiles/gamma.bpmn";
-            case "longR" -> "/camundaFiles/LongRun.bpmn";
-            default -> "/camundaFiles/ShortRun.bpmn";
+            case "alpha" -> "https://cpee.org/flow/motor.html?monitor=https://cpee.org/flow/engine/21677/";
+            case "beta" -> "Still blank and should be changed with option 2";
+            case "gamma" -> "Still blank and should be changed with option 3";
+            case "longR" -> "Predefined and should just display an image";
+            default -> "Predefined and should just display an image for the longR";
         };
-        return new File(Objects.requireNonNull(getClass().getResource(path)).toURI()); /* get file */
-    }
 
-    /**
-     * This method is a helper method for the openCamundaFile method, to operate the correct command for the operating
-     * system of the user.
-     *
-     * @param file is the file to open.
-     * @throws IOException is an exception handler for the OS selection.
-     */
-    private void openInCorrectOS(File file) throws IOException {
-        /* Request the name of the OS from the users' device. */
-        String operatingSystem = System.getProperty("os.name").toLowerCase();
+        try {
+            // Create a URI object from the URL string
+            URI uri = new URI(path);
 
-        /* Compare the String with the OS indication with the indicators for those systems and run their corresponding
-           operation to open the file.
-         */
-        if (operatingSystem.contains("mac")) { /* Mac*/
-            new ProcessBuilder("open", file.getAbsolutePath()).start();
-        } else if (operatingSystem.contains("win")) { /* Windows */
-            new ProcessBuilder("cmd.exe", "/c", "start", file.getAbsolutePath()).start();
-        } else if (operatingSystem.contains("nux") || operatingSystem.contains("nix")) { /* Linux & Unix */
-            new ProcessBuilder("xdg-open", file.getAbsolutePath()).start();
-        } else {
-            infoWindow("File Error by OS determination", "It is not possible to open the document" +
-                    " because it is not possible to find out on which operating system this application is running." +
-                    " Please contact the developer, the admin or switch to a Windows/Mac/Linux/Unix operating system.");
+            // Check if the Desktop class is supported (e.g., on Windows, macOS, and some Linux distributions)
+            if (Desktop.isDesktopSupported()) {
+                // Open the default web browser with the given URI
+                Desktop.getDesktop().browse(uri);
+            } else {
+                // Desktop is not supported (e.g., on some Linux distributions)
+                infoWindow("Browser Error", "You need to change your default web browser or inform " +
+                        "your Admin!");
+                System.out.println("You need to change your default web browser or inform your Admin!");
+            }
+        } catch (URISyntaxException | IOException e) {
+            infoWindow("Modeller Error", "The link to the modeller is missing or wrong." +
+                    " Please inform your Admin!");
+            throw new RuntimeException(e);
         }
     }
 }

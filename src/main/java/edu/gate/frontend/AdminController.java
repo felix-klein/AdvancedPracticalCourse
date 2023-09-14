@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -37,7 +36,7 @@ public class AdminController extends ComboController implements Initializable {
      */
     @FXML
     private void switchToUserScene(ActionEvent action) throws IOException {
-        new SceneControl(true, action, null);
+        new SceneControl((short) 0, action, null);
     }
 
     /**
@@ -81,17 +80,10 @@ public class AdminController extends ComboController implements Initializable {
             return; /* If there is no baud rate, we do not initialize and return */
         }
 
-        try {
-            /* Pass the command to initialize the Blueprint. */
-            File file = new File(Objects.requireNonNull(getClass()
-                    .getResource("/adminFiles/setup.bpmn")).toURI());
-            MainApplication.getTerminal().initializeBlueprint(file);
-            infoWindow("Motor Initialization Done", "The blueprint motor is now fully initialized " +
-                    "and ready to use for further testing!");
-        } catch (URISyntaxException e) {
-            System.out.println("There is an error with the admin file or its path");
-            e.getStackTrace();
-        }
+        /* Initialize the Blueprint. */
+        MainApplication.getTerminal().initializeBlueprint();
+        infoWindow("Motor Initialization Done", "The blueprint motor is now fully initialized " +
+                "and ready to use for further testing!");
     }
 
     /**
@@ -165,7 +157,7 @@ public class AdminController extends ComboController implements Initializable {
             Files.write(fullPath, setupSheet, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (URISyntaxException | IOException e) {
             System.out.println("Error in the data update section of the setup data.");
-            e.printStackTrace();
+            e.getCause();
         }
     }
 }
