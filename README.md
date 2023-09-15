@@ -47,7 +47,7 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * EGS (Engine-Gear-Shift): 0-6  [-1: down-shift, -99: up-shift]
   * STI (Sensor-Time-Interval): ->sensorInterval
   * EST (Engine-Status-Type): 0/1
-  * HDA (Hall-Delay-Angle): 0-59
+  * HDA (Hall-Delay-Angle): 1-59
   * RPM (Rotations-per-Minute): 0-4000
   * TMD (Time-Duration): 0-int
 * Sensor Response:
@@ -59,6 +59,21 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * CP3 is a list of all the sensor values at the Current-Phase-3.
   * TSP is a list of all the respective Time-Stamps gathered.
   * MIS is a list of all the Mission-Initialisation-Stamps (not corresponding to the rest).
+
+# Blueprint hardware command initialisation (data structure)
+* Specifications for easier patterns:
+  * HDA Level: 1 / 10 / 20 / 30 / 40 / 50 / 59 
+  * RPM Level: 0 / 1 / 500 / 1000 / 1500 / 2000 / 2500 / 3000 / 3500 / 4000 
+  * EST Level: 0 / 1 
+  * TMD Level: 1 / 5 / 10 / 120 / 300 / 600 / 1200
+* Pre-Testing (Each 1 - 9):
+  * Cold_Start_Fast
+  * Cold_Start_Slow&G_C_Up
+  * Cool_Down_Fast
+  * Cool_Down_Slow&G_C_Down
+  * Long_Run
+* See command structure and description in
+  [BlueprintCommandFlowHardware_Described](src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt)
 
 # Comment structure 
 Comments are an important and essential part of clear and comprehensible code. Therefor, we do integrate comments

@@ -33,15 +33,22 @@ public class Terminal {
      * This method got called from the AdminController to initialise the blueprint data via the blueprint engine.
      */
     public void initializeBlueprint() {
-        /* Convert the XML data of the blueprint into the data command list for the Hardware. */
-        ArrayList<String> blueprintData = new Gateway("blueprint", "extreme").getPreparedData();
+        /* Get the blueprint commands which are saved in a txt file. */
+        try {
+            ArrayList<String> blueprintData = (ArrayList<String>) Files.
+                    readAllLines(Paths.get(Objects.requireNonNull(getClass()
+                            .getResource("/data/BlueprintCommandFlowHardware.txt")).getPath()));
 
-        /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
-         * txt file for further investigations. */
-        HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
-        /* Get the sensor data back and save it in a txt file for later analyses. */
-        saveBlueprintData(hardwareInitialiseGate.getSENS());
-        initialized = true;
+            /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
+             * txt file for further investigations. */
+            HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
+            /* Get the sensor data back and save it in a txt file for later analyses. */
+            saveBlueprintData(hardwareInitialiseGate.getSENS());
+            initialized = true;
+        } catch (IOException e) {
+            e.getStackTrace();
+            initialized = false;
+        }
     }
 
     /**

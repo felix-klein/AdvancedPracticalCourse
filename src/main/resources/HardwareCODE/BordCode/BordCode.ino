@@ -20,15 +20,12 @@ bool runMission = false;
 static long missionStamp;
 static byte counter = 0;
 short sensorInterval = 499;
-byte engineGear = 0;
 
-const byte EGS = 1; //Engine-Gear-Shift     (0-6  [-1: down-shift, -99: up-shift])
-const byte TMD = 2; //Time-Duration         (0-int)
-const byte EST = 3; //Engine-Status-Type    (0/1)
-const byte RPM = 4; //Rotations-per-Minute  (0-4000)
-const byte ALB = 5; //Arduino-Light-Bulb    (0/1)
-const byte HDA = 6; //Hall-Delay-Angle      (0-59)
-const byte STI = 7; //Sensor-Time-Interval  (->sensorInterval)
+const byte TMD = 1; //Time-Duration         (0-int)
+const byte EST = 2; //Engine-Status-Type    (0/1)
+const byte RPM = 3; //Rotations-per-Minute  (0-4000)
+const byte HDA = 4; //Hall-Delay-Angle      (1-59)
+const byte STI = 5; //Sensor-Time-Interval  (->sensorInterval)
 
 // ---> user defined functions
 void applyMission() { /* Helper function to apply the gathered mission. */
@@ -36,28 +33,7 @@ void applyMission() { /* Helper function to apply the gathered mission. */
     String creatingMIS = String("MIS:");
 
   for (int i=0; i<missionNames.getSize(); i++) {
-      if(missionNames.getValue(i) == EGS) { /* --> Engine-Gear-Shift */
-          creatingMIS = creatingMIS + String("egs=");
-          /* Define the gear. */
-          if (missionParams.getValue(i) == -1 && engineGear > 0) { /* down-shift */
-              engineGear = engineGear - 1;
-          } else if (missionParams.getValue(i) == -99 && engineGear < 6) { /* up-shift */
-              engineGear = engineGear + 1;
-          } else { /* shift 0-6 */
-              engineGear = missionParams.getValue(i);
-          }
-          /* Define the corresponding RPM to each gear */
-          int newRPM = 0;
-          switch (engineGear) {
-              case 0: shield->setMotorSpeed(0); break;
-              case 1: shield->setMotorSpeed(820); break;
-              case 2: shield->setMotorSpeed(1398); break;
-              case 3: shield->setMotorSpeed(2060); break;
-              case 4: shield->setMotorSpeed(2683); break;
-              case 5: shield->setMotorSpeed(3306); break;
-              case 6: shield->setMotorSpeed(4000); break;
-          }
-      } else if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
+      if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
           creatingMIS = creatingMIS + String("tmd=");
           timeDelay = missionParams.getValue(i);
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
@@ -70,13 +46,6 @@ void applyMission() { /* Helper function to apply the gathered mission. */
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
           creatingMIS = creatingMIS + String("rpm=");
           shield->setMotorSpeed(missionParams.getValue(i));
-      } else if (missionNames.getValue(i) == ALB) { /* --> Arduino-Light-Bulb */
-          creatingMIS = creatingMIS + String("alb=");
-          if (missionParams.getValue(i) == 1) {
-              digitalWrite(13, HIGH);
-          } else {
-              digitalWrite(13, LOW);
-          }
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */
           creatingMIS = creatingMIS + String("hda=");
           shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
@@ -102,7 +71,7 @@ void setup() {
 
   // --> Serial communication initialization
   Serial.begin(115200); // Sets the data rate in bits per second (baud) for serial data transmission.
-  while (Serial.available() < 9) {}; // Get the number of bytes (characters) available for reading from the serial port. We wait till we get something.
+  while (Serial.available() < 9) {}; // Get the number of bytes (characters) available for reading from the serial port.
 
   pinMode(13, OUTPUT);
 }
@@ -117,20 +86,16 @@ void loop() {
         if (controller == '<') {
         } else if (controller == '*') {
           String name = Serial.readStringUntil(':');
-          if (name.equals(String("EGS"))) {
+          if (name.equals(String("TMD"))) {
             missionNames.add(1);
-          } else if (name.equals(String("TMD"))) {
-            missionNames.add(2);
           } else if (name.equals(String("EST"))) {
-            missionNames.add(3);
+            missionNames.add(2);
           } else if (name.equals(String("RPM"))) {
-            missionNames.add(4);
-          } else if (name.equals(String("ALB"))) {
-            missionNames.add(5);
+            missionNames.add(3);
           } else if (name.equals(String("HDA"))) {
-            missionNames.add(6);
+            missionNames.add(4);
           } else if (name.equals(String("STI"))) {
-            missionNames.add(7);
+            missionNames.add(5);
           }
           String param = Serial.readStringUntil('#');
           missionParams.add(param.toInt());
