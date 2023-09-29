@@ -8,16 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Preparation for the analysis phase.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintDataAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/blueprintAnalysedData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,31 +136,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "TheSwitch-Prep",
-    "last_opened_file_path": "/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/data",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.33678162",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.sync",
-    "spring.configuration.checksum": "991b882e344ef920b767eb94bddfc491",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TheSwitch-Prep&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/data&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33678162&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;991b882e344ef920b767eb94bddfc491&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/data" />
@@ -290,7 +292,8 @@
       <workItem from="1693896856175" duration="675000" />
       <workItem from="1693898175526" duration="34753000" />
       <workItem from="1694709264516" duration="905000" />
-      <workItem from="1694715774452" duration="5997000" />
+      <workItem from="1694715774452" duration="7501000" />
+      <workItem from="1695030161181" duration="31197000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -608,7 +611,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694714623455</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation.">
+      <option name="closed" value="true" />
+      <created>1694781282010</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1694781282010</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
     <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
     <MESSAGE value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
     <MESSAGE value="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process." />
@@ -663,7 +673,8 @@
     <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
     <MESSAGE value="ReadMe adjustments recording to the new changes." />
     <MESSAGE value="Preparation for the analysis phase." />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparation for the analysis phase." />
+    <MESSAGE value="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

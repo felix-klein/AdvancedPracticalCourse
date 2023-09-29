@@ -35,7 +35,7 @@ void applyMission() { /* Helper function to apply the gathered mission. */
   for (int i=0; i<missionNames.getSize(); i++) {
       if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
           creatingMIS = creatingMIS + String("tmd=");
-          timeDelay = missionParams.getValue(i);
+          timeDelay = missionParams.getValue(i) * 1000;
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
           creatingMIS = creatingMIS + String("est=");
           if (missionParams.getValue(i) == 0) {
@@ -126,10 +126,10 @@ void loop() {
       int reading = analogRead(0);
       float temp = reading * 0.0048828125 * 100;
       if (constructionsEnd == true) { // Signal the end of the last sensor data with a ?.
-        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#?")); // Example output at the end: "TSP:27.34#TMP:654000#?".
+        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#?")); // Example output at the end: "TSP:65400027.34#TMP:27.34#?".
         sensorsEnd = true;
       } else {
-        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp); //Example output: "TSP:27.34#TMP:654000".
+        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp); //Example output: "TSP:65400027.34#TMP:27.34".
       }
     }
  delay(10);
