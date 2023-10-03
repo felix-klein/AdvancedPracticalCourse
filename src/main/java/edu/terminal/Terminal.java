@@ -56,7 +56,8 @@ public class Terminal {
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public boolean startUserProcess(String type, String accuracyLevel) {
+    public boolean startUserProcess(String type, String accuracyLevel, int deviationPercentage,
+                                    int acceptancePercentage) {
         if (!initialized) {
             return false; /* False if there is no blueprint data already from the admin */
         }
@@ -66,7 +67,7 @@ public class Terminal {
         HardwareGate hardwareUserGate = new HardwareGate(preparedData);
         /* Get the sensor data back and use it for the process flow drawing. */
         SensInAnalysis sensorAnalyses = new SensInAnalysis(hardwareUserGate.getSENS());
-        new ComplianceChecking(sensorAnalyses);
+        new ComplianceChecking(sensorAnalyses, deviationPercentage, acceptancePercentage);
         return true;
     }
 }

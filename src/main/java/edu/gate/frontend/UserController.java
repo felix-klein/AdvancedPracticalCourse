@@ -22,8 +22,7 @@ public class UserController extends ComboController implements Initializable {
     private ChoiceBox<String> accuracy;
     @FXML
     private Slider deviation, acceptance;
-    private int deviationPercentage;
-    private int acceptancePercentage;
+    private int deviationPercentage, acceptancePercentage;
     @FXML
     private Label deviationLabel, acceptanceLabel;
 
@@ -37,7 +36,8 @@ public class UserController extends ComboController implements Initializable {
     private void process(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
         /* Activates the process with settings from the Control Center. */
-        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue());
+        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
+                deviationPercentage, acceptancePercentage);
 
         /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
         if (!processRunning) {
@@ -106,7 +106,7 @@ public class UserController extends ComboController implements Initializable {
         acceptancePercentage = (int) acceptance.getValue();
         acceptanceLabel.setText(acceptancePercentage + "%");
         acceptance.valueProperty().addListener((observableValue, number, t1) -> {
-            acceptancePercentage = (int) deviation.getValue();
+            acceptancePercentage = (int) acceptance.getValue();
             acceptanceLabel.setText(acceptancePercentage + "%");
         });
     }

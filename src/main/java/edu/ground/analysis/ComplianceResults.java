@@ -3,21 +3,19 @@ package edu.ground.analysis;
 import java.util.ArrayList;
 
 public class ComplianceResults {
-    private ArrayList<String> missions;
-    private ArrayList<Boolean> results;
-    private ArrayList<ArrayList<DataList>> dataTMP;
-    private ArrayList<ArrayList<DataList>> dataVIB;
-    private ArrayList<ArrayList<DataList>> dataMIC;
-    private ArrayList<ArrayList<DataList>> dataCP1;
-    private ArrayList<ArrayList<DataList>> dataCP2;
-    private ArrayList<ArrayList<DataList>> dataCP3;
+    private final ArrayList<MissionTotal> missionTotals;
+    private final ArrayList<ArrayList<DataList>> dataTMP;
+    private final ArrayList<ArrayList<DataList>> dataVIB;
+    private final ArrayList<ArrayList<DataList>> dataMIC;
+    private final ArrayList<ArrayList<DataList>> dataCP1;
+    private final ArrayList<ArrayList<DataList>> dataCP2;
+    private final ArrayList<ArrayList<DataList>> dataCP3;
     private Noise idealNoise;
     private Noise testNoise;
 
 
     public ComplianceResults() {
-        this.missions = new ArrayList<>();
-        this.results = new ArrayList<>();
+        this.missionTotals = new ArrayList<>();
         this.dataTMP = new ArrayList<>();
         this.dataVIB = new ArrayList<>();
         this.dataMIC = new ArrayList<>();
@@ -31,12 +29,10 @@ public class ComplianceResults {
 
     public record Noise(double TMP, double VIB, double MIC, double CP1, double CP2, double CP3) {}
 
-    public ArrayList<String> getMissions() {
-        return missions;
-    }
+    public record MissionTotal(String mission, boolean result, double percentage) {}
 
-    public ArrayList<Boolean> getResults() {
-        return results;
+    public ArrayList<MissionTotal> getMissionTotals() {
+        return missionTotals;
     }
 
     public ArrayList<ArrayList<DataList>> getDataTMP() {
@@ -80,19 +76,11 @@ public class ComplianceResults {
     }
 
     /**
-     * Modified setter for the mission to add a mission and not to initialize a complete mission set.
-     * @param mission is a single mission.
+     * Modified setter for the missions to add a total mission and not to initialize a complete mission set.
+     * @param totalMission is a single total mission.
      */
-    public void setMissions(String mission) {
-        this.missions.add(mission);
-    }
-
-    /**
-     * Modified setter for the results to add a result and not to initialize a complete results set.
-     * @param result is a single mission result.
-     */
-    public void setResults(Boolean result) {
-        this.results.add(result);
+    public void setMissionTotals(MissionTotal totalMission) {
+        this.missionTotals.add(totalMission);
     }
 
     /**

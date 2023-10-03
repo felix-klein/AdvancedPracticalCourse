@@ -11,7 +11,8 @@ import java.util.regex.Pattern;
 public class ComplianceChecking {
     private ArrayList<String> idealData;
     private final SensInAnalysis sensorAnalyses;
-    private ComplianceResults complianceResults;
+    private final ComplianceResults complianceResults;
+    private final double deviationPercentage, acceptancePercentage;
 
     /* Test-Structure:
        1. Cold_Start_Fast:
@@ -70,9 +71,12 @@ public class ComplianceChecking {
         8. <*RPM:3500#*TMD:1200#>
         9. <*RPM:4000#*TMD:1200#>
      */
-    public ComplianceChecking(SensInAnalysis sensorAnalyses) {
+    public ComplianceChecking(SensInAnalysis sensorAnalyses, int deviationPercentage,
+                              int acceptancePercentage) {
         this.sensorAnalyses = sensorAnalyses;
         this.complianceResults = new ComplianceResults();
+        this.deviationPercentage = deviationPercentage;
+        this.acceptancePercentage = acceptancePercentage;
         try {
             /* Get the ideal sensor data of the blueprint. */
             this.idealData = (ArrayList<String>) Files.
@@ -88,7 +92,6 @@ public class ComplianceChecking {
     /**
      * The comparison method, starts and proceeds the main compliance checking comparison by iterating through all
      * missions and its sensor data.
-     *
      * First we analyse the surround300 sensor data for the default environment sensor data. Secondly we iterate
      * through all missions and see if there is a change in RPM (which indicates a change in the comparison section).
      * If we do have a mission without a change in RPM or if the current mission is a very long one, the change to
@@ -114,7 +117,7 @@ public class ComplianceChecking {
             }
             int startIndexIdeal = fromTo(missionRPMFrom, missionRPMTo);
 
-            comparePerSecond(i, startIndexIdeal);
+            comparePerSecond(i, startIndexIdeal, missionRPMTo);
         }
     }
 
@@ -156,9 +159,14 @@ public class ComplianceChecking {
      * @param mission is the index which indicates the current mission.
      * @param startIndexIdeal is the index inside the ideal data array where the comparison should start.
      */
-    private void comparePerSecond(int mission, int startIndexIdeal) {
-        /* Add the current mission to the missions of the Compliance Results. */
-        complianceResults.setMissions(sensorAnalyses.getSensorData().MIS().get(mission));
+    private void comparePerSecond(int mission, int startIndexIdeal, int rpmMission) {
+        /* Crete a list of true and false values for the compliance percentage. */
+        int deviationTrue = 0;
+        int deviationFalse = 0;
+
+        /* Index counter is to define the new index line and the process of a new ideal area for comparison. */
+        int idealIndex = startIndexIdeal;
+
 
         ArrayList<ComplianceResults.DataList> dataTMP = new ArrayList<>();
         ArrayList<ComplianceResults.DataList> dataVIB = new ArrayList<>();
@@ -168,50 +176,74 @@ public class ComplianceChecking {
         ArrayList<ComplianceResults.DataList> dataCP3 = new ArrayList<>();
 
         for (int i = 0; i < sensorAnalyses.getMIC_perMission().get(mission).size(); i++) {
+            /* This jump in the ideal index is for the situation of an end of ideal data and change to a long run
+             comparison. */
+            if (idealData.get(idealIndex).contains(">>")) {
+                idealIndex = fromTo(rpmMission, rpmMission);
+            }
             /* The pattern will be: TMP*MIC*VIB*CP1*CP2*CP3 */
-            String[] idealLine = idealData.get(startIndexIdeal).split(String.valueOf('*'));
+            String[] idealLine = idealData.get(idealIndex).split(String.valueOf('*'));
 
             /* TMP: Sensor analyses. */
             double idealA = Double.parseDouble(idealLine[0]);
             double testA = sensorAnalyses.getTMP_perMission().get(mission).get(i);
             double testNoise = complianceResults.getTestNoise().TMP();
             double idealNoise = complianceResults.getIdealNoise().TMP();
-            dataTMP.add(dataListCreation(idealA, testA, testNoise, idealNoise));
+            ComplianceResults.DataList dataListTMP = dataListCreation(idealA, testA, testNoise, idealNoise);
+            dataTMP.add(dataListTMP);
 
             /* MIC: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[1]);
             testA = sensorAnalyses.getMIC_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().MIC();
             idealNoise = complianceResults.getIdealNoise().MIC();
-            dataMIC.add(dataListCreation(idealA, testA, testNoise, idealNoise));
+            ComplianceResults.DataList dataListMIC = dataListCreation(idealA, testA, testNoise, idealNoise);
+            dataMIC.add(dataListMIC);
 
             /* VIB: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[2]);
             testA = sensorAnalyses.getVIB_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().VIB();
             idealNoise = complianceResults.getIdealNoise().VIB();
-            dataVIB.add(dataListCreation(idealA, testA, testNoise, idealNoise));
+            ComplianceResults.DataList dataListVIB = dataListCreation(idealA, testA, testNoise, idealNoise);
+            dataVIB.add(dataListVIB);
 
             /* CP1: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[3]);
             testA = sensorAnalyses.getCP1_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().CP1();
             idealNoise = complianceResults.getIdealNoise().CP1();
-            dataCP1.add(dataListCreation(idealA, testA, testNoise, idealNoise));
+            ComplianceResults.DataList dataListCP1 = dataListCreation(idealA, testA, testNoise, idealNoise);
+            dataCP1.add(dataListCP1);
 
             /* CP2: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[4]);
             testA = sensorAnalyses.getCP2_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().CP2();
             idealNoise = complianceResults.getIdealNoise().CP2();
-            dataCP2.add(dataListCreation(idealA, testA, testNoise, idealNoise));
+            ComplianceResults.DataList dataListCP2 = dataListCreation(idealA, testA, testNoise, idealNoise);
+            dataCP2.add(dataListCP2);
 
             /* CP3: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[5]);
             testA = sensorAnalyses.getCP3_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().CP3();
             idealNoise = complianceResults.getIdealNoise().CP3();
-            dataCP3.add(dataListCreation(idealA, testA, testNoise, idealNoise));
+            ComplianceResults.DataList dataListCP3 = dataListCreation(idealA, testA, testNoise, idealNoise);
+            dataCP3.add(dataListCP3);
+
+            /* Deviation check for each sensor element. */
+            if (dataListTMP.deviation() <= deviationPercentage
+                    && dataListMIC.deviation() <= deviationPercentage
+                    && dataListVIB.deviation() <= deviationPercentage
+                    && dataListCP1.deviation() <= deviationPercentage
+                    && dataListCP2.deviation() <= deviationPercentage
+                    && dataListCP3.deviation() <= deviationPercentage) {
+                deviationTrue++;
+            } else {
+                deviationFalse++;
+            }
+            idealIndex++;
         }
 
         complianceResults.setDataTMP(dataTMP);
@@ -221,8 +253,12 @@ public class ComplianceChecking {
         complianceResults.setDataCP2(dataCP2);
         complianceResults.setDataCP3(dataCP3);
 
-        // Compare each corresponding second and create a list of true or false to generate the total true or false.
-        // Adjust the ComplianceResults.DataList object with a boolean.
+        /* Mission results including the calculation via the specified acceptance percentage. */
+        String missionName = sensorAnalyses.getSensorData().MIS().get(mission);
+        double missionPercentage = ((double) deviationTrue / (deviationTrue + deviationFalse)) * 100;
+        boolean missionResult = (missionPercentage >= acceptancePercentage);
+        complianceResults.setMissionTotals(
+                new ComplianceResults.MissionTotal(missionName, missionResult, missionPercentage));
     }
 
     /**
@@ -246,7 +282,6 @@ public class ComplianceChecking {
     /**
      * Compare the surrounding noise level for later canceling out. It is called 300 because of its duration of 300
      * seconds.
-     *
      * It was planed to use a truncated (arithmetic) mean, but the sorting of the data and the corresponding calculation
      * would increase the runtime significantly, and so the construction of a good and reliable test area is crucial.
      */
