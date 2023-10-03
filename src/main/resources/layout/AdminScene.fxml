@@ -64,7 +64,7 @@
                                 <Font name="Helvetica" size="18.0" />
                             </font>
                         </Label>
-                        <Button fx:id="iSetup" depthTest="DISABLE" layoutX="334.778" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSetup" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="iSetup" depthTest="DISABLE" layoutX="337.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSetup" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Helvetica" size="10.0" />
                             </font>

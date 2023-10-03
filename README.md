@@ -142,5 +142,5 @@ This structure does not count for code which is not written in java.
 * Per Second:
   * Each corresponding per second value of the ideal and test are compared to
     each other and result in a `true` if the "absolute value" is just in a
-    `10%` deviation.
+    `<10%` deviation.
   * A mission is `false` if `5%` of its per second comparisons are false.

@@ -27,7 +27,7 @@ public class ComplianceResults {
     }
 
     public record DataList(double idealR, double testR, double diffRelative, double diffAbsolute,
-                           double idealA, double testA) {}
+                           double idealA, double testA, double deviation) {}
 
     public record Noise(double TMP, double VIB, double MIC, double CP1, double CP2, double CP3) {}
 

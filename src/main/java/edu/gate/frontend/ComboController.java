@@ -14,6 +14,37 @@ import java.net.URISyntaxException;
 public class ComboController {
 
     /**
+     * This method does explain the deviation property.
+     *
+     * @param mouseEvent is the mouseclick to show the info window.
+     */
+    @FXML
+    private void infoButtonDeviation(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info deviation: " + mouseEvent.getPickResult());
+        String headline = "Deviation Information";
+        String text = "The deviation describes with how much tolerance each individual sensor value (value per " +
+                "second) may deviate from its ideal value in order to still be classified as \"within the norms\". " +
+                "Please select the percentage in which the deviation is still accepted, for example 5%.";
+        infoWindow(headline, text);
+    }
+
+    /**
+     * This method does explain the acceptance property.
+     *
+     * @param mouseEvent is the mouseclick to show the info window.
+     */
+    @FXML
+    private void infoButtonAcceptance(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - info acceptance: " + mouseEvent.getPickResult());
+        String headline = "Acceptance Information";
+        String text = "For the acceptance of a task, a certain percentage of the sensor data is allowed to lie " +
+                "outside the tolerable (deviation) range. This percentage influences the acceptance of the entire " +
+                "tasks and thus of the engine. Please select the percentage in which the acceptance is still valid, " +
+                "for example 98%.";
+        infoWindow(headline, text);
+    }
+
+    /**
      * This method does show us the information window from the Accuracy area.
      *
      * @param mouseEvent is the mouseclick to show the info window.

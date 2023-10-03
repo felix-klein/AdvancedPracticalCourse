@@ -239,7 +239,8 @@ public class ComplianceChecking {
         double testR = testA - testNoise;
         double diffRelative = idealR - testR;
         double diffAbsolute = idealA - testA;
-        return new ComplianceResults.DataList(idealR, testR, diffRelative, diffAbsolute, idealA, testA);
+        double deviation = (Math.abs(diffRelative)/idealR) * 100;/* deviation in percent */
+        return new ComplianceResults.DataList(idealR, testR, diffRelative, diffAbsolute, idealA, testA, deviation);
     }
 
     /**
