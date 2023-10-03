@@ -136,3 +136,11 @@ This structure does not count for code which is not written in java.
   * Baud Rate: `115200`
   * Terminal Input: `screen /dev/cu.usbmodem141101 115200`
   * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)
+
+
+# Compliance Checking
+* Per Second:
+  * Each corresponding per second value of the ideal and test are compared to
+    each other and result in a `true` if the "absolute value" is just in a
+    `10%` deviation.
+  * A mission is `false` if `5%` of its per second comparisons are false.

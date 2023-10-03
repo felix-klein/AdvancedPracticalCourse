@@ -40,8 +40,10 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           creatingMIS = creatingMIS + String("est=");
           if (missionParams.getValue(i) == 0) {
               //shield->setMotorMode(STOP_MOTOR);
+              digitalWrite(13, HIGH); // TODO: Testing
           } else {
               //shield->setMotorMode(START_MOTOR);
+              digitalWrite(13, LOW); // TODO: Testing
           }
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
           creatingMIS = creatingMIS + String("rpm=");
@@ -123,13 +125,31 @@ void loop() {
     static unsigned long sensorStamp = 0; // Static, because it should stay throughout the loop / unsigned long, because if it is to big it should restart at 0.
     if ((millis() - sensorStamp > sensorInterval) && (sensorsEnd == false)) {
       sensorStamp = millis();
-      int reading = analogRead(0);
-      float temp = reading * 0.0048828125 * 100;
+
+      int readingTMP = analogRead(0);
+      float temp = readingTMP * 0.0048828125 * 100;
+
+      int readVIB = analogRead(1);
+      float vib = readVIB * (5.0 / 1023.0);
+
+      int readingMIC = analogRead(2);
+
+      int readingCP1 = analogRead(3);
+      float volt1 = (readingCP1 / 1024.0) * 5000;
+
+      int readingCP2 = analogRead(4);
+      float volt2 = (readingCP2 / 1024.0) * 5000;
+
+      int readingCP3 = analogRead(5);
+      float volt3 = (readingCP3 / 1024.0) * 5000;
+
       if (constructionsEnd == true) { // Signal the end of the last sensor data with a ?.
-        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#?")); // Example output at the end: "TSP:65400027.34#TMP:27.34#?".
+        // Example output at the end: "TSP:65400027.34#TMP:27.34#?".
+        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#VIB:") + vib + String("#MIC:") + readingMIC + String("#CP1:") + volt1 + String("#CP2:") + volt2 + String("#CP3:") + volt3 + String("#?"));
         sensorsEnd = true;
       } else {
-        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp); //Example output: "TSP:65400027.34#TMP:27.34".
+        //Example output: "TSP:65400027.34#TMP:27.34".
+        Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#VIB:") + vib + String("#MIC:") + readingMIC + String("#CP1:") + volt1 + String("#CP2:") + volt2 + String("#CP3:") + volt3);
       }
     }
  delay(10);

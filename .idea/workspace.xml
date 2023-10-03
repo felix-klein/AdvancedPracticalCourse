@@ -8,18 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintDataAnalysis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintSaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/blueprintAnalysedData.txt" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="The data comparison and saving is adjusted and build. The next phase is the reals Checking of the compliance and its savings in a meaningful manner.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +288,7 @@
       <workItem from="1693898175526" duration="34753000" />
       <workItem from="1694709264516" duration="905000" />
       <workItem from="1694715774452" duration="7501000" />
-      <workItem from="1695030161181" duration="31197000" />
+      <workItem from="1695030161181" duration="48406000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -619,7 +614,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694781282010</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="The data comparison and saving is adjusted and build. The next phase is the reals Checking of the compliance and its savings in a meaningful manner.">
+      <option name="closed" value="true" />
+      <created>1696000723783</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1696000723784</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,7 +652,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
     <MESSAGE value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
     <MESSAGE value="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process." />
     <MESSAGE value="Not finished or tested commit, with the goal of saving the current stage. There are mostly structural changes for more logical and cleaner functions." />
@@ -674,7 +676,8 @@
     <MESSAGE value="ReadMe adjustments recording to the new changes." />
     <MESSAGE value="Preparation for the analysis phase." />
     <MESSAGE value="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation." />
+    <MESSAGE value="The data comparison and saving is adjusted and build. The next phase is the reals Checking of the compliance and its savings in a meaningful manner." />
+    <option name="LAST_COMMIT_MESSAGE" value="The data comparison and saving is adjusted and build. The next phase is the reals Checking of the compliance and its savings in a meaningful manner." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
