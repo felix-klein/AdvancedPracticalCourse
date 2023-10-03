@@ -13,9 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="100.0" prefHeight="1378.0" prefViewportHeight="803.0" prefViewportWidth="649.0" prefWidth="649.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.AdminController">
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="100.0" prefHeight="1862.0" prefViewportHeight="803.0" prefViewportWidth="649.0" prefWidth="649.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.AdminController">
     <content>
-        <AnchorPane minHeight="100.0" prefHeight="1378.0" prefWidth="649.0" style="-fx-background-color: #121212;">
+        <AnchorPane minHeight="100.0" prefHeight="1862.0" prefWidth="649.0" style="-fx-background-color: #121212;">
             <children>
                 <TextFlow fx:id="header" layoutX="20.0" layoutY="5.0" prefHeight="30.0" prefWidth="552.5" style="-fx-background-color: #0065bd; -fx-border-radius: 1; -fx-background-radius: 1;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                     <children>
@@ -64,7 +64,7 @@
                                 <Font name="Helvetica" size="18.0" />
                             </font>
                         </Label>
-                        <Button fx:id="iSetup" depthTest="DISABLE" layoutX="334.778" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSetup" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="iSetup" depthTest="DISABLE" layoutX="337.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSetup" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Helvetica" size="10.0" />
                             </font>
@@ -109,7 +109,7 @@
                   </CheckBox>
                     </children>
                 </Pane>
-                <Button fx:id="toUserScene" layoutX="10.0" layoutY="1350.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To User Page" textFill="WHITE">
+                <Button fx:id="toUserScene" layoutX="10.0" layoutY="1828.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To User Page" textFill="WHITE">
                     <font>
                         <Font name="Helvetica" size="12.0" />
                     </font>
@@ -143,7 +143,7 @@
                   </Label>
                     </children>
                 </Pane>
-            <ImageView fx:id="setupImage" fitHeight="500.0" fitWidth="592.5" layoutX="-158.0" layoutY="845.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" x="202.3737">
+            <ImageView fx:id="setupImage" fitHeight="978.0" fitWidth="592.5" layoutX="-182.0" layoutY="845.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" x="202.3737">
                <image>
                   <Image url="@../adminFiles/setup.png" />
                </image></ImageView>

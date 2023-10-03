@@ -4,7 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Slider;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +20,11 @@ public class UserController extends ComboController implements Initializable {
     private RadioButton alpha, beta, gamma, longR; /*  shortR: isn't needed, because it is the default value */
     @FXML
     private ChoiceBox<String> accuracy;
+    @FXML
+    private Slider deviation, acceptance;
+    private int deviationPercentage, acceptancePercentage;
+    @FXML
+    private Label deviationLabel, acceptanceLabel;
 
     /**
      * The method process is activated, if the Process button ("run test") is clicked. It is the main method of the whole
@@ -29,7 +36,8 @@ public class UserController extends ComboController implements Initializable {
     private void process(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
         /* Activates the process with settings from the Control Center. */
-        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue());
+        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
+                deviationPercentage, acceptancePercentage);
 
         /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
         if (!processRunning) {
@@ -81,10 +89,26 @@ public class UserController extends ComboController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /* Initializing the ChoiceBox for the accuracy levels */
+        /* Initializing the ChoiceBox for the accuracy levels. */
         String[] level = new String[]{"extreme", "intense", "high", "basic", "1-for-1"}; /* choice options */
         accuracy.getItems().addAll(level);
         accuracy.setValue("basic"); /* default */
+
+        /* Initializing the Slider for the deviation. */
+        deviationPercentage = (int) deviation.getValue();
+        deviationLabel.setText(deviationPercentage + "%");
+        deviation.valueProperty().addListener((observableValue, number, t1) -> {
+            deviationPercentage = (int) deviation.getValue();
+            deviationLabel.setText(deviationPercentage + "%");
+        });
+
+        /* Initializing the Slider for the acceptance. */
+        acceptancePercentage = (int) acceptance.getValue();
+        acceptanceLabel.setText(acceptancePercentage + "%");
+        acceptance.valueProperty().addListener((observableValue, number, t1) -> {
+            acceptancePercentage = (int) acceptance.getValue();
+            acceptanceLabel.setText(acceptancePercentage + "%");
+        });
     }
 
     /**

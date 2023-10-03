@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -42,14 +43,14 @@
                   </Label>
                </children>
             </TextFlow>
-            <Pane layoutX="412.5" layoutY="260.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="260.0">
+            <Pane layoutX="412.5" layoutY="260.0" prefHeight="77.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="260.0">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" text="Accuracy" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="iAccuracy" depthTest="DISABLE" layoutX="174.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonAccuracy" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="iAccuracy" depthTest="DISABLE" layoutX="237.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonAccuracy" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="10.0" />
                      </font>
@@ -57,18 +58,39 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <ChoiceBox fx:id="accuracy" layoutX="20.0" layoutY="41.0" prefWidth="159.11718" />
+                  <ChoiceBox fx:id="accuracy" layoutX="50.0" layoutY="41.0" prefWidth="159.11718" />
                </children>
             </Pane>
-            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0" />
-            <Pane layoutX="20.0" layoutY="260.0" prefHeight="187.0" prefWidth="388.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.topAnchor="260.0">
+            <Pane layoutX="412.5" layoutY="342.0" prefHeight="77.0" prefWidth="127.5" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Acceptance" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="iAcceptance" depthTest="DISABLE" layoutX="104.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonAcceptance" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Slider fx:id="acceptance" blockIncrement="1.0" layoutX="10.0" layoutY="43.0" min="50.0" prefHeight="20.0" prefWidth="107.5" showTickLabels="true" showTickMarks="true" value="95.0" />
+                  <Label fx:id="acceptanceLabel" layoutX="49.0" layoutY="31.0" text="Label" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Pane layoutX="20.0" layoutY="260.0" prefHeight="187.0" prefWidth="328.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.topAnchor="260.0">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" text="Process Selection" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="iSelection" depthTest="DISABLE" layoutX="362.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSelection" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="iSelection" depthTest="DISABLE" layoutX="305.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonSelection" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="10.0" />
                      </font>
@@ -106,12 +128,12 @@
                   </RadioButton>
                </children>
             </Pane>
-            <Button fx:id="toAdminScene" layoutX="40.0" layoutY="734.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To Admin Page" textFill="WHITE">
+            <Button fx:id="toAdminScene" layoutX="40.0" layoutY="734.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefWidth="100.0" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="To Admin Page" textFill="WHITE">
                <font>
                   <Font name="Helvetica" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="Go" layoutX="412.5" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#process" prefHeight="105.0" prefWidth="200.0" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="#b00020" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="342.0">
+            <Button fx:id="Go" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#process" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: #5E94D4; -fx-background-radius: 8; -fx-border-radius: 8;" text="RUN TEST" textFill="#b00020" AnchorPane.rightAnchor="99.5">
                <font>
                   <Font name="Helvetica" size="12.0" />
                </font>
@@ -133,7 +155,7 @@
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Button depthTest="DISABLE" layoutX="114.7783" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonCustomize" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                  <Button depthTest="DISABLE" layoutX="117.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonCustomize" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="10.0" />
                      </font>
@@ -165,7 +187,7 @@
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Button depthTest="DISABLE" layoutX="114.7783" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonView" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                  <Button depthTest="DISABLE" layoutX="117.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonView" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="10.0" />
                      </font>
@@ -195,6 +217,29 @@
                   <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="41.0" prefHeight="226.0" prefWidth="408.0" text="When choosing to customize processes or select predefined ones, it helps to internalize the following description to make modeling as pleasant as possible:&#10;&#10;- Start Motor / Stop Motor:  Both tasks do not occupy arguments, since they&#10;          start or stop the engine directly, respectively.&#10;- Throttle Level:  Describes the speed of the motor and therefore includes&#10;          the arguments RPM (rotations per minute) and Duration for how long&#10;          the motor should operate in this state.&#10;- Motor Degree:  Degree specifies the time at which the pole change is&#10;          performed in relation to the stator-rotor ratio. Therefore here the&#10;          arguments Degree and Duration.&#10;&gt; Stop: The stop acts like an emergency stop with immediate effect when&#10;          it is reached for all sensors and the motor." textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="352.5" layoutY="342.0" prefHeight="77.0" prefWidth="127.5" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Deviation" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="iDeviation" depthTest="DISABLE" layoutX="104.8" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonDeviation" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Slider fx:id="deviation" blockIncrement="1.0" layoutX="10.0" layoutY="43.0" max="30.0" prefHeight="20.0" prefWidth="107.5" showTickLabels="true" showTickMarks="true" value="5.0" />
+                  <Label fx:id="deviationLabel" layoutX="49.0" layoutY="31.0" text="Label" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
                      </font>
                   </Label>
                </children>

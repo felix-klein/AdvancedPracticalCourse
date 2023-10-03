@@ -32,7 +32,7 @@ public class ProcessDataPrep {
      * @param accInterval is the "accuracy interval", which describes the Sensor accuracy.
      */
     private void dataModeling(ArrayList<String> purifiedData, Short accInterval) {
-        this.preparedData.add("<*STI:" + accInterval + "#>");
+        this.preparedData.add("<*STI:" + accInterval + "#*TMD:300#>");
         this.preparedData.addAll(recursiveDataBuilder(purifiedData));
         this.preparedData.set(preparedData.size() - 1, preparedData.get(preparedData.size() - 1) + "?");
     }

@@ -8,9 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Changes doe to new ideas for the model representation and preparation for the analyses start.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Major changes to the User Scene with the adding of customizable deviation and acceptance.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +139,7 @@
     &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;TheSwitch-Prep&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/layout&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixklein/Desktop/TUM/8.Semester/BA/i17BA/src/main/resources/data&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -154,6 +157,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/data" />
       <recent name="$PROJECT_DIR$/src/main/resources/layout" />
       <recent name="$PROJECT_DIR$/target/classes/layout" />
     </key>
@@ -282,6 +286,9 @@
       <workItem from="1693896856175" duration="675000" />
       <workItem from="1693898175526" duration="34753000" />
       <workItem from="1694709264516" duration="905000" />
+      <workItem from="1694715774452" duration="7501000" />
+      <workItem from="1695030161181" duration="52558000" />
+      <workItem from="1696355134828" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -583,7 +590,55 @@
       <option name="project" value="LOCAL" />
       <updated>1694713159889</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="ReadMe adjustments recording to the new changes.">
+      <option name="closed" value="true" />
+      <created>1694713765749</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1694713765749</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Preparation for the analysis phase.">
+      <option name="closed" value="true" />
+      <created>1694714623455</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1694714623455</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation.">
+      <option name="closed" value="true" />
+      <created>1694781282010</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1694781282010</updated>
+    </task>
+    <task id="LOCAL-00044" summary="The data comparison and saving is adjusted and build. The next phase is the reals Checking of the compliance and its savings in a meaningful manner.">
+      <option name="closed" value="true" />
+      <created>1696000723783</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1696000723784</updated>
+    </task>
+    <task id="LOCAL-00045" summary="IN the middle of the sensor data per second comparison and shortly before the mathematical evaluation.">
+      <option name="closed" value="true" />
+      <created>1696344843304</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1696344843304</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Major changes to the User Scene with the adding of customizable deviation and acceptance.">
+      <option name="closed" value="true" />
+      <created>1696354914375</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1696354914375</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,12 +668,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adjustments related to the lates chaotic commit (push). More style and logical adjustments." />
-    <MESSAGE value="Small Admin adjustments and logical structuring." />
-    <MESSAGE value="Small Admin adjustments and form related contributions to reduce errors." />
-    <MESSAGE value="Adjustments to warnings and the change of Camunda Modeler opener method to eliminate the warnings and to modernize the API." />
-    <MESSAGE value="Big steps into the data saving, loading and changing of .txt data. Adjustments to the admin frontend and the handling of those new options. The Connection area got bigger for the moment but will be orders in the next time." />
-    <MESSAGE value="Untested steps into the data processing and connection to the hardware. New classes and Resources for the storing and processing of the sensor data.&#10;Tests are still be needed and are in process." />
     <MESSAGE value="Not finished or tested commit, with the goal of saving the current stage. There are mostly structural changes for more logical and cleaner functions." />
     <MESSAGE value="Not finished work session, but with improvements for the Serial communication and the style of data preparation and structuring." />
     <MESSAGE value="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code." />
@@ -638,7 +687,13 @@
     <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
     <MESSAGE value="UML adjustments for the correct documentation." />
     <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
+    <MESSAGE value="ReadMe adjustments recording to the new changes." />
+    <MESSAGE value="Preparation for the analysis phase." />
+    <MESSAGE value="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation." />
+    <MESSAGE value="The data comparison and saving is adjusted and build. The next phase is the reals Checking of the compliance and its savings in a meaningful manner." />
+    <MESSAGE value="IN the middle of the sensor data per second comparison and shortly before the mathematical evaluation." />
+    <MESSAGE value="Major changes to the User Scene with the adding of customizable deviation and acceptance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major changes to the User Scene with the adding of customizable deviation and acceptance." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

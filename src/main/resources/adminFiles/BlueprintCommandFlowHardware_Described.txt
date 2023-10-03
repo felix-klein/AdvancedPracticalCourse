@@ -1,0 +1,58 @@
+<*STI:9#>                   // High accuracy level of the sensor interval
+<*TDM:300#>                 //Saving and investigating the neutral sensor response
+
+<*EST:1#*RPM:1#*TMD:60#>    //Cold_Start_Fast_1
+<*RPM:1#*TMD:1200#>	        //Long_Run_1
+<*EST:0#*TMD:300#>          //Cool_Down_Fast_1
+
+<*EST:1#*RPM:500#*TMD:60#>	//Cold_Start_Fast_2
+<*RPM:500#*TMD:1200#>		//Long_Run_2
+<*EST:0#*TMD:300#>	        //Cool_Down_Fast_2
+
+<*EST:1#*RPM:1000#*TMD:60#>	//Cold_Start_Fast_3
+<*RPM:1000#*TMD:1200#>		//Long_Run_3
+<*EST:0#*TMD:300#>		    //Cool_Down_Fast_3
+
+<*EST:1#*RPM:1500#*TMD:60#>	//Cold_Start_Fast_4
+<*RPM:1500#*TMD:1200#>		//Long_Run_4
+<*EST:0#*TMD:300#>		    //Cool_Down_Fast_4
+
+<*EST:1#*RPM:2000#*TMD:60#>	//Cold_Start_Fast_5
+<*RPM:2000#*TMD:1200#>		//Long_Run_5
+<*EST:0#*TMD:300#>		    //Cool_Down_Fast_5
+
+<*EST:1#*RPM:2500#*TMD:60#>	//Cold_Start_Fast_6
+<*RPM:2500#*TMD:1200#>		//Long_Run_6
+<*EST:0#*TMD:300#>		    //Cool_Down_Fast_6
+
+<*EST:1#*RPM:3000#*TMD:60#>	//Cold_Start_Fast_7
+<*RPM:3000#*TMD:1200#>		//Long_Run_7
+<*EST:0#*TMD:300#>	    	//Cool_Down_Fast_7
+
+<*EST:1#*RPM:3500#*TMD:60#>	//Cold_Start_Fast_8
+<*RPM:3500#*TMD:1200#>		//Long_Run_8
+<*EST:0#*TMD:300#>		    //Cool_Down_Fast_8
+
+<*EST:1#*RPM:4000#*TMD:60#>	//Cold_Start_Fast_9
+<*RPM:4000#*TMD:1200#>		//Long_Run_9
+<*EST:0#*TMD:300#>		    //Cool_Down_Fast_9
+
+<*EST:1#*RPM:1#*TMD:10#>	//Cold_Start_Slow&G_C_Up_1
+<*RPM:500#*TMD:30#>		    //Cold_Start_Slow&G_C_Up_2
+<*RPM:1000#*TMD:30#>		//Cold_Start_Slow&G_C_Up_3
+<*RPM:1500#*TMD:30#>		//Cold_Start_Slow&G_C_Up_4
+<*RPM:2000#*TMD:30#>		//Cold_Start_Slow&G_C_Up_5
+<*RPM:2500#*TMD:30#>		//Cold_Start_Slow&G_C_Up_6
+<*RPM:3000#*TMD:30#>		//Cold_Start_Slow&G_C_Up_7
+<*RPM:3500#*TMD:30#> 		//Cold_Start_Slow&G_C_Up_8
+<*RPM:4000#*TMD:30#>		//Cold_Start_Slow&G_C_Up_9
+
+<*RPM:3500#*TMD:30#>		//Cool_Down_Slow&G_C_Down_1
+<*RPM:3000#*TMD:30#>		//Cool_Down_Slow&G_C_Down_2
+<*RPM:2500#*TMD:30#>		//Cool_Down_Slow&G_C_Down_3
+<*RPM:2000#*TMD:30#>		//Cool_Down_Slow&G_C_Down_4
+<*RPM:1500#*TMD:30#>		//Cool_Down_Slow&G_C_Down_5
+<*RPM:1000#*TMD:30#>		//Cool_Down_Slow&G_C_Down_6
+<*RPM:500#*TMD:30#>		    //Cool_Down_Slow&G_C_Down_7
+<*RPM:1#*TMD:30#>		    //Cool_Down_Slow&G_C_Down_8
+<*EST:0#*TMD:60#>?		    //Cool_Down_Slow&G_C_Down_9
