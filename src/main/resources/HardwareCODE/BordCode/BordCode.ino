@@ -19,7 +19,7 @@ short timeDelay = 100;
 bool runMission = false;
 static long missionStamp;
 static byte counter = 0;
-short sensorInterval = 499;
+static int sensorInterval = 499;
 
 const byte TMD = 1; //Time-Duration         (0-int)
 const byte EST = 2; //Engine-Status-Type    (0/1)
@@ -59,7 +59,6 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
       } else if (missionNames.getValue(i) == STI) { /* --> Sensor-Time-Interval  */
           creatingMIS = creatingMIS + String("sti=");
-          sensorInterval = missionParams.getValue(i);
       }
       creatingMIS = creatingMIS + missionParams.getValue(i) + String("&");
   }
@@ -94,6 +93,7 @@ void loop() {
         if (controller == '<') {
         } else if (controller == '*') {
           String name = Serial.readStringUntil(':');
+          String param = Serial.readStringUntil('#');
           if (name.equals(String("TMD"))) {
             missionNames.add(1);
           } else if (name.equals(String("EST"))) {
@@ -104,8 +104,8 @@ void loop() {
             missionNames.add(4);
           } else if (name.equals(String("STI"))) {
             missionNames.add(5);
+            sensorInterval = param.toInt();
           }
-          String param = Serial.readStringUntil('#');
           missionParams.add(param.toInt());
         } else if (controller == '>') {
           applyMission();

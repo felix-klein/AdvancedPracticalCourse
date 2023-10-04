@@ -25,6 +25,7 @@ public class SerialThread extends Thread {
     private SensIn SENS;
     private ArrayList<String> processInstructions;
     private ArrayList<Integer> processInstructionsTimeDelay;
+    private boolean realStart = false;
 
     /**
      * byThread: This Constructor is for the by-Thread call with the main work of RECEIVING-DATA.
@@ -109,9 +110,9 @@ public class SerialThread extends Thread {
                 /* Build the time delay for the serial sending, to reduce the data overhead on the hardware. The
                  * sending of all the data at once would result in a possible data loss because of the rather small
                  * memory on the arduino board. */
-                if (s > 0 && processInstructionsTimeDelay.get(s - 1) > 10) {
+                if (s > 0 && processInstructionsTimeDelay.get(s - 1) >= 5) {
                     try {
-                        Thread.sleep(processInstructionsTimeDelay.get(s - 1) - 10);
+                        Thread.sleep((processInstructionsTimeDelay.get(s - 1) * 1000) - 100);
                     } catch (InterruptedException e) {
                         System.out.println("The Thread sleep operation doesn't work as predicted!");
                         e.getStackTrace();
@@ -121,7 +122,7 @@ public class SerialThread extends Thread {
                 outputStream.flush();
             } catch (IOException e) {
                 System.out.println("Error in the output stream of the serial communication:");
-                e.getCause();
+                e.getStackTrace();
                 break;
             }
         }
@@ -166,34 +167,45 @@ public class SerialThread extends Thread {
         System.out.println(dataLine);
         String[] splitMission = dataLine.split("#");
 
-        for (String s : splitMission) {
-            if (s.contains("?")) {
-                return true;
-            } else if (s.contains("TMP")) {
-                String[] split = s.split(":");
-                TMP.add(Float.valueOf(split[1]));
-            } else if (s.contains("VIB")) {
-                String[] split = s.split(":");
-                VIB.add(Float.valueOf(split[1]));
-            } else if (s.contains("MIC")) {
-                String[] split = s.split(":");
-                MIC.add(Short.valueOf(split[1]));
-            } else if (s.contains("CP1")) {
-                String[] split = s.split(":");
-                CP1.add(Double.valueOf(split[1]));
-            } else if (s.contains("CP2")) {
-                String[] split = s.split(":");
-                CP2.add(Double.valueOf(split[1]));
-            } else if (s.contains("CP3")) {
-                String[] split = s.split(":");
-                CP3.add(Double.valueOf(split[1]));
-            } else if (s.contains("TSP")) {
-                String[] split = s.split(":");
-                TSP.add(Long.valueOf(split[1]));
-            } else if (s.contains("MIS")) {
-                /* MIS got a new syntax, which looks like: MIS:egs=1&tmd=5000&tsp=345999. */
-                String[] split = s.split(":");
-                MIS.add(split[1]);
+        /* Safety for the real start of the sensor data. */
+        if (!realStart) {
+            if(splitMission[0].contains("MIS")) {
+                String[] split = splitMission[0].split(":");
+                if (split[0].startsWith("sti=")) {
+                    realStart = true;
+                }
+            }
+        }
+        if (realStart) {
+            for (String s : splitMission) {
+                if (s.contains("?")) {
+                    return true;
+                } else if (s.contains("TMP")) {
+                    String[] split = s.split(":");
+                    TMP.add(Float.valueOf(split[1]));
+                } else if (s.contains("VIB")) {
+                    String[] split = s.split(":");
+                    VIB.add(Float.valueOf(split[1]));
+                } else if (s.contains("MIC")) {
+                    String[] split = s.split(":");
+                    MIC.add(Short.valueOf(split[1]));
+                } else if (s.contains("CP1")) {
+                    String[] split = s.split(":");
+                    CP1.add(Double.valueOf(split[1]));
+                } else if (s.contains("CP2")) {
+                    String[] split = s.split(":");
+                    CP2.add(Double.valueOf(split[1]));
+                } else if (s.contains("CP3")) {
+                    String[] split = s.split(":");
+                    CP3.add(Double.valueOf(split[1]));
+                } else if (s.contains("TSP")) {
+                    String[] split = s.split(":");
+                    TSP.add(Long.valueOf(split[1]));
+                } else if (s.contains("MIS")) {
+                    /* MIS got a new syntax, which looks like: MIS:egs=1&tmd=5000&tsp=345999. */
+                    String[] split = s.split(":");
+                    MIS.add(split[1]);
+                }
             }
         }
         return false;

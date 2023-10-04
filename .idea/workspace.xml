@@ -8,23 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Final implementations and adjustments to the calculation of the compliance checking. -&gt; Compliance Checking Algorithm.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/Gateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +291,7 @@
       <workItem from="1695030161181" duration="52558000" />
       <workItem from="1696355134828" duration="4964000" />
       <workItem from="1696411065717" duration="9423000" />
-      <workItem from="1696425644503" duration="5377000" />
+      <workItem from="1696425644503" duration="16752000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -659,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696359929488</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner.">
+      <option name="closed" value="true" />
+      <created>1696432014089</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1696432014089</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,7 +687,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Not finished work session, but with improvements for the Serial communication and the style of data preparation and structuring." />
     <MESSAGE value="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code." />
     <MESSAGE value="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!" />
     <MESSAGE value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
@@ -714,7 +711,8 @@
     <MESSAGE value="IN the middle of the sensor data per second comparison and shortly before the mathematical evaluation." />
     <MESSAGE value="Major changes to the User Scene with the adding of customizable deviation and acceptance." />
     <MESSAGE value="Final implementations and adjustments to the calculation of the compliance checking. -&gt; Compliance Checking Algorithm." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final implementations and adjustments to the calculation of the compliance checking. -&gt; Compliance Checking Algorithm." />
+    <MESSAGE value="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner." />
+    <option name="LAST_COMMIT_MESSAGE" value="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
