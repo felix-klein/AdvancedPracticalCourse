@@ -1,5 +1,6 @@
 package edu.gate.frontend;
 
+import edu.ground.analysis.ComplianceResults;
 import edu.terminal.Terminal;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
  */
 public class MainApplication extends Application {
     private static Terminal terminal;
+    private ComplianceResults complianceResults;
 
     /**
      * The main method is for JavaFX purposes initialized with a command.
@@ -36,8 +38,9 @@ public class MainApplication extends Application {
             new SceneControl((short) 0, null, primaryStage);
 
             /* Creation of a secondary Stage for the by-Window (Process and Results) */
-            Stage secondaryStage = new Stage();
-            new SceneControl((short) 2, null, secondaryStage);
+            setComplianceResults();
+            // Stage secondaryStage = new Stage();
+            // new SceneControl((short) 2, null, secondaryStage);
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
             fx.getCause();
@@ -53,5 +56,29 @@ public class MainApplication extends Application {
     public static Terminal getTerminal() {
         return terminal;
     }
+
+    /**
+     * Setter for the startUserProcess method in Terminal to initialize the results for the Scene Builder of Results.
+     */
+    public void setComplianceResults() {
+        this.complianceResults = terminal.getComplianceResults();
+        /* Right after initialization, the result window can be shown. */
+        try {
+            /* Creation of a secondary Stage for the by-Window (Process and Results) */
+            Stage secondaryStage = new Stage();
+            new SceneControl((short) 2, null, secondaryStage);
+        } catch (Exception fx) { /* Throw a general text and additional information */
+            System.out.println("There is an error in the JavaFX application or in one of the related applications!");
+            fx.getCause();
+        }
+    }
+
+    /**
+     * Getter of the results for the ResultScene.
+     *
+     * @return a compliance result object.
+     */
+    public ComplianceResults getComplianceResults() {
+        return complianceResults;
+    }
 }
-//Result Inspection

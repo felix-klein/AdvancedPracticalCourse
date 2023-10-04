@@ -10,9 +10,9 @@ public class SensInAnalysis {
     private int startElement = 0;
 
     ArrayList<ArrayList<Float>> TMP_perMission = new ArrayList<>();
-    ArrayList<ArrayList<Float>> CP1_perMission = new ArrayList<>();
-    ArrayList<ArrayList<Float>> CP2_perMission = new ArrayList<>();
-    ArrayList<ArrayList<Float>> CP3_perMission = new ArrayList<>();
+    ArrayList<ArrayList<Double>> CP1_perMission = new ArrayList<>();
+    ArrayList<ArrayList<Double>> CP2_perMission = new ArrayList<>();
+    ArrayList<ArrayList<Double>> CP3_perMission = new ArrayList<>();
     ArrayList<ArrayList<Float>> VIB_perMission = new ArrayList<>();
     ArrayList<ArrayList<Float>> MIC_perMission = new ArrayList<>();
 
@@ -111,9 +111,9 @@ public class SensInAnalysis {
      * @param amount is the amount of sensor data in the time period of the current mission.
      * @return an ArrayList of als the per second sensor results of the mission part.
      */
-    private ArrayList<Float> CP1_Mission_Analyser(int amount) {
-        ArrayList<Float> cpOnes = new ArrayList<>();
-        Float current = 0F;
+    private ArrayList<Double> CP1_Mission_Analyser(int amount) {
+        ArrayList<Double> cpOnes = new ArrayList<>();
+        Double current = 0.0;
         int counter = 0;
         Long timePassed = 0L;
         Long startTime = 0L;
@@ -139,9 +139,9 @@ public class SensInAnalysis {
      * @param amount is the amount of sensor data in the time period of the current mission.
      * @return an ArrayList of als the per second sensor results of the mission part.
      */
-    private ArrayList<Float> CP2_Mission_Analyser(int amount) {
-        ArrayList<Float> cpTwos = new ArrayList<>();
-        Float current = 0F;
+    private ArrayList<Double> CP2_Mission_Analyser(int amount) {
+        ArrayList<Double> cpTwos = new ArrayList<>();
+        Double current = 0.0;
         int counter = 0;
         Long timePassed = 0L;
         Long startTime = 0L;
@@ -167,9 +167,9 @@ public class SensInAnalysis {
      * @param amount is the amount of sensor data in the time period of the current mission.
      * @return an ArrayList of als the per second sensor results of the mission part.
      */
-    private ArrayList<Float> CP3_Mission_Analyser(int amount) {
-        ArrayList<Float> cpThrees = new ArrayList<>();
-        Float current = 0F;
+    private ArrayList<Double> CP3_Mission_Analyser(int amount) {
+        ArrayList<Double> cpThrees = new ArrayList<>();
+        Double current = 0.0;
         int counter = 0;
         Long timePassed = 0L;
         Long startTime = 0L;
@@ -259,7 +259,7 @@ public class SensInAnalysis {
      *
      * @return a list of a list with each list element (a mission) and each list-list element the sensor data.
      */
-    public ArrayList<ArrayList<Float>> getCP1_perMission() {
+    public ArrayList<ArrayList<Double>> getCP1_perMission() {
         return CP1_perMission;
     }
 
@@ -268,7 +268,7 @@ public class SensInAnalysis {
      *
      * @return a list of a list with each list element (a mission) and each list-list element the sensor data.
      */
-    public ArrayList<ArrayList<Float>> getCP2_perMission() {
+    public ArrayList<ArrayList<Double>> getCP2_perMission() {
         return CP2_perMission;
     }
 
@@ -277,7 +277,7 @@ public class SensInAnalysis {
      *
      * @return a list of a list with each list element (a mission) and each list-list element the sensor data.
      */
-    public ArrayList<ArrayList<Float>> getCP3_perMission() {
+    public ArrayList<ArrayList<Double>> getCP3_perMission() {
         return CP3_perMission;
     }
 

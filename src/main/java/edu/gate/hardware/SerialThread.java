@@ -17,9 +17,9 @@ public class SerialThread extends Thread {
     private ArrayList<Float> TMP; /* Temperature */
     private ArrayList<Float> VIB; /* Vibration */
     private ArrayList<Short> MIC; /* Microphone-Volume */
-    private ArrayList<Long> CP1; /* Current-Port-1 */
-    private ArrayList<Long> CP2; /* Current-Port-2 */
-    private ArrayList<Long> CP3; /* Current-Port-3 */
+    private ArrayList<Double> CP1; /* Current-Port-1 */
+    private ArrayList<Double> CP2; /* Current-Port-2 */
+    private ArrayList<Double> CP3; /* Current-Port-3 */
     private ArrayList<Long> TSP; /* Time-Stamp */
     private ArrayList<String> MIS; /* Mission-Initialisation-Stamps */
     private SensIn SENS;
@@ -109,9 +109,9 @@ public class SerialThread extends Thread {
                 /* Build the time delay for the serial sending, to reduce the data overhead on the hardware. The
                  * sending of all the data at once would result in a possible data loss because of the rather small
                  * memory on the arduino board. */
-                if (s > 0 && processInstructionsTimeDelay.get(s - 1) > 50) {
+                if (s > 0 && processInstructionsTimeDelay.get(s - 1) > 10) {
                     try {
-                        Thread.sleep(processInstructionsTimeDelay.get(s - 1) - 50);
+                        Thread.sleep(processInstructionsTimeDelay.get(s - 1) - 10);
                     } catch (InterruptedException e) {
                         System.out.println("The Thread sleep operation doesn't work as predicted!");
                         e.getStackTrace();
@@ -163,6 +163,7 @@ public class SerialThread extends Thread {
      * @return a boolean to indicate if the received string contains the end signal.
      */
     private boolean analyseSerialData(String dataLine) {
+        System.out.println(dataLine);
         String[] splitMission = dataLine.split("#");
 
         for (String s : splitMission) {
@@ -179,13 +180,13 @@ public class SerialThread extends Thread {
                 MIC.add(Short.valueOf(split[1]));
             } else if (s.contains("CP1")) {
                 String[] split = s.split(":");
-                CP1.add(Long.valueOf(split[1]));
+                CP1.add(Double.valueOf(split[1]));
             } else if (s.contains("CP2")) {
                 String[] split = s.split(":");
-                CP2.add(Long.valueOf(split[1]));
+                CP2.add(Double.valueOf(split[1]));
             } else if (s.contains("CP3")) {
                 String[] split = s.split(":");
-                CP3.add(Long.valueOf(split[1]));
+                CP3.add(Double.valueOf(split[1]));
             } else if (s.contains("TSP")) {
                 String[] split = s.split(":");
                 TSP.add(Long.valueOf(split[1]));

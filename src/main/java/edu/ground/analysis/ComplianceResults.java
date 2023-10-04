@@ -12,6 +12,13 @@ public class ComplianceResults {
     private final ArrayList<ArrayList<DataList>> dataCP3;
     private Noise idealNoise;
     private Noise testNoise;
+    private boolean overallCompliance;
+    private int compliantTasks;
+    private double complianceRate;
+    private int tasks;
+    private String accuracy;
+    private int deviation;
+    private int acceptance;
 
 
     public ComplianceResults() {
@@ -22,6 +29,7 @@ public class ComplianceResults {
         this.dataCP1 = new ArrayList<>();
         this.dataCP2 = new ArrayList<>();
         this.dataCP3 = new ArrayList<>();
+        this.compliantTasks = 0;
     }
 
     public record DataList(double idealR, double testR, double diffRelative, double diffAbsolute,
@@ -59,6 +67,34 @@ public class ComplianceResults {
         return dataCP3;
     }
 
+    public boolean isOverallCompliance() {
+        return overallCompliance;
+    }
+
+    public int getCompliantTasks() {
+        return compliantTasks;
+    }
+
+    public double getComplianceRate() {
+        return complianceRate;
+    }
+
+    public int getTasks() {
+        return tasks;
+    }
+
+    public String getAccuracy() {
+        return accuracy;
+    }
+
+    public int getDeviation() {
+        return deviation;
+    }
+
+    public int getAcceptance() {
+        return acceptance;
+    }
+
     public Noise getIdealNoise() {
         return idealNoise;
     }
@@ -81,6 +117,9 @@ public class ComplianceResults {
      */
     public void setMissionTotals(MissionTotal totalMission) {
         this.missionTotals.add(totalMission);
+        if (totalMission.result()) {
+            addCompliantTasks();
+        }
     }
 
     /**
@@ -129,6 +168,37 @@ public class ComplianceResults {
      */
     public void setDataCP3(ArrayList<DataList> dataCP3) {
         this.dataCP3.add(dataCP3);
+    }
+
+    public void setOverallCompliance(boolean overallCompliance) {
+        this.overallCompliance = overallCompliance;
+    }
+
+    /**
+     * Kind of a setter for the automatic increase in compliant tasks.
+     */
+    public void addCompliantTasks() {
+        this.compliantTasks++;
+    }
+
+    public void setComplianceRate(double complianceRate) {
+        this.complianceRate = complianceRate;
+    }
+
+    public void setTasks(int tasks) {
+        this.tasks = tasks;
+    }
+
+    public void setAccuracy(String accuracy) {
+        this.accuracy = accuracy;
+    }
+
+    public void setDeviation(int deviation) {
+        this.deviation = deviation;
+    }
+
+    public void setAcceptance(int acceptance) {
+        this.acceptance = acceptance;
     }
 }
 

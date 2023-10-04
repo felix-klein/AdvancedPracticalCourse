@@ -47,7 +47,13 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           }
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
           creatingMIS = creatingMIS + String("rpm=");
-          shield->setMotorSpeed(missionParams.getValue(i));
+          // TODO: Testing
+          if (missionParams.getValue(i) <= 2000) {
+          digitalWrite(13, LOW); // TODO: Testing
+          } else {
+          digitalWrite(13, LOW); // TODO: Testing
+          }
+          //shield->setMotorSpeed(missionParams.getValue(i));
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */
           creatingMIS = creatingMIS + String("hda=");
           shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));

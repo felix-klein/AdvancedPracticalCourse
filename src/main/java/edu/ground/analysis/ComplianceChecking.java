@@ -72,11 +72,18 @@ public class ComplianceChecking {
         9. <*RPM:4000#*TMD:1200#>
      */
     public ComplianceChecking(SensInAnalysis sensorAnalyses, int deviationPercentage,
-                              int acceptancePercentage) {
+                              int acceptancePercentage, String accuracyLevel) {
         this.sensorAnalyses = sensorAnalyses;
         this.complianceResults = new ComplianceResults();
         this.deviationPercentage = deviationPercentage;
         this.acceptancePercentage = acceptancePercentage;
+
+        /* First part Compliance Results initialisation. */
+        complianceResults.setAcceptance(acceptancePercentage);
+        complianceResults.setDeviation(deviationPercentage);
+        complianceResults.setAccuracy(accuracyLevel);
+        complianceResults.setTasks(sensorAnalyses.MIC_perMission.size());
+
         try {
             /* Get the ideal sensor data of the blueprint. */
             this.idealData = (ArrayList<String>) Files.
@@ -87,6 +94,19 @@ public class ComplianceChecking {
         } catch (IOException e) {
             e.getStackTrace();
         }
+
+        /* Last part Compliance Results initialisation. */
+        double rateSum = 0;
+        boolean overallCompliance = true;
+        for (int i = 0; i < complianceResults.getMissionTotals().size(); i++) {
+            rateSum += complianceResults.getMissionTotals().get(i).percentage();
+            if (!complianceResults.getMissionTotals().get(i).result()) {
+                overallCompliance = false;
+            }
+        }
+        double complianceRate = rateSum / complianceResults.getMissionTotals().size();
+        complianceResults.setComplianceRate((double) Math.round(complianceRate * 100) /100);
+        complianceResults.setOverallCompliance(overallCompliance);
     }
 
     /**
@@ -334,5 +354,9 @@ public class ComplianceChecking {
                 (sumCP1/counter),
                 (sumCP2/counter),
                 (sumCP3/counter)));
+    }
+
+    public ComplianceResults getComplianceResults() {
+        return complianceResults;
     }
 }

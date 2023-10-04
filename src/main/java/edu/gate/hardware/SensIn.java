@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @param TSP is a list of all the respective Time-Stamps gathered.
  * @param MIS is a list of all the Mission-Initialisation-Stamps (not corresponding to the rest).
  */
-public record SensIn(ArrayList<Float> TMP, ArrayList<Float> VIB, ArrayList<Short> MIC, ArrayList<Long> CP1,
-                     ArrayList<Long> CP2, ArrayList<Long> CP3, ArrayList<Long> TSP, ArrayList<String> MIS) {
+public record SensIn(ArrayList<Float> TMP, ArrayList<Float> VIB, ArrayList<Short> MIC, ArrayList<Double> CP1,
+                     ArrayList<Double> CP2, ArrayList<Double> CP3, ArrayList<Long> TSP, ArrayList<String> MIS) {
 
 }

@@ -19,6 +19,7 @@ import java.util.Objects;
  */
 public class Terminal {
     private boolean initialized;
+    private ComplianceResults complianceResults;
 
     public Terminal() {
         /* If there is a blueprint text file, we consider this file as the correct file for this motor of control. */
@@ -51,12 +52,12 @@ public class Terminal {
     /**
      * From gate/frontend/UserController.java.
      * This method got coled from the UserController to activate the process.
-     * To ground/datapreparation/FileProcessing.java.
+     *
      *
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public boolean startUserProcess(String type, String accuracyLevel, int deviationPercentage,
+    public boolean startUserProcess(int type, String accuracyLevel, int deviationPercentage,
                                     int acceptancePercentage) {
         if (!initialized) {
             return false; /* False if there is no blueprint data already from the admin */
@@ -67,7 +68,13 @@ public class Terminal {
         HardwareGate hardwareUserGate = new HardwareGate(preparedData);
         /* Get the sensor data back and use it for the process flow drawing. */
         SensInAnalysis sensorAnalyses = new SensInAnalysis(hardwareUserGate.getSENS());
-        new ComplianceChecking(sensorAnalyses, deviationPercentage, acceptancePercentage);
+        ComplianceChecking complianceCheck = new ComplianceChecking(sensorAnalyses, deviationPercentage,
+                acceptancePercentage, accuracyLevel);
+        this.complianceResults = complianceCheck.getComplianceResults();
         return true;
+    }
+
+    public ComplianceResults getComplianceResults() {
+        return complianceResults;
     }
 }

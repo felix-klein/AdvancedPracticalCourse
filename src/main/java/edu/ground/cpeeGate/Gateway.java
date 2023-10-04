@@ -18,7 +18,7 @@ public class Gateway {
      * @param type is the model we need to prepare for the Hardware.
      * @param accuracyLevel is an additional parameter for the accuracy of the sensor data.
      */
-    public Gateway(String type, String accuracyLevel) {
+    public Gateway(int type, String accuracyLevel) {
         String xmlResponse = pull(type);
         preparedData = new ProcessDataPrep(xmlResponse, accuracyLevel).getPreparedData();
     }
@@ -29,9 +29,9 @@ public class Gateway {
      * @param type is the model we were ask to use.
      * @return a single String including all the xml data with linebreaks.
      */
-    private String pull(String type) {
+    private String pull(int type) {
         try {
-            URI uriLog = typeOpener(type);
+            URI uriLog = new URI("https://cpee.org/flow/engine/" + type + "/properties/");
 
             HttpClient webClient = HttpClient.newHttpClient();
             HttpRequest webRequest = HttpRequest.newBuilder().uri(uriLog).GET().build();
@@ -47,28 +47,6 @@ public class Gateway {
             e.getCause();
         }
         return null;
-    }
-
-    /**
-     * This helper method compares the gotten "type" and connects it its correct URI.
-     *
-     * @param type is the model we were ask to use and of which we need to find the corresponding URI.
-     * @return a URI, where we can GET the xml data from.
-     * @throws URISyntaxException if the URI is incorrect.
-     */
-    private URI typeOpener(String type) throws URISyntaxException {
-        URI returnURI;
-
-        returnURI = switch (type) {
-            case "blueprint" -> Objects.requireNonNull(getClass().getResource("/adminFiles/setup.bpmn")).toURI();
-            case "alpha" -> new URI("https://cpee.org/flow/engine/21677/properties/");
-            case "beta" -> new URI("Still blank and should be changed with option 2");
-            case "gamma" -> new URI("Still blank and should be changed with option 3");
-            case "longR" -> new URI("Predefined and should just display an image");
-            default -> new URI("Predefined and should just display an image for the longR");
-        };
-
-        return returnURI;
     }
 
     /**
