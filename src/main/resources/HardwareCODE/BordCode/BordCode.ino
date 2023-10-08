@@ -15,9 +15,9 @@ bool constructionsEnd = false;
 bool sensorsEnd = false;
 SingleLinkedList<byte> missionNames;
 SingleLinkedList<short> missionParams;
-short timeDelay = 100;
+static short timeDelay = 100;
 bool runMission = false;
-static long missionStamp;
+static unsigned long missionStamp;
 static byte counter = 0;
 static int sensorInterval = 499;
 
@@ -126,7 +126,6 @@ void loop() {
     }
   }
 
-//TODO: All sensors need to be added.
 // OUTPUT: Sensor data gathering, in parallel.
     static unsigned long sensorStamp = 0; // Static, because it should stay throughout the loop / unsigned long, because if it is to big it should restart at 0.
     if ((millis() - sensorStamp > sensorInterval) && (sensorsEnd == false)) {
@@ -150,11 +149,11 @@ void loop() {
       float volt3 = (readingCP3 / 1024.0) * 5000;
 
       if (constructionsEnd == true) { // Signal the end of the last sensor data with a ?.
-        // Example output at the end: "TSP:65400027.34#TMP:27.34#?".
+        // Example output at the end: "TSP:67990#TMP:21.97#VIB:0.00#MIC:238#CP1:170.90#CP2:146.48#CP3:170.90#?".
         Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#VIB:") + vib + String("#MIC:") + readingMIC + String("#CP1:") + volt1 + String("#CP2:") + volt2 + String("#CP3:") + volt3 + String("#?"));
         sensorsEnd = true;
       } else {
-        //Example output: "TSP:65400027.34#TMP:27.34".
+        //Example output: "TSP:48110#TMP:21.97#VIB:0.00#MIC:26#CP1:156.25#CP2:146.48#CP3:166.02".
         Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#VIB:") + vib + String("#MIC:") + readingMIC + String("#CP1:") + volt1 + String("#CP2:") + volt2 + String("#CP3:") + volt3);
       }
     }

@@ -8,13 +8,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments and new structures after FIRST PRACTICAL TESTS.&#10;Admin side with complete practical tests.&#10;New structure in data analyses and processing.">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]3/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/.theia/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/TestBlueprintFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SensIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/SensInAnalysis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintDataAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintDataAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/blueprintData/BlueprintSaver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/BlueprintCommandFlowHardware.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/setup.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +74,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="analysisPhase" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -291,7 +301,13 @@
       <workItem from="1695030161181" duration="52558000" />
       <workItem from="1696355134828" duration="4964000" />
       <workItem from="1696411065717" duration="9423000" />
-      <workItem from="1696425644503" duration="16752000" />
+      <workItem from="1696425644503" duration="18757000" />
+      <workItem from="1696593051117" duration="395000" />
+      <workItem from="1696597975247" duration="541000" />
+      <workItem from="1696706106224" duration="315000" />
+      <workItem from="1696710235242" duration="9577000" />
+      <workItem from="1696761597318" duration="6141000" />
+      <workItem from="1696767936660" duration="16406000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -657,7 +673,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696432014089</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="First serialisation tests and adjustments to the hardware.">
+      <option name="closed" value="true" />
+      <created>1696450498731</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1696450498731</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +698,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/main" />
+                        <option value="GitLab/UserResultCreation" />
                       </list>
                     </value>
                   </entry>
@@ -687,8 +711,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code." />
-    <MESSAGE value="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!" />
     <MESSAGE value="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested." />
     <MESSAGE value="Small style, READ.ME and warning adjustments to make the code more readable and clean." />
     <MESSAGE value="Major changes to the BordCode.ino to adjust it to the Infineon board. This does include research and results in motor control parameter and other structures.&#10;Modifications in style related areas where conducted as well." />
@@ -712,7 +734,9 @@
     <MESSAGE value="Major changes to the User Scene with the adding of customizable deviation and acceptance." />
     <MESSAGE value="Final implementations and adjustments to the calculation of the compliance checking. -&gt; Compliance Checking Algorithm." />
     <MESSAGE value="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner." />
-    <option name="LAST_COMMIT_MESSAGE" value="User Interface adjustments: Selection increase, Process Creation, Process Visualization, Test Result structure.&#10;First Test for the data gathering are started in a not engine like manner." />
+    <MESSAGE value="First serialisation tests and adjustments to the hardware." />
+    <MESSAGE value="Adjustments and new structures after FIRST PRACTICAL TESTS.&#10;Admin side with complete practical tests.&#10;New structure in data analyses and processing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments and new structures after FIRST PRACTICAL TESTS.&#10;Admin side with complete practical tests.&#10;New structure in data analyses and processing." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,7 +2,7 @@ package edu.terminal;
 
 import edu.gate.hardware.HardwareGate;
 import edu.ground.analysis.*;
-import edu.ground.blueprintData.BlueprintSaver;
+import edu.ground.blueprintData.BlueprintDataAnalysis;
 import edu.ground.cpeeGate.Gateway;
 
 import java.io.IOException;
@@ -33,15 +33,20 @@ public class Terminal {
     public void initializeBlueprint() {
         /* Get the blueprint commands which are saved in a txt file. */
         try {
+            /*
             ArrayList<String> blueprintData = (ArrayList<String>) Files.
                     readAllLines(Paths.get(Objects.requireNonNull(getClass()
                             .getResource("/data/BlueprintCommandFlowHardware.txt")).getPath()));
-
+             */
+            // TODO: It is still a blueprint test element.
+            ArrayList<String> blueprintData = (ArrayList<String>) Files.
+                    readAllLines(Paths.get(Objects.requireNonNull(getClass()
+                            .getResource("/data/TestBlueprintFile.txt")).getPath()));
             /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
              * txt file for further investigations. */
             HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
             /* Get the sensor data back and save it in a txt file for later analyses. */
-            new BlueprintSaver(hardwareInitialiseGate.getSENS());
+            new BlueprintDataAnalysis(hardwareInitialiseGate.getSENS());
             initialized = true;
         } catch (IOException e) {
             e.getStackTrace();
@@ -66,9 +71,8 @@ public class Terminal {
         ArrayList<String> preparedData = new Gateway(type, accuracyLevel).getPreparedData();
         /* Start the process on the hardware. */
         HardwareGate hardwareUserGate = new HardwareGate(preparedData);
-        /* Get the sensor data back and use it for the process flow drawing. */
-        SensInAnalysis sensorAnalyses = new SensInAnalysis(hardwareUserGate.getSENS());
-        ComplianceChecking complianceCheck = new ComplianceChecking(sensorAnalyses, deviationPercentage,
+
+        ComplianceChecking complianceCheck = new ComplianceChecking(hardwareUserGate.getSENS(), deviationPercentage,
                 acceptancePercentage, accuracyLevel);
         this.complianceResults = complianceCheck.getComplianceResults();
         return true;
