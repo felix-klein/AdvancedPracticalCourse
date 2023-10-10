@@ -91,8 +91,6 @@ public class ComplianceChecking {
             this.idealData = (ArrayList<String>) Files.
                     readAllLines(Paths.get(Objects.requireNonNull(getClass()
                             .getResource("/data/blueprintAnalysedData.txt")).getPath()));
-            System.out.println(idealData.size());
-            System.out.println(idealData);
 
             comparison();
         } catch (IOException e) {
@@ -207,7 +205,7 @@ public class ComplianceChecking {
                 idealIndex = fromTo(rpmMission, rpmMission);
             }
             /* The pattern will be: TMP*MIC*VIB*CP1*CP2*CP3 */
-            String[] idealLine = idealData.get(idealIndex).split(String.valueOf('*'));
+            String[] idealLine = idealData.get(idealIndex).split("\\*");
 
             /* TMP: Sensor analyses. */
             double idealA = Double.parseDouble(idealLine[0]);
@@ -322,7 +320,7 @@ public class ComplianceChecking {
         /* Loop to analyse each data string. */
         while (!idealData.get(counter).contains(">>")) {
             /* The pattern will be: TMP*MIC*VIB*CP1*CP2*CP3 */
-            String[] individual = idealData.get(counter).split(String.valueOf('*'));
+            String[] individual = idealData.get(counter).split("\\*");
             sumTMP += Double.parseDouble(individual[0]);
             sumMIC += Double.parseDouble(individual[1]);
             sumVIB += Double.parseDouble(individual[2]);

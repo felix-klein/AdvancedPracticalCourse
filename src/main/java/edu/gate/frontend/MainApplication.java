@@ -12,6 +12,7 @@ import javafx.stage.Stage;
  */
 public class MainApplication extends Application {
     private static Terminal terminal;
+    public static ComplianceResults complianceResults;
 
     /**
      * The main method is for JavaFX purposes initialized with a command.
@@ -35,9 +36,6 @@ public class MainApplication extends Application {
         try {
             /* Initializing the scene creation class to create a JavaFX application scene */
             new SceneControl((short) 0, null, primaryStage);
-
-            /* Creation of a secondary Stage for the by-Window (Process and Results) */
-            setComplianceResults();
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
             fx.getCause();
@@ -58,15 +56,7 @@ public class MainApplication extends Application {
      * Setter for the startUserProcess method in Terminal to initialize the results for the Scene Builder of Results.
      */
     public static void setComplianceResults() {
-        ComplianceResults complianceResults = terminal.getComplianceResults();
-        //TODO: Test output
-        System.out.println("IdealNoise: " + complianceResults.getIdealNoise());
-        System.out.println("TestNoise: " + complianceResults.getTestNoise());
-        System.out.println("Tasks: " + complianceResults.getTasks());
-        System.out.println("OverallCompliance: " + complianceResults.getOverallCompliance());
-        System.out.println("ComplianceRate: " + complianceResults.getComplianceRate());
-        System.out.println("Acceptance: " + complianceResults.getAcceptance());
-        System.out.println("Deviation: " + complianceResults.getDeviation());
+        complianceResults = terminal.getComplianceResults();
 
         /* Right after initialization, the result window can be shown. */
         try {

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -41,7 +44,7 @@
                         </Label>
                     </children>
                 </TextFlow>
-                <Pane layoutX="240.0" layoutY="590.0" prefHeight="77.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="251.0" AnchorPane.topAnchor="590.0">
+                <Pane layoutX="175.0" layoutY="581.0" prefHeight="77.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="316.0" AnchorPane.topAnchor="581.0">
                     <children>
                         <Label layoutX="10.0" layoutY="10.0" text="Accuracy" textFill="#5e94d4">
                             <font>
@@ -113,6 +116,14 @@
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
+                  <BarChart fx:id="accuracyBarChart" layoutY="30.0" prefHeight="238.0" prefWidth="446.0" style="-fx-bar-fill: #0065bd;">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis autoRanging="false" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </Pane>
             <Pane layoutX="20.0" layoutY="398.0" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
@@ -160,7 +171,7 @@
                         <Font name="Helvetica" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="complianceRateLabel122" alignment="CENTER" layoutX="183.0" layoutY="80.0" maxWidth="74.0" prefWidth="74.0" text="Label" textFill="WHITE" wrapText="true">
+                  <Label fx:id="acceptanceLabel" alignment="CENTER" layoutX="183.0" layoutY="80.0" maxWidth="74.0" prefWidth="74.0" text="Label" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Helvetica" size="14.0" />
                      </font>

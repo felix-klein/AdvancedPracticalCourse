@@ -120,7 +120,6 @@ public class SerialThread extends Thread {
                     }
                 }
                 outputStream.write(processInstructions.get(s).getBytes());
-                System.out.println(processInstructions.get(s));
                 outputStream.flush();
             } catch (IOException e) {
                 System.out.println("Error in the output stream of the serial communication:");

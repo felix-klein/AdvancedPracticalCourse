@@ -8,14 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="pom.xml cleanup.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments and corrections after further tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/SceneControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/terminal/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/blueprintAnalysedData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/blueprintAnalysedData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +309,7 @@
       <workItem from="1696920835194" duration="4201000" />
       <workItem from="1696933135747" duration="409000" />
       <workItem from="1696933968261" duration="269000" />
-      <workItem from="1696934579831" duration="16006000" />
+      <workItem from="1696934579831" duration="24650000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -448,14 +450,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code.">
-      <option name="closed" value="true" />
-      <created>1689515684998</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1689515684998</updated>
     </task>
     <task id="LOCAL-00025" summary="First Test: Board-Test separate with Serial messages per hand. Bug fixes with correcting results.&#10;-&gt; Result Notice: the memory at the board is very small!">
       <option name="closed" value="true" />
@@ -681,7 +675,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696935351894</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Adjustments and corrections after further tests.">
+      <option name="closed" value="true" />
+      <created>1696952892213</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1696952892213</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -711,7 +713,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Major changes to the BordCode.ino to adjust it to the Infineon board. This does include research and results in motor control parameter and other structures.&#10;Modifications in style related areas where conducted as well." />
     <MESSAGE value="Untested Changes to the data processing and file creation of the blueprint data. Adding of an additional variable for the analyses of the processed missions." />
     <MESSAGE value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
     <MESSAGE value="Adjustment of the latest changes to the UML diagram." />
@@ -736,7 +737,8 @@
     <MESSAGE value="Adjustments and new structures after FIRST PRACTICAL TESTS.&#10;Admin side with complete practical tests.&#10;New structure in data analyses and processing." />
     <MESSAGE value="Further testing to the analysis area." />
     <MESSAGE value="pom.xml cleanup." />
-    <option name="LAST_COMMIT_MESSAGE" value="pom.xml cleanup." />
+    <MESSAGE value="Adjustments and corrections after further tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments and corrections after further tests." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

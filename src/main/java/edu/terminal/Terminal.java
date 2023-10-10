@@ -65,7 +65,6 @@ public class Terminal {
         ArrayList<String> preparedData = new Gateway(type, accuracyLevel).getPreparedData();
         /* Start the process on the hardware. */
         HardwareGate hardwareUserGate = new HardwareGate(preparedData);
-
         ComplianceChecking complianceCheck = new ComplianceChecking(hardwareUserGate.getSENS(), deviationPercentage,
                 acceptancePercentage, accuracyLevel);
         this.complianceResults = complianceCheck.getComplianceResults();
