@@ -8,9 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Further testing to the analysis area.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="pom.xml cleanup.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ComboController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceChecking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/UserScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +307,7 @@
       <workItem from="1696920835194" duration="4201000" />
       <workItem from="1696933135747" duration="409000" />
       <workItem from="1696933968261" duration="269000" />
-      <workItem from="1696934579831" duration="752000" />
+      <workItem from="1696934579831" duration="16006000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -443,14 +448,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Not finished work session, but with improvements for the Serial communication and the style of data preparation and structuring.">
-      <option name="closed" value="true" />
-      <created>1689439982825</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1689439982825</updated>
     </task>
     <task id="LOCAL-00024" summary="Finished code for the FIRST DRAFT, but still without a test. Inclusion of the arduino board code.">
       <option name="closed" value="true" />
@@ -676,7 +673,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696933657711</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="pom.xml cleanup.">
+      <option name="closed" value="true" />
+      <created>1696935351894</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1696935351894</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +711,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small style, READ.ME and warning adjustments to make the code more readable and clean." />
     <MESSAGE value="Major changes to the BordCode.ino to adjust it to the Infineon board. This does include research and results in motor control parameter and other structures.&#10;Modifications in style related areas where conducted as well." />
     <MESSAGE value="Untested Changes to the data processing and file creation of the blueprint data. Adding of an additional variable for the analyses of the processed missions." />
     <MESSAGE value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
@@ -731,7 +735,8 @@
     <MESSAGE value="First serialisation tests and adjustments to the hardware." />
     <MESSAGE value="Adjustments and new structures after FIRST PRACTICAL TESTS.&#10;Admin side with complete practical tests.&#10;New structure in data analyses and processing." />
     <MESSAGE value="Further testing to the analysis area." />
-    <option name="LAST_COMMIT_MESSAGE" value="Further testing to the analysis area." />
+    <MESSAGE value="pom.xml cleanup." />
+    <option name="LAST_COMMIT_MESSAGE" value="pom.xml cleanup." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

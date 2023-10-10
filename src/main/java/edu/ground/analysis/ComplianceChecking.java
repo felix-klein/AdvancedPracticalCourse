@@ -91,6 +91,8 @@ public class ComplianceChecking {
             this.idealData = (ArrayList<String>) Files.
                     readAllLines(Paths.get(Objects.requireNonNull(getClass()
                             .getResource("/data/blueprintAnalysedData.txt")).getPath()));
+            System.out.println(idealData.size());
+            System.out.println(idealData);
 
             comparison();
         } catch (IOException e) {
@@ -122,6 +124,7 @@ public class ComplianceChecking {
     private void comparison() {
         int missionRPMFrom;
         int missionRPMTo = 0;
+
 
         /* Analyse at first the surround data of the 300. */
         noiseComparison300();

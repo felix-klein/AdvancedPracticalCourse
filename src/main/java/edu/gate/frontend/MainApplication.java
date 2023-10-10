@@ -59,6 +59,15 @@ public class MainApplication extends Application {
      */
     public static void setComplianceResults() {
         ComplianceResults complianceResults = terminal.getComplianceResults();
+        //TODO: Test output
+        System.out.println("IdealNoise: " + complianceResults.getIdealNoise());
+        System.out.println("TestNoise: " + complianceResults.getTestNoise());
+        System.out.println("Tasks: " + complianceResults.getTasks());
+        System.out.println("OverallCompliance: " + complianceResults.getOverallCompliance());
+        System.out.println("ComplianceRate: " + complianceResults.getComplianceRate());
+        System.out.println("Acceptance: " + complianceResults.getAcceptance());
+        System.out.println("Deviation: " + complianceResults.getDeviation());
+
         /* Right after initialization, the result window can be shown. */
         try {
             /* Creation of a secondary Stage for the by-Window (Process and Results) */

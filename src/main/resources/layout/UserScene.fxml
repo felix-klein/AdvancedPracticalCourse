@@ -106,12 +106,12 @@
                         <ToggleGroup fx:id="Selection" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="alpha" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Custom process creation BETA" textFill="WHITE" toggleGroup="$Selection">
+                  <RadioButton fx:id="alpha" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Custom process creation ALPHA" textFill="WHITE" toggleGroup="$Selection">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="beta" layoutX="20.0" layoutY="95.0" mnemonicParsing="false" text="Custom process creation GAMMA" textFill="WHITE" toggleGroup="$Selection">
+                  <RadioButton fx:id="beta" layoutX="20.0" layoutY="95.0" mnemonicParsing="false" text="Custom process creation BETA" textFill="WHITE" toggleGroup="$Selection">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>

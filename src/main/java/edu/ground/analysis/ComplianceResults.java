@@ -67,7 +67,7 @@ public class ComplianceResults {
         return dataCP3;
     }
 
-    public boolean isOverallCompliance() {
+    public boolean getOverallCompliance() {
         return overallCompliance;
     }
 
