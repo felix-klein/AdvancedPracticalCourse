@@ -16,20 +16,6 @@
             <artifactId>javafx-controls</artifactId>
             <version>21-ea+23</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.kordamp.bootstrapfx/bootstrapfx-core -->
-        <!-- BootstrapFX to create Bootstrap like layouts with JavaFX -->
-        <dependency>
-            <groupId>org.kordamp.bootstrapfx</groupId>
-            <artifactId>bootstrapfx-core</artifactId>
-            <version>0.4.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.dlsc.formsfx/formsfx-core -->
-        <!-- FormsFX to create forms with ease and creates well-designed and user-friendly forms by default -->
-        <dependency>
-            <groupId>com.dlsc.formsfx</groupId>
-            <artifactId>formsfx-core</artifactId>
-            <version>11.6.0</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
         <!-- Provides support for the FXML (FXML Markup Language) framework -->
         <dependency>
@@ -43,28 +29,6 @@
             <groupId>com.fazecast</groupId>
             <artifactId>jSerialComm</artifactId>
             <version>2.9.3</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-        <!-- JUnit as a testing Framework and Tool for the Java parts -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.3</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/guru.nidi/graphviz-java -->
-        <!-- Graphviz is for Java to build PetriNet png`s -->
-        <dependency>
-            <groupId>guru.nidi</groupId>
-            <artifactId>graphviz-java</artifactId>
-            <version>0.18.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-web -->
-        <!-- Dependency for the inclusion of WebView -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-web</artifactId>
-            <version>21-ea+24</version>
         </dependency>
 
     </dependencies>
