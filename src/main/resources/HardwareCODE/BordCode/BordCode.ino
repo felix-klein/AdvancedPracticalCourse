@@ -38,6 +38,7 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           timeDelay = missionParams.getValue(i) * 1000;
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
           creatingMIS = creatingMIS + String("est=");
+          timeDelay = 990;
           if (missionParams.getValue(i) == 0) {
               //shield->setMotorMode(STOP_MOTOR);
               digitalWrite(13, HIGH); // TODO: Testing
@@ -51,7 +52,7 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           if (missionParams.getValue(i) <= 2000) {
           digitalWrite(13, LOW); // TODO: Testing
           } else {
-          digitalWrite(13, LOW); // TODO: Testing
+          digitalWrite(13, HIGH); // TODO: Testing
           }
           //shield->setMotorSpeed(missionParams.getValue(i));
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */

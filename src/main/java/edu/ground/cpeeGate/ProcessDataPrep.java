@@ -91,7 +91,7 @@ public class ProcessDataPrep {
                 int loopEnd = purifiedData.size() - 1;
                 while (loopEnd >= 0 && recursivePart.isEmpty()) {
                     if (purifiedData.get(loopEnd).contains("</loop>")) {
-                        recursivePart = (ArrayList<String>) purifiedData.subList(i+1, loopEnd);
+                        recursivePart = new ArrayList<>(purifiedData.subList(i+1, loopEnd));
                     }
                     loopEnd--;
                 }

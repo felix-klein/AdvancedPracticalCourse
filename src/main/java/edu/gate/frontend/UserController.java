@@ -46,6 +46,7 @@ public class UserController extends ComboController implements Initializable {
         } else {
             processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
                     deviationPercentage, acceptancePercentage);
+            MainApplication.setComplianceResults();
         }
 
         /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */

@@ -18,15 +18,15 @@
       <bpmn:outgoing>Flow_0emxczb</bpmn:outgoing>
       <bpmn:outgoing>Flow_0z7yd9g</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:task id="Activity_0s6ayz5" name="Fast Cold Start&#10;EST:1&#10;RPM:{rpm}&#10;TMD:60">
+    <bpmn:task id="Activity_0s6ayz5" name="Fast Cold Start&#10;EST:1&#10;RPM:{rpm}&#10;TMD:30">
       <bpmn:incoming>Flow_0emxczb</bpmn:incoming>
       <bpmn:outgoing>Flow_0t8vfu0</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:task id="Activity_161msgz" name="Long Run&#10;RPM:{rpm}&#10;TMD:600">
+    <bpmn:task id="Activity_161msgz" name="Long Run&#10;RPM:{rpm}&#10;TMD:360">
       <bpmn:incoming>Flow_0t8vfu0</bpmn:incoming>
       <bpmn:outgoing>Flow_06gea6f</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:task id="Activity_1m6vae0" name="Fast Cool Down&#10;EST:0&#10;TMD:300">
+    <bpmn:task id="Activity_1m6vae0" name="Fast Cool Down&#10;EST:0&#10;TMD:170">
       <bpmn:incoming>Flow_06gea6f</bpmn:incoming>
       <bpmn:outgoing>Flow_176a94b</bpmn:outgoing>
     </bpmn:task>
@@ -35,7 +35,7 @@
     <bpmn:sequenceFlow id="Flow_0t8vfu0" sourceRef="Activity_0s6ayz5" targetRef="Activity_161msgz" />
     <bpmn:sequenceFlow id="Flow_06gea6f" sourceRef="Activity_161msgz" targetRef="Activity_1m6vae0" />
     <bpmn:sequenceFlow id="Flow_176a94b" sourceRef="Activity_1m6vae0" targetRef="Gateway_1rdcvrm" />
-    <bpmn:task id="Activity_0yq495p" name="Slow Start &#38; Upshift 1&#10;EST:1&#10;TMD:4">
+    <bpmn:task id="Activity_0yq495p" name="Slow Start &#38; Upshift 1&#10;EST:1&#10;TMD:40">
       <bpmn:incoming>Flow_0z7yd9g</bpmn:incoming>
       <bpmn:outgoing>Flow_0ocz98z</bpmn:outgoing>
       <bpmn:outgoing>Flow_19h7l8b</bpmn:outgoing>
@@ -45,7 +45,7 @@
       <bpmn:incoming>Flow_1htq9w6</bpmn:incoming>
       <bpmn:outgoing>Flow_09xglr8</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:task id="Activity_00bhmtl" name="Slow Start &#38; Upshift X&#10;EST:1&#10;RPM:{rpm}&#10;TMD:37">
+    <bpmn:task id="Activity_00bhmtl" name="Slow Start &#38; Upshift X&#10;EST:1&#10;RPM:{rpm}&#10;TMD:40">
       <bpmn:extensionElements />
       <bpmn:incoming>Flow_09xglr8</bpmn:incoming>
       <bpmn:outgoing>Flow_1htq9w6</bpmn:outgoing>
@@ -54,7 +54,7 @@
     <bpmn:sequenceFlow id="Flow_1htq9w6" sourceRef="Activity_00bhmtl" targetRef="Gateway_0l6tydn" />
     <bpmn:sequenceFlow id="Flow_0ocz98z" sourceRef="Activity_0yq495p" targetRef="Gateway_0l6tydn" />
     <bpmn:sequenceFlow id="Flow_0z7yd9g" sourceRef="Gateway_1rdcvrm" targetRef="Activity_0yq495p" />
-    <bpmn:task id="Activity_1wzhgyf" name="Cool Down &#38; Downshift 9&#10;EST:0&#10;TMD:300">
+    <bpmn:task id="Activity_1wzhgyf" name="Cool Down &#38; Downshift 9&#10;EST:0&#10;TMD:40">
       <bpmn:incoming>Flow_1enrnyg</bpmn:incoming>
       <bpmn:outgoing>Flow_1j1k0h7</bpmn:outgoing>
     </bpmn:task>
@@ -64,7 +64,7 @@
       <bpmn:outgoing>Flow_1szdhsw</bpmn:outgoing>
       <bpmn:outgoing>Flow_1enrnyg</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:task id="Activity_0l66rtj" name="Cool Down &#38; Downshift X&#10;EST:1&#10;RPM:{rpm}&#10;TMD:37">
+    <bpmn:task id="Activity_0l66rtj" name="Cool Down &#38; Downshift X&#10;EST:1&#10;RPM:{rpm}&#10;TMD:40">
       <bpmn:incoming>Flow_1szdhsw</bpmn:incoming>
       <bpmn:outgoing>Flow_0xli89l</bpmn:outgoing>
     </bpmn:task>

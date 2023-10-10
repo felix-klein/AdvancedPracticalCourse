@@ -23,7 +23,7 @@ public class Terminal {
 
     public Terminal() {
         /* If there is a blueprint text file, we consider this file as the correct file for this motor of control. */
-        initialized = getClass().getResource("/data/blueprint.txt") != null;
+        initialized = getClass().getResource("/data/blueprintAnalysedData.txt") != null;
     }
 
     /**
@@ -33,15 +33,9 @@ public class Terminal {
     public void initializeBlueprint() {
         /* Get the blueprint commands which are saved in a txt file. */
         try {
-            /*
             ArrayList<String> blueprintData = (ArrayList<String>) Files.
                     readAllLines(Paths.get(Objects.requireNonNull(getClass()
                             .getResource("/data/BlueprintCommandFlowHardware.txt")).getPath()));
-             */
-            // TODO: It is still a blueprint test element.
-            ArrayList<String> blueprintData = (ArrayList<String>) Files.
-                    readAllLines(Paths.get(Objects.requireNonNull(getClass()
-                            .getResource("/data/TestBlueprintFile.txt")).getPath()));
             /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
              * txt file for further investigations. */
             HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
