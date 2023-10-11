@@ -44,7 +44,7 @@
                         </Label>
                     </children>
                 </TextFlow>
-                <Pane layoutX="175.0" layoutY="581.0" prefHeight="77.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="316.0" AnchorPane.topAnchor="581.0">
+                <Pane layoutX="445.0" layoutY="661.0" prefHeight="77.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="661.0">
                     <children>
                         <Label layoutX="10.0" layoutY="10.0" text="Accuracy" textFill="#5e94d4">
                             <font>
@@ -111,12 +111,12 @@
             </Pane>
             <Pane layoutX="285.0" layoutY="260.0" prefHeight="268.0" prefWidth="446.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
                <children>
-                  <Label layoutX="10.0" layoutY="10.0" text="Accuracy" textFill="#5e94d4">
+                  <Label layoutX="10.0" layoutY="10.0" text="Percentage of accepted sensor values per mission" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <BarChart fx:id="accuracyBarChart" layoutY="30.0" prefHeight="238.0" prefWidth="446.0" style="-fx-bar-fill: #0065bd;">
+                  <BarChart fx:id="accuracyBarChart" layoutY="30.0" prefHeight="238.0" prefWidth="446.0" style="-fx-alternative-column-fill-visible: #0065bd;">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -172,6 +172,20 @@
                      </font>
                   </Label>
                   <Label fx:id="acceptanceLabel" alignment="CENTER" layoutX="183.0" layoutY="80.0" maxWidth="74.0" prefWidth="74.0" text="Label" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Helvetica" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="533.0" prefHeight="71.0" prefWidth="711.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Tasks and ID's" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="missionLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="13.0" prefHeight="48.0" prefWidth="490.0" text="Missions" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Helvetica" size="14.0" />
                      </font>
