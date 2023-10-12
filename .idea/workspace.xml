@@ -8,10 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Further Tests and Adjustments.&#10;Further functions for the analysis.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Further Tests and Adjustments.&#10;Further functions for the analysis. (2)">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]2/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/frontend/ResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/ResultScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/.theia/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/.theia/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/setupData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/setupData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/AdminScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +307,8 @@
       <workItem from="1696920835194" duration="4201000" />
       <workItem from="1696933135747" duration="409000" />
       <workItem from="1696933968261" duration="269000" />
-      <workItem from="1696934579831" duration="27286000" />
+      <workItem from="1696934579831" duration="27513000" />
+      <workItem from="1697023875513" duration="7498000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -444,14 +449,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00026" summary="CODE RUNNING and WORKING:&#10;The board connection is working and the data is transferred correctly. Loops still need to be tested.">
-      <option name="closed" value="true" />
-      <created>1689589907135</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1689589907135</updated>
     </task>
     <task id="LOCAL-00027" summary="Small style, READ.ME and warning adjustments to make the code more readable and clean.">
       <option name="closed" value="true" />
@@ -677,7 +674,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696977298279</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Further Tests and Adjustments.&#10;Further functions for the analysis. (2)">
+      <option name="closed" value="true" />
+      <created>1697015107151</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1697015107153</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +712,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing." />
     <MESSAGE value="Adjustment of the latest changes to the UML diagram." />
     <MESSAGE value="Changes to the clean structure and visualisation. No rudimentary changes but rather a cleanup for the presentation to the coordinator.&#10;Last push before the exams brake." />
     <MESSAGE value="Changes and clean up for a clean rebuild of the new branch." />
@@ -732,7 +736,8 @@
     <MESSAGE value="pom.xml cleanup." />
     <MESSAGE value="Adjustments and corrections after further tests." />
     <MESSAGE value="Further Tests and Adjustments.&#10;Further functions for the analysis." />
-    <option name="LAST_COMMIT_MESSAGE" value="Further Tests and Adjustments.&#10;Further functions for the analysis." />
+    <MESSAGE value="Further Tests and Adjustments.&#10;Further functions for the analysis. (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further Tests and Adjustments.&#10;Further functions for the analysis. (2)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

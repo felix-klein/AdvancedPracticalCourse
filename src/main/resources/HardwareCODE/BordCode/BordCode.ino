@@ -1,12 +1,13 @@
 // ---> include libraries
 #include <SingleLinkedList.hpp> /*Include the library for the creation of List objects */
-#include "TLE9879_Group.h" /* Include the Infineon Shield library to the Arduino project */
+#include "TLE9879_Group.h" /* Include the Infineon shields library to the Arduino project */
 
 // ---> defines and constants
-TLE9879_Group *shield; /* Declare Shield group object */
+TLE9879_Group *shields; /* Declare shields group object */
+
 
 /*
-Normal example Input: <*STI:999#><*ALB:1#*TMD:5000#> <*ALB:0#*TMD:1000#><*ALB:0#*TMD:4500#>?
+Normal example Input: <*STI:499#*TMD:4#><*EST:1#*TMD:4#><*RPM:3000#*TMD:120#><*EST:0#*TMD:20#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -15,7 +16,7 @@ bool constructionsEnd = false;
 bool sensorsEnd = false;
 SingleLinkedList<byte> missionNames;
 SingleLinkedList<short> missionParams;
-static short timeDelay = 100;
+static long timeDelay = 100;
 bool runMission = false;
 static unsigned long missionStamp;
 static byte counter = 0;
@@ -35,29 +36,20 @@ void applyMission() { /* Helper function to apply the gathered mission. */
   for (int i=0; i<missionNames.getSize(); i++) {
       if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
           creatingMIS = creatingMIS + String("tmd=");
-          timeDelay = missionParams.getValue(i) * 1000;
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
           creatingMIS = creatingMIS + String("est=");
-          timeDelay = 990;
           if (missionParams.getValue(i) == 0) {
-              //shield->setMotorMode(STOP_MOTOR);
-              digitalWrite(13, HIGH); // TODO: Testing
+            shields->setMotorMode(STOP_MOTOR);
           } else {
-              //shield->setMotorMode(START_MOTOR);
-              digitalWrite(13, LOW); // TODO: Testing
+            shields->setMotorMode(START_MOTOR);
           }
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
           creatingMIS = creatingMIS + String("rpm=");
-          // TODO: Testing
-          if (missionParams.getValue(i) <= 2000) {
-          digitalWrite(13, LOW); // TODO: Testing
-          } else {
-          digitalWrite(13, HIGH); // TODO: Testing
-          }
-          //shield->setMotorSpeed(missionParams.getValue(i));
+          shields->setMotorSpeed(missionParams.getValue(i));
+          shields->setMotorMode(START_MOTOR);
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */
           creatingMIS = creatingMIS + String("hda=");
-          shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
+          shields->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
       } else if (missionNames.getValue(i) == STI) { /* --> Sensor-Time-Interval  */
           creatingMIS = creatingMIS + String("sti=");
       }
@@ -68,19 +60,17 @@ void applyMission() { /* Helper function to apply the gathered mission. */
 
 // ---> setup()
 void setup() {
-  // --> Infineon shield initialization
-  //shield->setParameter(HALL_INPUT_A, 0); /* For the case, that the contacts on the HALL input are wrong */
-  /*
-  shield = new TLE9879_Group(1); // Initialize the shield group with the one shields in the stack
-  shield->setMode(HALL); // Set the mode to HALL
-  shield->setParameter(HALL_POLE_PAIRS, 4); // Set number of pole pares to 4, for 8 poles
-  shield->setParameter(HALL_ANGLE_DELAY_EN, 1); // Set the possibility of changing the timing degree
-  */
-
   // --> Serial communication initialization
-  Serial.begin(115200); // Sets the data rate in bits per second (baud) for serial data transmission.
-  while (Serial.available() < 9) {}; // Get the number of bytes (characters) available for reading from the serial port.
+  Serial.begin(9600); // Sets the data rate in bits per second (baud) for serial data transmission.
+  Serial.println(Serial.read());
+  // --> Infineon shields initialization
+  //shields->setParameter(HALL_INPUT_A, 0); /* For the case, that the contacts on the HALL input are wrong */
+  shields = new TLE9879_Group(1); // Initialize the shields group with the one shieldss in the stack
+  shields->setMode(HALL); // Set the mode to HALL
+  shields->setParameter(HALL_POLE_PAIRS, 4); // Set number of pole pares to 4, for 8 poles
+  shields->setParameter(HALL_ANGLE_DELAY_EN, 1); // Set the possibility of changing the timing degree
 
+  while (Serial.available() < 9) {}; // Get the number of bytes (characters) available for reading from the serial port.
   pinMode(13, OUTPUT);
 }
 
@@ -97,6 +87,7 @@ void loop() {
           String param = Serial.readStringUntil('#');
           if (name.equals(String("TMD"))) {
             missionNames.add(1);
+            timeDelay = param.toInt() * 1000;
           } else if (name.equals(String("EST"))) {
             missionNames.add(2);
           } else if (name.equals(String("RPM"))) {
@@ -114,8 +105,10 @@ void loop() {
           missionNames.clear();
           missionParams.clear();
           runMission = true;
+          Serial.println(timeDelay);
         } else if (controller == '?') {
           constructionsEnd = true;
+          shields->setMotorMode(STOP_MOTOR);
         }
       }
     } else {
@@ -132,13 +125,13 @@ void loop() {
     if ((millis() - sensorStamp > sensorInterval) && (sensorsEnd == false)) {
       sensorStamp = millis();
 
-      int readingTMP = analogRead(0);
+      int readingMIC = analogRead(0);
+
+      int readingTMP = analogRead(1);
       float temp = readingTMP * 0.0048828125 * 100;
 
-      int readVIB = analogRead(1);
+      int readVIB = analogRead(2);
       float vib = readVIB * (5.0 / 1023.0);
-
-      int readingMIC = analogRead(2);
 
       int readingCP1 = analogRead(3);
       float volt1 = (readingCP1 / 1024.0) * 5000;
