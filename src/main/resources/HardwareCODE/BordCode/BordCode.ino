@@ -7,7 +7,7 @@ TLE9879_Group *shields; /* Declare shields group object */
 
 
 /*
-Normal example Input: <*STI:999#*TMD:4#><*EST:1#*TMD:4#><*RPM:4000#*TMD:2#><*RPM:100#*TMD:1#><*RPM:4000#*TMD:5#><*EST:0#*TMD:8#>?
+Normal example Input: <*STI:999#*TMD:4#><*RPM:4000#*TMD:2#><*RPM:100#*TMD:3#><*RPM:4000#*TMD:5#><*EST:0#*TMD:8#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -18,7 +18,7 @@ SingleLinkedList<byte> missionNames;
 SingleLinkedList<short> missionParams;
 static long timeDelay;
 bool runMission = false;
-static unsigned long missionStamp;
+static long missionStamp;
 static byte counter = 0;
 static int sensorInterval = 499;
 
@@ -62,7 +62,6 @@ void applyMission() { /* Helper function to apply the gathered mission. */
 void setup() {
   // --> Serial communication initialization
   Serial.begin(9600); // Sets the data rate in bits per second (baud) for serial data transmission.
-  Serial.println(Serial.read());
   // --> Infineon shields initialization
   //shields->setParameter(HALL_INPUT_A, 0); /* For the case, that the contacts on the HALL input are wrong */
   shields = new TLE9879_Group(1); // Initialize the shields group with the one shieldss in the stack
@@ -112,7 +111,7 @@ void loop() {
         }
       }
     } else {
-      long timeSinceMissionStart = millis() - missionStamp;
+      static long timeSinceMissionStart = millis() - missionStamp;
       if (timeSinceMissionStart >= timeDelay) {
         runMission = false;
         missionStamp = 0;

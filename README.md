@@ -1,18 +1,29 @@
-# Bachelor Thesis Practical
+# Bachelor Thesis Prototype
+
+Welcome to the system and documentation environment for the bachelor thesis: An Integrated Approach to Predictive 
+Maintenance and Quality Control for E-Engines through Compliance Checking. In addition to the written thesis, this work
+also includes the practical part of the prototype construction. This environment is primarily used for editing and 
+storing the software used for the prototype, but also includes the thesis itself, the literature references, the 
+artefacts and a large number of images and videos that exceed the scope of the written work. In the following, you will
+be referred to the further materials and receive information about the systems and environments used.
+
+## Bachelor Thesis Material
+All non-software related materials can be found in the folder [Bachelor-Thesis-Material](Bachelor-Thesis-Material).
+* [Artefacts](Bachelor-Thesis-Material/Artefacts)\
+  Artefacts include data sheets and implementation recommendations for the hardware, as well as software packages and descriptions for the Infineon microcontroller.
+* [Images](Bachelor-Thesis-Material/Images)\
+  Images are divided into two sections: Images that can be found in the written elaboration and images that have been added as supplements.
+* [Literature References](Bachelor-Thesis-Material/Literature_References)\
+  The literature references are copies of the literature used in the preparation of this thesis.
 
 ## Requirements for easy set up
-
 For a simple setup of this project, [pom.xml](pom.xml) can be used,
 the dependencies and plugins contained here are as follows:
 
 * Dependencies:
     * javafx-controls
-    * bootstrapfx-core
-    * formsfx-core
     * javafx-fxml
     * jSerialComm
-    * junit-jupiter-api
-    * graphviz-java
 * Plugins:
     * javafx-maven-plugin
 * Properties:
@@ -21,16 +32,16 @@ the dependencies and plugins contained here are as follows:
     * project.build.sourceEncoding: UTF-8
 * <u>External IDE`s:</u>
   * Camunda Modeler (Version 5.12.0)
-  * Arduino IDE (Version 2.1.0)
+  * Arduino IDE (Version 2.2.1)
   * Scene Builder - Gluon
 
 * External Additions:
-  * CPEE - Engine: Modeller for the process
+  * [CPEE](https://cpee.org/) - Engine: Modeller for the process 
 
 ## Build and run the project
 
 To get the project running:
-1. Install Camunda Modeler (Version 5.12.0);
+1. Install Google Chrome;
 2. Make *Maven* executable (run) by use of:\
    ```View > Tool Windows > Maven > i17BA > Run Configurations > i17BA [javafx:run]```
 
@@ -40,16 +51,15 @@ The code structure in the form of classes, methods and attributes can quickly be
 Therefore, the following lightweight UML-diagram reveals a structural representation of the back-end. Even though not
 all methods (and even classes) are shown, it still illustrates the key connections.
 
-![UML diagram of the project](UML.svg)
+![UML diagram of the project](UML.png)
 
 # Commands and Sensor Response rules and syntax
 * Commands:
-  * EGS (Engine-Gear-Shift): 0-6  [-1: down-shift, -99: up-shift]
   * STI (Sensor-Time-Interval): ->sensorInterval
   * EST (Engine-Status-Type): 0/1
   * HDA (Hall-Delay-Angle): 1-59
   * RPM (Rotations-per-Minute): 0-4000
-  * TMD (Time-Duration): 0-int
+  * TMD (Time-Duration): 0-int (in seconds)
 * Sensor Response:
   * TMP is a list of all the Temperature gathered.
   * VIB is a list of all the Vibration gathered.
@@ -61,17 +71,12 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * MIS is a list of all the Mission-Initialisation-Stamps (not corresponding to the rest).
 
 # Blueprint hardware command initialisation (data structure)
-* Specifications for easier patterns:
-  * HDA Level: 1 / 10 / 20 / 30 / 40 / 50 / 59 
-  * RPM Level: 0 / 1 / 500 / 1000 / 1500 / 2000 / 2500 / 3000 / 3500 / 4000 
-  * EST Level: 0 / 1 
-  * TMD Level: 1 / 5 / 10 / 120 / 300 / 600 / 1200
 * Pre-Testing (Each 1 - 9):
   * Cold_Start_Fast
-  * Cold_Start_Slow&G_C_Up
-  * Cool_Down_Fast
-  * Cool_Down_Slow&G_C_Down
   * Long_Run
+  * Cool_Down_Fast
+  * Cold_Start_Slow&G_C_Up
+  * Cool_Down_Slow&G_C_Down
 * See command structure and description in
   [BlueprintCommandFlowHardware_Described](src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt)
 
@@ -83,18 +88,11 @@ For further clarification and as a result of active programming we decided to us
   * `/* */` and `/** **/`for final comments and work, like a 'final/normal comment'
 This structure does not count for code which is not written in java.
 
-## List of References
+## List of Programming-References
+* Arduino IDE-language: [Arduino LANGUAGE](https://www.arduino.cc/reference/en/)
+* Arduino API List: [Arduino List Library  2.1.4](https://nkaaf.github.io/Arduino-List/html/index.html)
 
-* Algorithmic-References
-    *   
-* Frontend-References
-    * graphviz-java: [Graphviz Github](https://github.com/nidi3/graphviz-java)
-* Hardware-References
-    * Arduino IDE-language: [Arduino LANGUAGE](https://www.arduino.cc/reference/en/)
-    * Arduino API List: [Arduino List Library  2.1.4](https://nkaaf.github.io/Arduino-List/html/index.html)
-
-## Design Guide
-
+# Design Guide
 * Main Design-Guide reference:
   * [M2-Material Design](https://m2.material.io/design/color/dark-theme.html)
 * Color Scheme Dark-Theme:
@@ -107,40 +105,13 @@ This structure does not count for code which is not written in java.
     * Red200: `#B00020` `176,0,32` - Warning, Wrong Task
     * Green200: `#018786` `1, 135, 134`- Correct Task
     * tum-blue-light: `#5E94D4` - Label, Event Start/End
-    * tum-blue-light-dark: `#9ABCE4` - Event 
-
-# Cheat Zone
-* Visibility:
-  ![img.png](information1.png)
-    
-* Numbers:
-  * byte (8): -128 to 127 
-  * short (16): −32768 to 32767
-  * int (32):−2147483648 to 2147483647
-  * long (64): −9223372036854775808 to 9223372036854775807
-  * float (32): -3.4e+38 to 3.4e+38 --7 digits
-  * double (64): -1.7e+308 to 1.7e+308 --15 digits
-  * boolean (1): true to false
-  * char (16): all Unicode
-* JavaFX:
-  * Layers: Stage >> Scene >> Scene-Graph > Root > Branch > Leaf
-  * SceneBuilder: JavaFX is functional modeled via SceneBuilder App.
-  * Window Size: 647.0 x 200.0
-  * Window Position: 781.0, 25.0
+    * tum-blue-light-dark: `#9ABCE4` - Event
 
 # Hardware Connection
 * Connection:
   * Type: `Cable`
   * Technique: `Serial` (JSerialComm)
   * Port: `/dev/cu.usbmodem141101`
-  * Baud Rate: `115200`
+  * Baud Rate: `9600`
   * Terminal Input: `screen /dev/cu.usbmodem141101 115200`
   * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)
-
-
-# Compliance Checking
-* Per Second:
-  * Each corresponding per second value of the ideal and test are compared to
-    each other and result in a `true` if the "absolute value" is just in a
-    `<10%` deviation.
-  * A mission is `false` if `5%` of its per second comparisons are false.
