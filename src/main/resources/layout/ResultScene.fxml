@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -14,9 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="803.0" minViewportWidth="751.0" prefHeight="764.0" prefViewportHeight="803.0" prefViewportWidth="751.0" prefWidth="751.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.ResultController">
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minViewportHeight="803.0" minViewportWidth="751.0" prefHeight="1200.0" prefViewportHeight="803.0" prefViewportWidth="751.0" prefWidth="751.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gate.frontend.ResultController">
     <content>
-        <AnchorPane minHeight="803.0" minWidth="751.0" prefHeight="803.0" prefWidth="751.0" style="-fx-background-color: #121212;">
+        <AnchorPane minHeight="803.0" minWidth="751.0" prefHeight="1200.0" prefWidth="751.0" style="-fx-background-color: #121212;">
             <children>
                 <TextFlow fx:id="header" layoutX="20.0" layoutY="5.0" prefHeight="30.0" prefWidth="552.5" style="-fx-background-color: #0065bd; -fx-border-radius: 1; -fx-background-radius: 1;" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                     <children>
@@ -44,24 +43,6 @@
                         </Label>
                     </children>
                 </TextFlow>
-                <Pane layoutX="445.0" layoutY="661.0" prefHeight="77.0" prefWidth="260.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="661.0">
-                    <children>
-                        <Label layoutX="10.0" layoutY="10.0" text="Accuracy" textFill="#5e94d4">
-                            <font>
-                                <Font name="Helvetica" size="18.0" />
-                            </font>
-                        </Label>
-                        <Button fx:id="iAccuracy" depthTest="DISABLE" layoutX="237.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonAccuracy" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font name="Helvetica" size="10.0" />
-                            </font>
-                            <opaqueInsets>
-                                <Insets />
-                            </opaqueInsets>
-                        </Button>
-                        <ChoiceBox fx:id="accuracy" layoutX="50.0" layoutY="41.0" prefWidth="159.11718" />
-                    </children>
-                </Pane>
                 <Label layoutX="30.0" layoutY="230.0" text="Compliance Results" textFill="WHITE" AnchorPane.topAnchor="230.0">
                     <font>
                         <Font name="Helvetica" size="20.0" />
@@ -192,6 +173,33 @@
                   </Label>
                </children>
             </Pane>
+            <Pane layoutX="20.0" layoutY="609.0" prefHeight="400.0" prefWidth="711.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Deviation Analysis" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <LineChart fx:id="deviationChart" layoutY="30.0" prefHeight="370.0" prefWidth="711.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis lowerBound="-30.0" minorTickCount="10" side="LEFT" upperBound="30.0" />
+                    </yAxis>
+                  </LineChart>
+                      <ChoiceBox fx:id="sensor" layoutX="539.0" layoutY="10.0" onMouseReleased="#chosen" prefWidth="159.11718" />
+               </children>
+            </Pane>
+            <TextFlow id="Intro" fx:id="intro1" layoutX="20.0" layoutY="1014.0" prefHeight="181.0" prefWidth="711.0" style="-fx-background-color: #20252A; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER">
+               <children>
+                  <Label fx:id="introtxt1" alignment="CENTER" prefHeight="171.0" prefWidth="691.0" text="Evaluation Recommendation!&#10;The Deviation Analysis shows a line chart for each sensor in which each point corresponds to the values of a mission. This value is calculated from the arithmetic mean of all the mean values contained in this mission for this sensor under observation.&#10;&#10;When interpreting these deviation graphs, it is advisable to look out for constantly rising, falling or stagnating curves in the case of a constant test curve, as in the case of the short-run and long-run curves. These may indicate a future malfunction with further use or more extreme values.&#10;If you are unable to observe such a curve, or if you are running an unstable test, pay attention to the setting of deviation and acceptance." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </TextFlow>
             </children></AnchorPane>
     </content>
 </ScrollPane>

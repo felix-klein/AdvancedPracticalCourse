@@ -107,7 +107,7 @@ public class ComplianceChecking {
             }
         }
         double complianceRate = rateSum / complianceResults.getMissionTotals().size();
-        complianceResults.setComplianceRate((double) Math.round(complianceRate * 100) /100);
+        complianceResults.setComplianceRate((double) Math.round(complianceRate * 100) / 100);
         complianceResults.setOverallCompliance(overallCompliance);
     }
 

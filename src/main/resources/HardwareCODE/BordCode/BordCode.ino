@@ -7,7 +7,7 @@ TLE9879_Group *shields; /* Declare shields group object */
 
 
 /*
-Normal example Input: <*STI:499#*TMD:4#><*EST:1#*TMD:4#><*RPM:3000#*TMD:120#><*EST:0#*TMD:20#>?
+Normal example Input: <*STI:999#*TMD:4#><*EST:1#*TMD:4#><*RPM:4000#*TMD:2#><*RPM:100#*TMD:1#><*RPM:4000#*TMD:5#><*EST:0#*TMD:8#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -16,7 +16,7 @@ bool constructionsEnd = false;
 bool sensorsEnd = false;
 SingleLinkedList<byte> missionNames;
 SingleLinkedList<short> missionParams;
-static long timeDelay = 100;
+static long timeDelay;
 bool runMission = false;
 static unsigned long missionStamp;
 static byte counter = 0;

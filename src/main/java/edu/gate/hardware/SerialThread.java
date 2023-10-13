@@ -246,7 +246,7 @@ public class SerialThread extends Thread {
             for (int i = 0; i < TSP_perMission.get(mission).size(); i++) {
                 int oneSecond = 1000 - (TSP_perMission.get(mission).get(i) - periodStart);
 
-                /* If one second is over, or it is the last element, the median of its values is saved. */
+                /* If one second is over, or it is the last element, the mean of its values is saved. */
                 if (i == TSP_perMission.get(mission).size() - 1 || oneSecond < 0) {
                     TMP_perMissionX.add(TMP/amount);
                     VIB_perMissionX.add(VIB/amount);

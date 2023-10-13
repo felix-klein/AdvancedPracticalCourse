@@ -38,6 +38,7 @@ public class MainApplication extends Application {
             new SceneControl((short) 0, null, primaryStage);
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
+            System.out.println("PrimaryStage");
             fx.getCause();
         }
     }
@@ -65,6 +66,7 @@ public class MainApplication extends Application {
             new SceneControl((short) 2, null, secondaryStage);
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
+            System.out.println("SecondaryStage");
             fx.getCause();
         }
     }
