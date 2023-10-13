@@ -72,12 +72,12 @@
                                 <Insets />
                             </opaqueInsets>
                         </Button>
-                  <CheckBox fx:id="check1" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" text="Attach the 3-phase power supply to the engine" textFill="WHITE">
+                  <CheckBox fx:id="check1" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" text="Attach the 3-phase power supply to the board" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="check2" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Attach the Hall sensor wiring to the engine" textFill="WHITE">
+                  <CheckBox fx:id="check2" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Attach the Hall sensor wiring to the board" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
@@ -171,7 +171,7 @@
                         <Font name="Helvetica" size="10.0" />
                      </font>
                   </Label>
-                  <Label layoutX="190.0" layoutY="124.0" text="(Default: 115200)" textFill="WHITE">
+                  <Label layoutX="190.0" layoutY="124.0" text="(Default: 9600)" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="10.0" />
                      </font>

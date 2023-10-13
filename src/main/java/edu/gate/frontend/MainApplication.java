@@ -1,5 +1,6 @@
 package edu.gate.frontend;
 
+import edu.ground.analysis.ComplianceResults;
 import edu.terminal.Terminal;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
  */
 public class MainApplication extends Application {
     private static Terminal terminal;
+    public static ComplianceResults complianceResults;
 
     /**
      * The main method is for JavaFX purposes initialized with a command.
@@ -34,12 +36,9 @@ public class MainApplication extends Application {
         try {
             /* Initializing the scene creation class to create a JavaFX application scene */
             new SceneControl((short) 0, null, primaryStage);
-
-            /* Creation of a secondary Stage for the by-Window (Process and Results) */
-            Stage secondaryStage = new Stage();
-            new SceneControl((short) 2, null, secondaryStage);
         } catch (Exception fx) { /* Throw a general text and additional information */
             System.out.println("There is an error in the JavaFX application or in one of the related applications!");
+            System.out.println("PrimaryStage");
             fx.getCause();
         }
     }
@@ -53,5 +52,22 @@ public class MainApplication extends Application {
     public static Terminal getTerminal() {
         return terminal;
     }
+
+    /**
+     * Setter for the startUserProcess method in Terminal to initialize the results for the Scene Builder of Results.
+     */
+    public static void setComplianceResults() {
+        complianceResults = terminal.getComplianceResults();
+
+        /* Right after initialization, the result window can be shown. */
+        try {
+            /* Creation of a secondary Stage for the by-Window (Process and Results) */
+            Stage secondaryStage = new Stage();
+            new SceneControl((short) 2, null, secondaryStage);
+        } catch (Exception fx) { /* Throw a general text and additional information */
+            System.out.println("There is an error in the JavaFX application or in one of the related applications!");
+            System.out.println("SecondaryStage");
+            fx.getCause();
+        }
+    }
 }
-//Result Inspection

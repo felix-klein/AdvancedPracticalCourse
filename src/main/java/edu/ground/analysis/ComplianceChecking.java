@@ -1,5 +1,7 @@
 package edu.ground.analysis;
 
+import edu.gate.hardware.SensIn;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class ComplianceChecking {
     private ArrayList<String> idealData;
-    private final SensInAnalysis sensorAnalyses;
+    private final SensIn sensorData;
     private final ComplianceResults complianceResults;
     private final double deviationPercentage, acceptancePercentage;
 
@@ -71,12 +73,19 @@ public class ComplianceChecking {
         8. <*RPM:3500#*TMD:1200#>
         9. <*RPM:4000#*TMD:1200#>
      */
-    public ComplianceChecking(SensInAnalysis sensorAnalyses, int deviationPercentage,
-                              int acceptancePercentage) {
-        this.sensorAnalyses = sensorAnalyses;
+    public ComplianceChecking(SensIn sensorData, int deviationPercentage,
+                              int acceptancePercentage, String accuracyLevel) {
+        this.sensorData = sensorData;
         this.complianceResults = new ComplianceResults();
         this.deviationPercentage = deviationPercentage;
         this.acceptancePercentage = acceptancePercentage;
+
+        /* First part Compliance Results initialisation. */
+        complianceResults.setAcceptance(acceptancePercentage);
+        complianceResults.setDeviation(deviationPercentage);
+        complianceResults.setAccuracy(accuracyLevel);
+        complianceResults.setTasks(sensorData.MIS().size());
+
         try {
             /* Get the ideal sensor data of the blueprint. */
             this.idealData = (ArrayList<String>) Files.
@@ -87,6 +96,19 @@ public class ComplianceChecking {
         } catch (IOException e) {
             e.getStackTrace();
         }
+
+        /* Last part Compliance Results initialisation. */
+        double rateSum = 0;
+        boolean overallCompliance = true;
+        for (int i = 0; i < complianceResults.getMissionTotals().size(); i++) {
+            rateSum += complianceResults.getMissionTotals().get(i).percentage();
+            if (!complianceResults.getMissionTotals().get(i).result()) {
+                overallCompliance = false;
+            }
+        }
+        double complianceRate = rateSum / complianceResults.getMissionTotals().size();
+        complianceResults.setComplianceRate((double) Math.round(complianceRate * 100) / 100);
+        complianceResults.setOverallCompliance(overallCompliance);
     }
 
     /**
@@ -101,18 +123,19 @@ public class ComplianceChecking {
         int missionRPMFrom;
         int missionRPMTo = 0;
 
+
         /* Analyse at first the surround data of the 300. */
         noiseComparison300();
 
 
         /* Iterate through all missions, except the surround initialisation 300. */
-        for (int i = 1; i < sensorAnalyses.getMIC_perMission().size(); i++) {
+        for (int i = 1; i < sensorData.MIS().size(); i++) {
             /* We are looking for missions with a change in rpm. The "To" is under investigation. */
             missionRPMFrom = missionRPMTo;
             /* Special treatment for missions with change in RPM for the comparison. */
-            if (sensorAnalyses.getSensorData().MIS().get(i).contains("rpm=")) {
+            if (sensorData.MIS().get(i).contains("rpm=")) {
                 Pattern pattern = Pattern.compile("rpm=(\\d+)&");
-                Matcher matcher = pattern.matcher(sensorAnalyses.getSensorData().MIS().get(i));
+                Matcher matcher = pattern.matcher(sensorData.MIS().get(i));
                 missionRPMTo = matcher.find() ?  Integer.parseInt(matcher.group(1)) :  0;
             }
             int startIndexIdeal = fromTo(missionRPMFrom, missionRPMTo);
@@ -175,18 +198,18 @@ public class ComplianceChecking {
         ArrayList<ComplianceResults.DataList> dataCP2 = new ArrayList<>();
         ArrayList<ComplianceResults.DataList> dataCP3 = new ArrayList<>();
 
-        for (int i = 0; i < sensorAnalyses.getMIC_perMission().get(mission).size(); i++) {
+        for (int i = 0; i < sensorData.MIC_perMission().get(mission).size(); i++) {
             /* This jump in the ideal index is for the situation of an end of ideal data and change to a long run
              comparison. */
             if (idealData.get(idealIndex).contains(">>")) {
                 idealIndex = fromTo(rpmMission, rpmMission);
             }
             /* The pattern will be: TMP*MIC*VIB*CP1*CP2*CP3 */
-            String[] idealLine = idealData.get(idealIndex).split(String.valueOf('*'));
+            String[] idealLine = idealData.get(idealIndex).split("\\*");
 
             /* TMP: Sensor analyses. */
             double idealA = Double.parseDouble(idealLine[0]);
-            double testA = sensorAnalyses.getTMP_perMission().get(mission).get(i);
+            double testA = sensorData.TMP_perMission().get(mission).get(i);
             double testNoise = complianceResults.getTestNoise().TMP();
             double idealNoise = complianceResults.getIdealNoise().TMP();
             ComplianceResults.DataList dataListTMP = dataListCreation(idealA, testA, testNoise, idealNoise);
@@ -194,7 +217,7 @@ public class ComplianceChecking {
 
             /* MIC: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[1]);
-            testA = sensorAnalyses.getMIC_perMission().get(mission).get(i);
+            testA = sensorData.MIC_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().MIC();
             idealNoise = complianceResults.getIdealNoise().MIC();
             ComplianceResults.DataList dataListMIC = dataListCreation(idealA, testA, testNoise, idealNoise);
@@ -202,7 +225,7 @@ public class ComplianceChecking {
 
             /* VIB: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[2]);
-            testA = sensorAnalyses.getVIB_perMission().get(mission).get(i);
+            testA = sensorData.VIB_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().VIB();
             idealNoise = complianceResults.getIdealNoise().VIB();
             ComplianceResults.DataList dataListVIB = dataListCreation(idealA, testA, testNoise, idealNoise);
@@ -210,7 +233,7 @@ public class ComplianceChecking {
 
             /* CP1: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[3]);
-            testA = sensorAnalyses.getCP1_perMission().get(mission).get(i);
+            testA = sensorData.CP1_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().CP1();
             idealNoise = complianceResults.getIdealNoise().CP1();
             ComplianceResults.DataList dataListCP1 = dataListCreation(idealA, testA, testNoise, idealNoise);
@@ -218,7 +241,7 @@ public class ComplianceChecking {
 
             /* CP2: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[4]);
-            testA = sensorAnalyses.getCP2_perMission().get(mission).get(i);
+            testA = sensorData.CP2_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().CP2();
             idealNoise = complianceResults.getIdealNoise().CP2();
             ComplianceResults.DataList dataListCP2 = dataListCreation(idealA, testA, testNoise, idealNoise);
@@ -226,7 +249,7 @@ public class ComplianceChecking {
 
             /* CP3: Sensor analyses. */
             idealA = Double.parseDouble(idealLine[5]);
-            testA = sensorAnalyses.getCP3_perMission().get(mission).get(i);
+            testA = sensorData.CP3_perMission().get(mission).get(i);
             testNoise = complianceResults.getTestNoise().CP3();
             idealNoise = complianceResults.getIdealNoise().CP3();
             ComplianceResults.DataList dataListCP3 = dataListCreation(idealA, testA, testNoise, idealNoise);
@@ -254,7 +277,7 @@ public class ComplianceChecking {
         complianceResults.setDataCP3(dataCP3);
 
         /* Mission results including the calculation via the specified acceptance percentage. */
-        String missionName = sensorAnalyses.getSensorData().MIS().get(mission);
+        String missionName = sensorData.MIS().get(mission);
         double missionPercentage = ((double) deviationTrue / (deviationTrue + deviationFalse)) * 100;
         boolean missionResult = (missionPercentage >= acceptancePercentage);
         complianceResults.setMissionTotals(
@@ -297,7 +320,7 @@ public class ComplianceChecking {
         /* Loop to analyse each data string. */
         while (!idealData.get(counter).contains(">>")) {
             /* The pattern will be: TMP*MIC*VIB*CP1*CP2*CP3 */
-            String[] individual = idealData.get(counter).split(String.valueOf('*'));
+            String[] individual = idealData.get(counter).split("\\*");
             sumTMP += Double.parseDouble(individual[0]);
             sumMIC += Double.parseDouble(individual[1]);
             sumVIB += Double.parseDouble(individual[2]);
@@ -318,13 +341,13 @@ public class ComplianceChecking {
         counter = 0;
         sumTMP = sumMIC = sumVIB = sumCP1 = sumCP2 = sumCP3 = 0.0;
         /* Loop to analyse each sensor element for the mission 0 which corresponds to the 300. */
-        while (counter < sensorAnalyses.getMIC_perMission().get(0).size()) {
-            sumTMP += sensorAnalyses.getTMP_perMission().get(0).get(counter);
-            sumMIC += sensorAnalyses.getMIC_perMission().get(0).get(counter);
-            sumVIB += sensorAnalyses.getVIB_perMission().get(0).get(counter);
-            sumCP1 += sensorAnalyses.getCP1_perMission().get(0).get(counter);
-            sumCP2 += sensorAnalyses.getCP2_perMission().get(0).get(counter);
-            sumCP3 += sensorAnalyses.getCP3_perMission().get(0).get(counter);
+        while (counter < sensorData.MIC_perMission().get(0).size()) {
+            sumTMP += sensorData.TMP_perMission().get(0).get(counter);
+            sumMIC += sensorData.MIC_perMission().get(0).get(counter);
+            sumVIB += sensorData.VIB_perMission().get(0).get(counter);
+            sumCP1 += sensorData.CP1_perMission().get(0).get(counter);
+            sumCP2 += sensorData.CP2_perMission().get(0).get(counter);
+            sumCP3 += sensorData.CP3_perMission().get(0).get(counter);
             counter++;
         }
         complianceResults.setTestNoise(new ComplianceResults.Noise(
@@ -334,5 +357,9 @@ public class ComplianceChecking {
                 (sumCP1/counter),
                 (sumCP2/counter),
                 (sumCP3/counter)));
+    }
+
+    public ComplianceResults getComplianceResults() {
+        return complianceResults;
     }
 }

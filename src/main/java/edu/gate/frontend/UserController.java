@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
  */
 public class UserController extends ComboController implements Initializable {
     @FXML
-    private RadioButton alpha, beta, gamma, longR; /*  shortR: isn't needed, because it is the default value */
+    private RadioButton newView, alpha, beta, longR;
     @FXML
     private ChoiceBox<String> accuracy;
     @FXML
@@ -25,6 +25,8 @@ public class UserController extends ComboController implements Initializable {
     private int deviationPercentage, acceptancePercentage;
     @FXML
     private Label deviationLabel, acceptanceLabel;
+
+    private int typeId = -1;
 
     /**
      * The method process is activated, if the Process button ("run test") is clicked. It is the main method of the whole
@@ -36,8 +38,16 @@ public class UserController extends ComboController implements Initializable {
     private void process(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - RUN TEST: " + mouseEvent.getPickResult());
         /* Activates the process with settings from the Control Center. */
-        boolean processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
-                deviationPercentage, acceptancePercentage);
+        boolean processRunning = false;
+        if (getType() == -1) {
+            infoWindow("Lack of New Instance", "Before you want to use a new process in the" +
+                    " \"Recreate\" area, you must modify it and thus create it for the system. Please open a" +
+                    " new process in the \"Recreate\" area by clicking on \"New Model\" and then proceed as usual.");
+        } else {
+            processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
+                    deviationPercentage, acceptancePercentage);
+            MainApplication.setComplianceResults();
+        }
 
         /* If the admin has not initialized the blueprint engine yet, the user can not start the process. */
         if (!processRunning) {
@@ -52,21 +62,19 @@ public class UserController extends ComboController implements Initializable {
      *
      * @return the type as a String.
      */
-    private String getType() {
-        String type;
+    private int getType() {
         /* Determine which of the processes the user selected. */
-        if (alpha.isSelected()) { /* alpha: first customized process */
-            type = "alpha";
+        if (newView.isSelected()) { /* newView: new model creation */
+            return this.typeId;
+        } else if (alpha.isSelected()) { /* alpha: first customized process */
+            return 21677;
         } else if (beta.isSelected()) { /* beta: second customized process */
-            type = "beta";
-        } else if (gamma.isSelected()) { /* gamma: third customized process */
-            type = "gamma";
+            return 22526;
         } else if (longR.isSelected()) { /* longR: the predefined long run process */
-            type = "longR";
+            return 22539;
         } else { /* shortR: the predefined short run process, also default value */
-            type = "shortR";
+            return 22528;
         }
-        return type;
     }
 
     /**
@@ -112,7 +120,18 @@ public class UserController extends ComboController implements Initializable {
     }
 
     /**
-     * This method opens the Camunda Modeler with the ALPHA file via mouse click.
+     * This method opens a new process model with a new instance id, via mouse click.
+     *
+     * @param mouseEvent is the event to open the process modeler.
+     */
+    @FXML
+    private void newView(javafx.scene.input.MouseEvent mouseEvent) {
+        System.out.println("Button - New Model: " + mouseEvent.getPickResult());
+        this.typeId = openModeller("newView");
+    }
+
+    /**
+     * This method opens an existing model via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
      */
@@ -123,7 +142,7 @@ public class UserController extends ComboController implements Initializable {
     }
 
     /**
-     * This method opens the Camunda Modeler with the BETA file via mouse click.
+     * This method opens an existing model via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
      */
@@ -134,18 +153,7 @@ public class UserController extends ComboController implements Initializable {
     }
 
     /**
-     * This method opens the Camunda Modeler with the GAMMA file via mouse click.
-     *
-     * @param mouseEvent is the event to open the process modeler.
-     */
-    @FXML
-    private void gammaView(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("Button - Gamma: " + mouseEvent.getPickResult());
-        openModeller("gamma");
-    }
-
-    /**
-     * This method opens the Camunda Modeler with the LONG-RUN file via mouse click.
+     * This method opens an existing model via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
      */
@@ -156,7 +164,7 @@ public class UserController extends ComboController implements Initializable {
     }
 
     /**
-     * This method opens the Camunda Modeler with the SHORT-RUN file via mouse click.
+     * This method opens an existing model via mouse click.
      *
      * @param mouseEvent is the event to open the process modeler.
      */

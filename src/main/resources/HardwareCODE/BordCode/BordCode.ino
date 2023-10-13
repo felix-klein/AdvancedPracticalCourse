@@ -1,12 +1,13 @@
 // ---> include libraries
 #include <SingleLinkedList.hpp> /*Include the library for the creation of List objects */
-#include "TLE9879_Group.h" /* Include the Infineon Shield library to the Arduino project */
+#include "TLE9879_Group.h" /* Include the Infineon shields library to the Arduino project */
 
 // ---> defines and constants
-TLE9879_Group *shield; /* Declare Shield group object */
+TLE9879_Group *shields; /* Declare shields group object */
+
 
 /*
-Normal example Input: <*STI:999#><*ALB:1#*TMD:5000#> <*ALB:0#*TMD:1000#><*ALB:0#*TMD:4500#>?
+Normal example Input: <*STI:999#*TMD:4#><*RPM:4000#*TMD:2#><*RPM:100#*TMD:3#><*RPM:4000#*TMD:5#><*EST:0#*TMD:8#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -15,11 +16,11 @@ bool constructionsEnd = false;
 bool sensorsEnd = false;
 SingleLinkedList<byte> missionNames;
 SingleLinkedList<short> missionParams;
-short timeDelay = 100;
+static long timeDelay;
 bool runMission = false;
 static long missionStamp;
 static byte counter = 0;
-short sensorInterval = 499;
+static int sensorInterval = 499;
 
 const byte TMD = 1; //Time-Duration         (0-int)
 const byte EST = 2; //Engine-Status-Type    (0/1)
@@ -35,25 +36,22 @@ void applyMission() { /* Helper function to apply the gathered mission. */
   for (int i=0; i<missionNames.getSize(); i++) {
       if (missionNames.getValue(i) == TMD) { /* --> Time-Duration */
           creatingMIS = creatingMIS + String("tmd=");
-          timeDelay = missionParams.getValue(i) * 1000;
       } else if (missionNames.getValue(i) == EST) { /* --> Engine-Status-Type */
           creatingMIS = creatingMIS + String("est=");
           if (missionParams.getValue(i) == 0) {
-              //shield->setMotorMode(STOP_MOTOR);
-              digitalWrite(13, HIGH); // TODO: Testing
+            shields->setMotorMode(STOP_MOTOR);
           } else {
-              //shield->setMotorMode(START_MOTOR);
-              digitalWrite(13, LOW); // TODO: Testing
+            shields->setMotorMode(START_MOTOR);
           }
       } else if (missionNames.getValue(i) == RPM) { /* --> Rotations-per-Minute */
           creatingMIS = creatingMIS + String("rpm=");
-          shield->setMotorSpeed(missionParams.getValue(i));
+          shields->setMotorSpeed(missionParams.getValue(i));
+          shields->setMotorMode(START_MOTOR);
       } else if (missionNames.getValue(i) == HDA) { /* --> Hall-Delay-Angle  */
           creatingMIS = creatingMIS + String("hda=");
-          shield->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
+          shields->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
       } else if (missionNames.getValue(i) == STI) { /* --> Sensor-Time-Interval  */
           creatingMIS = creatingMIS + String("sti=");
-          sensorInterval = missionParams.getValue(i);
       }
       creatingMIS = creatingMIS + missionParams.getValue(i) + String("&");
   }
@@ -62,19 +60,16 @@ void applyMission() { /* Helper function to apply the gathered mission. */
 
 // ---> setup()
 void setup() {
-  // --> Infineon shield initialization
-  //shield->setParameter(HALL_INPUT_A, 0); /* For the case, that the contacts on the HALL input are wrong */
-  /*
-  shield = new TLE9879_Group(1); // Initialize the shield group with the one shields in the stack
-  shield->setMode(HALL); // Set the mode to HALL
-  shield->setParameter(HALL_POLE_PAIRS, 4); // Set number of pole pares to 4, for 8 poles
-  shield->setParameter(HALL_ANGLE_DELAY_EN, 1); // Set the possibility of changing the timing degree
-  */
-
   // --> Serial communication initialization
-  Serial.begin(115200); // Sets the data rate in bits per second (baud) for serial data transmission.
-  while (Serial.available() < 9) {}; // Get the number of bytes (characters) available for reading from the serial port.
+  Serial.begin(9600); // Sets the data rate in bits per second (baud) for serial data transmission.
+  // --> Infineon shields initialization
+  //shields->setParameter(HALL_INPUT_A, 0); /* For the case, that the contacts on the HALL input are wrong */
+  shields = new TLE9879_Group(1); // Initialize the shields group with the one shieldss in the stack
+  shields->setMode(HALL); // Set the mode to HALL
+  shields->setParameter(HALL_POLE_PAIRS, 4); // Set number of pole pares to 4, for 8 poles
+  shields->setParameter(HALL_ANGLE_DELAY_EN, 1); // Set the possibility of changing the timing degree
 
+  while (Serial.available() < 9) {}; // Get the number of bytes (characters) available for reading from the serial port.
   pinMode(13, OUTPUT);
 }
 
@@ -88,8 +83,10 @@ void loop() {
         if (controller == '<') {
         } else if (controller == '*') {
           String name = Serial.readStringUntil(':');
+          String param = Serial.readStringUntil('#');
           if (name.equals(String("TMD"))) {
             missionNames.add(1);
+            timeDelay = param.toInt() * 1000;
           } else if (name.equals(String("EST"))) {
             missionNames.add(2);
           } else if (name.equals(String("RPM"))) {
@@ -98,8 +95,8 @@ void loop() {
             missionNames.add(4);
           } else if (name.equals(String("STI"))) {
             missionNames.add(5);
+            sensorInterval = param.toInt();
           }
-          String param = Serial.readStringUntil('#');
           missionParams.add(param.toInt());
         } else if (controller == '>') {
           applyMission();
@@ -107,12 +104,14 @@ void loop() {
           missionNames.clear();
           missionParams.clear();
           runMission = true;
+          Serial.println(timeDelay);
         } else if (controller == '?') {
           constructionsEnd = true;
+          shields->setMotorMode(STOP_MOTOR);
         }
       }
     } else {
-      long timeSinceMissionStart = millis() - missionStamp;
+      static long timeSinceMissionStart = millis() - missionStamp;
       if (timeSinceMissionStart >= timeDelay) {
         runMission = false;
         missionStamp = 0;
@@ -120,19 +119,18 @@ void loop() {
     }
   }
 
-//TODO: All sensors need to be added.
 // OUTPUT: Sensor data gathering, in parallel.
     static unsigned long sensorStamp = 0; // Static, because it should stay throughout the loop / unsigned long, because if it is to big it should restart at 0.
     if ((millis() - sensorStamp > sensorInterval) && (sensorsEnd == false)) {
       sensorStamp = millis();
 
-      int readingTMP = analogRead(0);
+      int readingMIC = analogRead(0);
+
+      int readingTMP = analogRead(1);
       float temp = readingTMP * 0.0048828125 * 100;
 
-      int readVIB = analogRead(1);
+      int readVIB = analogRead(2);
       float vib = readVIB * (5.0 / 1023.0);
-
-      int readingMIC = analogRead(2);
 
       int readingCP1 = analogRead(3);
       float volt1 = (readingCP1 / 1024.0) * 5000;
@@ -144,11 +142,11 @@ void loop() {
       float volt3 = (readingCP3 / 1024.0) * 5000;
 
       if (constructionsEnd == true) { // Signal the end of the last sensor data with a ?.
-        // Example output at the end: "TSP:65400027.34#TMP:27.34#?".
+        // Example output at the end: "TSP:67990#TMP:21.97#VIB:0.00#MIC:238#CP1:170.90#CP2:146.48#CP3:170.90#?".
         Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#VIB:") + vib + String("#MIC:") + readingMIC + String("#CP1:") + volt1 + String("#CP2:") + volt2 + String("#CP3:") + volt3 + String("#?"));
         sensorsEnd = true;
       } else {
-        //Example output: "TSP:65400027.34#TMP:27.34".
+        //Example output: "TSP:48110#TMP:21.97#VIB:0.00#MIC:26#CP1:156.25#CP2:146.48#CP3:166.02".
         Serial.println(String("TSP:") + sensorStamp + String("#TMP:") + temp + String("#VIB:") + vib + String("#MIC:") + readingMIC + String("#CP1:") + volt1 + String("#CP2:") + volt2 + String("#CP3:") + volt3);
       }
     }

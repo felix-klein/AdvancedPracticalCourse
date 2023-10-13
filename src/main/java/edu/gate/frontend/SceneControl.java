@@ -1,5 +1,6 @@
 package edu.gate.frontend;
 
+import edu.ground.analysis.ComplianceResults;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

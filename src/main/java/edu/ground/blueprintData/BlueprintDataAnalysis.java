@@ -1,7 +1,6 @@
 package edu.ground.blueprintData;
 
 import edu.gate.hardware.SensIn;
-import edu.ground.analysis.SensInAnalysis;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -14,16 +13,15 @@ import java.util.Objects;
 
 public class BlueprintDataAnalysis {
     public BlueprintDataAnalysis(SensIn sensorData) {
-        SensInAnalysis blueprintExternAnalysis = new SensInAnalysis(sensorData);
-        saveAnalysedData(blueprintExternAnalysis);
+        saveAnalysedData(sensorData);
     }
 
     /**
      * This method uses the analysed sensor data to save it into a txt file for further analyses.
      *
-     * @param blueprintExternAnalysis is the result of the sensor data analyses.
+     * @param sensorData is the sensor data.
      */
-    private void saveAnalysedData(SensInAnalysis blueprintExternAnalysis) {
+    private void saveAnalysedData(SensIn sensorData) {
         try {
             /* Indicate the right path in the correct format. */
             Path fullPath = Paths.get(Objects.requireNonNull(getClass()
@@ -32,7 +30,7 @@ public class BlueprintDataAnalysis {
             ArrayList<String> blueprintSheet = new ArrayList<>();
             int groupCounter = 0;
             int groupID = 1;
-            for (int i = 1; i < blueprintExternAnalysis.getVIB_perMission().size(); i++) {
+            for (int i = 0; i < sensorData.MIS().size(); i++) {
                 /* The Switch statement is the naming of each mission for later recognising. */
                 groupID = (groupID==10) ? 1 : groupID;
                 switch (groupCounter) {
@@ -64,18 +62,18 @@ public class BlueprintDataAnalysis {
                     }
                 }
                 /* Iterate through all the data for the same second of the same mission. */
-                for (int ii = 0; ii < blueprintExternAnalysis.getTMP_perMission().get(i).size(); ii++) {
-                    String line = String.valueOf(blueprintExternAnalysis.getTMP_perMission().get(i).get(ii)) + '*' +
-                     blueprintExternAnalysis.getMIC_perMission().get(i).get(ii) + '*' +
-                     blueprintExternAnalysis.getVIB_perMission().get(i).get(ii) + '*' +
-                     blueprintExternAnalysis.getCP1_perMission().get(i).get(ii) + '*' +
-                     blueprintExternAnalysis.getCP2_perMission().get(i).get(ii) + '*' +
-                     blueprintExternAnalysis.getCP3_perMission().get(i).get(ii);
+                for (int ii = 0; ii < sensorData.TMP_perMission().get(i).size(); ii++) {
+                    String line = String.valueOf(sensorData.TMP_perMission().get(i).get(ii)) + '*' +
+                            sensorData.MIC_perMission().get(i).get(ii) + '*' +
+                            sensorData.VIB_perMission().get(i).get(ii) + '*' +
+                            sensorData.CP1_perMission().get(i).get(ii) + '*' +
+                            sensorData.CP2_perMission().get(i).get(ii) + '*' +
+                            sensorData.CP3_perMission().get(i).get(ii);
                     /* The pattern will be: TMP*MIC*VIB*CP1*CP2*CP3 */
                     blueprintSheet.add(line);
                 }
             }
-            Files.write(fullPath, blueprintSheet, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+            Files.write(fullPath, blueprintSheet, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
         } catch (URISyntaxException | IOException e) {
             System.out.println("The saving or writing of the blueprint data does not work as expected!");
             e.getStackTrace();

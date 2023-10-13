@@ -98,7 +98,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <RadioButton fx:id="alpha" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" text="Custom process creation ALPHA" textFill="WHITE">
+                  <RadioButton fx:id="newView" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" text="Recreating a process New Model" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
@@ -106,12 +106,12 @@
                         <ToggleGroup fx:id="Selection" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="beta" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Custom process creation BETA" textFill="WHITE" toggleGroup="$Selection">
+                  <RadioButton fx:id="alpha" layoutX="20.0" layoutY="68.0" mnemonicParsing="false" text="Custom process creation ALPHA" textFill="WHITE" toggleGroup="$Selection">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="gamma" layoutX="20.0" layoutY="95.0" mnemonicParsing="false" text="Custom process creation GAMMA" textFill="WHITE" toggleGroup="$Selection">
+                  <RadioButton fx:id="beta" layoutX="20.0" layoutY="95.0" mnemonicParsing="false" text="Custom process creation BETA" textFill="WHITE" toggleGroup="$Selection">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
@@ -148,14 +148,14 @@
                   <Font name="Helvetica" size="20.0" />
                </font>
             </Label>
-            <Pane layoutX="20.0" layoutY="492.0" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+            <Pane layoutX="20.0" layoutY="569.0" prefHeight="160.0" prefWidth="140.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
                <children>
                   <Label layoutX="10.0" layoutY="10.0" text="Customize" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Button depthTest="DISABLE" layoutX="117.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonCustomize" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="iCustomize" depthTest="DISABLE" layoutX="117.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonCustomize" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="10.0" />
                      </font>
@@ -163,44 +163,22 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#alphaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Alpha" textFill="#5e94d4">
+                  <Button layoutX="20.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#shortRView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Short-Run" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="20.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#betaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Beta" textFill="#5e94d4">
+                  <Button layoutX="20.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#longRView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Long-Run" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="20.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#gammaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Gamma" textFill="#5e94d4">
+                  <Button layoutX="20.0" layoutY="68.0" mnemonicParsing="false" onMouseClicked="#betaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Beta" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
                   </Button>
-               </children>
-            </Pane>
-            <Pane layoutX="20.0" layoutY="627.0" prefHeight="102.0" prefWidth="140.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
-               <children>
-                  <Label layoutX="10.0" layoutY="10.0" text="View" textFill="#5e94d4">
-                     <font>
-                        <Font name="Helvetica" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button depthTest="DISABLE" layoutX="117.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonView" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Helvetica" size="10.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <Button layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#shortRView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Short-Run" textFill="#5e94d4">
-                     <font>
-                        <Font name="Helvetica" size="12.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="20.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#longRView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Long-Run" textFill="#5e94d4">
+                  <Button layoutX="20.0" layoutY="39.0" mnemonicParsing="false" onMouseClicked="#alphaView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="Alpha" textFill="#5e94d4">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
@@ -214,7 +192,7 @@
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="41.0" prefHeight="226.0" prefWidth="408.0" text="When choosing to customize processes or select predefined ones, it helps to internalize the following description to make modeling as pleasant as possible:&#10;&#10;- Start Motor / Stop Motor:  Both tasks do not occupy arguments, since they&#10;          start or stop the engine directly, respectively.&#10;- Throttle Level:  Describes the speed of the motor and therefore includes&#10;          the arguments RPM (rotations per minute) and Duration for how long&#10;          the motor should operate in this state.&#10;- Motor Degree:  Degree specifies the time at which the pole change is&#10;          performed in relation to the stator-rotor ratio. Therefore here the&#10;          arguments Degree and Duration.&#10;&gt; Stop: The stop acts like an emergency stop with immediate effect when&#10;          it is reached for all sensors and the motor." textFill="WHITE" wrapText="true">
+                  <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="41.0" prefHeight="226.0" prefWidth="408.0" text="When choosing to customize processes or the creation of a new instanze, it helps to internalize the following description to make modeling as pleasant as possible:&#10;&#10;- Start Motor / Stop Motor:  Both tasks do not occupy arguments, since they&#10;          start or stop the engine directly, respectively.&#10;- Throttle Level:  Describes the speed of the motor and therefore includes&#10;          the arguments RPM (rotations per minute) and Duration for how long&#10;          the motor should operate in this state.&#10;- Motor Degree:  Degree specifies the time at which the pole change is&#10;          performed in relation to the stator-rotor ratio. Therefore here the&#10;          arguments Degree and Duration.&#10;&gt; Stop: The stop acts like an emergency stop with immediate effect when&#10;          it is reached for all sensors and the motor." textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Helvetica" size="12.0" />
                      </font>
@@ -242,6 +220,28 @@
                         <Font name="Helvetica" size="10.0" />
                      </font>
                   </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="20.0" layoutY="492.0" prefHeight="70.0" prefWidth="140.0" style="-fx-background-color: #20252A; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Recreate" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="iRecreate" depthTest="DISABLE" layoutX="117.5" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#infoButtonRecreate" style="-fx-background-color: #5E94D4; -fx-background-radius: 10; -fx-border-radius: 10;" text="i" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="10.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#newView" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="New Model" textFill="#5e94d4">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children></AnchorPane>

@@ -1,2 +1,2 @@
-Port:/dev/cu.usbmodem143201*
-BaudRate:115200*
+Port:/dev/cu.usbmodem141101*
+BaudRate:9600*

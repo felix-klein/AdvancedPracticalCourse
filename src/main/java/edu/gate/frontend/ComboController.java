@@ -3,15 +3,92 @@ package edu.gate.frontend;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 /**
  * The ComboController is a mather class for the AdminController and UserController to inherit methods.
  */
 public class ComboController {
+    private static final String webBody = """
+            <testset xmlns="http://cpee.org/ns/properties/2.0">
+              <executionhandler>ruby</executionhandler>
+              <dataelements/>
+              <endpoints>
+                <motor_start>motor_start</motor_start>
+                <motor_stop>motor_stop</motor_stop>
+                <motor_gear>motor_gear</motor_gear>
+                <motor_hull_sensor>motor_hull_sensor</motor_hull_sensor>
+              </endpoints>
+              <attributes>
+                <info>Motor</info>
+                <modeltype>motor</modeltype>
+                <theme>motor</theme>
+              </attributes>
+              <description>
+                <description xmlns="http://cpee.org/ns/description/1.0">
+                <call id="a1" endpoint="motor_start">
+            <parameters>
+            <label>Start Motor 1</label>
+            <arguments/>
+            </parameters>
+            </call>
+            <call id="a5" endpoint="motor_hull_sensor">
+            <parameters>
+            <label/>
+            <arguments>
+            <degree/>
+            <duration/>
+            </arguments>
+            </parameters>
+            </call>
+            <loop mode="pre_test" condition="">
+            <_probability>
+            <_probability_min/>
+            <_probability_max/>
+            <_probability_avg/>
+            </_probability>
+            </loop>
+            <call id="a2" endpoint="motor_gear">
+            <parameters>
+            <label/>
+            <arguments>
+            <level/>
+            <duration/>
+            </arguments>
+            </parameters>
+            </call>
+            <call id="a3" endpoint="motor_gear">
+            <parameters>
+            <label/>
+            <arguments>
+            <level/>
+            <duration/>
+            </arguments>
+            </parameters>
+            </call>
+            <call id="a4" endpoint="motor_gear">
+            <parameters>
+            <label/>
+            <arguments>
+            <level/>
+            <duration/>
+            </arguments>
+            </parameters>
+            </call>
+            </description>
+              </description>
+              <transformation>
+                <description type="copy"/>
+                <dataelements type="none"/>
+                <endpoints type="none"/>
+              </transformation>
+            </testset>""";
 
     /**
      * This method does explain the deviation property.
@@ -82,22 +159,23 @@ public class ComboController {
     private void infoButtonCustomize(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - info customization: " + mouseEvent.getPickResult());
         String headline = "Process Customization";
-        String text = "These 3 process environments can be customized and modified by you. Please follow the" +
-                " instructions on the right and save your changes with the save button. Do not change the location!";
+        String text = "The customize area describes instances that are stored in this form. Your changes and " +
+                "adaptations to the model are retained even after programme closure and can thus be further modified" +
+                " or used again.";
         infoWindow(headline, text);
     }
 
     /**
-     * This method does show us the information window from the not customizable processes.
+     * This method does show us the information window from the new creating process.
      *
      * @param mouseEvent is the mouseclick to show the info window.
      */
     @FXML
-    private void infoButtonView(javafx.scene.input.MouseEvent mouseEvent) {
+    private void infoButtonRecreate(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - info view: " + mouseEvent.getPickResult());
-        String headline = "Predefined Models";
-        String text = "We ask that you view, but not change, these predefined processes. If you do change them, " +
-                "please follow the given notations.";
+        String headline = "Recreate";
+        String text = "With the selection of this instance, a complete model is created with the minimum" +
+                " functionality requirements.";
         infoWindow(headline, text);
     }
 
@@ -135,18 +213,21 @@ public class ComboController {
     }
 
     /**
-     * This Method opens the Browser with the tap of the correct modeller instance or a picture of the process model.
-     * TODO: Open Modeller needs real options, until now there are just dummies.
+     * This Method opens the Browser with the tap of the correct modeller instance.
+     *
      * @param type is the selected model.
      */
-    protected void openModeller(String type) {
-        String path = switch (type) {
-            case "alpha" -> "https://cpee.org/flow/motor.html?monitor=https://cpee.org/flow/engine/21677/";
-            case "beta" -> "Still blank and should be changed with option 2";
-            case "gamma" -> "Still blank and should be changed with option 3";
-            case "longR" -> "Predefined and should just display an image";
-            default -> "Predefined and should just display an image for the longR";
+    protected int openModeller(String type) {
+        // "https://cpee.org/flow/motor.html?monitor=https://cpee.org/flow/engine/21677/"
+        int id = switch (type) {
+            case "newView" -> post();
+            case "alpha" -> 21677;
+            case "beta" -> 22526;
+            case "longR" -> 22539;
+            default -> 22528;
         };
+
+        String path = "https://cpee.org/flow/motor.html?monitor=https://cpee.org/flow/engine/" + id + "/";
 
         try {
             // Create a URI object from the URL string
@@ -167,5 +248,36 @@ public class ComboController {
                     " Please inform your Admin!");
             throw new RuntimeException(e);
         }
+        return id;
+    }
+
+    protected int post() {
+        try {
+            HttpClient webClient = HttpClient.newHttpClient();
+            HttpRequest webRequest = HttpRequest.newBuilder()
+                    .uri(URI.create("https://cpee.org/flow/start/"))
+                    .setHeader("Content-Type", "application/xml")
+                    .setHeader("content-id", "xml")
+                    .POST(HttpRequest.BodyPublishers.ofString(webBody))
+                    .build();
+
+            HttpResponse<String> response = webClient.send(webRequest, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() == 200) {
+                String[] responseBody = response.body().split(",");
+                for (String s : responseBody) {
+                    if (s.startsWith("{\"CPEE-INSTANCE\":\"")) {
+                        String[] values = s.split(":");
+                        String id = values[1].substring(values[1].indexOf("\"") + 1, values[1].lastIndexOf("\""));
+                        System.out.println(id);
+                        return Integer.parseInt(id);
+                    }
+                }
+            } else {
+                System.out.println("HTTP Request failed with status code: " + response.statusCode());
+            }
+        } catch (IOException | InterruptedException e) {
+            e.getCause();
+        }
+        return -1;
     }
 }

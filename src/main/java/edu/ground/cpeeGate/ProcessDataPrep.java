@@ -32,6 +32,7 @@ public class ProcessDataPrep {
      * @param accInterval is the "accuracy interval", which describes the Sensor accuracy.
      */
     private void dataModeling(ArrayList<String> purifiedData, Short accInterval) {
+        this.preparedData.add("<*TMD:5#>");
         this.preparedData.add("<*STI:" + accInterval + "#*TMD:300#>");
         this.preparedData.addAll(recursiveDataBuilder(purifiedData));
         this.preparedData.set(preparedData.size() - 1, preparedData.get(preparedData.size() - 1) + "?");
@@ -53,57 +54,65 @@ public class ProcessDataPrep {
             if (purifiedData.get(i).contains("endpoint=\"motor_start\"")) {
                 /* Investigation of a Motor Start. */
                 currentInLines.add("<*EST:1#>");
-                i = i + 6;
+                i = i + 5;
             } else if (purifiedData.get(i).contains("endpoint=\"motor_stop\"")) {
                 /* Investigation of a Motor Stop. */
                 currentInLines.add("<*EST:0#>");
-                i = i + 6;
+                i = i + 5;
             } else if (purifiedData.get(i).contains("endpoint=\"motor_hull_sensor\"")) {
                 /* Investigation of a Motor Hull Sensor. */
                 /* HDA Part -> The Hall Degree Angle of the motor. */
-                String fullLine = "<*HDA:";
                 int degree = patternMatcher("<degree>(\\d+)</degree>", purifiedData.get(i+4));
-                fullLine = fullLine + (degree == -1 ? fullLine + "30#" : fullLine + degree + "#");
                 /* TMD Part -> The Time Duration of the action. */
                 int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i+5));
-                fullLine = fullLine + "*TMD:" + (duration == -1 ? fullLine + "0#>" : fullLine + duration + "#>");
-                i = i + 8;
-                currentInLines.add(fullLine);
+                i += 8;
+                currentInLines.add("<*HDA:" + (degree == -1 ? "30" : degree) + "#"
+                        + "*TMD:" + (duration == -1 ? "120" : duration) + "#>");
             } else if (purifiedData.get(i).contains("endpoint=\"motor_gear\"")) {
                 /* Investigation of a Motor Gear. */
                 /* RPM Part -> The Rotations Per Minutes of the motor.*/
-                String fullLine = "<*RPM:";
                 int level = patternMatcher("<level>(\\d+)</level>", purifiedData.get(i+4));
-                fullLine = fullLine + (level == -1 ? fullLine + "500#" : fullLine + level + "#");
                 /* TMD Part -> The Time Duration of the action. */
                 int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i+5));
-                fullLine = fullLine + "*TMD:" + (duration == -1 ? fullLine + "0#>" : fullLine + duration + "#>");
-                i = i + 8;
-                currentInLines.add(fullLine);
+                i += 8;
+                currentInLines.add("<*RPM:" + (level == -1 ? "500" : level) + "#"
+                        + "*TMD:" + (duration == -1 ? "120" : duration) + "#>");
             } else if (purifiedData.get(i).contains("<loop ")) {
                 /* Investigation of a Loop. */
-                /* How many loop runs does this loop do. */
-                int loopCount = patternMatcher("<_probability>(\\d+)</_probability>", purifiedData.get(i+2));
-                /* ArrayList to save the commands of this loop. */
-                ArrayList<String> recursivePart = new ArrayList<>();
-                /* Part to find the last index of this loop. */
-                int loopEnd = purifiedData.size() - 1;
-                while (loopEnd >= 0 && recursivePart.isEmpty()) {
-                    if (purifiedData.get(loopEnd).contains("</loop>")) {
-                        recursivePart = (ArrayList<String>) purifiedData.subList(i+1, loopEnd);
-                    }
-                    loopEnd--;
-                }
-                /* Recursive call of this method to investigate the lines of this loop sections at its own. */
-                ArrayList<String> loopInLines = recursiveDataBuilder(recursivePart);
-                while (loopCount > 0) {
+                int loopCount = patternMatcher("<loop times=\"(\\d+)\">", purifiedData.get(i));
+                int loopEnd = loopHandler(i, purifiedData);
+                ArrayList<String> recursiveSubList = new ArrayList<>(purifiedData.subList(i+1, loopEnd));
+                /* Recursive call of this method with a sub list including the loop lines. */
+                ArrayList<String> loopInLines = recursiveDataBuilder(recursiveSubList);
+                for (int loops = 0; loops < loopCount; loops++) {
                     currentInLines.addAll(loopInLines);
-                    loopCount--;
                 }
-                i = loopEnd + 1; /* Continue at the end of the loop */
+                i = loopEnd;
             }
         }
         return currentInLines;
+    }
+
+    /**
+     * Helper method to find the end index of the current loop.
+     *
+     * @param currentIndex is the start of the loop.
+     * @param purifiedData is the whole purified data list.
+     * @return an int which is the end of the current loop.
+     */
+    private int loopHandler(int currentIndex, ArrayList<String> purifiedData) {
+        /* Counter to filter out crossing loops inside of this loop. */
+        int loopsOpen = 0;
+        for (int i = currentIndex + 1; i < purifiedData.size(); i++) {
+            if (purifiedData.get(i).startsWith("<loop times=")) {
+                loopsOpen++;
+            } else if (loopsOpen > 0 && purifiedData.get(i).contains("</loop>")) {
+                loopsOpen--;
+            } else if (loopsOpen == 0 && purifiedData.get(i).contains("</loop>")) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**

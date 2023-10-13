@@ -2,7 +2,7 @@ package edu.terminal;
 
 import edu.gate.hardware.HardwareGate;
 import edu.ground.analysis.*;
-import edu.ground.blueprintData.BlueprintSaver;
+import edu.ground.blueprintData.BlueprintDataAnalysis;
 import edu.ground.cpeeGate.Gateway;
 
 import java.io.IOException;
@@ -19,10 +19,11 @@ import java.util.Objects;
  */
 public class Terminal {
     private boolean initialized;
+    private ComplianceResults complianceResults;
 
     public Terminal() {
         /* If there is a blueprint text file, we consider this file as the correct file for this motor of control. */
-        initialized = getClass().getResource("/data/blueprint.txt") != null;
+        initialized = getClass().getResource("/data/blueprintAnalysedData.txt") != null;
     }
 
     /**
@@ -35,12 +36,11 @@ public class Terminal {
             ArrayList<String> blueprintData = (ArrayList<String>) Files.
                     readAllLines(Paths.get(Objects.requireNonNull(getClass()
                             .getResource("/data/BlueprintCommandFlowHardware.txt")).getPath()));
-
             /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
              * txt file for further investigations. */
             HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
             /* Get the sensor data back and save it in a txt file for later analyses. */
-            new BlueprintSaver(hardwareInitialiseGate.getSENS());
+            new BlueprintDataAnalysis(hardwareInitialiseGate.getSENS());
             initialized = true;
         } catch (IOException e) {
             e.getStackTrace();
@@ -51,12 +51,12 @@ public class Terminal {
     /**
      * From gate/frontend/UserController.java.
      * This method got coled from the UserController to activate the process.
-     * To ground/datapreparation/FileProcessing.java.
+     *
      *
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public boolean startUserProcess(String type, String accuracyLevel, int deviationPercentage,
+    public boolean startUserProcess(int type, String accuracyLevel, int deviationPercentage,
                                     int acceptancePercentage) {
         if (!initialized) {
             return false; /* False if there is no blueprint data already from the admin */
@@ -65,9 +65,13 @@ public class Terminal {
         ArrayList<String> preparedData = new Gateway(type, accuracyLevel).getPreparedData();
         /* Start the process on the hardware. */
         HardwareGate hardwareUserGate = new HardwareGate(preparedData);
-        /* Get the sensor data back and use it for the process flow drawing. */
-        SensInAnalysis sensorAnalyses = new SensInAnalysis(hardwareUserGate.getSENS());
-        new ComplianceChecking(sensorAnalyses, deviationPercentage, acceptancePercentage);
+        ComplianceChecking complianceCheck = new ComplianceChecking(hardwareUserGate.getSENS(), deviationPercentage,
+                acceptancePercentage, accuracyLevel);
+        this.complianceResults = complianceCheck.getComplianceResults();
         return true;
+    }
+
+    public ComplianceResults getComplianceResults() {
+        return complianceResults;
     }
 }
