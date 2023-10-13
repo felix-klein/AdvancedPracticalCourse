@@ -9,495 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Creation of the Analysis Interface and adding modifications.&#10;New structure and final preparation of the README.md file.">
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Acrylic Glass.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Arduino UNO.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Current Sensor.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Electric Motor.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Power Supply Module/Power Supply Module.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Power Supply Module/Schematic Power Supply Module.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Pyramid Panels.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Sound Sensor/Sound-Sensor-Schematic.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Sound Sensor/Sound-Sensor-UserManual.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/00_documentation/BLDC Shield with TLE9879QXA40 for Arduino.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/00_documentation/BLDC_getting_started.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/00_documentation/Infineon-BLDC_shield-PB-v01_00-EN.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/00_documentation/Infineon-TLE987x-Sensorless-Field-Oriented-Control-ApplicationNotes-v01_00-EN.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/_t_l_e9879___group_8h_source.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/annotated.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/bc_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/bdwn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/class_t_l_e9879___group-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/class_t_l_e9879___group.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/classes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/doc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/doxygen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/doxygen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/dynsections.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/files.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/folderclosed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/folderopen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/functions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/functions_func.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/group___b_o_a_r_d___n_r.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/group___board.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/group___common.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/group___dataset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/group___defines.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/group___parameters.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/menudata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/modules.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/nav_f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/nav_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/nav_h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_0.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/all_9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/classes_0.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/classes_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_0.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/functions_6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_0.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/groups_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/mag_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/nomatches.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/search.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/search_l.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/search_m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/search_r.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/search/searchdata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/splitbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/sync_off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/sync_on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/tab_a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/tab_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/tab_h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/tab_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/01_arduino_library/docs/tabs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/02_example_sketches/bldc_shield_blinky_test/bldc_shield_blinky_test.ino" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/02_example_sketches/bldc_shield_multiple_motor_test/bldc_shield_multiple_motor_test.ino" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/02_example_sketches/bldc_shield_single_motor_test/bldc_shield_single_motor_test.ino" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/README_shield_software.pptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/TLE987x_EvalKit_Getting_Started.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/JLink.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/JLinkARM.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/TLE9879_Shield_Flash.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/all_applications.jlinkscript" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/bemf.hex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/bootloader.hex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/foc.hex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/batch_flashing_shield_software/hall.hex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/Main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/Main.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/Main.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/commands.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/commands.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/commands.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/commands.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/globvars_BEMF.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/App/globvars_BEMF.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/BEMF.uvoptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/BEMF.uvprojx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/BEMF.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_BEMF.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_BEMF.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_BEMF.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_cfg.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_cfg.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_speed_api.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Emo_speed_api.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Mat.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Table.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Emo/Table.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/EventRecorderStub.scvd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/JLinkSettings.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Listings/BEMF.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/Listings/startup_tle987x.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/BEMF_Motorcontrol.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ICW_TLE987x.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc1.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc1_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc2.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/adc2_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bdrv.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bdrv.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bdrv_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bemf_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bootrom.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bootrom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/bsl_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ccu6.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ccu6.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ccu6_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/config.icwp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/csa_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/dma_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/eval_board.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/gpt12e.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/gpt12e.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/gpt12e_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/int.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/int.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/int_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/isr.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/isr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/isr_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/lin.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/lin_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/mon.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/mon.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/mon_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/pmu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/port.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/port.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/port_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/scu.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/scu.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/scu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ssc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ssc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/ssc_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/startup_tle987x.s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/system_tle987x.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/system_tle987x.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/system_tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/timer2x_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/timer3_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/tle_device.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/tle_device.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/tle_device.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/types.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/uart_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/wdt1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/Device/TLE9879QXA40/wdt1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/BEMF/RTE/_TLE9879_EvalKit/RTE_Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/Bootloader.uvoptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/Bootloader.uvprojx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/EventRecorderStub.scvd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/JLinkSettings.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/Listings/Bootloader.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/Listings/startup_tle987x.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/ICW_TLE987x.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/adc1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/adc1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/adc1_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/adc2_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/bdrv_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/bootrom.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/bootrom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/bsl_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/ccu6_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/config.icwp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/csa_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/dma_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/eval_board.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/gpt12e_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/int.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/int.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/int_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/isr.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/isr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/isr_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/lin.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/lin_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/mon_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/pmu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/port.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/port.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/port_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/scu.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/scu.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/scu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/ssc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/ssc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/ssc_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/startup_tle987x.s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/system_tle987x.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/system_tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/timer2x_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/timer3_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/tle_device.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/tle_device.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/types.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/uart_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/wdt1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/Device/TLE9879QXA40/wdt1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/_TLE9879_EvalKit/RTE_Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/_Target_1/RTE_Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/RTE/__/RTE_Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/app/commands.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/app/commands.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/app/main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/Bootloader/app/main.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/EventRecorderStub.scvd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/JLinkSettings.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/Listings/Sensorless_FOC.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/Listings/startup_tle987x.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/FOC_Motorcontrol.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ICW_TLE987x.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/adc1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/adc1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/adc1_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/adc2.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/adc2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/adc2_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/bdrv.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/bdrv.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/bdrv_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/bootrom.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/bootrom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/bsl_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ccu6.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ccu6.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ccu6_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/config.icwp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/csa.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/csa.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/csa_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/dma_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/eval_board.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/foc_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/gpt12e.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/gpt12e.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/gpt12e_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/int.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/int.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/int_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/isr.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/isr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/isr_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/lin.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/lin_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/mon.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/mon.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/mon_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/pmu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/port.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/port.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/port_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/scu.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/scu.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/scu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ssc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ssc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/ssc_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/startup_tle987x.s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/system_tle987x.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/system_tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/timer2x_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/timer3_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/tle_device.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/tle_device.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/types.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/uart_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/wdt1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/Device/TLE9879QXA40/wdt1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/RTE/_TLE9879_EvalKit/RTE_Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/Sensorless_FOC.uvoptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/Sensorless_FOC.uvprojx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/Main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/Main.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/Main.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/Main.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/commands.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/commands.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/commands.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/commands.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/globvars_FOC.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/app/globvars_FOC.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/configuration.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo_RAM.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo_RAM.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo_RAM.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo_cfg.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo_cfg.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Emo_speed_api.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Mat.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Table.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/FOC/emo/Table.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/BldcBcHall.uvoptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/BldcBcHall.uvprojx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/EventRecorderStub.scvd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/JLinkSettings.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/Listings/BldcBcHall.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/Listings/startup_tle987x.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/BC_Motorcontrol.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ICW_TLE987x.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/adc1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/adc1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/adc1_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/adc2_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bchall_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bdrv.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bdrv.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bdrv_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bootrom.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bootrom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/bsl_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ccu6.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ccu6.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ccu6_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/config.icwp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/csa_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/dma_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/eval_board.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/gpt12e.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/gpt12e.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/gpt12e_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/int.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/int.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/int_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/isr.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/isr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/isr_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/lin.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/lin_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/mon_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/pmu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/port.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/port.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/port_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/scu.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/scu.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/scu_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ssc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ssc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/ssc_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/startup_tle987x.s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/system_tle987x.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/system_tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/timer2x_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/timer3_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/tle987x.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/tle_device.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/tle_device.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/types.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/uart_defines.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/wdt1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/Device/TLE9879QXA40/wdt1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/RTE/_TLE9879_EvalKit/RTE_Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/Main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/Main.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/Main.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/Main.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/commands.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/commands.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/commands.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/commands.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/globvars_HALL.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/globvars_HALL.h.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/globvas_HALL.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/app/globvas_HALL.c.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/emo/Emo.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/emo/Emo.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/emo/EmoCcu.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/emo/EmoCcu.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/emo/EmoCcu_Cfg.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/HALL/emo/EmoMat.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/auto_address.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/auto_address.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/common.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/common.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/commonMC.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/03_shield_software/uVision_project_files/commonMC.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/04_layout/bldc_shield_eagle_layout.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/04_layout/bldc_shield_eagle_layout/bldc_shield_eagle_layout.brd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/04_layout/bldc_shield_eagle_layout/bldc_shield_eagle_layout.sch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/05_links/bldc_shield_website.url" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/05_links/infineon_shields_for_arduino.url" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Temperature Sensor.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Vibration Sensor/ARD VIB 01.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/Vibration Sensor/SEN-VIB01_Manual.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Artefacts/WÜRTH-Box.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/Closed_TestBench.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/Complete-Setup_Front.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/First_Sensortest.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/Outside_Electronics.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/Running_Outside_Electronics.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/VideoClip_Running_Motor.MOV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Additional_Images/VideoClip_Running_Motor.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/3D-Print.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/Analysis_Page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/Bench.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/BlueprintProcess.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/CPEEview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/ClassDiagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/Long-Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/PSE.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/Short-Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/User-Admin-Interface.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/adminWork.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Images/Thesis_Images/userWork.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R001.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R002.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R003.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R004.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R005.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R006.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R007.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R008.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R009.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R010.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bachelor-Thesis-Material/Literature_References/R011.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminFiles/BlueprintCommandFlowHardware_Described.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -547,7 +59,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="UserResultCreation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -794,7 +306,8 @@
       <workItem from="1697129063390" duration="203000" />
       <workItem from="1697129407451" duration="27000" />
       <workItem from="1697129659876" duration="11018000" />
-      <workItem from="1697174838173" duration="5564000" />
+      <workItem from="1697174838173" duration="6207000" />
+      <workItem from="1697195207093" duration="462000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -935,14 +448,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Untested Changes to the data processing and file creation of the blueprint data. Adding of an additional variable for the analyses of the processed missions.">
-      <option name="closed" value="true" />
-      <created>1689692549351</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1689692549351</updated>
     </task>
     <task id="LOCAL-00030" summary="Tested file writing functions and return data ordering. Out-commenting is temporary for reasons of easier testing.">
       <option name="closed" value="true" />
@@ -1168,7 +673,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697176597879</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Creation of the Analysis Interface and adding modifications.&#10;New structure and final preparation of the README.md file.">
+      <option name="closed" value="true" />
+      <created>1697183855808</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1697183855808</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1185,7 +698,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="GitLab/UserResultCreation" />
+                        <option value="GitLab/main" />
                       </list>
                     </value>
                   </entry>
