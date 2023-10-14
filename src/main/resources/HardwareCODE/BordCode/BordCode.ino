@@ -7,7 +7,7 @@ TLE9879_Group *shields; /* Declare shields group object */
 
 
 /*
-Normal example Input: <*STI:999#*TMD:4#><*RPM:4000#*TMD:2#><*RPM:100#*TMD:3#><*RPM:4000#*TMD:5#><*EST:0#*TMD:8#>?
+Normal example Input: <*STI:999#*TMD:4#><*RPM:4000#*TMD:30#><*RPM:100#*TMD:3#><*EST:0#*TMD:8#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -104,14 +104,13 @@ void loop() {
           missionNames.clear();
           missionParams.clear();
           runMission = true;
-          Serial.println(timeDelay);
         } else if (controller == '?') {
           constructionsEnd = true;
           shields->setMotorMode(STOP_MOTOR);
         }
       }
     } else {
-      static long timeSinceMissionStart = millis() - missionStamp;
+      long timeSinceMissionStart = millis() - missionStamp;
       if (timeSinceMissionStart >= timeDelay) {
         runMission = false;
         missionStamp = 0;
