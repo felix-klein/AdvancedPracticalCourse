@@ -8,12 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Modification of additional material.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/analysis/ComplianceResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/blueprintAnalysedData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/blueprintAnalysedData.txt" afterDir="false" />
-    </list>
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments to the Hardware code, and minor bug fixes." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -312,7 +307,7 @@
       <workItem from="1697174838173" duration="6207000" />
       <workItem from="1697195207093" duration="513000" />
       <workItem from="1697197073329" duration="45000" />
-      <workItem from="1697294485040" duration="3442000" />
+      <workItem from="1697294485040" duration="3529000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -453,14 +448,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Adjustment of the latest changes to the UML diagram.">
-      <option name="closed" value="true" />
-      <created>1689709563496</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1689709563496</updated>
     </task>
     <task id="LOCAL-00032" summary="Changes to the clean structure and visualisation. No rudimentary changes but rather a cleanup for the presentation to the coordinator.&#10;Last push before the exams brake.">
       <option name="closed" value="true" />
@@ -686,7 +673,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697197016063</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Adjustments to the Hardware code, and minor bug fixes.">
+      <option name="closed" value="true" />
+      <created>1697310829568</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1697310829569</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,7 +711,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First changes to the frontend structure and the inclusion of the Process JavaFX interface. Still not working but we consider a first save for refactoring." />
     <MESSAGE value="Partly working web view with the wrong browser. The Overall view is correct." />
     <MESSAGE value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
     <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
@@ -741,7 +735,8 @@
     <MESSAGE value="Creation of the Analysis Interface and adding modifications." />
     <MESSAGE value="Creation of the Analysis Interface and adding modifications.&#10;New structure and final preparation of the README.md file." />
     <MESSAGE value="Modification of additional material." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification of additional material." />
+    <MESSAGE value="Adjustments to the Hardware code, and minor bug fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments to the Hardware code, and minor bug fixes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
