@@ -7,7 +7,7 @@ TLE9879_Group *shields; /* Declare shields group object */
 
 
 /*
-Normal example Input: <*STI:999#*TMD:4#><*RPM:4000#*TMD:30#><*RPM:100#*TMD:3#><*EST:0#*TMD:8#>?
+Normal example Input: <*STI:999#*TMD:4#><*RPM:4000#*TMD:30#><*EMS:1#>?<*RPM:100#*TMD:3#><*EST:0#*TMD:8#>?
 Min Input: <*EST:1#> (9 for starting the engine as an example)
 */
 
@@ -27,6 +27,7 @@ const byte EST = 2; //Engine-Status-Type    (0/1)
 const byte RPM = 3; //Rotations-per-Minute  (0-4000)
 const byte HDA = 4; //Hall-Delay-Angle      (1-59)
 const byte STI = 5; //Sensor-Time-Interval  (->sensorInterval)
+const byte EMS = 6; //Emergency Stop        (0)
 
 // ---> user defined functions
 void applyMission() { /* Helper function to apply the gathered mission. */
@@ -52,6 +53,9 @@ void applyMission() { /* Helper function to apply the gathered mission. */
           shields->setParameter(HALL_DELAY_ANGLE, missionParams.getValue(i));
       } else if (missionNames.getValue(i) == STI) { /* --> Sensor-Time-Interval  */
           creatingMIS = creatingMIS + String("sti=");
+      } else if (missionNames.getValue(i) == EMS) { /* --> Emergency Stop  */
+          creatingMIS = creatingMIS + String("ems=");
+          shields->setMotorMode(STOP_MOTOR);
       }
       creatingMIS = creatingMIS + missionParams.getValue(i) + String("&");
   }
@@ -89,6 +93,7 @@ void loop() {
             timeDelay = param.toInt() * 1000;
           } else if (name.equals(String("EST"))) {
             missionNames.add(2);
+            timeDelay = 9;
           } else if (name.equals(String("RPM"))) {
             missionNames.add(3);
           } else if (name.equals(String("HDA"))) {
@@ -96,6 +101,9 @@ void loop() {
           } else if (name.equals(String("STI"))) {
             missionNames.add(5);
             sensorInterval = param.toInt();
+          } else if (name.equals(String("EMS"))) {
+            missionNames.add(6);
+            timeDelay = 0;
           }
           missionParams.add(param.toInt());
         } else if (controller == '>') {

@@ -8,7 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments to the Hardware code, and minor bug fixes." />
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="Adjustments to the Hardware code, and minor bug fixes.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/gate/hardware/SerialThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ground/cpeeGate/ProcessDataPrep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HardwareCODE/BordCode/BordCode.ino" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -308,6 +314,9 @@
       <workItem from="1697195207093" duration="513000" />
       <workItem from="1697197073329" duration="45000" />
       <workItem from="1697294485040" duration="3529000" />
+      <workItem from="1697313322951" duration="439000" />
+      <workItem from="1697313794861" duration="25000" />
+      <workItem from="1697353553796" duration="4578000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -448,14 +457,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Changes to the clean structure and visualisation. No rudimentary changes but rather a cleanup for the presentation to the coordinator.&#10;Last push before the exams brake.">
-      <option name="closed" value="true" />
-      <created>1689840354520</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1689840354520</updated>
     </task>
     <task id="LOCAL-00033" summary="Changes and clean up for a clean rebuild of the new branch.">
       <option name="closed" value="true" />
@@ -681,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697310829569</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Adjustments to the Hardware code, and minor bug fixes.">
+      <option name="closed" value="true" />
+      <created>1697313384486</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1697313384487</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

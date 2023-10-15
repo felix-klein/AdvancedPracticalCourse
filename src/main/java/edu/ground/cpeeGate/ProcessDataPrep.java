@@ -59,6 +59,10 @@ public class ProcessDataPrep {
                 /* Investigation of a Motor Stop. */
                 currentInLines.add("<*EST:0#>");
                 i = i + 5;
+            } else if (purifiedData.get(i).contains("<stop id=")) {
+                /* Investigation of an Emergency Stop. */
+                currentInLines.add("<*EMS:1#>");
+                break; /* An Emergency Stop will end the whole process immediately if it is introduced */
             } else if (purifiedData.get(i).contains("endpoint=\"motor_hull_sensor\"")) {
                 /* Investigation of a Motor Hull Sensor. */
                 /* HDA Part -> The Hall Degree Angle of the motor. */

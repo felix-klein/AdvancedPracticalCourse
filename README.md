@@ -1,4 +1,4 @@
-# Bachelor Thesis Prototype
+## Bachelor Thesis Prototype
 
 Welcome to the system and documentation environment for the bachelor thesis: An Integrated Approach to Predictive 
 Maintenance and Quality Control for E-Engines through Compliance Checking. In addition to the written thesis, this work
@@ -7,16 +7,21 @@ storing the software used for the prototype, but also includes the thesis itself
 artefacts and a large number of images and videos that exceed the scope of the written work. In the following, you will
 be referred to the further materials and receive information about the systems and environments used.
 
-## Bachelor Thesis Material
+# Bachelor Thesis Material
 All non-software related materials can be found in the folder [Bachelor-Thesis-Material](Bachelor-Thesis-Material).
 * [Artefacts](Bachelor-Thesis-Material/Artefacts)\
-  Artefacts include data sheets and implementation recommendations for the hardware, as well as software packages and descriptions for the Infineon microcontroller.
+  Artefacts include data sheets and implementation recommendations for the hardware, as well as software packages and 
+  descriptions for the Infineon microcontroller.
 * [Images](Bachelor-Thesis-Material/Images)\
-  Images are divided into two sections: Images that can be found in the written elaboration and images that have been added as supplements.
+  Images are divided into two sections: Images that can be found in the written elaboration and images that have been 
+  added as supplements.
 * [Literature References](Bachelor-Thesis-Material/Literature_References)\
   The literature references are copies of the literature used in the preparation of this thesis.
+* [Written Thesis](Bachelor-Thesis-Material/Written_Thesis)\
+  In the Written Thesis environment, you will find the written bachelor thesis in PDF format, as well as photographs of
+  the submitted portfolio.
 
-## Requirements for easy set up
+# Requirements for easy set up
 For a simple setup of this project, [pom.xml](pom.xml) can be used,
 the dependencies and plugins contained here are as follows:
 
@@ -30,23 +35,27 @@ the dependencies and plugins contained here are as follows:
     * maven.compiler.source: 20
     * maven.compiler.target: 20
     * project.build.sourceEncoding: UTF-8
-* <u>External IDE`s:</u>
+
+# IDE's and external usages
+* External IDE`s:
   * Camunda Modeler (Version 5.12.0)
   * Arduino IDE (Version 2.2.1)
-  * Scene Builder - Gluon
+  * Gluon — Scene Builder (Version 20.0.0)
+  * IntelliJ IDEA — Ultimate Edition (Version 2023.2.1)
+  * CLion (Version 2023.2.1)
+  * Postman (Version 10.19.0)
 
 * External Additions:
-  * [CPEE](https://cpee.org/) - Engine: Modeller for the process 
+  * [CPEE](https://cpee.org/) - Engine: Modeller for the processes
+  * Google Chrome (Version 117.0.5938.149) - As standard browser
 
-## Build and run the project
-
+# Build and run the project
 To get the project running:
 1. Install Google Chrome;
 2. Make *Maven* executable (run) by use of:\
    ```View > Tool Windows > Maven > i17BA > Run Configurations > i17BA [javafx:run]```
 
-## Code structure and layout
-
+# Code structure and layout
 The code structure in the form of classes, methods and attributes can quickly become confusing in such large projects.
 Therefore, the following lightweight UML-diagram reveals a structural representation of the back-end. Even though not
 all methods (and even classes) are shown, it still illustrates the key connections.
@@ -60,6 +69,7 @@ all methods (and even classes) are shown, it still illustrates the key connectio
   * HDA (Hall-Delay-Angle): 1-59
   * RPM (Rotations-per-Minute): 0-4000
   * TMD (Time-Duration): 0-int (in seconds)
+  * EMS (Emergency Stop): 1 -> Description at [Emergency Stop](#Emergency-Stop)
 * Sensor Response:
   * TMP is a list of all the Temperature gathered.
   * VIB is a list of all the Vibration gathered.
@@ -88,9 +98,10 @@ For further clarification and as a result of active programming we decided to us
   * `/* */` and `/** **/`for final comments and work, like a 'final/normal comment'
 This structure does not count for code which is not written in java.
 
-## List of Programming-References
+# List of Programming-References
 * Arduino IDE-language: [Arduino LANGUAGE](https://www.arduino.cc/reference/en/)
 * Arduino API List: [Arduino List Library  2.1.4](https://nkaaf.github.io/Arduino-List/html/index.html)
+* Infineon Shield Examples: [Example Sketches](Bachelor-Thesis-Material/Artefacts/TLE9879QXA40/02_example_sketches)
 
 # Design Guide
 * Main Design-Guide reference:
@@ -115,3 +126,11 @@ This structure does not count for code which is not written in java.
   * Baud Rate: `9600`
   * Terminal Input: `screen /dev/cu.usbmodem141101 115200`
   * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)
+
+# Emergency Stop
+The Emergency Stop is a Task which can be included into a process when ever needed.
+Its primary function and intended use is the testing of a process flow. The user does
+not need to delete or create a new whole process just for the testing of a beginning segment.
+
+The Emergency Stop functions as a rapid and immediate end of the test. No more commands are
+transferred to the board, the motor will stop running and the sensor data will stop sending.
