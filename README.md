@@ -144,4 +144,4 @@ to [GitHub i17ba](https://github.com/felix-klein/i17ba) was conducted and does n
 regarded directly to the systems, e.g. Push history and Milestones.\
 If you are interested in further insights, older releases or development stages which are documented in the GitLab
 version of this project, or if you got general project question, please use the 
-Discord-Server: [Server i17ba-Q&A](https://discord.gg/rDpUg3Vh).
+Discord-Server: [Server i17ba-Q&A](https://discord.gg/rDpUg3Vh) (active until one year after official project completion, 15.10.2023).

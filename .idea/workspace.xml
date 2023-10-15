@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(2) Adjustments to the Hardware code, and minor bug fixes.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -313,7 +313,7 @@
       <workItem from="1697294485040" duration="3529000" />
       <workItem from="1697313322951" duration="439000" />
       <workItem from="1697313794861" duration="25000" />
-      <workItem from="1697353553796" duration="6962000" />
+      <workItem from="1697353553796" duration="8067000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -454,14 +454,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Creation of THE SWITCH - PREP, to adjust the code and its structure for the rebuilding phase including a new Process Modeler.">
-      <option name="closed" value="true" />
-      <created>1693820577553</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1693820577553</updated>
     </task>
     <task id="LOCAL-00035" summary="First changes to the frontend structure and the inclusion of the Process JavaFX interface. Still not working but we consider a first save for refactoring.">
       <option name="closed" value="true" />
@@ -687,7 +679,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697359236743</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments.">
+      <option name="closed" value="true" />
+      <created>1697361943227</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1697361943227</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -717,7 +717,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing." />
     <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
     <MESSAGE value="UML adjustments for the correct documentation." />
     <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
@@ -742,7 +741,8 @@
     <MESSAGE value="Modification of additional material." />
     <MESSAGE value="Adjustments to the Hardware code, and minor bug fixes." />
     <MESSAGE value="(2) Adjustments to the Hardware code, and minor bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="(2) Adjustments to the Hardware code, and minor bug fixes." />
+    <MESSAGE value="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
+    <option name="LAST_COMMIT_MESSAGE" value="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
