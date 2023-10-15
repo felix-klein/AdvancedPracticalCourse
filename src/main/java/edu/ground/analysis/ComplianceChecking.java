@@ -73,8 +73,8 @@ public class ComplianceChecking {
         8. <*RPM:3500#*TMD:1200#>
         9. <*RPM:4000#*TMD:1200#>
      */
-    public ComplianceChecking(SensIn sensorData, int deviationPercentage,
-                              int acceptancePercentage, String accuracyLevel) {
+    public ComplianceChecking(SensIn sensorData, int deviationPercentage, int acceptancePercentage,
+                              String accuracyLevel) {
         this.sensorData = sensorData;
         this.complianceResults = new ComplianceResults();
         this.deviationPercentage = deviationPercentage;
@@ -88,9 +88,9 @@ public class ComplianceChecking {
 
         try {
             /* Get the ideal sensor data of the blueprint. */
-            this.idealData = (ArrayList<String>) Files.
-                    readAllLines(Paths.get(Objects.requireNonNull(getClass()
-                            .getResource("/data/blueprintAnalysedData.txt")).getPath()));
+            this.idealData = (ArrayList<String>) Files.readAllLines(Paths.get(Objects.requireNonNull(getClass()
+                    .getResource("/data/blueprintAnalysedData.txt"))
+                    .getPath()));
 
             comparison();
         } catch (IOException e) {
@@ -136,7 +136,7 @@ public class ComplianceChecking {
             if (sensorData.MIS().get(i).contains("rpm=")) {
                 Pattern pattern = Pattern.compile("rpm=(\\d+)&");
                 Matcher matcher = pattern.matcher(sensorData.MIS().get(i));
-                missionRPMTo = matcher.find() ?  Integer.parseInt(matcher.group(1)) :  0;
+                missionRPMTo = matcher.find() ? Integer.parseInt(matcher.group(1)) : 0;
             }
             int startIndexIdeal = fromTo(missionRPMFrom, missionRPMTo);
 
@@ -147,13 +147,13 @@ public class ComplianceChecking {
     /**
      * The From-To method exists to find the start index of the ideal sensor data in the blueprint results. It is
      * searching for the correct part/section of the ideal test results by its ID-Name and a sensible quantisation
-     * classification. Each blueprint test was executed at a multiple 500 RPM value. The user RPM is therefor comparable
-     * to the closest ideal value.
+     * classification. Each blueprint test was executed at a multiple 500 RPM value. The user RPM is therefor
+     * comparable to the closest ideal value.
      * e.g.:
-     *  User RPM: 480       ->      corresponding ideal value section: 500 (including the area 250 - 749 RPM)
+     * User RPM: 480       ->      corresponding ideal value section: 500 (including the area 250 - 749 RPM)
      *
      * @param missionRPMFrom is the preceding RPM value.
-     * @param missionRPMTo is the current RPM value.
+     * @param missionRPMTo   is the current RPM value.
      * @return an index which indicates the first sensor data line for this specific comparison.
      */
     private int fromTo(int missionRPMFrom, int missionRPMTo) {
@@ -179,7 +179,7 @@ public class ComplianceChecking {
     /**
      * To compare each second of a missions sensor data, the ideal values with the test values.
      *
-     * @param mission is the index which indicates the current mission.
+     * @param mission         is the index which indicates the current mission.
      * @param startIndexIdeal is the index inside the ideal data array where the comparison should start.
      */
     private void comparePerSecond(int mission, int startIndexIdeal, int rpmMission) {
@@ -256,12 +256,9 @@ public class ComplianceChecking {
             dataCP3.add(dataListCP3);
 
             /* Deviation check for each sensor element. */
-            if (dataListTMP.deviation() <= deviationPercentage
-                    && dataListMIC.deviation() <= deviationPercentage
-                    && dataListVIB.deviation() <= deviationPercentage
-                    && dataListCP1.deviation() <= deviationPercentage
-                    && dataListCP2.deviation() <= deviationPercentage
-                    && dataListCP3.deviation() <= deviationPercentage) {
+            if (dataListTMP.deviation() <= deviationPercentage && dataListMIC.deviation() <= deviationPercentage &&
+                    dataListVIB.deviation() <= deviationPercentage && dataListCP1.deviation() <= deviationPercentage &&
+                    dataListCP2.deviation() <= deviationPercentage && dataListCP3.deviation() <= deviationPercentage) {
                 deviationTrue++;
             } else {
                 deviationFalse++;
@@ -280,25 +277,26 @@ public class ComplianceChecking {
         String missionName = sensorData.MIS().get(mission);
         double missionPercentage = ((double) deviationTrue / (deviationTrue + deviationFalse)) * 100;
         boolean missionResult = (missionPercentage >= acceptancePercentage);
-        complianceResults.setMissionTotals(
-                new ComplianceResults.MissionTotal(missionName, missionResult, missionPercentage));
+        complianceResults.setMissionTotals(new ComplianceResults
+                .MissionTotal(missionName, missionResult, missionPercentage));
     }
 
     /**
      * Helper method for creation of DataList objects.
      *
-     * @param idealA is the absolute value of the ideal data.
-     * @param testA is the absolute value of the test data.
-     * @param testNoise is the noise of the test data.
+     * @param idealA     is the absolute value of the ideal data.
+     * @param testA      is the absolute value of the test data.
+     * @param testNoise  is the noise of the test data.
      * @param idealNoise is the noise of the ideal data.
      * @return a single DataList object.
      */
-    private ComplianceResults.DataList dataListCreation(double idealA, double testA, double testNoise, double idealNoise) {
+    private ComplianceResults.DataList dataListCreation(double idealA, double testA, double testNoise,
+                                                        double idealNoise) {
         double idealR = idealA - idealNoise;
         double testR = testA - testNoise;
         double diffRelative = idealR - testR;
         double diffAbsolute = idealA - testA;
-        double deviation = (Math.abs(diffRelative)/idealR) * 100;/* deviation in percent */
+        double deviation = (Math.abs(diffRelative) / idealR) * 100;/* deviation in percent */
         return new ComplianceResults.DataList(idealR, testR, diffRelative, diffAbsolute, idealA, testA, deviation);
     }
 
@@ -330,12 +328,13 @@ public class ComplianceChecking {
             counter++;
         }
         complianceResults.setIdealNoise(new ComplianceResults.Noise(
-                (sumTMP /counter - 1),
-                (sumMIC /counter - 1),
-                (sumVIB /counter - 1),
-                (sumCP1 /counter - 1),
-                (sumCP2 /counter - 1),
-                (sumCP3 /counter - 1)));
+                (sumTMP / counter - 1),
+                (sumMIC / counter - 1),
+                (sumVIB / counter - 1),
+                (sumCP1 / counter - 1),
+                (sumCP2 / counter - 1),
+                (sumCP3 / counter - 1)
+        ));
 
         /* Noise analyses of the test run. */
         counter = 0;
@@ -351,12 +350,13 @@ public class ComplianceChecking {
             counter++;
         }
         complianceResults.setTestNoise(new ComplianceResults.Noise(
-                (sumTMP/counter),
-                (sumMIC/counter),
-                (sumVIB/counter),
-                (sumCP1/counter),
-                (sumCP2/counter),
-                (sumCP3/counter)));
+                (sumTMP / counter),
+                (sumMIC / counter),
+                (sumVIB / counter),
+                (sumCP1 / counter),
+                (sumCP2 / counter),
+                (sumCP3 / counter)
+        ));
     }
 
     public ComplianceResults getComplianceResults() {

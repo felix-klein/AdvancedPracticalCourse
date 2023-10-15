@@ -48,13 +48,8 @@ public class AdminController extends ComboController implements Initializable {
     private void setup(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("Button - Start Initialization: " + mouseEvent.getPickResult());
         /* Control if all checkboxes are ticket. If no checkbox is not ticked.*/
-        if (!check1.isSelected()
-                || !check2.isSelected()
-                || !check3.isSelected()
-                || !check4.isSelected()
-                || !check5.isSelected()
-                || !check6.isSelected()
-                || !check7.isSelected()) {
+        if (!check1.isSelected() || !check2.isSelected() || !check3.isSelected() || !check4.isSelected() ||
+                !check5.isSelected() || !check6.isSelected() || !check7.isSelected()) {
             String headline = "Missing Checkboxes";
             String text = "Unfortunately, you cannot start the process yet because you have not completed or checked" +
                     " off all the tasks from the task list. Please make sure that all tasks are completed" +
@@ -142,7 +137,8 @@ public class AdminController extends ComboController implements Initializable {
          */
         try {
             /* Indicate the right path in the correct format. */
-            Path fullPath = Paths.get(Objects.requireNonNull(getClass().getResource("/data/setupData.txt"))
+            Path fullPath = Paths.get(Objects.requireNonNull(getClass()
+                    .getResource("/data/setupData.txt"))
                     .toURI());
             /* Iterate through all lines of the document and change the one line with its new data. */
             List<String> setupSheet = Files.readAllLines(fullPath);

@@ -1,7 +1,8 @@
 package edu.terminal;
 
 import edu.gate.hardware.HardwareGate;
-import edu.ground.analysis.*;
+import edu.ground.analysis.ComplianceChecking;
+import edu.ground.analysis.ComplianceResults;
 import edu.ground.blueprintData.BlueprintDataAnalysis;
 import edu.ground.cpeeGate.Gateway;
 
@@ -33,9 +34,10 @@ public class Terminal {
     public void initializeBlueprint() {
         /* Get the blueprint commands which are saved in a txt file. */
         try {
-            ArrayList<String> blueprintData = (ArrayList<String>) Files.
-                    readAllLines(Paths.get(Objects.requireNonNull(getClass()
-                            .getResource("/data/BlueprintCommandFlowHardware.txt")).getPath()));
+            ArrayList<String> blueprintData = (ArrayList<String>) Files.readAllLines(Paths
+                    .get(Objects.requireNonNull(getClass()
+                            .getResource("/data/BlueprintCommandFlowHardware.txt"))
+                            .getPath()));
             /* Using this process data to initialise and start the Hardware, which does save the blueprint results in a
              * txt file for further investigations. */
             HardwareGate hardwareInitialiseGate = new HardwareGate(blueprintData);
@@ -52,12 +54,10 @@ public class Terminal {
      * From gate/frontend/UserController.java.
      * This method got coled from the UserController to activate the process.
      *
-     *
      * @param accuracyLevel is the level of accuracy for the sensor data.
      * @return a boolean to indicate if the process could start of if the admin needs to initialise first.
      */
-    public boolean startUserProcess(int type, String accuracyLevel, int deviationPercentage,
-                                    int acceptancePercentage) {
+    public boolean startUserProcess(int type, String accuracyLevel, int deviationPercentage, int acceptancePercentage) {
         if (!initialized) {
             return false; /* False if there is no blueprint data already from the admin */
         }

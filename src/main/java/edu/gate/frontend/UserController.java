@@ -29,8 +29,8 @@ public class UserController extends ComboController implements Initializable {
     private int typeId = -1;
 
     /**
-     * The method process is activated, if the Process button ("run test") is clicked. It is the main method of the whole
-     * application. If the user did no changes, the default values will be used to process the application.
+     * The method process is activated, if the Process button ("run test") is clicked. It is the main method of the
+     * whole application. If the user did no changes, the default values will be used to process the application.
      *
      * @param mouseEvent is the mouseclick to run the process.
      */
@@ -44,8 +44,9 @@ public class UserController extends ComboController implements Initializable {
                     " \"Recreate\" area, you must modify it and thus create it for the system. Please open a" +
                     " new process in the \"Recreate\" area by clicking on \"New Model\" and then proceed as usual.");
         } else {
-            processRunning = MainApplication.getTerminal().startUserProcess(getType(), accuracy.getValue(),
-                    deviationPercentage, acceptancePercentage);
+            processRunning = MainApplication
+                    .getTerminal()
+                    .startUserProcess(getType(), accuracy.getValue(), deviationPercentage, acceptancePercentage);
             MainApplication.setComplianceResults();
         }
 

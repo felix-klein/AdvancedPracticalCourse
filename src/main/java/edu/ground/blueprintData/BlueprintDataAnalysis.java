@@ -25,14 +25,15 @@ public class BlueprintDataAnalysis {
         try {
             /* Indicate the right path in the correct format. */
             Path fullPath = Paths.get(Objects.requireNonNull(getClass()
-                    .getResource("/data/blueprintAnalysedData.txt")).toURI());
+                    .getResource("/data/blueprintAnalysedData.txt"))
+                    .toURI());
 
             ArrayList<String> blueprintSheet = new ArrayList<>();
             int groupCounter = 0;
             int groupID = 1;
             for (int i = 0; i < sensorData.MIS().size(); i++) {
                 /* The Switch statement is the naming of each mission for later recognising. */
-                groupID = (groupID==10) ? 1 : groupID;
+                groupID = (groupID == 10) ? 1 : groupID;
                 switch (groupCounter) {
                     case 0 -> { /* 0 -> 1 */
                         blueprintSheet.add(">>0.0");

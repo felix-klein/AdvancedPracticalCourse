@@ -13,14 +13,10 @@ import java.util.ArrayList;
  * @param CP2_perMission is a list of all the sensor values at the Current-Phase-2.
  * @param CP3_perMission is a list of all the sensor values at the Current-Phase-3.
  * @param TSP_perMission is a list of all the respective Time-Stamps gathered.
- * @param MIS is a list of all the Mission-Initialisation-Stamps (not corresponding to the rest).
+ * @param MIS            is a list of all the Mission-Initialisation-Stamps (not corresponding to the rest).
  */
-public record SensIn(ArrayList<ArrayList<Float>> TMP_perMission,
-                     ArrayList<ArrayList<Float>> VIB_perMission,
-                     ArrayList<ArrayList<Float>> MIC_perMission,
-                     ArrayList<ArrayList<Float>> CP1_perMission,
-                     ArrayList<ArrayList<Float>> CP2_perMission,
-                     ArrayList<ArrayList<Float>> CP3_perMission,
-                     ArrayList<ArrayList<Integer>> TSP_perMission,
-                     ArrayList<String> MIS) {
+public record SensIn(ArrayList<ArrayList<Float>> TMP_perMission, ArrayList<ArrayList<Float>> VIB_perMission,
+                     ArrayList<ArrayList<Float>> MIC_perMission, ArrayList<ArrayList<Float>> CP1_perMission,
+                     ArrayList<ArrayList<Float>> CP2_perMission, ArrayList<ArrayList<Float>> CP3_perMission,
+                     ArrayList<ArrayList<Integer>> TSP_perMission, ArrayList<String> MIS) {
 }

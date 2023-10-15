@@ -39,8 +39,9 @@ public class HardwareGate {
      */
     private String getSetupData(String dataHeader) {
         try {
-            List<String> setupSheet = Files.readAllLines(Paths.get(
-                    Objects.requireNonNull(getClass().getResource("/data/setupData.txt")).toURI()));
+            List<String> setupSheet = Files.readAllLines(Paths.get(Objects.requireNonNull(getClass()
+                    .getResource("/data/setupData.txt"))
+                    .toURI()));
             for (String s : setupSheet) {
                 if (s.contains(dataHeader)) {
                     return s.substring(dataHeader.length(), s.indexOf('*'));

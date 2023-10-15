@@ -11,7 +11,7 @@ public class ProcessDataPrep {
      * The Class ProcessDataPrep is the real data translate between the ruff xml string and the final List of output
      * Strings for the Hardware.
      *
-     * @param xmlResponse is the single String which includes the xml response in its raw nature.
+     * @param xmlResponse   is the single String which includes the xml response in its raw nature.
      * @param accuracyLevel is an additional parameter from the user interface for the accuracy of the sensor data.
      */
     public ProcessDataPrep(String xmlResponse, String accuracyLevel) {
@@ -29,7 +29,7 @@ public class ProcessDataPrep {
      * operations could work in a recursive manner.
      *
      * @param purifiedData is the raw prepared data.
-     * @param accInterval is the "accuracy interval", which describes the Sensor accuracy.
+     * @param accInterval  is the "accuracy interval", which describes the Sensor accuracy.
      */
     private void dataModeling(ArrayList<String> purifiedData, Short accInterval) {
         this.preparedData.add("<*TMD:5#>");
@@ -66,26 +66,26 @@ public class ProcessDataPrep {
             } else if (purifiedData.get(i).contains("endpoint=\"motor_hull_sensor\"")) {
                 /* Investigation of a Motor Hull Sensor. */
                 /* HDA Part -> The Hall Degree Angle of the motor. */
-                int degree = patternMatcher("<degree>(\\d+)</degree>", purifiedData.get(i+4));
+                int degree = patternMatcher("<degree>(\\d+)</degree>", purifiedData.get(i + 4));
                 /* TMD Part -> The Time Duration of the action. */
-                int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i+5));
+                int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i + 5));
                 i += 8;
-                currentInLines.add("<*HDA:" + (degree == -1 ? "30" : degree) + "#"
-                        + "*TMD:" + (duration == -1 ? "120" : duration) + "#>");
+                currentInLines.add("<*HDA:" + (degree == -1 ? "30" : degree) + "#" + "*TMD:" +
+                        (duration == -1 ? "120" : duration) + "#>");
             } else if (purifiedData.get(i).contains("endpoint=\"motor_gear\"")) {
                 /* Investigation of a Motor Gear. */
                 /* RPM Part -> The Rotations Per Minutes of the motor.*/
-                int level = patternMatcher("<level>(\\d+)</level>", purifiedData.get(i+4));
+                int level = patternMatcher("<level>(\\d+)</level>", purifiedData.get(i + 4));
                 /* TMD Part -> The Time Duration of the action. */
-                int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i+5));
+                int duration = patternMatcher("<duration>(\\d+)</duration>", purifiedData.get(i + 5));
                 i += 8;
-                currentInLines.add("<*RPM:" + (level == -1 ? "500" : level) + "#"
-                        + "*TMD:" + (duration == -1 ? "120" : duration) + "#>");
+                currentInLines.add("<*RPM:" + (level == -1 ? "500" : level) + "#" + "*TMD:" +
+                        (duration == -1 ? "120" : duration) + "#>");
             } else if (purifiedData.get(i).contains("<loop ")) {
                 /* Investigation of a Loop. */
                 int loopCount = patternMatcher("<loop times=\"(\\d+)\">", purifiedData.get(i));
                 int loopEnd = loopHandler(i, purifiedData);
-                ArrayList<String> recursiveSubList = new ArrayList<>(purifiedData.subList(i+1, loopEnd));
+                ArrayList<String> recursiveSubList = new ArrayList<>(purifiedData.subList(i + 1, loopEnd));
                 /* Recursive call of this method with a sub list including the loop lines. */
                 ArrayList<String> loopInLines = recursiveDataBuilder(recursiveSubList);
                 for (int loops = 0; loops < loopCount; loops++) {
@@ -122,14 +122,14 @@ public class ProcessDataPrep {
     /**
      * Helper for recursiveDataBuilder to find the data in String sections which do have a specific pattern.
      *
-     * @param regex is the pattern.
+     * @param regex      is the pattern.
      * @param searchArea is the area in which this pattern could be.
      * @return the value in the pattern or a -1 for no pattern which results in a default value.
      */
     private int patternMatcher(String regex, String searchArea) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(searchArea);
-        return matcher.find() ?  Integer.parseInt(matcher.group(1)) :  -1;
+        return matcher.find() ? Integer.parseInt(matcher.group(1)) : -1;
     }
 
     /**

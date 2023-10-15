@@ -76,7 +76,7 @@ public class ResultController extends ComboController implements Initializable {
         for (int i = 0; i < results.getMissionTotals().size(); i++) {
             int indexCut = results.getMissionTotals().get(i).mission().indexOf("&tsp=");
             String mission = i + ": \"" + results.getMissionTotals().get(i).mission().substring(0, indexCut) + "\"";
-            if(i == results.getMissionTotals().size() - 1) {
+            if (i == results.getMissionTotals().size() - 1) {
                 missionLabel.setText(missionList + mission);
             } else {
                 missionList += mission + "; ";

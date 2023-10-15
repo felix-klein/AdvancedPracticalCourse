@@ -48,8 +48,8 @@ public class SerialThread extends Thread {
     /**
      * mainThread: This Constructor is for the main-Thread (the current) call with the main work of SENDING-DATA.
      *
-     * @param port          is the actual running port from the HardwareGate.
-     * @param preparedData  is the final data for the hardware from the process model.
+     * @param port         is the actual running port from the HardwareGate.
+     * @param preparedData is the final data for the hardware from the process model.
      */
     public SerialThread(SerialPort port, ArrayList<String> preparedData) {
         this.port = port;
@@ -156,8 +156,16 @@ public class SerialThread extends Thread {
             }
         }
         perSecondTransformation();
-        this.SENS = new SensIn(TMP_perMission, VIB_perMission, MIC_perMission, CP1_perMission,
-                CP2_perMission, CP3_perMission, TSP_perMission, MIS);
+        this.SENS = new SensIn(
+                TMP_perMission,
+                VIB_perMission,
+                MIC_perMission,
+                CP1_perMission,
+                CP2_perMission,
+                CP3_perMission,
+                TSP_perMission,
+                MIS
+        );
     }
 
     /**
@@ -248,14 +256,14 @@ public class SerialThread extends Thread {
 
                 /* If one second is over, or it is the last element, the mean of its values is saved. */
                 if (i == TSP_perMission.get(mission).size() - 1 || oneSecond < 0) {
-                    TMP_perMissionX.add(TMP/amount);
-                    VIB_perMissionX.add(VIB/amount);
-                    MIC_perMissionX.add(MIC/amount);
-                    CP1_perMissionX.add(CP1/amount);
-                    CP2_perMissionX.add(CP2/amount);
-                    CP3_perMissionX.add(CP3/amount);
+                    TMP_perMissionX.add(TMP / amount);
+                    VIB_perMissionX.add(VIB / amount);
+                    MIC_perMissionX.add(MIC / amount);
+                    CP1_perMissionX.add(CP1 / amount);
+                    CP2_perMissionX.add(CP2 / amount);
+                    CP3_perMissionX.add(CP3 / amount);
                     amount = 0;
-                    TMP =VIB = MIC = CP1 = CP2 = CP3 = 0F;
+                    TMP = VIB = MIC = CP1 = CP2 = CP3 = 0F;
                     periodStart = TSP_perMission.get(mission).get(i);
                 }
 

@@ -1,6 +1,5 @@
 package edu.gate.frontend;
 
-import edu.ground.analysis.ComplianceResults;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,7 +27,6 @@ public class SceneControl {
      * Switch to User Scene:    SceneChoice=0, action=action, stage=null                - main-Window
      * Switch to Admin Scene:   SceneChoice=1, action=action, stage=null                - main-Window
      * Results Scene:           SceneChoice=2, action=action, stage=null                - by-Window
-     *
      */
     public SceneControl(short sceneChoice, ActionEvent action, Stage stage) throws IOException {
         /* Switch statement to initialize the correct window in its correct position */
@@ -59,7 +57,7 @@ public class SceneControl {
         stage.setScene(scene);
         stage.setY(25.0); /* window position */
         stage.setMinHeight(200.0); /* maximum with of the window */
-        if (sceneChoice<=1) {
+        if (sceneChoice <= 1) {
             stage.setX(781.0); /* window position */
             stage.setMinWidth(647.0); /* minimum with of the window */
             if (sceneChoice == 0) { /* set title */

@@ -32,12 +32,15 @@ public class ComplianceResults {
         this.compliantTasks = 0;
     }
 
-    public record DataList(double idealR, double testR, double diffRelative, double diffAbsolute,
-                           double idealA, double testA, double deviation) {}
+    public record DataList(double idealR, double testR, double diffRelative, double diffAbsolute, double idealA,
+                           double testA, double deviation) {
+    }
 
-    public record Noise(double TMP, double VIB, double MIC, double CP1, double CP2, double CP3) {}
+    public record Noise(double TMP, double VIB, double MIC, double CP1, double CP2, double CP3) {
+    }
 
-    public record MissionTotal(String mission, boolean result, double percentage) {}
+    public record MissionTotal(String mission, boolean result, double percentage) {
+    }
 
     public ArrayList<MissionTotal> getMissionTotals() {
         return missionTotals;
@@ -113,6 +116,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the missions to add a total mission and not to initialize a complete mission set.
+     *
      * @param totalMission is a single total mission.
      */
     public void setMissionTotals(MissionTotal totalMission) {
@@ -124,6 +128,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the DataList adding to the list.
+     *
      * @param dataTMP is a single DataList object we add.
      */
     public void setDataTMP(ArrayList<DataList> dataTMP) {
@@ -132,6 +137,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the DataList adding to the list.
+     *
      * @param dataVIB is a single DataList object we add.
      */
     public void setDataVIB(ArrayList<DataList> dataVIB) {
@@ -140,6 +146,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the DataList adding to the list.
+     *
      * @param dataMIC is a single DataList object we add.
      */
     public void setDataMIC(ArrayList<DataList> dataMIC) {
@@ -148,6 +155,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the DataList adding to the list.
+     *
      * @param dataCP1 is a single DataList object we add.
      */
     public void setDataCP1(ArrayList<DataList> dataCP1) {
@@ -156,6 +164,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the DataList adding to the list.
+     *
      * @param dataCP2 is a single DataList object we add.
      */
     public void setDataCP2(ArrayList<DataList> dataCP2) {
@@ -164,6 +173,7 @@ public class ComplianceResults {
 
     /**
      * Modified setter for the DataList adding to the list.
+     *
      * @param dataCP3 is a single DataList object we add.
      */
     public void setDataCP3(ArrayList<DataList> dataCP3) {

@@ -7,7 +7,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Gateway {
     private final ArrayList<String> preparedData;
@@ -15,7 +14,7 @@ public class Gateway {
     /**
      * The Gateway is the "gateway" for the model data to the datapreparation for the hardware.
      *
-     * @param type is the model we need to prepare for the Hardware.
+     * @param type          is the model we need to prepare for the Hardware.
      * @param accuracyLevel is an additional parameter for the accuracy of the sensor data.
      */
     public Gateway(int type, String accuracyLevel) {

@@ -8,9 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +64,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "felix-klein"
+  }
+}]]></component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;history&quot;: [
     {
@@ -111,11 +116,19 @@
     &quot;second&quot;: &quot;cc864adc-dd94-4282-941a-d687bf19afcf&quot;
   }
 }</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="969c3c5a-52a0-49fc-9a0c-71cd6686eba1" />
+        <option name="url" value="https://github.com/felix-klein/i17ba" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -313,7 +326,7 @@
       <workItem from="1697294485040" duration="3529000" />
       <workItem from="1697313322951" duration="439000" />
       <workItem from="1697313794861" duration="25000" />
-      <workItem from="1697353553796" duration="8067000" />
+      <workItem from="1697353553796" duration="8619000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -454,14 +467,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00035" summary="First changes to the frontend structure and the inclusion of the Process JavaFX interface. Still not working but we consider a first save for refactoring.">
-      <option name="closed" value="true" />
-      <created>1693826760947</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1693826760947</updated>
     </task>
     <task id="LOCAL-00036" summary="Partly working web view with the wrong browser. The Overall view is correct.">
       <option name="closed" value="true" />
@@ -687,7 +692,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697361943227</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments.">
+      <option name="closed" value="true" />
+      <created>1697362947938</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1697362947939</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -717,7 +730,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well." />
     <MESSAGE value="UML adjustments for the correct documentation." />
     <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
     <MESSAGE value="ReadMe adjustments recording to the new changes." />
@@ -742,7 +754,8 @@
     <MESSAGE value="Adjustments to the Hardware code, and minor bug fixes." />
     <MESSAGE value="(2) Adjustments to the Hardware code, and minor bug fixes." />
     <MESSAGE value="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
-    <option name="LAST_COMMIT_MESSAGE" value="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
+    <MESSAGE value="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
+    <option name="LAST_COMMIT_MESSAGE" value="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
