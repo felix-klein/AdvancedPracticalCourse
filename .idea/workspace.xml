@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(6) Adjustments to the Hardware code, and minor bug fixes. Additional material.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +64,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "felix-klein"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;felix-klein&quot;
   }
-}]]></component>
+}</component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;history&quot;: [
     {
@@ -326,7 +326,8 @@
       <workItem from="1697294485040" duration="3529000" />
       <workItem from="1697313322951" duration="439000" />
       <workItem from="1697313794861" duration="25000" />
-      <workItem from="1697353553796" duration="10608000" />
+      <workItem from="1697353553796" duration="11144000" />
+      <workItem from="1697396276218" duration="444000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -467,14 +468,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00037" summary="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing.">
-      <option name="closed" value="true" />
-      <created>1694543957309</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1694543957309</updated>
     </task>
     <task id="LOCAL-00038" summary="Adjustments and further changes which are a result of the new modeler. The Terminal and the blueprint was adjusted as well.">
       <option name="closed" value="true" />
@@ -700,7 +693,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697364836278</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="(6) Adjustments to the Hardware code, and minor bug fixes. Additional material.">
+      <option name="closed" value="true" />
+      <created>1697368648433</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1697368648433</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +731,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
     <MESSAGE value="ReadMe adjustments recording to the new changes." />
     <MESSAGE value="Preparation for the analysis phase." />
     <MESSAGE value="Major changes to the blueprint aspect and the creation of a corresponding command file for the admin blueprint initialisation." />
@@ -755,7 +755,8 @@
     <MESSAGE value="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
     <MESSAGE value="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
     <MESSAGE value="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes." />
+    <MESSAGE value="(6) Adjustments to the Hardware code, and minor bug fixes. Additional material." />
+    <option name="LAST_COMMIT_MESSAGE" value="(6) Adjustments to the Hardware code, and minor bug fixes. Additional material." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
