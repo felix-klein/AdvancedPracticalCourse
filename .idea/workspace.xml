@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments.">
+    <list default="true" id="1c606b53-c0e6-48e6-ae63-800b797a42db" name="Changes" comment="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +128,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -326,7 +326,7 @@
       <workItem from="1697294485040" duration="3529000" />
       <workItem from="1697313322951" duration="439000" />
       <workItem from="1697313794861" duration="25000" />
-      <workItem from="1697353553796" duration="8619000" />
+      <workItem from="1697353553796" duration="10608000" />
     </task>
     <task id="LOCAL-00001" summary="Structural changes and implementations like JavaFX, JUnit, Camunda, jSerialComm and exemplary code.">
       <created>1687628476716</created>
@@ -467,14 +467,6 @@
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1689078401662</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Partly working web view with the wrong browser. The Overall view is correct.">
-      <option name="closed" value="true" />
-      <created>1693840072423</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1693840072423</updated>
     </task>
     <task id="LOCAL-00037" summary="The main change of The Switch, with changes of the data receiving and data processing. It still needs a lot of changes and especially testing.">
       <option name="closed" value="true" />
@@ -700,7 +692,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697362947939</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes.">
+      <option name="closed" value="true" />
+      <created>1697364836277</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1697364836278</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +730,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="UML adjustments for the correct documentation." />
     <MESSAGE value="Changes doe to new ideas for the model representation and preparation for the analyses start." />
     <MESSAGE value="ReadMe adjustments recording to the new changes." />
     <MESSAGE value="Preparation for the analysis phase." />
@@ -755,7 +754,8 @@
     <MESSAGE value="(2) Adjustments to the Hardware code, and minor bug fixes." />
     <MESSAGE value="(3) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
     <MESSAGE value="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
-    <option name="LAST_COMMIT_MESSAGE" value="(4) Adjustments to the Hardware code, and minor bug fixes. README.md adjustments." />
+    <MESSAGE value="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="(5) Adjustments to the Hardware code, and minor bug fixes. Major style changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
