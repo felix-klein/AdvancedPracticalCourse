@@ -125,7 +125,7 @@ This structure does not count for code which is not written in java.
   * Port: `/dev/cu.usbmodem141101`
   * Baud Rate: `9600`
   * Terminal Input: `screen /dev/cu.usbmodem141101 115200`
-  * Main information Link: [JSerial GitHub] (https://github.com/Fazecast/jSerialComm)
+  * Main information Link: [JSerial GitHub](https://github.com/Fazecast/jSerialComm)
 
 # Emergency Stop
 The Emergency Stop is a Task which can be included into a process when ever needed.
@@ -134,3 +134,14 @@ not need to delete or create a new whole process just for the testing of a begin
 
 The Emergency Stop functions as a rapid and immediate end of the test. No more commands are
 transferred to the board, the motor will stop running and the sensor data will stop sending.
+
+# Further Code Insights as a Guest
+As the main Git environment for the generation of this project, the [LRZ GitLab](https://gitlab.lrz.de)
+is in use. Included is an extensive documentation of Commit, Push and Merge commands, as well as 
+Milestones and Labels.\
+As the publication requires a public availability of the system code and additional materials, the transit
+to [GitHub i17ba](https://github.com/felix-klein/i17ba) was conducted and does not include properties which are not 
+regarded directly to the systems, e.g. Push history and Milestones.\
+If you are interested in further insights, older releases or development stages which are documented in the GitLab
+version of this project, or if you got general project question, please use the 
+Discord-Server: [Server i17ba-Q&A](https://discord.gg/rDpUg3Vh).
