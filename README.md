@@ -1,5 +1,15 @@
-## Bachelor Thesis Prototype
+## Advanced Practical Course
 
+**Info text Part II - Advanced Practical Course:** \
+This project is the continuation of the Bachelor: An Integrated Approach to Predictive
+Maintenance and Quality Control for E-Engines through Compliance Checking. The Advanced Practical Course: 0000000917
+Advanced Practical Course - Supportive Process Automation and Worker Assistance (IN2128, IN2106), offers the
+possibility to extend and improve the prototype on specific features. The GitHub environment is used for this part II
+of the project for reasons of overview and deployment. This is done by redeploying and embedding directly. Note that
+much of the previous information, implementations and structures are retained, but their form can and must be changed.
+A special tagging of the changed items is not made explicit, but can be taken from the git history.
+
+**Info text Part I - Bachelor Thesis:** \
 Welcome to the system and documentation environment for the bachelor thesis: An Integrated Approach to Predictive 
 Maintenance and Quality Control for E-Engines through Compliance Checking. In addition to the written thesis, this work
 also includes the practical part of the prototype construction. This environment is primarily used for editing and 
